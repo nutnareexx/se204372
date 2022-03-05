@@ -13,7 +13,8 @@ else
     <head></head>
     <body>
         <?php echo "controller = ".$controller." ,action = ".$action ;?>
-        <br>[<a href="">Home</a>]<br>
+        <br>[<a href="">Home</a>]
+        [<a href= "?controller=company&action=index">company</a>]
         <?php require_once("routes.php");?>
     
 </body>
