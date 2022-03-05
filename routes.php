@@ -1,5 +1,7 @@
 <?php
-$controllers = array('pages'=>['home','error']);
+$controllers = array('pages'=>['home','error'],
+                     'company'=>['index']
+                    );
 
 function call($controller,$action){
     require_once("controllers/".$controller."_controller.php");
@@ -7,6 +9,10 @@ function call($controller,$action){
     {
         case "pages": $controller = new PagesController();
                       break;
+
+        case "company": require_once("models/companyModel.php");
+                        $controller = new companyController();
+                        break;
     }
     $controller->{$action}();
 }
@@ -14,11 +20,14 @@ function call($controller,$action){
 if(array_key_exists($controller,$controllers))
 {
     if(in_array($action,$controllers[$controller]))
-    {   call($controller,$action);  }
-    else
-    {   call('pages','home');    }
+    {
+        call($controller,$action);
+    }
+    else{
+        call('pages','error');
+    }
 }
-else
-{
-    call('pages','home');
-}?>
+else{
+    call('pages','error');
+}
+?>
