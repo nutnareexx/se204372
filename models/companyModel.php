@@ -1,4 +1,4 @@
-<p>company</p>
+
 
 <?php
 class DetailCompanyModel{
