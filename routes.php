@@ -1,7 +1,8 @@
 <?php
 $controllers = array('pages'=>['home','error'],
                      'company'=>['index','newCompany'],
-                     'cooperative'=>['index','newCooperative','addCooperative','search']
+                     'cooperative'=>['index','newCooperative','addCooperative','search'],
+                     'petitionDC'=>['index']
                     );
 
 function call($controller,$action){
@@ -15,7 +16,7 @@ function call($controller,$action){
                         $controller = new companyController();
                         break;
 
-        case "petition": require_once("models/petitionDcMoodel.php");
+        case "petitionDC": require_once("models/petitionDcMoodel.php");
                          $controller = new petitionDcController();
                          break;
         case "cooperative": require_once("models/cooperativeModel.php");
