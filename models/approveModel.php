@@ -6,7 +6,8 @@ class approveModel
     public $status_id;
     public $status_name;
 
-    public function __construct($approve_id,$approve_date,$status_id,$status_name){
+    public function __construct($approve_id,$approve_date,$status_id,$status_name)
+    {
         
         $this->approve_id = $approve_id;
         $this->approve_name = $approve_date;
