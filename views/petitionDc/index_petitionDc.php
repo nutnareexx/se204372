@@ -37,6 +37,7 @@ tr:nth-child(even){background-color: #f2f2f2}
      <h1 style="background-color: green;">ระบบบริหารจัดการการฝึกงานออนไลน์</h1>
     <h2>ยื่นคำร้องฝึกงาน</h2>
 </div>
+<br><br>เพิ่มคำร้องฝึกงาน <a href=?controller=petitionDcController&action=newpetitionDc>Click</a><br>
 
 <table>
     <tr>
@@ -58,8 +59,8 @@ tr:nth-child(even){background-color: #f2f2f2}
 {
     echo "<tr> <td>$dclist->petition_id</td>
     <td>$dclist->user_id</td>
-    <td>$dclist->name_title $dclist->user_name $dclist->user_surname</td>
-    <td>$dclist->start_p $dclist->finish_p</td>
+    <td>$dclist->name_title$dclist->user_name $dclist->user_surname</td>
+    <td>$dclist->start_p - $dclist->finish_p</td>
     <td>$dclist->dc_position</td> 
     <td>$dclist->dc_name</td>  
     <td>$dclist->dc_pay</td> 
