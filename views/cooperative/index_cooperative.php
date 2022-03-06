@@ -15,6 +15,30 @@
                 text-align: center;
             }
 
+
+            .btn-group .button {
+            /*border-radius: 5%;*/
+            position: relative;
+            background-color: #0974ba ; /* Green */
+            border: 1px black;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            /*float: center;*/
+        }
+
+        .btn-group .button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+
+        .btn-group .button:hover {
+            background-color: #ddd;
+            color: black;
+
 table {
     font-family: 'Prompt', sans-serif;
     border-collapse: collapse;
@@ -37,8 +61,21 @@ tr:nth-child(even){background-color: #f2f2f2}
 <div class="header">
      <!--width="20%" height="20%">-->
      <h1 style="background-color: green;">ระบบบริหารจัดการการฝึกงานออนไลน์</h1>
-    <h2>รายละเอียดสถานประกอบการที่ประสงค์รับนิสิตฝึกงาน</h2>
+    <h2>รายละเอียดสถานประกอบการที่ประสงค์รับนิสิตสหกิจ</h2>
+
+    <h3>เพิ่มสถานประกอบการณ์ใหม่ <a href="?controller=cooperative&action=newCooperative"> click!!! </a> </h3>
 </div>
+
+
+
+<form method="get" action="">
+    
+    <input type="text" name="key">
+    <input type="hidden" name="controller" value="cooperative"/>
+    <button type="submit" name="action" value="search">
+        Search</button>
+
+</form>
     
 
 <table>
@@ -59,20 +96,20 @@ tr:nth-child(even){background-color: #f2f2f2}
 
 </html>
 
-<?php foreach($DetailCompanyList as $c)
+<?php foreach($cooperativeList as $c)
 {
     echo "<tr>
-    <td>$c->dc_id</td>
-    <td>$c->dc_name</td>
-    <td>$c->dc_position</td>
-    <td>$c->dc_department</td>
-    <td>$c->dc_num</td>
-    <td>$c->dc_skills</td>
-    <td>$c->dc_nature</td>
-    <td>$c->dc_pay</td>
-    <td>$c->dc_room</td>
-    <td>$c->dc_benefit</td>
-    <td>$c->dc_select</td>
+    <td>$c->c_id</td>
+    <td>$c->c_name</td>
+    <td>$c->c_position</td>
+    <td>$c->c_department</td>
+    <td>$c->c_num</td>
+    <td>$c->c_skills</td>
+    <td>$c->c_nature</td>
+    <td>$c->c_pay</td>
+    <td>$c->c_room</td>
+    <td>$c->c_benefit</td>
+    <td>$c->c_select</td>
     </tr>
     ";
 } 

@@ -14,8 +14,9 @@ else
     <body>
         <?php echo "controller = ".$controller." ,action = ".$action ;?>
         <br>[<a href="?controller=pages&action=home">Home</a>]
-        [<a href= "?controller=company&action=index">company</a>]
         [<a href= "?controller=company&action=index">petition</a>]
+        [<a href= "?controller=company&action=index">companyฝึกงาน</a>]
+        [<a href= "?controller=cooperative&action=index">companyสหกิจ</a>]
         <?php require_once("routes.php");?>
     
 </body>
