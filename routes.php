@@ -13,6 +13,10 @@ function call($controller,$action){
         case "company": require_once("models/companyModel.php");
                         $controller = new companyController();
                         break;
+
+        case "petition": require_once("models/petitionDcMoodel.php");
+                         $controller = new petitionDcController();
+                         break;
     }
     $controller->{$action}();
 }
