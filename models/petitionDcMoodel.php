@@ -1,57 +1,116 @@
 <?php
 class petitionDcModel{
-    public $approve_id;
-    public $p_id;
-    public $approve_date;
-    public $status_id;
+    public $dc_id;
+    public $petition_id;
     public $user_id;
-    public $company_id;
-    public $file_id;
-    public $date_p;
+    public $name_title;
+    public $user_name;
+    public $user_surname;
+    public $start_p;
+    public $finish_p;
+    public $dc_position;
+    public $dc_name;
+    public $dc_pay;
+    public $dc_room;
+    public $status_id;
+    public $status_name;
 
-    public function __construct($approve_id, $p_id, $approve_date, $status_id, $user_id, $company_id, $file_id, $date_p)
+    public function __construct($dc_id, $petition_id, $user_id, $name_title, $user_name, $user_surname, $start_p, $finish_p, 
+    $dc_position,$dc_name, $dc_pay, $dc_room, $status_id, $status_name)
     {
-        $this->approve_id = $approve_id;
-        $this->p_id = $p_id;
-        $this->approve_date = $approve_date;
-        $this->status_id = $status_id;
+        $this->dc_id = $dc_id;
+        $this->petition_id = $petition_id;
         $this->user_id = $user_id;
-        $this->company_id = $company_id;
-        $this->file_id = $file_id;
-        $this->date_p = $date_p;
+        $this->name_title = $name_title;
+        $this->user_name = $user_name;
+        $this->user_surname = $user_surname;
+        $this->start_p = $start_p;
+        $this->finish_p = $finish_p;
+        $this->dc_position = $dc_position;
+        $this->dc_name = $dc_name;
+        $this->dc_pay = $dc_pay;
+        $this->dc_room = $dc_room;
+        $this->status_id = $status_id;
+        $this->status_name = $status_name;
         
     }
 
-    public static function getAll()
+    public static function get($petition_id)
     {
-        $DetailCompanyList = [];
+        
         require("connection_connect.php");
-        $sql = "SELECT t.petition_id, t.user_id, t.name_title, t.user_name, t.user_surname, t.start_p, t.finish_p, t.dc_position, t.dc_name, t.dc_pay, t.dc_room, status.status_name
+        $sql = "SELECT t.dc_id, t.petition_id, t.user_id, t.name_title, t.user_name, t.user_surname, t.start_p, t.finish_p, t.dc_position, t.dc_name, t.dc_pay, t.dc_room, t.status_id, status.status_name
         FROM `status` INNER JOIN 
-            (SELECT userp.petition_id, userp.user_id, userp.name_id, name_title.name_title, userp.user_name, userp.user_surname, userp.start_p, userp.finish_p, userp.dc_position, userp.dc_name, 
-             userp.dc_pay, 	userp.dc_room, userp.status_id 
+            (SELECT userp.dc_id, userp.petition_id, userp.user_id, userp.name_id, name_title.name_title, userp.user_name, userp.user_surname, 
+             userp.start_p, userp.finish_p, userp.dc_position, userp.dc_name, userp.dc_pay, 	userp.dc_room, userp.status_id 
                 FROM `name_title` INNER JOIN 
-                (SELECT pdc.petition_id, pdc.user_id, pdc.start_p, pdc.finish_p, pdc.dc_position, pdc.dc_name, pdc.dc_pay, pdc.dc_room, user.name_id, user.user_name, user.user_surname, pdc.status_id 
+                (SELECT pdc.dc_id, pdc.petition_id, pdc.user_id, pdc.start_p, pdc.finish_p, pdc.dc_position, pdc.dc_name, pdc.dc_pay, pdc.dc_room, 
+                 user.name_id, user.user_name, user.user_surname, pdc.status_id 
                      FROM `user`  INNER JOIN
                     (SELECT petition_id, start_p, finish_p, date_p, user_id, status_id, petition.dc_id, dc_name, dc_position, dc_pay, dc_room 
                      FROM `petition` INNER JOIN `detail_company` ON petition.dc_id = detail_company.dc_id) AS pdc ON user.user_id = pdc.user_id) AS userp ON userp.name_id = name_title.name_id) AS t
-                     ON t.status_id = status.status_id;";
+                     ON t.status_id = status.status_id WHERE petition_id = '$petition_id'";
+        $result = $conn->query($sql);
+        $my_row = $result->fetch_assoc();
+            $dc_id = $my_row['dc_id'];
+            $petition_id = $my_row['petition_id'];
+            $user_id = $my_row['user_id'];
+            $name_title = $my_row['name_title'];
+            $user_name = $my_row['user_name'];
+            $user_surname = $my_row['user_surname'];
+            $start_p = $my_row['start_p'];
+            $finish_p = $my_row['finish_p'];
+            $dc_position = $my_row['dc_position'];
+            $dc_name = $my_row['dc_name'];
+            $dc_pay = $my_row['dc_pay'];
+            $dc_room = $my_row['dc_room'];
+            $status_id = $my_row['status_id'];
+            $status_name = $my_row['status_name'];
+        require("connection_close.php");
+
+        return new petitionDcModel($dc_id, $petition_id, $user_id, $name_title, $user_name, $user_surname, $start_p, $finish_p, 
+        $dc_position,$dc_name, $dc_pay, $dc_room, $status_id, $status_name);
+    }
+
+
+    public static function getAll()
+    {
+        $petionDcList = [];
+        require("connection_connect.php");
+        $sql = "SELECT t.dc_id, t.petition_id, t.user_id, t.name_title, t.user_name, t.user_surname, t.start_p, t.finish_p, t.dc_position, t.dc_name, t.dc_pay, t.dc_room, t.status_id, status.status_name
+        FROM `status` INNER JOIN 
+            (SELECT userp.dc_id, userp.petition_id, userp.user_id, userp.name_id, name_title.name_title, userp.user_name, userp.user_surname, 
+             userp.start_p, userp.finish_p, userp.dc_position, userp.dc_name, userp.dc_pay, 	userp.dc_room, userp.status_id 
+                FROM `name_title` INNER JOIN 
+                (SELECT pdc.dc_id, pdc.petition_id, pdc.user_id, pdc.start_p, pdc.finish_p, pdc.dc_position, pdc.dc_name, pdc.dc_pay, pdc.dc_room, 
+                 user.name_id, user.user_name, user.user_surname, pdc.status_id 
+                     FROM `user`  INNER JOIN
+                    (SELECT petition_id, start_p, finish_p, date_p, user_id, status_id, petition.dc_id, dc_name, dc_position, dc_pay, dc_room 
+                     FROM `petition` INNER JOIN `detail_company` ON petition.dc_id = detail_company.dc_id) AS pdc ON user.user_id = pdc.user_id) AS userp ON userp.name_id = name_title.name_id) AS t
+                     ON t.status_id = status.status_id";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
-            $approve_id = $my_row['approve_id'];
-            $p_id = $my_row['p_id'];
-            $approve_date = $my_row['approve_date'];
-            $status_id = $my_row['status_id'];
+            $dc_id = $my_row['dc_id'];
+            $petition_id = $my_row['petition_id'];
             $user_id = $my_row['user_id'];
-            $company_id = $my_row['company_id'];
-            $file_id = $my_row['file_id'];
-            $date_p = $my_row['date_p'];
-            $DetailCompanyList[] = new petitionModel($approve_id, $p_id, $approve_date, $status_id, $user_id, $company_id, $file_id, $date_p);
+            $name_title = $my_row['name_title'];
+            $user_name = $my_row['user_name'];
+            $user_surname = $my_row['user_surname'];
+            $start_p = $my_row['start_p'];
+            $finish_p = $my_row['finish_p'];
+            $dc_position = $my_row['dc_position'];
+            $dc_name = $my_row['dc_name'];
+            $dc_pay = $my_row['dc_pay'];
+            $dc_room = $my_row['dc_room'];
+            $status_id = $my_row['status_id'];
+            $status_name = $my_row['status_name'];
+            $petionDcList[] = new petitionDcModel($dc_id, $petition_id, $user_id, $name_title, $user_name, $user_surname, $start_p, $finish_p, 
+            $dc_position,$dc_name, $dc_pay, $dc_room, $status_id, $status_name);
 
         }
         require("connection_close.php");
-        return $DetailCompanyList;
+        return $petionDcList;
 
 
 
