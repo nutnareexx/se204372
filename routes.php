@@ -2,7 +2,7 @@
 $controllers = array('pages'=>['home','error'],
                      'company'=>['index','newCompany'],
                      'cooperative'=>['index','newCooperative','addCooperative','search'],
-                     'petitionDC'=>['index']
+                     'petitionDC'=>['index','newpetitionDc']
                     );
 
 function call($controller,$action){
