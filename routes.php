@@ -1,6 +1,7 @@
 <?php
 $controllers = array('pages'=>['home','error'],
-                     'company'=>['index']
+                     'company'=>['index','newCompany'],
+                     'cooperative'=>['index','newCooperative','addCooperative','search']
                     );
 
 function call($controller,$action){
@@ -13,6 +14,10 @@ function call($controller,$action){
         case "company": require_once("models/companyModel.php");
                         $controller = new companyController();
                         break;
+
+        case "cooperative": require_once("models/cooperativeModel.php");
+                        $controller = new cooperativeController();
+                        break;                
     }
     $controller->{$action}();
 }
