@@ -3,7 +3,7 @@ class petitionDcController
 {
     public function index()
     {
-        $pettionDcList = petitionDcModel::getAll();
+        $petionDcList = petitionDcModel::getAll();
         require_once('views/petitionDc/index_petitionDc.php');
     }
 }
