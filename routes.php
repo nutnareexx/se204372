@@ -25,6 +25,8 @@ function call($controller,$action){
                             require_once("models/nametitleModel.php");
                             require_once("models/userModel.php");
                             require_once("models/statusModel.php");
+                            require_once("models/companyModel.php");
+                            require_once("models/cooperativeModel.php");
                             $controller = new petitionDcController();
                             break;
         case "cooperative": require_once("models/cooperativeModel.php");
