@@ -36,8 +36,9 @@ tr:nth-child(even){background-color: #f2f2f2}
      <!--width="20%" height="20%">-->
      <h1 style="background-color: green;">ระบบบริหารจัดการการฝึกงานออนไลน์</h1>
     <h2>ยื่นคำร้องฝึกงาน</h2>
+    <h3><b>เพิ่มคำร้องฝึกงาน <a href=?controller=petitionDC&action=newpetitionDc>Click</a><br></h3>
 </div>
-<br><br>เพิ่มคำร้องฝึกงาน <a href=?controller=petitionDcController&action=newpetitionDc>Click</a><br>
+
 
 <table>
     <tr>
@@ -46,10 +47,12 @@ tr:nth-child(even){background-color: #f2f2f2}
         <td><b>ชื่อ-นามสกุล</td>
         <td><b>ระยะเวลาฝึกงาน</td>
         <td><b>ตำแน่งที่ไปฝึกงาน</td>
-        <td><b>ชื่อสถานประกอบการ</td>
+        <td><b>ชื่อสถานประกอบการฝึกงาน</td>
         <td><b>ค่าตอบแทน</td>
         <td><b>ที่พัก</td>
         <td><b>สถานะ</td>
+        <td><b>อัพเดตสถานะ</td>
+        <td><b>ลบข้อมูล</td>
     </tr>
 </body>
 
@@ -66,6 +69,8 @@ tr:nth-child(even){background-color: #f2f2f2}
     <td>$dclist->dc_pay</td> 
     <td>$dclist->dc_room</td> 
     <td>$dclist->status_name</td> 
+    <td> <a href=?controller=petitionDC&action=updateform&petition_id=$dclist->status_id> update </a> </td>
+    <td> <a href=?controller=petitionDC&action=deleteconfirm&petition_id=$dclist->status_id> delete </a>
     </td></tr>";
 }
 echo "</table>";
