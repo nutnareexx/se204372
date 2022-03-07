@@ -10,12 +10,12 @@ class petitionDcController
     public function newpetitionDc()
     {
         $petionDcList = petitionDcModel::getAll();
-        $approveList = approveModel::getAll();
+        //$approveList = approveModel::getAll();
         $statusList = statusModel::getAll();
         $nametitleList = nametitleModel::getAll();
-        $userList = userModel::getAll();
+        //$userList = userModel::getAll();
         $DetailCompanyList = DetailCompanyModel::getAll();
-        $cooperativeList =  cooperativeModel::getAll();
+        //$cooperativeList =  cooperativeModel::getAll();
         require_once('views/petitionDc/newpetitionDc.php');
     }
 
