@@ -33,7 +33,7 @@ class nametitleModel{
         require("connection_connect.php");
         $sql = "SELECT * FROM `name_title`";
         $result = $conn->query($sql);
-        $my_row = $result->fetch_assoc()
+        $my_row = $result->fetch_assoc();
         $name_id = $my_row['name_id'];
         $name_title = $my_row['name_title'];
         require("connection_connect.php");
