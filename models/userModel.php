@@ -36,7 +36,7 @@ class userModel{
             $userList[] = new userModel($user_id, $name_id, $user_name, $user_surname, $user_phone, $user_email);
         }
         require("connection_close.php");
-        return $statusList;
+        return $userList;
 
     }
 
@@ -45,7 +45,7 @@ class userModel{
         require("connection_connect.php");
         $sql = "SELECT * FROM `user`";
         $result = $conn->query($sql);
-        $my_row = $result->fetch_assoc()
+        $my_row = $result->fetch_assoc();
             $user_id = $my_row['user_id'];
             $name_id = $my_row['name_id'];
             $user_name = $my_row['user_name'];
