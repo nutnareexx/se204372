@@ -33,7 +33,7 @@ class statusModel{
         require("connection_connect.php");
         $sql = "SELECT * FROM `status` ";
         $result = $conn->query($sql);
-        $my_row = $result->fetch_assoc()
+        $my_row = $result->fetch_assoc();
         $status_id = $my_row['status_id'];
         $status_name = $my_row['status_name'];
         require("connection_connect.php");
