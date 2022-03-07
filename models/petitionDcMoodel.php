@@ -14,9 +14,10 @@ class petitionDcModel{
     public $dc_room;
     public $status_id;
     public $status_name;
+    public $c_id;
 
     public function __construct($dc_id, $petition_id, $user_id, $name_title, $user_name, $user_surname, $start_p, $finish_p, 
-    $dc_position,$dc_name, $dc_pay, $dc_room, $status_id, $status_name)
+    $dc_position,$dc_name, $dc_pay, $dc_room, $status_id, $status_name, $c_id)
     {
         $this->dc_id = $dc_id;
         $this->petition_id = $petition_id;
@@ -32,6 +33,7 @@ class petitionDcModel{
         $this->dc_room = $dc_room;
         $this->status_id = $status_id;
         $this->status_name = $status_name;
+        $this->c_id = $c_id;
         
     }
 
@@ -39,15 +41,16 @@ class petitionDcModel{
     {
         
         require("connection_connect.php");
-        $sql = "SELECT t.dc_id, t.petition_id, t.user_id, t.name_title, t.user_name, t.user_surname, t.start_p, t.finish_p, t.dc_position, t.dc_name, t.dc_pay, t.dc_room, t.status_id, status.status_name
+        $sql = "SELECT t.dc_id, t.petition_id, t.user_id, t.name_title, t.user_name, t.user_surname, t.start_p, t.finish_p, t.date_p, 
+        t.dc_position, t.dc_name, t.dc_pay, t.dc_room, t.status_id, status.status_name, t.c_id
         FROM `status` INNER JOIN 
             (SELECT userp.dc_id, userp.petition_id, userp.user_id, userp.name_id, name_title.name_title, userp.user_name, userp.user_surname, 
-             userp.start_p, userp.finish_p, userp.dc_position, userp.dc_name, userp.dc_pay, 	userp.dc_room, userp.status_id 
+             userp.start_p, userp.finish_p, userp.date_p, userp.dc_position, userp.dc_name, userp.dc_pay, userp.dc_room, userp.status_id, userp.c_id 
                 FROM `name_title` INNER JOIN 
-                (SELECT pdc.dc_id, pdc.petition_id, pdc.user_id, pdc.start_p, pdc.finish_p, pdc.dc_position, pdc.dc_name, pdc.dc_pay, pdc.dc_room, 
-                 user.name_id, user.user_name, user.user_surname, pdc.status_id 
+                (SELECT pdc.dc_id, pdc.petition_id, pdc.user_id, pdc.start_p, pdc.finish_p, pdc.date_p, pdc.dc_position, pdc.dc_name, pdc.dc_pay, pdc.dc_room, 
+                 user.name_id, user.user_name, user.user_surname, pdc.status_id, pdc.c_id
                      FROM `user`  INNER JOIN
-                    (SELECT petition_id, start_p, finish_p, date_p, user_id, status_id, petition.dc_id, dc_name, dc_position, dc_pay, dc_room 
+                    (SELECT petition_id, start_p, finish_p, date_p, user_id, status_id, petition.dc_id, c_id, dc_name, dc_position, dc_pay, dc_room 
                      FROM `petition` INNER JOIN `detail_company` ON petition.dc_id = detail_company.dc_id) AS pdc ON user.user_id = pdc.user_id) AS userp ON userp.name_id = name_title.name_id) AS t
                      ON t.status_id = status.status_id WHERE petition_id = '$petition_id'";
         $result = $conn->query($sql);
@@ -66,10 +69,11 @@ class petitionDcModel{
             $dc_room = $my_row['dc_room'];
             $status_id = $my_row['status_id'];
             $status_name = $my_row['status_name'];
+            $c_id = $my_row['c_id'];
         require("connection_close.php");
 
         return new petitionDcModel($dc_id, $petition_id, $user_id, $name_title, $user_name, $user_surname, $start_p, $finish_p, 
-        $dc_position,$dc_name, $dc_pay, $dc_room, $status_id, $status_name);
+        $dc_position,$dc_name, $dc_pay, $dc_room, $status_id, $status_name, $c_id);
     }
 
 
@@ -77,15 +81,16 @@ class petitionDcModel{
     {
         $petionDcList = [];
         require("connection_connect.php");
-        $sql = "SELECT t.dc_id, t.petition_id, t.user_id, t.name_title, t.user_name, t.user_surname, t.start_p, t.finish_p, t.dc_position, t.dc_name, t.dc_pay, t.dc_room, t.status_id, status.status_name
+        $sql = "SELECT t.dc_id, t.petition_id, t.user_id, t.name_title, t.user_name, t.user_surname, t.start_p, t.finish_p, t.date_p, 
+        t.dc_position, t.dc_name, t.dc_pay, t.dc_room, t.status_id, status.status_name, t.c_id
         FROM `status` INNER JOIN 
             (SELECT userp.dc_id, userp.petition_id, userp.user_id, userp.name_id, name_title.name_title, userp.user_name, userp.user_surname, 
-             userp.start_p, userp.finish_p, userp.dc_position, userp.dc_name, userp.dc_pay, 	userp.dc_room, userp.status_id 
+             userp.start_p, userp.finish_p, userp.date_p, userp.dc_position, userp.dc_name, userp.dc_pay, userp.dc_room, userp.status_id, userp.c_id 
                 FROM `name_title` INNER JOIN 
-                (SELECT pdc.dc_id, pdc.petition_id, pdc.user_id, pdc.start_p, pdc.finish_p, pdc.dc_position, pdc.dc_name, pdc.dc_pay, pdc.dc_room, 
-                 user.name_id, user.user_name, user.user_surname, pdc.status_id 
+                (SELECT pdc.dc_id, pdc.petition_id, pdc.user_id, pdc.start_p, pdc.finish_p, pdc.date_p, pdc.dc_position, pdc.dc_name, pdc.dc_pay, pdc.dc_room, 
+                 user.name_id, user.user_name, user.user_surname, pdc.status_id, pdc.c_id
                      FROM `user`  INNER JOIN
-                    (SELECT petition_id, start_p, finish_p, date_p, user_id, status_id, petition.dc_id, dc_name, dc_position, dc_pay, dc_room 
+                    (SELECT petition_id, start_p, finish_p, date_p, user_id, status_id, petition.dc_id, c_id, dc_name, dc_position, dc_pay, dc_room 
                      FROM `petition` INNER JOIN `detail_company` ON petition.dc_id = detail_company.dc_id) AS pdc ON user.user_id = pdc.user_id) AS userp ON userp.name_id = name_title.name_id) AS t
                      ON t.status_id = status.status_id";
         $result = $conn->query($sql);
@@ -105,22 +110,38 @@ class petitionDcModel{
             $dc_room = $my_row['dc_room'];
             $status_id = $my_row['status_id'];
             $status_name = $my_row['status_name'];
+            $c_id = $my_row['c_id'];
             $petionDcList[] = new petitionDcModel($dc_id, $petition_id, $user_id, $name_title, $user_name, $user_surname, $start_p, $finish_p, 
-            $dc_position,$dc_name, $dc_pay, $dc_room, $status_id, $status_name);
+            $dc_position,$dc_name, $dc_pay, $dc_room, $status_id, $status_name, $c_id);
 
         }
         require("connection_close.php");
         return $petionDcList;
 
-
-
-
     }
-}
+
+    public static function Add($petition_id, $start_p, $finish_p, $date_p, $user_id, $status_id, $dc_id, $c_id)
+    {
+        require("connection_connect.php");
+        $sql = "INSERT INTO `petition`(`petition_id`, `start_p`, `finish_p`, `date_p`, `user_id`, `status_id`, `dc_id`, `c_id`) 
+        VALUES ('$petition_id','$start_p','$finish_p','$date_p','$user_id','$status_id','$dc_id','$c_id')";
+        $result = $conn->query($sql);
+        require("connection_close.php");
+        return;
+    }
+
+  public static function update($petition_id, $start_p, $finish_p, $date_p, $user_id, $status_id, $dc_id, $c_id, $petitionid)
+  {
+      require("connection_connect.php");
+      $sql = "UPDATE `petition` SET `petition_id`='$petition_id',`start_p`='$start_p',
+      `finish_p`='$finish_p',`date_p`='$date_p',`user_id`='$user_id',
+      `status_id`='$status_id',`dc_id`='$dc_id',`c_id`='$c_id' WHERE petition_id = $petitionid";
+      $result = $conn->query($sql);
+      require("connection_close.php");
+      return "update success $result row";
+  }
 
 
 
 
-
-
-?>
+}?>
