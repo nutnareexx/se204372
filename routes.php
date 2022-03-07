@@ -1,5 +1,6 @@
 <?php
 $controllers = array('pages'=>['home','error'],
+                     'hamburger' => ['index'],
                      'company'=>['index','newCompany'],
                      'cooperative'=>['index','newCooperative','addCooperative','search'],
                      'petitionDC'=>['index','newpetitionDc']
@@ -9,19 +10,22 @@ function call($controller,$action){
     require_once("controllers/".$controller."_controller.php");
     switch($controller)
     {
-        case "pages": $controller = new PagesController();
-                      break;
+        case "pages":       $controller = new PagesController();
+                            break;
 
-        case "company": require_once("models/companyModel.php");
-                        $controller = new companyController();
-                        break;
+        case "hamburger":   $controller = new hamburgerController();
+                            break;
 
-        case "petitionDC": require_once("models/petitionDcMoodel.php");
-                         $controller = new petitionDcController();
-                         break;
+        case "company":     require_once("models/companyModel.php");
+                            $controller = new companyController();
+                            break;
+
+        case "petitionDC":  require_once("models/petitionDcMoodel.php");
+                            $controller = new petitionDcController();
+                            break;
         case "cooperative": require_once("models/cooperativeModel.php");
-                        $controller = new cooperativeController();
-                        break;                
+                            $controller = new cooperativeController();
+                            break;                
     }
     $controller->{$action}();
 }
