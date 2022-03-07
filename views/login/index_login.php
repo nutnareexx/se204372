@@ -11,9 +11,9 @@
      <h1 style="background-color: green;
      ">ระบบบริหารจัดการการฝึกงานออนไลน์</h1>
     <h2>คณะวิศวกรรมศาสตร์ สาขาคอมพิวเตอร์</h2>
-    <input type="text" id="user" name="user">
+    <b>Username <input type="text" id="user" name="user">
     <br><br>
-    <input type="password" id="password" name="password">
+    <b>Password <input type="password" id="password" name="password">
     <button>Login</button>
 
 
