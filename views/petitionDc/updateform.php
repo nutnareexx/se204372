@@ -32,7 +32,7 @@
 
     <input type="hidden" name="controller" value="petitionDC"/>
     <input type="hidden" name="petitionid" value="<?php echo $petionDcList->petition_id;?>"/>
-    <br><br><button type="submit" name="action" value="index"> Back </button>
+    <br><button type="submit" name="action" value="index"> Back </button>
     <button type="submit" name="action" value="update"> Update </button>
 
 
