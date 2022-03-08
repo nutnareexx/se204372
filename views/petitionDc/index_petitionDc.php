@@ -42,8 +42,7 @@ tr:nth-child(even){background-color: #f2f2f2}
     
     <input type="text" name="key">
     <input type="hidden" name="controller" value="petitionDC"/>
-    <button type="submit" name="action" value="search">
-        Search</button>
+    <button type="submit" name="action" value="search">Search</button>
 
 </form>
 
