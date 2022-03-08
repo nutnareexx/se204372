@@ -69,8 +69,8 @@ tr:nth-child(even){background-color: #f2f2f2}
     <td>$dclist->dc_pay</td> 
     <td>$dclist->dc_room</td> 
     <td>$dclist->status_name</td> 
-    <td> <a href=?controller=petitionDC&action=updateform&petition_id=$dclist->status_id> update </a> </td>
-    <td> <a href=?controller=petitionDC&action=deleteconfirm&petition_id=$dclist->status_id> delete </a>
+    <td> <a href=?controller=petitionDC&action=updateform&petition_id=$dclist->petition_id> update </a> </td>
+    <td> <a href=?controller=petitionDC&action=deleteconfirm&petition_id=$dclist->petition_id> delete </a>
     </td></tr>";
 }
 echo "</table>";
