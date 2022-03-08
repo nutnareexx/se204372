@@ -76,6 +76,13 @@ class petitionDcController
         petitionDcController::index();
     }
 
+    public function search()
+    {
+        $key = $_GET['key'];
+        $petionDcList = petitionDcModel::search($key);
+        require_once('views/petitionDc/index_petitionDc.php');
+    }
+
 
 
 }?>
