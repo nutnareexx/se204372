@@ -4,7 +4,7 @@ class petitionDcUserController
     public function index()
     {
         $petionDcList = petitionDcModel::getAll();
-        require_once('views/petitionDc/index_petitionDcUser.php');
+        require_once('views/petitionDcUser/index_petitionDcUser.php');
     }
 
     public function newpetitionDc()
@@ -16,7 +16,7 @@ class petitionDcUserController
         //$userList = userModel::getAll();
         $DetailCompanyList = DetailCompanyModel::getAll();
         //$cooperativeList =  cooperativeModel::getAll();
-        require_once('views/petitionDc/newpetitionDc.php');
+        require_once('views/petitionDcUser/newpetitionDc.php');
     }
 
     public function addpetitionDc()
@@ -64,7 +64,7 @@ class petitionDcUserController
     public function deleteconfirm()
     {
         $dc = $_GET['petition_id'];
-        $petionDcList = petitionDcUserModel::get($dc);
+        $petionDcList = petitionDcModel::get($dc);
         require_once('views/petitionDc/deleteconfirm.php');
 
     }
