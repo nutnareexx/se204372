@@ -14,7 +14,6 @@ else
     <body>
         <?php echo "controller = ".$controller." ,action = ".$action ;?>
         <br>
-        [<a href= "?controller=hamburger&action=index">hamburger</a>]
         [<a href= "?controller=pages&action=home">Home</a>]
         [<a href= "?controller=petitionDC&action=index">ยื่นคำร้องฝึกงานสำหรับอาจารย์</a>]
         [<a href= "?controller=petitionDCUser&action=index">ยื่นคำร้องฝึกงานสำหรับนิสิต</a>]
