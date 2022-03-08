@@ -130,12 +130,10 @@ class petitionDcModel{
         return;
     }
 
-  public static function update($petition_id, $start_p, $finish_p, $date_p, $user_id, $status_id, $dc_id, $c_id, $petitionid)
+  public static function update($petition_id, $status_id)
   {
       require("connection_connect.php");
-      $sql = "UPDATE `petition` SET `petition_id`='$petition_id',`start_p`='$start_p',
-      `finish_p`='$finish_p',`date_p`='$date_p',`user_id`='$user_id',
-      `status_id`='$status_id',`dc_id`='$dc_id',`c_id`='$c_id' WHERE petition_id = $petitionid";
+      $sql = "UPDATE `petition` SET `status_id`='$status_id'WHERE petition_id = '$petition_id'";
       $result = $conn->query($sql);
       require("connection_close.php");
       return "update success $result row";
