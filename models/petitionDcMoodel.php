@@ -167,7 +167,7 @@ class petitionDcModel{
                     (SELECT petition_id, start_p, finish_p, date_p, user_id, status_id, petition.dc_id, c_id, dc_name, dc_position, dc_pay, dc_room 
                      FROM `petition` INNER JOIN `detail_company` ON petition.dc_id = detail_company.dc_id) AS pdc ON user.user_id = pdc.user_id) AS userp ON userp.name_id = name_title.name_id) AS t
                      ON t.status_id = status.status_id
-                     ORDER BY petition_id
+                     
                     WHERE (t.dc_id like '%$key%' or t.petition_id like '%$key%' or t.user_id like '%$key%' 
                     or t.name_title like '%$key%' or t.user_name like '%$key%' or t.user_surname like '%$key%' or t.start_p like '%$key%'
                     or t.finish_p like '%$key%' or t.date_p like '%$key%' or t.dc_position like '%$key%' or t.dc_name like '%$key%'
