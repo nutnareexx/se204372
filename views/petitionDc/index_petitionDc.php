@@ -36,7 +36,6 @@ tr:nth-child(even){background-color: #f2f2f2}
      <!--width="20%" height="20%">-->
      <h1 style="background-color: green;">ระบบบริหารจัดการการฝึกงานออนไลน์</h1>
     <h2>ยื่นคำร้องฝึกงาน</h2>
-    <h3><b>เพิ่มคำร้องฝึกงาน <a href=?controller=petitionDC&action=newpetitionDc>Click</a><br></h3>
 </div>
 
 
