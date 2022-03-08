@@ -1,48 +1,23 @@
 
 
 <form method="get" action="">
-    
-    <br><label><b>ลำดับที่<input type="text" name="petition_id"
-        value="<?php echo $petionDcList->petition_id;?>"/>
-    </select></label><br><br>
 
-    <label><b>รหัสนิสิต<input type="text" name="user_id"
-        value="<?php echo $petionDcList->user_id;?>"/>
-    </select></label><br><br>
 
-    <label><b>คำนำหน้า<input type="text" name="name_id"
-        value="<?php echo $petionDcList->name_title;?>"/>
-    </select></label>
 
-    <label><b>ชื่อ<input type="text" name="user_id"
-        value="<?php echo $petionDcList->user_name  ;?>"/>
-    </select></label>
 
-    <label><b>นามสกุล<input type="text" name="user_id"
-        value="<?php echo $petionDcList->user_surname  ;?>"/>
-    </select></label><br><br>
+<?php echo "
+            <br><b>ลำดับที่ : </b>   $petionDcList->petition_id  
+            <br><b>รหัสนิสิต : </b>  $petionDcList->user_id
+            <br><b>ชื่อ-นามสกุล : </b>  $petionDcList->name_title$petionDcList->user_name $petionDcList->user_surname
+            <br><b>ระยะเวลาฝึกงาน : </b> $petionDcList->start_p - $petionDcList->finish_p 
+            <br><b>ตำแหน่งที่ไปฝึกงาน : </b> $petionDcList->dc_position
+            <br><b>ชื่อสถานประกอบการฝึกงาน : </b> $petionDcList->dc_name    
+            <br><b>ค่าตอบแทน : </b> $petionDcList->dc_pay 
+            <br><b>ที่พัก : </b> $petionDcList->dc_room<br>";?>
 
-    <label><b>เริ่มฝึกงาน<input type="text" name="user_id"
-        value="<?php echo $petionDcList->start_p  ;?>"/>
-    </select></label>
 
-    <label><b>สิ้นสุดการฝึกงาน<input type="text" name="user_id"
-        value="<?php echo $petionDcList->finish_p;?>"/>
-    </select></label><br><br>
-
-    <label><b>ชื่อสถานประกอบการฝึกงาน<input type="text" name="dc_id"
-        value="<?php echo $petionDcList->dc_name  ;?>"/>
-    </select></label>
-
-    <label><b>ค่าตอบแทน<input type="text" name="dc_id"
-        value="<?php echo $petionDcList->dc_pay  ;?>"/>
-    </select></label>
-
-    <label><b>ที่พัก<input type="text" name="dc_id"
-        value="<?php echo $petionDcList->dc_room;?>"/>
-    </select></label><br><br>
-
-    <label>สถานะ <select name="status_id">
+   
+    <label><b>อัพเดตสถานะ </b> <select name="status_id">
         <?php foreach($statusList as $st){
             echo "<option value=$st->status_id";
             if($st->status_id==$petionDcList->status_id){
@@ -51,6 +26,7 @@
             echo ">$st->status_name</option>";
         }?>
         </select></label><br> 
+        
 
    
 

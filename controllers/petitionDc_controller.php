@@ -21,6 +21,7 @@ class petitionDcController
 
     public function addpetitionDc()
     {
+        echo "addp";
         $dc_id = $_GET['dc_id'];
         $petition_id = $_GET['petition_id'];
         $user_id = $_GET['user_id'];
@@ -55,16 +56,10 @@ class petitionDcController
 
     public function update()
     {
-        $petition_id = $_GET['petition_id'];
-        $start_p = $_GET['start_p'];
-        $finish_p = $_GET['finidh_p'];
-        $date_p = $_GET['date_p'];
-        $user_id = $_GET['user_id'];
+        
+        $petition_id = $_GET['petitionid'];
         $status_id = $_GET['status_id'];
-        $dc_id = $_GET['dc_id'];
-        $c_id = $_GET['c_id'];
-        $petitionid = $_GET['petitionid'];
-        petitionDcModel::update($petition_id, $start_p, $finish_p, $date_p, $user_id, $status_id, $dc_id, $c_id, $petitionid);
+        petitionDcModel::update( $petition_id, $status_id);
         petitionDcController::index();
     }
 
