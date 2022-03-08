@@ -52,7 +52,9 @@ class petitionDcModel{
                      FROM `user`  INNER JOIN
                     (SELECT petition_id, start_p, finish_p, date_p, user_id, status_id, petition.dc_id, c_id, dc_name, dc_position, dc_pay, dc_room 
                      FROM `petition` INNER JOIN `detail_company` ON petition.dc_id = detail_company.dc_id) AS pdc ON user.user_id = pdc.user_id) AS userp ON userp.name_id = name_title.name_id) AS t
-                     ON t.status_id = status.status_id WHERE petition_id = '$petition_id'";
+                     ON t.status_id = status.status_id
+                     WHERE petition_id = '$petition_id'
+                     ORDER BY petition_id";
         $result = $conn->query($sql);
         $my_row = $result->fetch_assoc();
             $dc_id = $my_row['dc_id'];
@@ -92,7 +94,8 @@ class petitionDcModel{
                      FROM `user`  INNER JOIN
                     (SELECT petition_id, start_p, finish_p, date_p, user_id, status_id, petition.dc_id, c_id, dc_name, dc_position, dc_pay, dc_room 
                      FROM `petition` INNER JOIN `detail_company` ON petition.dc_id = detail_company.dc_id) AS pdc ON user.user_id = pdc.user_id) AS userp ON userp.name_id = name_title.name_id) AS t
-                     ON t.status_id = status.status_id";
+                     ON t.status_id = status.status_id
+                     ORDER BY petition_id;";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
@@ -120,11 +123,11 @@ class petitionDcModel{
 
     }
 
-    public static function Add($petition_id, $start_p, $finish_p, $date_p, $user_id, $status_id, $dc_id, $c_id)
+    public static function Add($petition_id, $start_p, $finish_p, $date_p, $user_id, $status_id, $dc_id)
     {
         require("connection_connect.php");
-        $sql = "INSERT INTO `petition`(`petition_id`, `start_p`, `finish_p`, `date_p`, `user_id`, `status_id`, `dc_id`, `c_id`) 
-        VALUES ('$petition_id','$start_p','$finish_p','$date_p','$user_id','$status_id','$dc_id','$c_id')";
+        $sql = "INSERT INTO `petition`(`petition_id`, `start_p`, `finish_p`, `date_p`, `user_id`, `status_id`, `dc_id`,) 
+        VALUES ('$petition_id','$start_p','$finish_p','$date_p','$user_id','$status_id','$dc_id')";
         $result = $conn->query($sql);
         require("connection_close.php");
         return;
@@ -137,6 +140,15 @@ class petitionDcModel{
       $result = $conn->query($sql);
       require("connection_close.php");
       return "update success $result row";
+  }
+
+  public static function delete($petition_id)
+  {
+      require("connection_connect.php");
+      $sql = "DELETE FROM `petition` WHERE petition_id = '$petition_id'";
+      $result = $conn->query($sql);
+      require("connection_close.php");
+      return "delete success $result row";
   }
 
 
