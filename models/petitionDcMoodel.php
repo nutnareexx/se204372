@@ -95,7 +95,7 @@ class petitionDcModel{
                     (SELECT petition_id, start_p, finish_p, date_p, user_id, status_id, petition.dc_id, c_id, dc_name, dc_position, dc_pay, dc_room 
                      FROM `petition` INNER JOIN `detail_company` ON petition.dc_id = detail_company.dc_id) AS pdc ON user.user_id = pdc.user_id) AS userp ON userp.name_id = name_title.name_id) AS t
                      ON t.status_id = status.status_id
-                     ORDER BY petition_id;";
+                     ORDER BY petition_id";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
@@ -150,6 +150,53 @@ class petitionDcModel{
       require("connection_close.php");
       return "delete success $result row";
   }
+
+  public static function search($key)
+    {
+        $petionDcList = [];
+        require("connection_connect.php");
+        $sql = "SELECT t.dc_id, t.petition_id, t.user_id, t.name_title, t.user_name, t.user_surname, t.start_p, t.finish_p, t.date_p, 
+        t.dc_position, t.dc_name, t.dc_pay, t.dc_room, t.status_id, status.status_name, t.c_id
+        FROM `status` INNER JOIN 
+            (SELECT userp.dc_id, userp.petition_id, userp.user_id, userp.name_id, name_title.name_title, userp.user_name, userp.user_surname, 
+             userp.start_p, userp.finish_p, userp.date_p, userp.dc_position, userp.dc_name, userp.dc_pay, userp.dc_room, userp.status_id, userp.c_id 
+                FROM `name_title` INNER JOIN 
+                (SELECT pdc.dc_id, pdc.petition_id, pdc.user_id, pdc.start_p, pdc.finish_p, pdc.date_p, pdc.dc_position, pdc.dc_name, pdc.dc_pay, pdc.dc_room, 
+                 user.name_id, user.user_name, user.user_surname, pdc.status_id, pdc.c_id
+                     FROM `user`  INNER JOIN
+                    (SELECT petition_id, start_p, finish_p, date_p, user_id, status_id, petition.dc_id, c_id, dc_name, dc_position, dc_pay, dc_room 
+                     FROM `petition` INNER JOIN `detail_company` ON petition.dc_id = detail_company.dc_id) AS pdc ON user.user_id = pdc.user_id) AS userp ON userp.name_id = name_title.name_id) AS t
+                     ON t.status_id = status.status_id
+                     ORDER BY petition_id
+                    WHERE (t.dc_id like '%$key%' or t.petition_id like '%$key%' or t.user_id like '%$key%' 
+                    or t.name_title like '%$key%' or t.user_name like '%$key%' or t.user_surname like '%$key%' or t.start_p like '%$key%'
+                    or t.finish_p like '%$key%' or t.date_p like '%$key%' or t.dc_position like '%$key%' or t.dc_name like '%$key%'
+                    or t.dc_pay like '%$key%'or t.dc_room like '%$key%' or t.status_id like '%$key%' or status.status_name like '%$key%'
+                    or t.c_id like '%$key%')";
+        $result = $conn->query($sql);
+        while($my_row = $result->fetch_assoc())
+        {
+            $dc_id = $my_row['dc_id'];
+            $petition_id = $my_row['petition_id'];
+            $user_id = $my_row['user_id'];
+            $name_title = $my_row['name_title'];
+            $user_name = $my_row['user_name'];
+            $user_surname = $my_row['user_surname'];
+            $start_p = $my_row['start_p'];
+            $finish_p = $my_row['finish_p'];
+            $dc_position = $my_row['dc_position'];
+            $dc_name = $my_row['dc_name'];
+            $dc_pay = $my_row['dc_pay'];
+            $dc_room = $my_row['dc_room'];
+            $status_id = $my_row['status_id'];
+            $status_name = $my_row['status_name'];
+            $c_id = $my_row['c_id'];
+            $petionDcList[] = new petitionDcModel($dc_id, $petition_id, $user_id, $name_title, $user_name, $user_surname, $start_p, $finish_p, 
+            $dc_position,$dc_name, $dc_pay, $dc_room, $status_id, $status_name, $c_id);
+        }
+        require("connection_close.php");
+        return $petionDcList;
+    }
 
 
 
