@@ -34,10 +34,8 @@ class petitionDcController
         $dc_name = $_GET['dc_name'];
         $dc_pay = $_GET['dc_pay'];
         $dc_room = $_GET['dc_room'];
-        $status_id = $_GET['status_id'];
-        $status_name = $_GET['status_name'];
         petitionDcModel::Add($dc_id, $petition_id, $user_id, $name_title, $user_name, $user_surname, $start_p, $finish_p, 
-        $dc_position,$dc_name, $dc_pay, $dc_room, $status_id, $status_name);
+        $dc_position,$dc_name, $dc_pay, $dc_room);
         petitionDcController::index();
     }
 
@@ -60,6 +58,21 @@ class petitionDcController
         $petition_id = $_GET['petitionid'];
         $status_id = $_GET['status_id'];
         petitionDcModel::update( $petition_id, $status_id);
+        petitionDcController::index();
+    }
+
+    public function deleteconfirm()
+    {
+        $dc = $_GET['petition_id'];
+        $petionDcList = petitionDcModel::get($dc);
+        require_once('views/petitionDc/deleteconfirm.php');
+
+    }
+
+    public function delete()
+    {
+        $petitionid = $_GET['petitionid'];
+        petitionDcModel::delete($petitionid);
         petitionDcController::index();
     }
 
