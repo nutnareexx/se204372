@@ -172,7 +172,8 @@ class petitionDcModel{
                     or t.name_title like '%$key%' or t.user_name like '%$key%' or t.user_surname like '%$key%' or t.start_p like '%$key%'
                     or t.finish_p like '%$key%' or t.date_p like '%$key%' or t.dc_position like '%$key%' or t.dc_name like '%$key%'
                     or t.dc_pay like '%$key%'or t.dc_room like '%$key%' or t.status_id like '%$key%' or status.status_name like '%$key%'
-                    or t.c_id like '%$key%')";
+                    or t.c_id like '%$key%')
+                    ORDER BY petition_id";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
