@@ -38,6 +38,15 @@ tr:nth-child(even){background-color: #f2f2f2}
     <h2>ยื่นคำร้องฝึกงาน</h2>
 </div>
 
+<form method="get" action="">
+    
+    <input type="text" name="key">
+    <input type="hidden" name="controller" value="petitionDC"/>
+    <button type="submit" name="action" value="search">
+        Search</button>
+
+</form>
+
 
 <table>
     <tr>
