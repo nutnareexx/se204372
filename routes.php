@@ -3,8 +3,8 @@ $controllers = array('pages'=>['home','error'],
                      'hamburger' => ['index'],
                      'company'=>['index','newCompany'],
                      'cooperative'=>['index','addCooperative','search'],
-                     'petitionDC'=>['index','newpetitionDc', 'addpetitionDc','updateform','update', 'deleteconfirm', 'delete'],
-                     'petitionDCUser'=>[]
+                     'petitionDC'=>['index','updateform','update', 'deleteconfirm', 'delete'],
+                     'petitionDCUser'=>['index', 'newpetitionDc', 'addpetitionDc']
                     );
 
 function call($controller,$action){
