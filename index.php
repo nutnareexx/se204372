@@ -20,6 +20,8 @@ else
         [<a href= "?controller=petitionDCUser&action=index">ยื่นคำร้องฝึกงานสำหรับนิสิต</a>]
         [<a href= "?controller=company&action=index">companyฝึกงาน</a>]
         [<a href= "?controller=cooperative&action=index">companyสหกิจ</a>]
+        [<a href= "?controller=hamburger&action=index">hamburgerนิสิต</a>]
+        [<a href= "?controller=hamburgerAj&action=index">hamburgerอาจารย์</a>]
         <?php require_once("routes.php");?>
     
 </body>
