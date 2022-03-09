@@ -1,11 +1,16 @@
 <?php
 $controllers = array('pages'=>['home','error'],
                      'hamburger' => ['index'],
+                     'hamburgerAj' => ['index'],
                      'company'=>['index','newCompany'],
                      'cooperative'=>['index','newCooperative','addCooperative','search'],
+<<<<<<< Updated upstream
                      'petitionDC'=>['index','updateform','update', 'deleteconfirm', 'delete','search'],
                      'petitionC'=>['indexC','updateformC','updateC','deleteconfirmC','deleteC','searchC'],
                      'petitionDCUser'=>['index', 'newpetitionDc', 'addpetitionDc']
+=======
+                     'petitionDC'=>['index','newpetitionDc']
+>>>>>>> Stashed changes
                     );
 
 function call($controller,$action){
@@ -18,19 +23,17 @@ function call($controller,$action){
         case "hamburger":   $controller = new hamburgerController();
                             break;
 
+        case "hamburgerAj": $controller = new hamburgerAjController();
+                            break;
+
         case "company":     require_once("models/companyModel.php");
                             $controller = new companyController();
                             break;
 
         case "petitionDC":  require_once("models/petitionDcMoodel.php");
-                            require_once("models/approveModel.php");
-                            require_once("models/nametitleModel.php");
-                            require_once("models/userModel.php");
-                            require_once("models/statusModel.php");
-                            require_once("models/companyModel.php");
-                            require_once("models/cooperativeModel.php");
                             $controller = new petitionDcController();
                             break;
+<<<<<<< Updated upstream
 
         case "petitionC":  require_once("models/petitionCModel.php");
                             require_once("models/approveModel.php");
@@ -52,6 +55,9 @@ function call($controller,$action){
                             $controller = new petitionDcUserController();
                             break;                    
         
+=======
+                            
+>>>>>>> Stashed changes
         case "cooperative": require_once("models/cooperativeModel.php");
                             $controller = new cooperativeController();
                             break;                
