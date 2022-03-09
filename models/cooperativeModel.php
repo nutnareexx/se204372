@@ -71,8 +71,8 @@ class cooperativeModel{
         $cooperativeList =[];
         require("connection_connect.php");
         $sql = "SELECT * FROM `detail_cooperative`
-        (c_name like '%$key%' or c_position like '%$key%' or c_department like '%$key%' or c_num like '%$key%' or c_skills like '%$key%' or c_nature like '%$key%' or c_pay like '%$key%' or
-        c_room like '%$key%' or c_benefit like '%$key%' or c_select like '%$key%' ) and c_id = c_id";
+        WHERE (c_name like '%$key%' or c_position like '%$key%' or c_department like '%$key%' or c_num like '%$key%' or c_skills like '%$key%' or c_nature like '%$key%' or c_pay like '%$key%' or
+        c_room like '%$key%' or c_benefit like '%$key%' or c_select like '%$key%' )";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
