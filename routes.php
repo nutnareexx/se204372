@@ -2,7 +2,7 @@
 $controllers = array('pages'=>['home','error'],
                      'hamburger' => ['index'],
                      'company'=>['index','newCompany'],
-                     'cooperative'=>['index','addCooperative','search'],
+                     'cooperative'=>['index','newCooperative','addCooperative','search'],
                      'petitionDC'=>['index','updateform','update', 'deleteconfirm', 'delete','search'],
                      'petitionC'=>['indexC','updateformC','updateC','deleteconfirmC','deleteC','searchC'],
                      'petitionDCUser'=>['index', 'newpetitionDc', 'addpetitionDc']
