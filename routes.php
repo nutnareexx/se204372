@@ -26,6 +26,17 @@ function call($controller,$action){
                             $controller = new companyController();
                             break;
 
+        case "companyP":     require_once("models/companyModel.php");
+                             require_once("models/approveModel.php");
+                             require_once("models/cooperativeModel.php");
+                             require_once("models/nametitleModel.php");
+                             require_once("models/petitionCModel.php");
+                             require_once("models/petitionDcMoodel.php");
+                             require_once("models/statusModel.php");
+                             require_once("models/userModel.php");
+                            $controller = new companyPController();
+                            break;
+
         case "petitionDC":  require_once("models/petitionDcMoodel.php");
                             $controller = new petitionDcController();
                             break;
