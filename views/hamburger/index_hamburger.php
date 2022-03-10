@@ -34,7 +34,7 @@
             </ul>
         </li>
         <li>
-            <a href="?controller=petitionDCUser&action=index">
+            <a href="?controller=checkApproval&action=index">
                 <i class='bx bx-check-square' ></i>
                 <span class="link_name">ตรวจสอบผลการอนุมัติ</span>
             </a>
@@ -44,7 +44,7 @@
         </li>
         
         <li>
-            <a href="?controller=download&action=index">
+            <a href="?controller=downloadStudent&action=index">
             <i class='bx bx-download'></i>
             <span class="link_name">download</span>
             </a>
@@ -53,7 +53,7 @@
             </ul>
         </li>
         <li>
-            <a href="?controller=upload&action=index?controller=upload&action=index">
+            <a href="?controller=uploadStudent&action=index">
             <i class='bx bx-upload'></i>
             <span class="link_name">upload</span>
             </a>
@@ -69,19 +69,18 @@
             
                 <div class="name-job">
                     <div class="profile_name">Name</div>
-                </div>
-            <a href= "?controller=pages&action=home">
-            <i class='bx bx-log-out '></i>
+                </div>             
+                <i class='bx bx-log-out '></i>
         </div>
         </li>
     </dl>
 </div>
 
 <section class="home-section">
- <div class="home-content">
- <i class='bx bx-menu'></i>
- <span class="text">ระบบบริหารจัดการการฝึกงานแบบออนไลน์</span>
- </div>
+    <div class="home-content">
+        <i class='bx bx-menu'></i>
+            <span class="text">ระบบบริหารจัดการการฝึกงานแบบออนไลน์</span>
+    </div>
 </section>
 
 <script>
