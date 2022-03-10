@@ -12,7 +12,13 @@ $controllers = array('pages'=>['home','error'],
                      'petitionCUser'=> ['index'],
                      'checkApproval'=> ['index'],
                      'downloadStudent'=> ['index'],
-                     'uploadStudent'=> ['index']
+                     'uploadStudent'=> ['index'],
+                     'considerAj'=> ['index'],
+                     'graphAj'=> ['index'],
+                     'reportPetition'=> ['index'],
+                     'bookAj'=> ['index'],
+                     'checkHistory'=> ['index'],
+                     'uploadAj'=> ['index']
                     );
 
 function call($controller,$action){
@@ -32,19 +38,18 @@ function call($controller,$action){
                             $controller = new companyController();
                             break;
 
-        case "companyP":     require_once("models/companyModel.php");
+        case "companyP":    require_once("models/companyModel.php");
                             $controller = new companyPController();
                             break;
 
-        case "companyC":    
-                            $controller = new companyCController();
+        case "companyC":    $controller = new companyCController();
                             break;
 
         case "petitionDC":  require_once("models/petitionDcMoodel.php");
                             $controller = new petitionDcController();
                             break;
 
-        case "petitionC":  require_once("models/petitionCModel.php");
+        case "petitionC":   require_once("models/petitionCModel.php");
                             require_once("models/approveModel.php");
                             require_once("models/nametitleModel.php");
                             require_once("models/userModel.php");
@@ -78,6 +83,24 @@ function call($controller,$action){
                             break; 
 
         case "uploadStudent":  $controller = new uploadStudentController();
+                            break; 
+
+        case "considerAj":  $controller = new considerAjController();
+                            break; 
+
+        case "graphAj":     $controller = new graphAjController();
+                            break; 
+
+        case "reportPetition":  $controller = new reportPetitionController();
+                            break; 
+
+        case "bookAj":      $controller = new bookAjController();
+                            break; 
+
+        case "checkHistory":  $controller = new checkHistoryController();
+                            break; 
+
+        case "uploadAj":    $controller = new uploadAjController();
                             break; 
     }
     $controller->{$action}();
