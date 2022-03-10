@@ -1,17 +1,20 @@
 <?php echo "  <br><br>ยืนยันที่จะลบข้อมูลนี้หรือไม่?<br>
-            <br><b>ลำดับที่ : </b>   $petionDcList->petition_id  
-            <br><b>รหัสนิสิต : </b>  $petionDcList->user_id
-            <br><b>ชื่อ-นามสกุล : </b>  $petionDcList->name_title$petionDcList->user_name $petionDcList->user_surname
-            <br><b>ระยะเวลาฝึกงาน : </b> $petionDcList->start_p - $petionDcList->finish_p 
-            <br><b>ตำแหน่งที่ไปฝึกงาน : </b> $petionDcList->dc_position
-            <br><b>ชื่อสถานประกอบการฝึกงาน : </b> $petionDcList->dc_name    
-            <br><b>ค่าตอบแทน : </b> $petionDcList->dc_pay 
-            <br><b>ที่พัก : </b> $petionDcList->dc_room
-            <br><b>สถานะ : </b> $petionDcList->status_name<br>";?>
+            <br><b>ที่ : </b>   $DetailCompanyPList->dc_id  
+            <br><b>ชื่อสถานประกอบการ/หน่วยงาน : </b>  $DetailCompanyPList->dc_name
+            <br><b>ตำแหน่งงานที่ต้องการรับ : </b>  $DetailCompanyPList->dc_position
+            <br><b>แผนกฝ่าย : </b> $DetailCompanyPList->dc_department
+            <br><b>จำนวน(คน) : </b> $DetailCompanyPList->dc_num
+            <br><b>ความสามารถทีมีหรือทักษะที่ควรมี : </b> $DetailCompanyPList->dc_skills    
+            <br><b>ลักษณะงานที่ต้องปฏิบัติ : </b> $DetailCompanyPList->dc_nature 
+            <br><b>จำนวนค่าตอบแทน : </b> $DetailCompanyPList->dc_pay
+            <br><b>ที่พัก : </b> $DetailCompanyPList->dc_room
+            <br><b>สวัสดิการอื่นๆ : </b> $DetailCompanyPList->dc_benefit
+            <br><b>การคัดเลือก : </b> $DetailCompanyPList->dc_select
+            <br>";?>
 
 <form method="get" action="">
-    <input type="hidden" name="controller" value="petitionDC"/>
-    <input type="hidden" name="petitionid" value="<?php echo $petionDcList->petition_id;?>"/>
-    <br><button type="submit" name="action" value="index">Back</button>
-    <button type="submit" name="action" value="delete">Delete</button>
+    <input type="hidden" name="controller" value="companyP"/>
+    <input type="hidden" name="dcid" value="<?php echo $DetailCompanyPList->dc_id;?>"/>
+    <br><button type="submit" name="action" value="indexP">Back</button>
+    <button type="submit" name="action" value="deleteP">Delete</button>
 </form>
