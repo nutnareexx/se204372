@@ -255,27 +255,50 @@ body {
 .sidebar .profile-details{
     position: fixed;
     bottom: 0;
+    width: 360px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background: #73c088;
+    padding: 6px 0;
+    transition: all 0.4s ease;
+    white-space: nowrap;
 }
 
+.sidebar.close .profile-details{
+    width: 78px;
+    
+}
+
+.sidebar .profile-details .profile-content{
+    display: flex;
+    align-items: center;
+    
+}
 .sidebar .profile-details i{
     height: 52px;
     width: 100%;
     align-items: center;
     color: #fff;
     line-height: 50px;
-    font-size: 40px;
-    margin: 0 20px 0 20px;
+    font-size: 30px;
+    white-space: nowrap;
 }
 
 .sidebar .profile-details .profile_name{
     color: #fff;
     font-size: 20px;
     font-weight: 500;
-    margin: 0 70px 0 70px;
+    width: 200px;
+    text-align: center;
+    white-space: nowrap;
 }
+.sidebar.close .profile-details i,
+.sidebar.close .profile-details .profile_name{
+    display: block;
+}
+
+
 
 
 @media screen and (max-height: 450px) {
@@ -293,7 +316,7 @@ body {
         </div>
     <dl class="nav-links">
         <li>
-            <a href="#">
+            <a href="?controller=petitionDCUser&action=index">
                 <i class='bx bx-file-blank' ></i>
                 <span class="link_name">ยื่นคำร้องฝึกงาน</span>
             </a>
@@ -333,17 +356,19 @@ body {
                 <li><a class="link_name" href="#">upload</a></li>
             </ul>
         </li>
+        <li>
+        <div class="profile-details">
+            <div class="profile-content">
+                <i class='bx bxs-user'></i>
+            </div>
+            
+                <div class="name-job">
+                    <div class="profile_name">Name</div>
+                </div>
+            <i class='bx bx-log-out '></i>
+        </div>
+        </li>
     </dl>
-    <div class="profile-details">
-        <div class="profile-content">
-            <i class='bx bxs-user'></i>
-        </div>
-        <div class="name-job">
-            <div class="profile_name">Name</div>
-        </div>
-        <i class='bx bx-log-out'></i>
-    </div>
-    </li>
 </div>
 
 <section class="home-section">
