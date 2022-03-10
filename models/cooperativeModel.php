@@ -36,9 +36,10 @@ class cooperativeModel{
         require("connection_connect.php");
         $sql = "SELECT * FROM `detail_cooperative` ";
         $result = $conn->query($sql);
+        $x=1;
         while($my_row = $result->fetch_assoc())
         {
-            $c_id = $my_row['c_id'];
+            $c_id = $x++;
             $c_name = $my_row['c_name'];
             $c_position = $my_row['c_position'];
             $c_department = $my_row['c_department'];
