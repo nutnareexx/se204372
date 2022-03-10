@@ -50,17 +50,22 @@ tr:nth-child(even){background-color: #f2f2f2}
             </div>
             <ul class="sub-menu">
                 <li><a class="link_name" href="#">สถานประกอบการณ์</a></li>
-                <li><a href="?controller=petitionDC&action=index">ฝึกงาน</a></li>
-                <li><a href="?controller=petitionC&action=indexC">สหกิจ</a></li>
+                <li><a href="?controller=companyP&action=indexP">ฝึกงาน</a></li>
+                <li><a href="?controller=companyC&action=index">สหกิจ</a></li>
             </ul>
         </li>
         <li>
-            <a href="?controller=petitionC&action=indexC">
-                <i class='bx bx-check-square' ></i>
-                <span class="link_name">ตรวจสอบคำร้องขอฝึกงาน</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">ตรวจสอบคำร้องขอฝึกงาน</a></li>
+            <div class="iocn-link">
+                <a href="#">
+                    <i class='bx bx-check-square'></i>
+                    <span class="link_name">ตรวจสอบคำร้อง</span>
+                </a>
+                <i class='bx bx-chevron-down arrow'></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="#">ตรวจสอบคำร้อง</a></li>
+                <li><a href="?controller=petitionDC&action=index">ฝึกงาน</a></li>
+                <li><a href="?controller=petitionC&action=indexC">สหกิจ</a></li>
             </ul>
         </li>
         <li>
@@ -139,7 +144,7 @@ tr:nth-child(even){background-color: #f2f2f2}
  </div>
  <div class="header">
      
-     <h2>ยื่นคำร้องสหกิจ</h2>
+     <h2>ตรวจสอบคำร้องสหกิจ</h2>
  </div>
  
  <form method="get" action="">
