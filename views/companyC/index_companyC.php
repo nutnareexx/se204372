@@ -47,7 +47,7 @@
         </li>
         
         <li>
-            <a href="#">
+            <a href="?controller=considerAj&action=index">
                 <i class='bx bx-file'></i>
                 <span class="link_name">พิจาราณาคำร้องขอฝึกงาน</span>
             </a>
@@ -56,7 +56,7 @@
             </ul>
         </li>
         <li>
-            <a href="#">
+            <a href="?controller=graphAj&action=index">
                 <i class='bx bx-line-chart' ></i>
                 <span class="link_name">สถานการณ์ยื่นคำร้องนิสิต</span>
             </a>
@@ -65,7 +65,7 @@
             </ul>
         </li>
         <li>
-            <a href="#">
+            <a href="?controller=reportPetition&action=index">
                 <i class='bx bx-file-blank' ></i>
                 <span class="link_name">รายงานสรุปการอนุมัติฝึกงาน</span>
             </a>
@@ -74,7 +74,7 @@
             </ul>
         </li>
         <li>
-            <a href="#">
+            <a href="?controller=bookAj&action=index">
                 <i class='bx bx-book' ></i>
                 <span class="link_name">ออกหนังสือขอความอนุเคราะห์</span>
             </a>
@@ -83,7 +83,7 @@
             </ul>
         </li>
         <li>
-            <a href="#">
+            <a href="?controller=checkHistory&action=index">
                 <i class='bx bx-notepad'></i>
                 <span class="link_name">ตรวจสอบประวัติการฝึกงาน</span>
             </a>
@@ -92,7 +92,7 @@
             </ul>
         </li>
         <li>
-            <a href="#">
+            <a href="?controller=uploadAj&action=index">
                 <i class='bx bx-upload'></i>
                 <span class="link_name">อัพโหลดประกาศ</span>
             </a>
