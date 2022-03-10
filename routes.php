@@ -3,6 +3,7 @@ $controllers = array('pages'=>['home','error'],
                      'hamburger' => ['index'],
                      'hamburgerAj' => ['index'],
                      'company'=>['index','newDetailCompany','addDetailCompany','search'],
+                     'companyP'=>['indexP','newDetailCompanyP','addDetailCompanyP','searchP','updateformP','updateP','deleteconfirmP','deleteP'],
                      'cooperative'=>['index','newCooperative','addCooperative','search'],
                      'petitionDC'=>['index','updateform','update', 'deleteconfirm', 'delete','search'],
                      'petitionC'=>['indexC','updateformC','updateC','deleteconfirmC','deleteC','searchC'],
@@ -27,13 +28,6 @@ function call($controller,$action){
                             break;
 
         case "companyP":     require_once("models/companyModel.php");
-                             require_once("models/approveModel.php");
-                             require_once("models/cooperativeModel.php");
-                             require_once("models/nametitleModel.php");
-                             require_once("models/petitionCModel.php");
-                             require_once("models/petitionDcMoodel.php");
-                             require_once("models/statusModel.php");
-                             require_once("models/userModel.php");
                             $controller = new companyPController();
                             break;
 
