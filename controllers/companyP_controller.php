@@ -1,7 +1,7 @@
 <?php
 class companyPController
 {
-    public function index()
+    public function indexP()
     {
         $DetailCompanyPList = DetailCompanyModel::getAll();
         require_once('views/detailCompanyP/index_detailCompanyP.php');
@@ -26,13 +26,12 @@ class companyPController
         $dc_benefit = $_GET['dc_benefit'];
         $dc_select = $_GET['dc_select'];
         DetailCompanyModel::add($dc_name,$dc_position,$dc_department,$dc_num,$dc_skills,$dc_nature,$dc_pay,$dc_room,$dc_benefit,$dc_select);
-        companyPController::index();
+        companyPController::indexP();
     }
 
     public function searchP()
     {
         $key = $_GET['key'];
-        
         $DetailCompanyPList = DetailCompanyModel::search($key);
         require_once('views/detailCompanyP/index_detailCompanyP.php');
     }
@@ -40,12 +39,8 @@ class companyPController
     public function updateformP()
     {
        
-        $dc = $_GET['petition_id'];
-        $petionDcList = petitionDcModel::get($dc);
-        $nametitleList = nametitleModel::getAll();
-        $userList = userModel::getAll();
-        $DetailCompanyList = DetailCompanyModel::getAll();
-        $statusList = statusModel::getAll();
+        $dc = $_GET['dc_id'];
+        $DetailCompanyPList = DetailCompanyModel::get($dc);
         require_once('views/detailCompanyP/updateformP.php');
 
     }
@@ -53,10 +48,34 @@ class companyPController
     public function updateP()
     {
         
-        $petition_id = $_GET['petitionid'];
-        $status_id = $_GET['status_id'];
-        DetailCompanyModel::update( $petition_id, $status_id);
-        companyPController::index();
+        $dcid = $_GET['dcid'];
+        $dc_name = $_GET['dc_name'];
+        $dc_position = $_GET['dc_position'];
+        $dc_department = $_GET['dc_department'];
+        $dc_num = $_GET['dc_num'];
+        $dc_skills = $_GET['dc_skills'];
+        $dc_nature = $_GET['dc_nature'];
+        $dc_pay = $_GET['dc_pay'];
+        $dc_room = $_GET['dc_room'];
+        $dc_benefit = $_GET['dc_benefit'];
+        $dc_select = $_GET['dc_select'];
+        DetailCompanyModel::update($dcid,$dc_name,$dc_position,$dc_department,$dc_num,
+        $dc_skills,$dc_nature,$dc_pay,$dc_room,$dc_benefit,$dc_select);
+        companyPController::indexP();
+    }
+
+    public function deleteconfirmP()
+    {
+       $dc_id = $_GET['dc_id'];
+       $DetailCompanyPList =  DetailCompanyModel::get($dc_id);
+       require_once('./views/detailCompanyP/deleteconfirmP.php');
+    }
+
+    public function deleteP()
+    {
+        $dcid = $_GET['dcid'];
+        DetailCompanyModel::delete($dcid);
+        companyPController::indexP();
     }
 
 
