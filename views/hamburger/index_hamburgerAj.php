@@ -29,8 +29,8 @@
             </div>
             <ul class="sub-menu">
                 <li><a class="link_name" href="#">สถานประกอบการณ์</a></li>
-                <li><a href="?controller=company&action=index">ฝึกงาน</a></li>
-                <li><a href="?controller=cooperative&action=index">สหกิจ</a></li>
+                <li><a href="?controller=companyP&action=indexP">ฝึกงาน</a></li>
+                <li><a href="?controller=companyC&action=index">สหกิจ</a></li>
             </ul>
         </li>
         <li>
@@ -118,10 +118,11 @@
 </div>
 
 <section class="home-section">
- <div class="home-content">
- <i class='bx bx-menu'></i>
- <span class="text">ระบบบริหารจัดการการฝึกงานแบบออนไลน์</span>
- </div>
+    <div class="home-content">
+        <i class='bx bx-menu'></i>
+        <span class="text">ระบบบริหารจัดการการฝึกงานแบบออนไลน์</span>
+    </div>
+    <!-- เขียนตรงนี้นาจาาาาา -->
 </section>
 
 <script>
