@@ -38,7 +38,17 @@ tr:nth-child(even){background-color: #f2f2f2}
      <!--width="20%" height="20%">-->
      <h1 style="background-color: green;">ระบบบริหารจัดการการฝึกงานออนไลน์</h1>
     <h2>รายละเอียดสถานประกอบการที่ประสงค์รับนิสิตฝึกงาน</h2>
+
+    <h3>เพิ่มสถานประกอบการณ์ใหม่ <a href="?controller=company&action=newDetailCompany"> click!!! </a> </h3>
 </div>
+
+<form method="get" action="">
+    
+    <input type="text" name="key">
+    <input type="hidden" name="controller" value="company"/>
+    <button type="submit" name="action" value="search">Search</button>
+
+</form>
     
 
 <table>
@@ -48,7 +58,7 @@ tr:nth-child(even){background-color: #f2f2f2}
         <td>ตำแหน่งงานที่ต้องการรับ</td>
         <td>แผนกฝ่าย</td>
         <td>จำนวน(คน)</td>
-        <td>ความสามารถทีหรือทักษะที่ควรมี</td>
+        <td>ความสามารถทีมีหรือทักษะที่ควรมี</td>
         <td>ลักษณะงานที่ต้องปฏิบัติ</td>
         <td>จำนวนค่าตอบแทน</td>
         <td>ที่พัก</td>
