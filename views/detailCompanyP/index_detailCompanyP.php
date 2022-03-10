@@ -85,8 +85,8 @@ tr:nth-child(even){background-color: #f2f2f2}
     <td>$c->dc_room</td>
     <td>$c->dc_benefit</td>
     <td>$c->dc_select</td>
-    <td> <a href=?controller=companyP&action=updateformP&petition_id=$c->petition_id> update </a> </td>
-    <td> <a href=?controller=companyP&action=deleteconfirmP&petition_id=$c->petition_id> delete </a>
+    <td> <a href=?controller=companyP&action=updateformP&dc_id=$c->dc_id> update </a> </td>
+    <td> <a href=?controller=companyP&action=deleteconfirmP&dc_id=$c->dc_id> delete </a>
     </tr>
     ";
 } 
