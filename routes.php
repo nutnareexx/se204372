@@ -2,15 +2,11 @@
 $controllers = array('pages'=>['home','error'],
                      'hamburger' => ['index'],
                      'hamburgerAj' => ['index'],
-                     'company'=>['index','newCompany'],
+                     'company'=>['index','newDetailCompany','addDetailCompany','search'],
                      'cooperative'=>['index','newCooperative','addCooperative','search'],
-<<<<<<< Updated upstream
                      'petitionDC'=>['index','updateform','update', 'deleteconfirm', 'delete','search'],
                      'petitionC'=>['indexC','updateformC','updateC','deleteconfirmC','deleteC','searchC'],
                      'petitionDCUser'=>['index', 'newpetitionDc', 'addpetitionDc']
-=======
-                     'petitionDC'=>['index','newpetitionDc']
->>>>>>> Stashed changes
                     );
 
 function call($controller,$action){
@@ -33,7 +29,6 @@ function call($controller,$action){
         case "petitionDC":  require_once("models/petitionDcMoodel.php");
                             $controller = new petitionDcController();
                             break;
-<<<<<<< Updated upstream
 
         case "petitionC":  require_once("models/petitionCModel.php");
                             require_once("models/approveModel.php");
@@ -55,9 +50,6 @@ function call($controller,$action){
                             $controller = new petitionDcUserController();
                             break;                    
         
-=======
-                            
->>>>>>> Stashed changes
         case "cooperative": require_once("models/cooperativeModel.php");
                             $controller = new cooperativeController();
                             break;                
