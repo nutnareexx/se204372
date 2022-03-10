@@ -56,6 +56,44 @@ class DetailCompanyModel{
         return $DetailCompanyList;
     }
 
+    public static function add($dc_name,$dc_position,$dc_department,$dc_num,$dc_skills,$dc_nature,$dc_pay,$dc_room,$dc_benefit,$dc_select)
+    {
+        require("connection_connect.php");
+        $sql = "INSERT INTO `detail_company`( `dc_name`, `dc_position`, `dc_department`, `dc_num`, `dc_skills`, `dc_nature`, `dc_pay`, `dc_room`, `dc_benefit`, `dc_select`) 
+        VALUES ('$dc_name','$dc_position','$dc_department','$dc_num','$dc_skills','$dc_nature','$dc_pay','$dc_room','$dc_benefit','$dc_select')";
+        $result = $conn->query($sql);
+        require("connection_close.php");
+        return "add success $result rows";
+    }
+
+    public static function search($key)
+    {
+        $DetailCompanyList =[];
+        require("connection_connect.php");
+        $sql = "SELECT * FROM `detail_company`
+        WHERE (dc_name like '%$key%' or dc_position like '%$key%' or dc_department like '%$key%' or dc_num like '%$key%' or dc_skills like '%$key%' or dc_nature like '%$key%' or dc_pay like '%$key%' or
+        dc_room like '%$key%' or dc_benefit like '%$key%' or dc_select like '%$key%' )";
+        $result = $conn->query($sql);
+        while($my_row = $result->fetch_assoc())
+        {
+            $dc_id = $my_row['dc_id'];
+            $dc_name = $my_row['dc_name'];
+            $dc_position = $my_row['dc_position'];
+            $dc_department = $my_row['dc_department'];
+            $dc_num = $my_row['dc_num'];
+            $dc_skills = $my_row['dc_skills'];
+            $dc_nature = $my_row['dc_nature'];
+            $dc_pay = $my_row['dc_pay'];
+            $dc_room = $my_row['dc_room'];
+            $dc_benefit = $my_row['dc_benefit'];
+            $dc_select = $my_row['dc_select'];
+            $DetailCompanyList[] = new DetailCompanyModel($dc_id,$dc_name,$dc_position,$dc_department,$dc_num,$dc_skills,$dc_nature,$dc_pay,$dc_room,$dc_benefit,$dc_select);
+
+        }
+        require("connection_close.php");
+        return $DetailCompanyList;
+    }
+
 
 
 }
