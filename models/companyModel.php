@@ -62,9 +62,10 @@ class DetailCompanyModel{
         require("connection_connect.php");
         $sql = "SELECT * FROM `detail_company`";
         $result = $conn->query($sql);
+        $x=1;
         while($my_row = $result->fetch_assoc())
         {
-            $dc_id = $my_row['dc_id'];
+            $dc_id = $x++;
             $dc_name = $my_row['dc_name'];
             $dc_position = $my_row['dc_position'];
             $dc_department = $my_row['dc_department'];
