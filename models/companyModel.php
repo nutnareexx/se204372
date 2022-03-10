@@ -30,6 +30,32 @@ class DetailCompanyModel{
         
     }
 
+
+    public static function get($dc_id)
+    {
+        
+        require("connection_connect.php");
+        $sql = "SELECT * FROM `detail_company`
+                     WHERE dc_id = '$dc_id'";
+        $result = $conn->query($sql);
+        $my_row = $result->fetch_assoc();
+        $dc_id = $my_row['dc_id'];
+        $dc_name = $my_row['dc_name'];
+        $dc_position = $my_row['dc_position'];
+        $dc_department = $my_row['dc_department'];
+        $dc_num = $my_row['dc_num'];
+        $dc_skills = $my_row['dc_skills'];
+        $dc_nature = $my_row['dc_nature'];
+        $dc_pay = $my_row['dc_pay'];
+        $dc_room = $my_row['dc_room'];
+        $dc_benefit = $my_row['dc_benefit'];
+        $dc_select = $my_row['dc_select'];
+        require("connection_close.php");
+
+        return new DetailCompanyModel($dc_id,$dc_name,$dc_position,$dc_department,$dc_num,$dc_skills,$dc_nature,$dc_pay,$dc_room,$dc_benefit,$dc_select);
+    }
+
+
     public static function getAll()
     {
         $DetailCompanyList =[];
@@ -92,6 +118,28 @@ class DetailCompanyModel{
         }
         require("connection_close.php");
         return $DetailCompanyList;
+    }
+
+    public static function update($dcid,$dc_name,$dc_position,$dc_department,$dc_num,
+    $dc_skills,$dc_nature,$dc_pay,$dc_room,$dc_benefit,$dc_select)
+    {
+        require("connection_connect.php");
+        $sql = "UPDATE `detail_company`
+        SET dc_name = '$dc_name', dc_position = '$dc_position' , dc_department = '$dc_department' , dc_num= '$dc_num', 
+        dc_skills = '$dc_skills', dc_nature = '$dc_nature', dc_pay = '$dc_pay', dc_room = '$dc_room', dc_benefit = '$dc_benefit', dc_select = '$dc_select'
+        WHERE dc_id = '$dcid'";
+        $result = $conn->query($sql);
+        require("connection_close.php");
+        return "update success $result row";
+    }
+
+    public static function delete($dc_id)
+    {
+        require("connection_connect.php");
+        $sql = "DELETE FROM `detail_company` WHERE dc_id = '$dc_id'";
+        $result = $conn->query($sql);
+        require("connection_close.php");
+        return "delete success $result row";
     }
 
 
