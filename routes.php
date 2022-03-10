@@ -4,10 +4,15 @@ $controllers = array('pages'=>['home','error'],
                      'hamburgerAj' => ['index'],
                      'company'=>['index','newDetailCompany','addDetailCompany','search'],
                      'companyP'=>['indexP','newDetailCompanyP','addDetailCompanyP','searchP','updateformP','updateP','deleteconfirmP','deleteP'],
+                     'companyC'=> ['index'],
                      'cooperative'=>['index','newCooperative','addCooperative','search'],
                      'petitionDC'=>['index','updateform','update', 'deleteconfirm', 'delete','search'],
                      'petitionC'=>['indexC','updateformC','updateC','deleteconfirmC','deleteC','searchC'],
-                     'petitionDCUser'=>['index', 'newpetitionDc', 'addpetitionDc']
+                     'petitionDCUser'=>['index', 'newpetitionDc', 'addpetitionDc'],
+                     'petitionCUser'=> ['index'],
+                     'checkApproval'=> ['index'],
+                     'downloadStudent'=> ['index'],
+                     'uploadStudent'=> ['index']
                     );
 
 function call($controller,$action){
@@ -29,6 +34,10 @@ function call($controller,$action){
 
         case "companyP":     require_once("models/companyModel.php");
                             $controller = new companyPController();
+                            break;
+
+        case "companyC":    
+                            $controller = new companyCController();
                             break;
 
         case "petitionDC":  require_once("models/petitionDcMoodel.php");
@@ -53,11 +62,23 @@ function call($controller,$action){
                             require_once("models/companyModel.php");
                             require_once("models/cooperativeModel.php");
                             $controller = new petitionDcUserController();
-                            break;                    
+                            break;  
+                            
+        case "petitionCUser":  $controller = new petitionCUserController();
+                            break;  
         
         case "cooperative": require_once("models/cooperativeModel.php");
                             $controller = new cooperativeController();
-                            break;                
+                            break;     
+                            
+        case "checkApproval":  $controller = new checkApprovalController();
+                            break;                     
+        
+        case "downloadStudent":  $controller = new downloadStudentController();
+                            break; 
+
+        case "uploadStudent":  $controller = new uploadStudentController();
+                            break; 
     }
     $controller->{$action}();
 }
