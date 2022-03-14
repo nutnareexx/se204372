@@ -42,6 +42,20 @@ tr:nth-child(even){background-color: #f2f2f2}
         <li>
             <div class="iocn-link">
                 <a href="#">
+                    <i class='bx bx-buildings'></i>
+                    <span class="link_name">สถานประกอบการณ์</span>
+                </a>
+                <i class='bx bx-chevron-down arrow'></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="#">สถานประกอบการณ์</a></li>
+                <li><a href="?controller=company&action=index">ฝึกงาน</a></li>
+                <li><a href="?controller=cooperative&action=index">สหกิจ</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="iocn-link">
+                <a href="#">
                     <i class='bx bx-file-blank' ></i>
                     <span class="link_name">ยื่นคำร้อง</span>
                 </a>
@@ -106,8 +120,39 @@ tr:nth-child(even){background-color: #f2f2f2}
     <!-- เขียนตรงนี้นาจาาาาาา -->
     <div class="header">
   
-    <h2><b>ยื่นคำร้องฝึกงาน <a href=?controller=petitionDCUser&action=newpetitionDc>Click</a><br></h2>
-</div>
+    <h2><b>ยื่นคำร้องฝึกงาน <br></h2>
+
+    </div>
+
+<form method="get" action="">
+    <br>
+
+   
+    <label>รหัสนิสิต<input type="text" name="user_id"/></label><br><br>
+    
+    <label>คำนำหน้า<select name="name_id">
+        <option value="">--เลือก--</option>
+        <?php foreach($nametitleList as $newtt){
+            echo "<option value=$newtt->name_id>$newtt->name_title</option>";
+        }?>
+        </select></label><br><br>
+
+    <label>ชื่อ<input type="text" name="user_name"/></label>
+    <label>นามสกุล<input type="text" name="user_surname"/></label><br><br>
+
+    <label>เริ่มฝึกงาน<input type="date" name="start_p"/></label>
+    <label>สิ้นสุดการฝึกงาน<input type="date" name="finish_p"/></label><br><br>
+
+    <label>ตำแน่งที่ไปฝึกงาน<input type="text" name="dc_position"/></label><br><br>
+    <label>ชื่อสถานประกอบการฝึกงาน<input type="text" name="dc_name"/></label><br><br>
+
+   
+    <input type="hidden" name="controller" value="petitionDCUser"/>
+    <button type="submit" name="action" value="index">Back</button>
+    <button type="submit" name="action" value="addpetitionDc">Save</button>
+
+
+
 </section>
 
 <script>
