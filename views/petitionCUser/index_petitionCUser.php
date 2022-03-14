@@ -20,6 +20,20 @@
         <li>
             <div class="iocn-link">
                 <a href="#">
+                    <i class='bx bx-buildings'></i>
+                    <span class="link_name">สถานประกอบการณ์</span>
+                </a>
+                <i class='bx bx-chevron-down arrow'></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="#">สถานประกอบการณ์</a></li>
+                <li><a href="?controller=company&action=index">ฝึกงาน</a></li>
+                <li><a href="?controller=cooperative&action=index">สหกิจ</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="iocn-link">
+                <a href="#">
                     <i class='bx bx-file-blank' ></i>
                     <span class="link_name">ยื่นคำร้อง</span>
                 </a>
