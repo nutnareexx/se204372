@@ -1,7 +1,6 @@
 <?php
-$controllers = array('pages'=>['home','error'],
-                     'hamburger' => ['index'],
-                     'hamburgerAj' => ['index'],
+$controllers = array('pages'=>['home','error'],'nisit'=>['index'],
+                     'Aj' => ['index'],
                      'company'=>['index','newDetailCompany','addDetailCompany','search'],
                      'companyP'=>['indexP','newDetailCompanyP','addDetailCompanyP','searchP','updateformP','updateP','deleteconfirmP','deleteP'],
                      'companyC'=> ['index'],
@@ -28,10 +27,11 @@ function call($controller,$action){
         case "pages":       $controller = new PagesController();
                             break;
 
-        case "hamburger":   $controller = new hamburgerController();
+        case "nisit":      $controller = new nisitController();
                             break;
 
-        case "hamburgerAj": $controller = new hamburgerAjController();
+
+        case "Aj":          $controller = new AjController();
                             break;
 
         case "company":     require_once("models/companyModel.php");
