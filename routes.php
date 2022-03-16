@@ -5,6 +5,7 @@ $controllers = array('pages'=>['home','error'],'nisit'=>['index'],
                      'companyP'=>['indexP','newDetailCompanyP','addDetailCompanyP','searchP','updateformP','updateP','deleteconfirmP','deleteP'],
                      'companyC'=> ['index'],
                      'cooperative'=>['index','newCooperative','addCooperative','search'],
+                     'cooperativeP'=>['index','newCooperative','addCooperative','search','updateforms','update', 'deleteconfirm', 'delete'],
                      'petitionDC'=>['index','updateform','update', 'deleteconfirm', 'delete','search'],
                      'petitionC'=>['indexC','updateformC','updateC','deleteconfirmC','deleteC','searchC'],
                      'petitionDCUser'=>['index', 'newpetitionDc', 'addpetitionDc'],
@@ -74,7 +75,11 @@ function call($controller,$action){
         
         case "cooperative": require_once("models/cooperativeModel.php");
                             $controller = new cooperativeController();
-                            break;     
+                            break; 
+                            
+        case "cooperativeP": require_once("models/cooperativeModel.php");
+                            $controller = new cooperativePController();
+                            break;    
                             
         case "checkApproval":  $controller = new checkApprovalController();
                             break;                     
