@@ -9,7 +9,7 @@ $controllers = array('pages'=>['home','error'],'nisit'=>['index'],
                      'petitionDC'=>['index','updateform','update', 'deleteconfirm', 'delete','search'],
                      'petitionC'=>['indexC','updateformC','updateC','deleteconfirmC','deleteC','searchC'],
                      'petitionDCUser'=>['index', 'newpetitionDc', 'addpetitionDc'],
-                     'petitionCUser'=> ['index'],
+                     'petitionCUser'=> ['index','newpetitionC','addpetitionC'],
                      'checkApproval'=> ['index'],
                      'downloadStudent'=> ['index'],
                      'uploadStudent'=> ['index'],
@@ -70,8 +70,15 @@ function call($controller,$action){
                             $controller = new petitionDcUserController();
                             break;  
                             
-        case "petitionCUser":  $controller = new petitionCUserController();
-                            break;  
+        case "petitionCUser":   require_once("models/petitionCModel.php");
+                                require_once("models/approveModel.php");
+                                require_once("models/nametitleModel.php");
+                                require_once("models/userModel.php");
+                                require_once("models/statusModel.php");
+                                require_once("models/companyModel.php");
+                                require_once("models/cooperativeModel.php"); 
+                                $controller = new petitionCUserController();
+                                break;  
         
         case "cooperative": require_once("models/cooperativeModel.php");
                             $controller = new cooperativeController();

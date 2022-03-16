@@ -127,11 +127,11 @@ class petitionCModel{
 
     }
 
-    public static function Add($petition_id, $start_p, $finish_p, $date_p, $user_id, $status_id, $dc_id)
+    public static function Add($start_p, $finish_p, $date_p, $user_id)
     {
         require("connection_connect.php");
-        $sql = "INSERT INTO `petition`(`petition_id`, `start_p`, `finish_p`, `date_p`, `user_id`, `status_id`, `dc_id`,) 
-        VALUES ('$petition_id','$start_p','$finish_p','$date_p','$user_id','$status_id','$dc_id')";
+        $sql = "INSERT INTO `petition`(`start_p`, `finish_p`, `date_p`, `user_id`, `status_id`) 
+        VALUES ('$start_p','$finish_p','$date_p','$user_id','01')";
         $result = $conn->query($sql);
         require("connection_close.php");
         return;
