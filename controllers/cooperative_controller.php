@@ -11,6 +11,7 @@ class cooperativeController
     {
         $cooperativeList = cooperativeModel::getAll();
         require_once('views/cooperative/newCooperative.php');
+    
     }
 
     public function addCooperative()
