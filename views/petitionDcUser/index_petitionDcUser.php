@@ -16,19 +16,41 @@
                 text-align: center;
             }
 
-table {
-    font-family: 'Prompt', sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
+    table {
+        font-family: 'Prompt', sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
 
-th, td {
-    text-align: left;
-    padding: 8px;
-}
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
 
-tr:nth-child(odd){background-color: #cae3cc}
-tr:nth-child(even){background-color: #f2f2f2}
+    tr:nth-child(odd){background-color: #cae3cc}
+    tr:nth-child(even){background-color: #f2f2f2}
+
+    input[type=text], select {
+        font-family: 'Prompt', sans-serif;
+        width: 80%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 50px;
+        box-sizing: border-box;
+    }
+    input[type=date], select {
+        font-family: 'Prompt', sans-serif;
+        width: 80%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 50px;
+        box-sizing: border-box;
+            
+    }
 </style>
 
 
@@ -128,23 +150,23 @@ tr:nth-child(even){background-color: #f2f2f2}
     <br>
 
    
-    <label>รหัสนิสิต<input type="text" name="user_id"/></label><br><br>
+    <label>รหัสนิสิต : <input type="text" name="user_id"/></label><br><br>
     
-    <label>คำนำหน้า<select name="name_id">
+    <label>คำนำหน้า : <select name="name_id">
         <option value="">--เลือก--</option>
         <?php foreach($nametitleList as $newtt){
             echo "<option value=$newtt->name_id>$newtt->name_title</option>";
         }?>
         </select></label><br><br>
 
-    <label>ชื่อ<input type="text" name="user_name"/></label>
-    <label>นามสกุล<input type="text" name="user_surname"/></label><br><br>
+    <label>ชื่อ : <input type="text" name="user_name"/></label><br>
+    <label>นามสกุล : <input type="text" name="user_surname"/></label><br><br>
 
-    <label>เริ่มฝึกงาน<input type="date" name="start_p"/></label>
-    <label>สิ้นสุดการฝึกงาน<input type="date" name="finish_p"/></label><br><br>
+    <label>เริ่มฝึกงาน : <input type="date" name="start_p"/></label><br>
+    <label>สิ้นสุดการฝึกงาน : <input type="date" name="finish_p"/></label><br><br>
 
-    <label>ตำแน่งที่ไปฝึกงาน<input type="text" name="dc_position"/></label><br><br>
-    <label>ชื่อสถานประกอบการฝึกงาน<input type="text" name="dc_name"/></label><br><br>
+    <label>ตำแน่งที่ไปฝึกงาน : <input type="text" name="dc_position"/></label><br><br>
+    <label>ชื่อสถานประกอบการฝึกงาน : <input type="text" name="dc_name"/></label><br><br>
 
    
     <input type="hidden" name="controller" value="petitionDCUser"/>
