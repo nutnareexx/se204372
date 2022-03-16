@@ -30,6 +30,32 @@ class cooperativeModel{
         
     }
 
+    public static function get($c_id)
+    {
+        
+        require("connection_connect.php");
+        $sql = "SELECT * FROM `detail_cooperative`
+                     WHERE c_id = '$c_id'";
+        $result = $conn->query($sql);
+        $my_row = $result->fetch_assoc();
+        $c_id = $my_row['c_id'];
+        $c_name = $my_row['c_name'];
+        $c_position = $my_row['c_position'];
+        $c_department = $my_row['c_department'];
+        $c_num = $my_row['c_num'];
+        $c_skills = $my_row['c_skills'];
+        $c_nature = $my_row['c_nature'];
+        $c_pay = $my_row['c_pay'];
+        $c_room = $my_row['c_room'];
+        $c_benefit = $my_row['c_benefit'];
+        $c_select = $my_row['c_select'];
+        require("connection_close.php");
+
+        return new cooperativeModel($c_id,$c_name,$c_position,$c_department,$c_num,$c_skills,$c_nature,$c_pay,$c_room,$c_benefit,$c_select);
+    }
+
+
+
     public static function getAll()
     {
         $cooperativeList =[];
@@ -93,6 +119,29 @@ class cooperativeModel{
         }
         require("connection_close.php");
         return $cooperativeList;
+    }
+
+    public static function update($c_id, $c_name,$c_position,$c_department,$c_num,$c_skills,$c_nature,$c_pay,$c_room,$c_benefit,$c_select)
+    {
+        
+    
+        require("connection_connect.php");
+        $sql = "UPDATE `detail_cooperative`
+        SET c_name = '$c_name' , c_position = '$c_position', c_department = '$c_department' , c_num = '$c_num' , c_skills= '$c_skills', c_nature = '$c_nature', c_pay = '$c_pay',
+        c_room = '$c_room', c_benefit = '$c_benefit', c_select = '$c_select'
+        WHERE c_id = '$c_id'";
+        $result = $conn->query($sql);
+        require("connection_close.php");
+        return "update success $result row";
+    }
+
+    public static function delete($c_id)
+    {
+        require("connection_connect.php");
+        $sql = "DELETE FROM `detail_cooperative` WHERE c_id = '$c_id'";
+        $result = $conn->query($sql);
+        require("connection_close.php");
+        return "delete success $result row";
     }
 
 
