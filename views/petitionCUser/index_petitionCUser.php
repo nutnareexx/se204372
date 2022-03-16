@@ -9,6 +9,50 @@
     
 
 </head>
+<style>
+    .header {
+                font-family: 'Prompt', sans-serif;
+                background-color: #f1f1f1;
+                text-align: center;
+            }
+
+    table {
+        font-family: 'Prompt', sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(odd){background-color: #cae3cc}
+    tr:nth-child(even){background-color: #f2f2f2}
+
+    input[type=text], select {
+        font-family: 'Prompt', sans-serif;
+        width: 80%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 50px;
+        box-sizing: border-box;
+    }
+    input[type=date], select {
+        font-family: 'Prompt', sans-serif;
+        width: 80%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 50px;
+        box-sizing: border-box;
+            
+    }
+</style>
+
 <body>
 
 <div class="sidebar ">
@@ -100,6 +144,36 @@
      
      <h2>ยื่นคำร้องสหกิจ</h2>
  </div>
+
+ <form method="get" action="">
+    <br>
+
+   
+    <label>รหัสนิสิต : <input type="text" name="user_id"/></label><br><br>
+    
+    <label>คำนำหน้า : <select name="name_id">
+        <option value="">--เลือก--</option>
+        <?php foreach($nametitleList as $newtt){
+            echo "<option value=$newtt->name_id>$newtt->name_title</option>";
+        }?>
+        </select></label><br><br>
+
+    <label>ชื่อ : <input type="text" name="user_name"/></label><br>
+    <label>นามสกุล : <input type="text" name="user_surname"/></label><br><br>
+
+    <label>เริ่มสหกิจ : <input type="date" name="start_p"/></label><br>
+    <label>สิ้นสุดสหกิจ : <input type="date" name="finish_p"/></label><br><br>
+
+    <label>ตำแน่งที่ไปสหกิจ : <input type="text" name="c_position"/></label><br><br>
+    <label>ชื่อสถานประกอบการสหกิจ : <input type="text" name="c_name"/></label><br><br>
+
+    <label>วันที่กรอกคำร้อง : <input type="date" name="date_p"/></label><br><br>
+
+   
+    <input type="hidden" name="controller" value="petitionCUser"/>
+    <button type="submit" name="action" value="index">Back</button>
+    <button type="submit" name="action" value="addpetitionC">Save</button>
+
 </section>
 
 <script>
