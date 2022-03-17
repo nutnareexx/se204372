@@ -3,7 +3,6 @@ $controllers = array('pages'=>['home','error'],'nisit'=>['index'],
                      'Aj' => ['index'],
                      'company'=>['index','newDetailCompany','addDetailCompany','search'],
                      'companyP'=>['indexP','newDetailCompanyP','addDetailCompanyP','searchP','updateformP','updateP','deleteconfirmP','deleteP'],
-                     'companyC'=> ['index'],
                      'cooperative'=>['index','newCooperative','addCooperative','search'],
                      'cooperativeP'=>['index','newCooperative','addCooperative','search','updateforms','update', 'deleteconfirm', 'delete'],
                      'petitionDC'=>['index','updateform','update', 'deleteconfirm', 'delete','search'],
@@ -41,9 +40,6 @@ function call($controller,$action){
 
         case "companyP":    require_once("models/companyModel.php");
                             $controller = new companyPController();
-                            break;
-
-        case "companyC":    $controller = new companyCController();
                             break;
 
         case "petitionDC":  require_once("models/petitionDcMoodel.php");
