@@ -348,7 +348,7 @@ body {
             <ul class="sub-menu">
                 <li><a class="link_name" href="#">สถานประกอบการณ์</a></li>
                 <li><a href="?controller=companyP&action=indexP">ฝึกงาน</a></li>
-                <li><a href="?controller=companyC&action=index">สหกิจ</a></li>
+                <li><a href="?controller=cooperativeP&action=index">สหกิจ</a></li>
             </ul>
         </li>
         <li>
