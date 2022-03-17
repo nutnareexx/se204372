@@ -342,6 +342,8 @@ th, td {
 
 tr:nth-child(odd){background-color: #cae3cc}
 tr:nth-child(even){background-color: #f2f2f2}
+
+
 </style>
 
 
@@ -373,7 +375,7 @@ tr:nth-child(even){background-color: #f2f2f2}
             <ul class="sub-menu">
                 <li><a class="link_name" href="#">สถานประกอบการณ์</a></li>
                 <li><a href="?controller=companyP&action=indexP">ฝึกงาน</a></li>
-                <li><a href="?controller=cooperativeP&action=index">สหกิจ</a></li>
+                <li><a href="?controller=companyC&action=index">สหกิจ</a></li>
             </ul>
         </li>
         <li>
@@ -493,7 +495,8 @@ Search</button>
 <td><b>ที่พัก</td>
 <td><b>สวัสดิการอื่นๆ</td>
 <td><b>การคัดเลือก</td>
-<td><b>Update</td><td><b>Delete</td> </tr>
+<td><b>Update</td>
+<td><b>Delete</td> </tr>
 
 </section>
 
