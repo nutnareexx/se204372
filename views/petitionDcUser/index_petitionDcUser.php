@@ -419,6 +419,15 @@
             </div>
         <dl class="nav-links">
             <li>
+                <a href="?controller=nisit&action=index">
+                <i class='bx bx-home'></i>
+                    <span class="link_name">หน้าแรก</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="?controller=nisit&action=index">หน้าแรก</a></li>
+                </ul>
+            </li>
+            <li>
                 <div class="iocn-link">
                     <a href="#">
                         <i class='bx bx-buildings'></i>
