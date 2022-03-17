@@ -327,12 +327,34 @@ body {
             margin: 20px 20px 20px 20px;
             border-radius: 25px;
             font-size: 30px;
-            
-        }
+}
 
-.card a{
+.card2 {
+           
+           background-color: #f1f1f1;
+           padding: 20px 15px 20px 20px;
+           margin: 10px 20px 20px 20px;
+           border-radius: 25px;
+           font-size: 30px;
+           float: left;
+           width: 45%;
+       }
+.card3 {
+           
+           background-color: #f1f1f1;
+           padding: 20px 15px 20px 20px;
+           margin: 10px 20px 20px 20px;
+           border-radius: 25px;
+           font-size: 30px;
+           float: right;
+           width: 45%;
+       }
+
+.card2 a,.card3 a{
     text-decoration: none;
 }
+
+
 
 
 </style>
@@ -436,15 +458,13 @@ body {
     <div class="card">
         <b>ประกาศ</b>    
     </div>
-    <div class="card">
+    <div class="card2">
         <a href="?controller=company&action=index">ข้อมูลสถานประกอบการณ์ฝึกงาน</a>    
     </div>
-    <div class="card">
+    <div class="card3">
         <a href="?controller=cooperative&action=index">ข้อมูลสถานประกอบการณ์สหกิจ</a>    
     </div>
-    <div class="card">
-        <b>เอกสารต่างๆ</b>    
-    </div>
+    
 
 
 </section>
