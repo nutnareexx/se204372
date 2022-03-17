@@ -4,7 +4,7 @@
         
         <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
     
 </head>
 <style>
@@ -316,6 +316,22 @@ body {
   .sidebar a {font-size: 18px;}
 }
 
+.header {
+            font-family: 'Prompt', sans-serif;
+            background-color: #f1f1f1;
+            text-align: center;
+        }
+
+.card {
+            font-family: 'Prompt', sans-serif;
+            
+            background-color: #f1f1f1;
+            padding: 20px 20px 20px 20px;
+            margin: 20px 20px 20px 20px;
+            border-radius: 25px;
+            font-size: 18px;
+            text-align: left;
+        }
 
 </style>
 
@@ -416,8 +432,15 @@ body {
     <!-- เขียนตรงนี้นาจาาาาาา -->
     <div class="header">
   
-    <h2><b>หนังสือขอความอนุเคราะห์การฝึกงาน และหนังสือส่งตัว<a href='#'></h2>
-</div>
+    <h2><b>หนังสือขอความอนุเคราะห์การฝึกงาน และหนังสือส่งตัว</h2>
+    </div>
+
+    <div class="card">
+    <li>หนังสือขอความอนุเคราะห์การฝึกงาน<a href="#">download</a></li>
+    <br>
+    <li>หนังสือส่งตัว<a href="#">download</a></li>
+    </div>
+
 </section>
 
 <script>
