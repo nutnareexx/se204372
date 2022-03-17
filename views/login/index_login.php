@@ -18,6 +18,7 @@
 
         input[type=text], select {
             font-family: 'Prompt', sans-serif;
+            /* font-size: 18px; */
             width: 50%;
             padding: 12px 20px;
             margin: 8px 0;
@@ -29,6 +30,7 @@
 
         input[type=password], select {
             font-family: 'Prompt', sans-serif;
+            /* font-size: 18px; */
             width: 50%;
             padding: 12px 20px;
             margin: 8px 0;
@@ -49,9 +51,9 @@
         <h2>คณะวิศวกรรมศาสตร์ สาขาคอมพิวเตอร์</h2>
 
         <form method="get" action="">
-            <label>Username <input type="text" name="userid"></label>
+            <label>Username : <input type="text" name="userid"></label>
             <br><br>
-            <label>Password <input type="password" name="password"></label>
+            <label>Password : <input type="password" name="password"></label>
             <br><br>
             <input type="hidden" name="controller" value="user"/>
             <button type="submit" name="action" value="login">Login</button>
