@@ -6,8 +6,9 @@ class userModel{
     public $user_surname;
     public $user_phone;
     public $user_email;
+    public $user_password;
 
-    public function __construct($user_id, $name_id, $user_name, $user_surname, $user_phone, $user_email)
+    public function __construct($user_id, $name_id, $user_name, $user_surname, $user_phone, $user_email,$pass)
     {
 
         $this->user_id = $user_id;
@@ -16,6 +17,7 @@ class userModel{
         $this->user_surname = $user_surname;
         $this->user_phone = $user_phone;
         $this->user_email = $user_email;
+        $this->user_password = $pass;
 
     }
 
@@ -33,7 +35,8 @@ class userModel{
             $user_surname = $my_row['user_surname'];
             $user_phone = $my_row['user_phone'];
             $user_email = $my_row['user_email'];
-            $userList[] = new userModel($user_id, $name_id, $user_name, $user_surname, $user_phone, $user_email);
+            $user_password = $my_row['user_password'];
+            $userList[] = new userModel($user_id, $name_id, $user_name, $user_surname, $user_phone, $user_email,$user_password);
         }
         require("connection_close.php");
         return $userList;
@@ -43,7 +46,7 @@ class userModel{
     public static function get($user_id)
     {
         require("connection_connect.php");
-        $sql = "SELECT * FROM `user`";
+        $sql = "SELECT * FROM `user` WHERE user_id = '$user_id'";
         $result = $conn->query($sql);
         $my_row = $result->fetch_assoc();
             $user_id = $my_row['user_id'];
@@ -52,9 +55,10 @@ class userModel{
             $user_surname = $my_row['user_surname'];
             $user_phone = $my_row['user_phone'];
             $user_email = $my_row['user_email'];
+            $user_password = $my_row['user_password'];
         require("connection_connect.php");
 
-        return new userModel($user_id, $name_id, $user_name, $user_surname, $user_phone, $user_email);
+        return new userModel($user_id, $name_id, $user_name, $user_surname, $user_phone, $user_email,$user_password);
 
     }
 
