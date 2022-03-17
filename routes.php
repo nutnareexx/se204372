@@ -17,7 +17,8 @@ $controllers = array('pages'=>['home','error'],'nisit'=>['index'],
                      'reportPetition'=> ['index'],
                      'bookAj'=> ['index'],
                      'checkHistory'=> ['index'],
-                     'uploadAj'=> ['index']
+                     'uploadAj'=> ['index'],
+                     'user'=>['login']
                     );
 
 function call($controller,$action){
@@ -110,6 +111,10 @@ function call($controller,$action){
 
         case "uploadAj":    $controller = new uploadAjController();
                             break; 
+                        
+        case "user":        require_once("models/userModel.php");
+                            $controller = new userController();
+                            break;
     }
     $controller->{$action}();
 }
