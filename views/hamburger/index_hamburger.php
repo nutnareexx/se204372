@@ -320,6 +320,20 @@ body {
   .sidebar a {font-size: 18px;}
 }
 
+.card {
+           
+            background-color: #f1f1f1;
+            padding: 20px 20px 20px 20px;
+            margin: 20px 20px 20px 20px;
+            border-radius: 25px;
+            font-size: 30px;
+            
+        }
+
+.card a{
+    text-decoration: none;
+}
+
 
 </style>
 <body>
@@ -373,7 +387,7 @@ body {
                 <span class="link_name">ตรวจสอบผลการอนุมัติ</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">ตรวจสอบผลการอนุมัติ</a></li>
+                <li><a class="link_name" href="?controller=checkApproval&action=index">ตรวจสอบผลการอนุมัติ</a></li>
             </ul>
         </li>
         
@@ -383,7 +397,7 @@ body {
             <span class="link_name">download</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">download</a></li>
+                <li><a class="link_name" href="?controller=downloadStudent&action=index">download</a></li>
             </ul>
         </li>
         <li>
@@ -392,7 +406,7 @@ body {
             <span class="link_name">upload</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">upload</a></li>
+                <li><a class="link_name" href="?controller=uploadStudent&action=index">upload</a></li>
             </ul>
         </li>
     
@@ -418,6 +432,21 @@ body {
         <i class='bx bx-menu'></i>
             <span class="text">ระบบบริหารจัดการการฝึกงานแบบออนไลน์</span>
     </div>
+
+    <div class="card">
+        <b>ประกาศ</b>    
+    </div>
+    <div class="card">
+        <a href="?controller=company&action=index">ข้อมูลสถานประกอบการณ์ฝึกงาน</a>    
+    </div>
+    <div class="card">
+        <a href="?controller=cooperative&action=index">ข้อมูลสถานประกอบการณ์สหกิจ</a>    
+    </div>
+    <div class="card">
+        <b>เอกสารต่างๆ</b>    
+    </div>
+
+
 </section>
 
 <script>
