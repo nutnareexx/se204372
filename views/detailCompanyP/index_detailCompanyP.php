@@ -352,12 +352,12 @@ tr:nth-child(even){background-color: #f2f2f2}
         </div>
     <dl class="nav-links">
         <li>
-            <a href="?controller=nisit&action=index">
+            <a href="?controller=Aj&action=index">
             <i class='bx bx-home'></i>
                 <span class="link_name">หน้าแรก</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=nisit&action=index">หน้าแรก</a></li>
+                <li><a class="link_name" href="?controller=Aj&action=index">หน้าแรก</a></li>
             </ul>
         </li>
         <li>
@@ -371,7 +371,7 @@ tr:nth-child(even){background-color: #f2f2f2}
             <ul class="sub-menu">
                 <li><a class="link_name" href="#">สถานประกอบการณ์</a></li>
                 <li><a href="?controller=companyP&action=indexP">ฝึกงาน</a></li>
-                <li><a href="?controller=companyC&action=index">สหกิจ</a></li>
+                <li><a href="?controller=cooperativeP&action=index">สหกิจ</a></li>
             </ul>
         </li>
         <li>
@@ -395,7 +395,7 @@ tr:nth-child(even){background-color: #f2f2f2}
                 <span class="link_name">พิจาราณาคำร้องขอฝึกงาน</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">พิจาราณาคำร้องขอฝึกงาน</a></li>
+                <li><a class="link_name" href="?controller=considerAj&action=index">พิจาราณาคำร้องขอฝึกงาน</a></li>
             </ul>
         </li>
         <li>
@@ -404,7 +404,7 @@ tr:nth-child(even){background-color: #f2f2f2}
                 <span class="link_name">สถานการณ์ยื่นคำร้องนิสิต</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">สถานการณ์ยื่นคำร้องนิสิต</a></li>
+                <li><a class="link_name" href="?controller=graphAj&action=index">สถานการณ์ยื่นคำร้องนิสิต</a></li>
             </ul>
         </li>
         <li>
@@ -413,7 +413,7 @@ tr:nth-child(even){background-color: #f2f2f2}
                 <span class="link_name">รายงานสรุปการอนุมัติฝึกงาน</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">รายงานสรุปการอนุมัติฝึกงาน</a></li>
+                <li><a class="link_name" href="?controller=reportPetition&action=index">รายงานสรุปการอนุมัติฝึกงาน</a></li>
             </ul>
         </li>
         <li>
@@ -422,7 +422,7 @@ tr:nth-child(even){background-color: #f2f2f2}
                 <span class="link_name">ออกหนังสือขอความอนุเคราะห์</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">ออกหนังสือขอความอนุเคราะห์</a></li>
+                <li><a class="link_name" href="?controller=bookAj&action=index">ออกหนังสือขอความอนุเคราะห์</a></li>
             </ul>
         </li>
         <li>
@@ -431,7 +431,7 @@ tr:nth-child(even){background-color: #f2f2f2}
                 <span class="link_name">ตรวจสอบประวัติการฝึกงาน</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">ตรวจสอบประวัติการฝึกงาน</a></li>
+                <li><a class="link_name" href="?controller=checkHistory&action=index">ตรวจสอบประวัติการฝึกงาน</a></li>
             </ul>
         </li>
         <li>
@@ -440,7 +440,7 @@ tr:nth-child(even){background-color: #f2f2f2}
                 <span class="link_name">อัพโหลดประกาศ</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">อัพโหลดประกาศ</a></li>
+                <li><a class="link_name" href="?controller=uploadAj&action=index">อัพโหลดประกาศ</a></li>
             </ul>
         </li>
         <li> 
