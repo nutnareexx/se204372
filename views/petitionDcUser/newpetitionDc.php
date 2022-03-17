@@ -347,7 +347,7 @@ tr:nth-child(even){background-color: #f2f2f2}
             <span class="logo_name">KASETSART UNIVERSITY</span>
         </div>
     <dl class="nav-links">
-    <li>
+        <li>
             <a href="?controller=nisit&action=index">
             <i class='bx bx-home'></i>
                 <span class="link_name">หน้าแรก</span>
