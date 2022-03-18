@@ -41,7 +41,7 @@ body {
     align-items: center;
 }
 
-.sidebar .logo-details i{
+.sidebar .logo-details .logo_icon{
     font-size: 30px;
     color: #fff;
     height: 50px;
@@ -51,7 +51,10 @@ body {
     
 }
 
+
+
 .sidebar .logo-details .logo_name{
+    display: flex;
     font-size: 22px;
     color: #fff;
     font-weight: 600;
@@ -143,7 +146,7 @@ body {
     margin-top: -10px;
     background: #397d54;
     display: none;
-    
+    border-radius: 10px;
 }
 
 .sidebar .nav-links li.showMenu .sub-menu{
@@ -153,7 +156,8 @@ body {
 .sidebar .nav-links li .sub-menu a{
     color: #fff;
     font-size: 15px;
-    padding: 5px 0;
+    padding: 5px 40px;
+    
     white-space: nowrap;
     opacity: 0.6;
     transition: all 0.3 ease;
@@ -168,13 +172,14 @@ body {
     left: 100%;
     top: -10px;
     margin-top: 0;
-    padding: 10px 20px;
-    border-radius: 0 6px 6px 0;
+    padding: 10px;
+    border-radius: 10px;
     
     opacity: 0;
     display: block;
     pointer-events: none;
     transition: 0s;
+    
 }
 
 
@@ -320,7 +325,7 @@ body {
   .sidebar a {font-size: 18px;}
 }
 
-.card {
+.card1 {
            
             background-color: #f1f1f1;
             padding: 20px 20px 20px 20px;
@@ -328,29 +333,42 @@ body {
             border-radius: 25px;
             font-size: 30px;
 }
+.column {
+  float: left;
+  width: 47%;
+  padding: 20px 20px 20px 20px;
 
-.card2 {
-           
-           background-color: #f1f1f1;
-           padding: 20px 15px 20px 20px;
-           margin: 10px 20px 20px 20px;
-           border-radius: 25px;
-           font-size: 30px;
-           float: left;
-           width: 45%;
-       }
-.card3 {
-           
-           background-color: #f1f1f1;
-           padding: 20px 15px 20px 20px;
-           margin: 10px 20px 20px 20px;
-           border-radius: 25px;
-           font-size: 30px;
-           float: right;
-           width: 45%;
-       }
+}
 
-.card2 a,.card3 a{
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 25px;
+  text-align: center;
+  background-color: #f1f1f1;
+  border-radius: 25px;
+  font-size: 25px;
+}
+.card a{
     text-decoration: none;
 }
 
@@ -362,7 +380,7 @@ body {
 
 <div class="sidebar close">
         <div class="logo-details">
-            <i class='bx bxs-tree-alt'></i>
+            <span class="logo_icon">KU</span>
             <span class="logo_name">KASETSART UNIVERSITY</span>
         </div>
     <dl class="nav-links">
@@ -441,7 +459,7 @@ body {
             <div class="name-job">
                 <div class="profile_name">Name</div>
             </div>   
-            <a href="?controller=user&action=logoutNisit">          
+            <a href="?controller=user&action=logout">          
                 <i class='bx bx-log-out '></i>
             </a>
     </div>
@@ -453,18 +471,26 @@ body {
     <div class="home-content">
         <i class='bx bx-menu'></i>
             <span class="text">ระบบบริหารจัดการการฝึกงานแบบออนไลน์</span>
+    
     </div>
 
-    <div class="card">
+    <div class="card1">
         <b>ประกาศ</b>    
     </div>
-    <div class="card2">
-        <a href="?controller=company&action=index">ข้อมูลสถานประกอบการณ์ฝึกงาน</a>    
+
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <a href="?controller=company&action=index">ข้อมูลสถานประกอบการณ์ฝึกงาน</a>    
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <a href="?controller=cooperative&action=index">ข้อมูลสถานประกอบการณ์สหกิจ</a>    
+            </div>
+        </div>
     </div>
-    <div class="card3">
-        <a href="?controller=cooperative&action=index">ข้อมูลสถานประกอบการณ์สหกิจ</a>    
-    </div>
-    
 
 
 </section>
