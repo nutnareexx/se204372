@@ -149,7 +149,7 @@ body {
 .sidebar .nav-links li .sub-menu a{
     color: #fff;
     font-size: 15px;
-    padding: 5px 0;
+    padding: 5px 40px;
     white-space: nowrap;
     opacity: 0.6;
     transition: all 0.3 ease;
@@ -164,8 +164,8 @@ body {
     left: 100%;
     top: -10px;
     margin-top: 0;
-    padding: 10px 20px;
-    border-radius: 0 6px 6px 0;
+    padding: 10px;
+    border-radius: 10px;
     
     opacity: 0;
     display: block;
