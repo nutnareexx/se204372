@@ -53,7 +53,7 @@
             font-size: 22px;
             color: #fff;
             font-weight: 600;
-            transition:  0.3s ease;
+            transition:  0.3s ease; 
             transition-delay: 0.1s;
         }
 
@@ -337,8 +337,8 @@
 
         .card {
             font-family: 'Prompt', sans-serif;
-            width: 80%;
             background-color: #f1f1f1;
+            width:80%;
             padding: 20px 20px 20px 20px;
             margin: 20px 20px 20px 20px;
             border-radius: 50px;
@@ -351,6 +351,7 @@
         tr{
             padding: 10px 10px 10px 10px;
         }
+
 
         button {
             font-family: 'Prompt', sans-serif;
@@ -504,7 +505,7 @@
                         <div class="profile_name">Name</div>
                     </div>
                 
-                    <a href="?controller=user&action=logoutNisit">          
+                    <a href="?controller=pages&action=home">          
                         <i class='bx bx-log-out '></i>
                     </a>
                 
@@ -526,76 +527,152 @@
         </div>
 
         <center>
-        <div class="card">
+        <div class="card" >
         <form method="get" action="">
             <table align="center">
-                <tr>
-                    <td align="right" style="width: 30%;" ><label>วันที่เขียนคำร้อง :</label></td>
-                    <td> <input type="date" name="date"/></td>
-                </tr>
-                
-
-                <tr>
-                    <td align="right"><label>รหัสนิสิต :</label></td>
-                    <td><?php echo $userList->user_id;?></td>
-                    <!-- <td> <input type="text" name="user_id"/></td> -->
-                </tr>
-                
-                <tr>
-                    <td align="right"><label>คำนำหน้า : </label></td>
-                    <td><?php echo $userList->user_title?></td>
-                    <!-- <td><select name="name_id">
-                        <option value="">--เลือก--</option>
-                        <?php foreach($nametitleList as $newtt){
-                            echo "<option value=$newtt->name_id>$newtt->name_title</option>";
-                        }?>
-                        </select>
-                    </td> -->
-                </tr>
-
-                <tr>
-                    <td align="right"><label>ชื่อ : </label></td>
-                    <td><?php echo $userList->user_name?></td>
-                    <!-- <td><input type="text" name="user_name"/></td> -->
-                </tr>
-                <tr>
-                    <td align="right"><label>นามสกุล : </label></td>
-                    <td><?php echo $userList->user_surname?></td>
-                    <!-- <td><input type="text" name="user_surname"/></td> -->
-                </tr>
-
-                <tr>
-                    <td align="right"> <label>เบอร์โทรศัพท์ : </td>
-                    <td><input type="text" name="phone"/></label></td>
-                </tr>
+            <th colspan="2"> 
+                <br>
+                <label>ส่วนของผู้ที่จะให้ภาควิชาฯ ออกหนังสือขอความอนุเคราะห์ฝึกงาน</label>
+            </th>
             
-                <tr>
-                    <td align="right"> <label>Facebook : </td>
-                    <td><input type="text" name="facebook"/></td>
-                </tr>
+            
+            
+            <tr>
+                <td align="right" style="width: 30%;" ><label>ชื่อ : </label></td>
+                <td ><input type="text" name="name_com"/></td>
+            </tr>
 
-                <tr>
-                    <td align="right"><label>ตำแน่งที่ไปฝึกงาน : </label></td>
-                    <td><input type="text" name="dc_position"/></td>
-                </tr>
+            <tr>
+                <td align="right"><label>นามสกุล : </label></td>
+                <td><input type="text" name="lastname_com"/></td>
+            </tr>
 
-                <tr>
-                    <td align="right"> <label> สถานประกอบการ : </label></td>
-                    <td> 
-                        <input type="radio" id="old" name="company" value="old">
-                        <label for="old"> สถานประกอบการที่ภาควิชามีอยู่ </label><br>
-                        <input type="radio" id="new" name="company" value="new">
-                        <label for="new"> สถานประกอบการใหม่ </label><br>
-                        
-                    </td>
-                </tr>
+            <tr>
+                <td align="right"><label>ตำแหน่ง : </label></td>
+                <td><input type="text" name="position"/></td>
+            </tr>
+
+            <th colspan="2">
+                <br><br>
+                <label>ส่วนของสถานประกอบการ</label> 
+                
+            </th>
+
+            <tr>
+                <td align="right"><label>ชื่อสถานประกอบการ : </label></td>
+                <td>
+                <?php 
+                if($company == "old"){
+                    echo "<select name='name_company'>
+                    <option value=''>--เลือก--</option>";
+                    foreach($comList as $c){
+                        echo "<option value=$c->dc_id>$c->dc_name</option>";
+                    }
+                    "</select>";
+                }
+                else if ($company == "new"){
+                    echo "<input type='text' name='dc_name'/>";
+                }
+                ?>
+                </td>
+                
+                
+            </tr>
+
+            <tr>
+                <td align="right"><label>สถานที่ตั้งเลขที่ : </label></td>
+                <td><input type="text" name="no"/></td>
+            </tr>
+
+            <tr>
+                <td align="right"><label>ถนน : </label></td>
+                <td><input type="text" name="road"/></td>
+            </tr>
+
+            <tr>
+                <td align="right"><label>ตำบล/แขวง : </label></td>
+                <td><input type="text" name="Subdistrict"/></td>
+            </tr>
+
+            <tr>
+                <td align="right"><label>อำเภอ/เขต : </label></td>
+                <td><input type="text" name="district"/></td>
+            </tr>
+
+            <tr>
+                <td align="right"><label>จังหวัด : </label></td>
+                <td><input type="text" name="province"/></td>
+            </tr>
+
+            <tr>
+                <td align="right"><label>รหัสไปรษณีย์ : </label></td>
+                <td><input type="text" name="postcode"/></td>
+            </tr>
+
+            <th colspan="2">
+                <br><br>
+                <label>ส่วนของผู้ประสานงาน</label> 
+                
+            </th>
+
+            <tr>
+                <td align="right"><label>ชื่อผู้ประสานงาน : </label></td>
+                <td><input type="text" name="namehr"/></td>
+            </tr>
+
+            <tr>
+                <td align="right"><label>นามสกุลผู้ประสานงาน : </label></td>
+                <td><input type="text" name="lastnamehr"/></td>
+            </tr>
+
+            <tr>
+                <td align="right"><label>เบอร์โทรศัพท์ : </label></td>
+                <td><input type="text" name="phonehr"/></td>
+            </tr>
+
+            <tr>
+                <td align="right"><label>E-mail : </label></td>
+                <td><input type="mail" name="mail"/></td>
+            </tr>
+
+            <th colspan="2">
+                <br><br>
+                <label>ส่วนของรายละเอียดการฝึกงาน</label> 
+                
+            </th>
+
+            <tr>
+                <td align="right"><label>เริ่มฝึกงาน : </label></td>
+                <td><input type="date" name="start_p"/></td>
+            </tr>
+
+            <tr>
+                <td align="right"><label>สิ้นสุดการฝึกงาน : </label></td>
+                <td><input type="date" name="finish_p"/></td>
+            </tr>
+
+            <tr>
+                <td align="right"><label>จำนวนค่าตอบแทน : </label></td>
+                <td><input type="text" name="pay"/></td>
+            </tr>
+
+            <tr>
+                <td align="right"><label>ที่พัก : </label></td>
+                <td><input type="radio" id="html" name="fav_language" value="HTML">
+                <label for="html"> มี </label><br>
+                <input type="radio" id="css" name="fav_language" value="CSS">
+                <label for="css"> ไม่มี </label><br>
+                <!-- <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                <label for="javascript"> อื่นๆ </label><br><br></label></td> -->
+            </tr>
+            
             </table>
             <br>
 
             <input type="hidden" name="controller" value="petitionDCUser"/>
             <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
-            <button type="submit" name="action" value="index"> BACK </button>
-            <button type="submit" name="action" value="index2"> NEXT </button>
+            <button type="submit" name="action" value="index">Back</button>
+            <button type="submit" name="action" value="addpetitionDc">Save</button>
         </form>
         </div>
         </center>
@@ -603,26 +680,6 @@
         <br>
 
     </section>
-
-    <script>
-
-        let arrow = document.querySelectorAll(".arrow");
-        for (var i = 0; i < arrow.length; i++){
-            arrow[i].addEventListener("click", (e)=>{
-                let arrowParent = e.target.parentElement.parentElement;
-                arrowParent.classList.toggle("showMenu");
-            });
-        }
-
-        let sidebar = document.querySelector(".sidebar");
-        let sidebarBtn = document.querySelector(".bx-menu");
-        console.log(sidebarBtn);
-        sidebarBtn.addEventListener("click", ()=>{
-            sidebar.classList.toggle("close");
-        });
-
-    </script>
-
-
     </body>
-</html> 
+
+</html>

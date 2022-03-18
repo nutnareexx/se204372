@@ -11,6 +11,20 @@ class petitionDcUserController
         require_once('views/petitionDcUser/index_petitionDcUser.php');
     }
 
+    public function index2()
+    {
+        $date = $_GET['date'];
+        $userid = $_GET['userid'];
+        $phone = $_GET['phone'];
+        $faceB = $_GET['facebook'];
+        $position = $_GET['dc_position'];
+        $company = $_GET['company'];
+        $comList = DetailCompanyModel::getAll();
+
+        echo $userid.$company;
+        require_once('views/petitionDcUser/newCompany_Dcuser.php');
+    }
+
     public function newpetitionDc()
     {
         $petionDcList = petitionDcModel::getAll();
