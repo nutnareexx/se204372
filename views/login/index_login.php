@@ -16,6 +16,34 @@
             color: white;
         }
 
+        button {
+            font-family: 'Prompt', sans-serif;
+            /*border-radius: 5%;*/
+            position: relative;
+            background-color: #397d54 ; /* Green */
+            border: 1px black;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            
+            cursor: pointer;
+            /*float: center;*/
+            box-shadow: 3px 2px 8px gray;
+            border-radius: 50px;
+        }
+
+        button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+
+        button:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
         input[type=text], select {
             font-family: 'Prompt', sans-serif;
             /* font-size: 18px; */
@@ -56,7 +84,7 @@
             <label>Password : <input type="password" name="password"></label>
             <br><br>
             <input type="hidden" name="controller" value="user"/>
-            <button type="submit" name="action" value="login">Login</button>
+            <button type="submit" name="action" value="login">LOG IN</button>
         </form>
 
 
