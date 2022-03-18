@@ -7,6 +7,7 @@
         
         <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <style>
 
@@ -343,6 +344,42 @@ th, td {
 tr:nth-child(odd){background-color: #cae3cc}
 tr:nth-child(even){background-color: #f2f2f2}
 
+input[type=text], select {
+            font-family: 'Prompt', sans-serif;
+            width: 50%;
+            padding: 5px 5px;
+            margin: 8px 0;
+            font-size: 16px;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 50px;
+            box-sizing: border-box;
+        }
+
+        .btn-group .button {
+            font-family: 'Prompt', sans-serif;
+            position: relative;
+            background-color: #73c088 ; /* Green */
+            border: 1px black;
+            color: white;
+            padding: 7px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            /*float: center;*/
+            border-radius: 50px;
+        }
+
+        .btn-group .button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+
+        .btn-group .button:hover {
+            background-color: #ddd;
+            color: black;
+        }
 </style>
 
 
@@ -476,29 +513,32 @@ tr:nth-child(even){background-color: #f2f2f2}
 </div>
 
 <form method="get" action="">
-    
-    <input type="text" name="key">
-    <input type="hidden" name="controller" value="companyP"/>
-    <button type="submit" name="action" value="searchP">Search</button>
+    <div class="btn-group">
+        <input type="text" name="key">
+            <input type="hidden" name="controller" value="companyP"/>
+            <button class="button" type="submit" name="action" value="searchP">
+                <i class='fas fa-search' style='font-size: 22px'></i> </button>
 
+    </div>
+    
 </form>
     
 
 <table>
     <tr>
-        <td>ที่</td>
-        <td>ชื่อสถานประกอบการ/หน่วยงาน</td>
-        <td>ตำแหน่งงานที่ต้องการรับ</td>
-        <td>แผนกฝ่าย</td>
-        <td>จำนวน(คน)</td>
-        <td>ความสามารถทีมีหรือทักษะที่ควรมี</td>
-        <td>ลักษณะงานที่ต้องปฏิบัติ</td>
-        <td>จำนวนค่าตอบแทน</td>
-        <td>ที่พัก</td>
-        <td>สวัสดิการอื่นๆ</td>
-        <td>การคัดเลือก</td>
-        <td>อัพเดตข้อมูล</td>
-        <td>ลบข้อมูล</td>
+        <th>ที่</th>
+        <th>ชื่อสถานประกอบการ/หน่วยงาน</th>
+        <th>ตำแหน่งงานที่ต้องการรับ</th>
+        <th>แผนกฝ่าย</th>
+        <th>จำนวน(คน)</th>
+        <th>ความสามารถทีมีหรือทักษะที่ควรมี</th>
+        <th>ลักษณะงานที่ต้องปฏิบัติ</ttd>
+        <th>จำนวนค่าตอบแทน</th>
+        <th>ที่พัก</th>
+        <th>สวัสดิการอื่นๆ</th>
+        <th>การคัดเลือก</th>
+        <th>อัพเดตข้อมูล</th>
+        <th>ลบข้อมูล</th>
     </tr>
 </section>
 
@@ -541,8 +581,8 @@ sidebarBtn.addEventListener("click", ()=>{
     <td>$c->dc_room</td>
     <td>$c->dc_benefit</td>
     <td>$c->dc_select</td>
-    <td> <a href=?controller=companyP&action=updateformP&dc_id=$c->dc_id> update </a> </td>
-    <td> <a href=?controller=companyP&action=deleteconfirmP&dc_id=$c->dc_id> delete </a>
+    <td> <a href=?controller=companyP&action=updateformP&dc_id=$c->dc_id> <i class='fas fa-edit' style='font-size: 24px;'></i>  </a> </td>
+    <td> <a href=?controller=companyP&action=deleteconfirmP&dc_id=$c->dc_id> <i class='fas fa-trash-alt' style='font-size: 24px;'></i> </a>
     </tr>
     ";
 } 
