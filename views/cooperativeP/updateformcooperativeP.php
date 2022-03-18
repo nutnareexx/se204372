@@ -327,13 +327,13 @@ body {
                 text-align: center;
             }
 
-        /* table {
-            font-family: 'Prompt', sans-serif;
-            border-collapse: collapse;
+        table {
+            /* font-family: 'Prompt', sans-serif;
+            border-collapse: collapse; */
             width: 100%;
-            text-align: center;
-            background: #f2f2f2;
-        } */
+            /* text-align: center;
+            background: #f2f2f2; */
+        }
 
         /* th, td {
             text-align: left;
@@ -342,7 +342,7 @@ body {
 
         .card {
             font-family: 'Prompt', sans-serif;
-            
+            width: 80%;
             background-color: #f1f1f1;
             padding: 20px 20px 20px 20px;
             margin: 20px 20px 20px 20px;
@@ -537,13 +537,13 @@ body {
 <h2>แก้ไขสถานประกอบการณ์<h2>
     
 </div>
-
+<center>
 <div class="card">
 <form method="get" action="">
     <table align="center">
     <tr>
         
-        <td align="right"><label> ชื่อสถานประกอบการ/หน่วยงาน </label></td>
+        <td align="right" style="width: 20%;"><label><b> ชื่อสถานประกอบการ/หน่วยงาน </label></td>
         <td><input type="text" name="c_name" 
             value="<?php echo  $cooperativePList->c_name;?>"/> 
         </td>
@@ -570,32 +570,57 @@ body {
         </td>
     </tr>
 
-    <tr><td align="right"><label><b>ความสามารถทีหรือทักษะที่ควรมี <input type="text" name="c_skills"
-        value="<?php echo  $cooperativePList->c_skills;?>"/> </label><br></td></tr>
+    <tr>
+        <td align="right"><label><b>ความสามารถทีหรือทักษะที่ควรมี </label></td>
+        <td><input type="text" name="c_skills"
+            value="<?php echo  $cooperativePList->c_skills;?>"/> 
+        </td>
+    </tr>
 
-    <tr><td align="right"><label><b>ลักษณะงานที่ต้องปฏิบัติ <input type="text" name="c_nature"
-        value="<?php echo  $cooperativePList->c_nature;?>"/> </label><br></td></tr>
+    <tr>
+        <td align="right"><label><b>ลักษณะงานที่ต้องปฏิบัติ </label></td>
+        <td><input type="text" name="c_nature"
+            value="<?php echo  $cooperativePList->c_nature;?>"/> 
+        </td>
+    </tr>
 
-    <tr><td align="right"><label><b>จำนวนค่าตอบแทน <input type="text" name="c_pay"
-        value="<?php echo  $cooperativePList->c_pay;?>"/> </label><br></td></tr>
+    <tr>
+        <td align="right"><label><b>จำนวนค่าตอบแทน </label></td>
+        <td><input type="text" name="c_pay"
+            value="<?php echo  $cooperativePList->c_pay;?>"/> 
+        </td>
+    </tr>
 
-    <tr><td align="right"><label><b>ที่พัก <input type="text" name="c_room"
-        value="<?php echo  $cooperativePList->c_room;?>"/> </label><br></td></tr>
+    <tr>
+        <td align="right"><label><b>ที่พัก </label></td>
+        <td><input type="text" name="c_room"
+            value="<?php echo  $cooperativePList->c_room;?>"/> 
+        </td>
+    </tr>
 
-    <tr><td align="right"><label><b>สวัสดิการอื่นๆ <input type="text" name="c_benefit"
-        value="<?php echo  $cooperativePList->c_benefit;?>"/> </label><br></td></tr>
+    <tr>
+        <td align="right"><label><b>สวัสดิการอื่นๆ </label></td>
+        <td><input type="text" name="c_benefit"
+            value="<?php echo  $cooperativePList->c_benefit;?>"/> 
+        </td>
+    </tr>
 
-    <tr><td align="right"><label><b>การคัดเลือก <input type="text" name="c_select"
-        value="<?php echo  $cooperativePList->c_select;?>"/> </label><br></td></tr>
+    <tr>
+        <td align="right"><label><b>การคัดเลือก </label></td>
+        <td><input type="text" name="c_select"
+            value="<?php echo  $cooperativePList->c_select;?>"/> 
+        </td>
+    </tr>
     
     </table>
-</form>
+
     <input type="hidden" name="controller" value="cooperativeP"/>
     <input type="hidden" name="cid" value="<?php echo $cooperativePList->c_id;?>"/>
     <button type="submit" name="action" value="index"> Back </button>
     <button type="submit" name="action" value="update"> Update </button>
-       
+     </form>  
 </div>
+</center>
 
 
 </section>
