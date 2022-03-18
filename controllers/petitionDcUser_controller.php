@@ -3,8 +3,11 @@ class petitionDcUserController
 {
     public function index()
     {
+        $userid = $_GET['userid'];
         // $petionDcList = petitionDcModel::getAll();
         $nametitleList  = nametitleModel::getAll();
+        $userList = userModel::get($userid);
+        // echo $userid;
         require_once('views/petitionDcUser/index_petitionDcUser.php');
     }
 
