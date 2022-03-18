@@ -39,7 +39,7 @@ else
         [<a href= "?controller=bookAj&action=index">ออกหนังสือ/อาจารย์</a>]
         [<a href= "?controller=checkHistory&action=index">ตรวจสอบประวัติ/อาจารย์</a>]
         [<a href= "?controller=uploadAj&action=index">upload/อาจารย์</a>]-->
-        [<a href= "?controller=user&action=logout">logout</a>]
+        
         <?php require_once("routes.php");?>
     
 </body>

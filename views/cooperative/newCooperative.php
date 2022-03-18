@@ -326,7 +326,7 @@ body {
                 text-align: center;
             }
 
-table {
+/* table {
     font-family: 'Prompt', sans-serif;
     border-collapse: collapse;
     width: 100%;
@@ -338,7 +338,44 @@ th, td {
 }
 
 tr:nth-child(odd){background-color: #cae3cc}
-tr:nth-child(even){background-color: #f2f2f2}
+tr:nth-child(even){background-color: #f2f2f2} */
+
+input[type=text], select {
+            font-family: 'Prompt', sans-serif;
+            width: 100%;
+            padding: 5px 5px;
+            margin: 8px 0;
+            font-size: 16px;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 50px;
+            box-sizing: border-box;
+        }
+
+        .btn-group .button {
+            font-family: 'Prompt', sans-serif;
+            position: relative;
+            background-color: #73c088 ; /* Green */
+            border: 1px black;
+            color: white;
+            padding: 10px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            /*float: center;*/
+            border-radius: 50px;
+        }
+
+        .btn-group .button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+
+        .btn-group .button:hover {
+            background-color: #ddd;
+            color: black;
+        }
 </style>
 
 
@@ -423,7 +460,7 @@ tr:nth-child(even){background-color: #f2f2f2}
             <div class="name-job">
                 <div class="profile_name">Name</div>
             </div>   
-            <a href="?controller=pages&action=home">          
+            <a href="?controller=user&action=logoutNisit">          
                 <i class='bx bx-log-out '></i>
             </a>
     </div>
@@ -443,20 +480,55 @@ tr:nth-child(even){background-color: #f2f2f2}
     </div>
 
     <form method="get" action="">
-<label> ชื่อสถานประกอบการ/หน่วยงาน <input type = "text" name = "c_name" /> </label></br>
-<label> ตำแหน่งงานที่ต้องการรับ <input type = "text" name = "c_position" /> </label></br>
-<label> แผนกฝ่าย <input type = "text" name = "c_department" /> </label></br>
-<label> จำนวน(คน) <input type = "text" name = "c_num" /> </label></br>
-<label> ความสามารถทีหรือทักษะที่ควรมี <input type = "text" name = "c_skills" /> </label></br>
-<label> ลักษณะงานที่ต้องปฏิบัติ <input type = "text" name = "c_nature" /> </label></br>
-<label> จำนวนค่าตอบแทน <input type = "text" name = "c_pay" /> </label></br>
-<label> ที่พัก <input type = "text" name = "c_room" /> </label></br>
-<label> สวัสดิการอื่นๆ <input type = "text" name = "c_benefit" /> </label></br>
-<label> การคัดเลือก <input type = "text" name = "c_select" /> </label></br>
+    <table align="center">
+        <tr>
+            <td align="right">ชื่อสถานประกอบการ/หน่วยงาน : </td>
+            <td><label>  <input type = "text" name = "c_name" /> </label></td>
+        </tr>
+        <tr>
+            <td align="right">ตำแหน่งงานที่ต้องการรับ : </td>
+            <td><label>  <input type = "text" name = "c_position" /> </label></td>
+        </tr>
+        <tr>
+            <td align="right">แผนกฝ่าย : </td>
+            <td><label>  <input type = "text" name = "c_department" /> </label></td>
+        </tr>
+        <tr>
+            <td align="right">จำนวน(คน) : </td>
+            <td><label>  <input type = "text" name = "c_num" /> </label></td>
+        </tr>
+        <tr>
+            <td align="right">ความสามารถทีหรือทักษะที่ควรมี : </td>
+            <td><label>  <input type = "text" name = "c_skills" /> </label></td>
+        </tr>
+        <tr>
+            <td align="right">ลักษณะงานที่ต้องปฏิบัติ : </td>
+            <td><label>  <input type = "text" name = "c_nature" /> </label></td>
+        </tr>
+        <tr>
+            <td align="right">จำนวนค่าตอบแทน : </td>
+            <td><label>  <input type = "text" name = "c_pay" /> </label></td>
+        </tr>
+        <tr>
+            <td align="right">ที่พัก : </td>
+            <td><label>  <input type = "text" name = "c_room" /> </label></td>
+        </tr>
+        <tr>
+            <td align="right">สวัสดิการอื่นๆ : </td>
+            <td><label>  <input type = "text" name = "c_benefit" /> </label></td>
+        </tr>
+        <tr>
+            <td align="right">การคัดเลือก : </td>
+            <td><label>  <input type = "text" name = "c_select" /> </label></td>
+        </tr>
+    </table>
 
-<input type="hidden" name="controller" value="cooperative"/>
-<button type="submit" name="action" value="index">Back</button>
-<button type="submit" name="action" value="addCooperative">Save</button>
+<div class="btn-group">
+        <input type="hidden" name="controller" value="cooperative"/>
+    <button class="button" type="submit" name="action" value="index">Back</button>
+    <button class="button" type="submit" name="action" value="addCooperative">Save</button>
+</div>
+
 
 </form>
 

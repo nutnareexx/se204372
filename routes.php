@@ -18,7 +18,7 @@ $controllers = array('pages'=>['home','error'],'nisit'=>['index'],
                      'bookAj'=> ['index'],
                      'checkHistory'=> ['index'],
                      'uploadAj'=> ['index'],
-                     'user'=>['login','logout']
+                     'user'=>['login','logoutNisit','logoutAj']
                     );
 
 function call($controller,$action){
