@@ -414,10 +414,10 @@ tr:nth-child(even){background-color: #f2f2f2}
         <li>
             <a href="?controller=reportPetition&action=index">
                 <i class='bx bx-file-blank' ></i>
-                <span class="link_name">รายงานสรุปการอนุมัติฝึกงาน</span>
+                <span class="link_name">รายงานสรุปการอนุมัติสหกิจ</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=reportPetition&action=index">รายงานสรุปการอนุมัติฝึกงาน</a></li>
+                <li><a class="link_name" href="?controller=reportPetition&action=index">รายงานสรุปการอนุมัติสหกิจ</a></li>
             </ul>
         </li>
         <li>
@@ -432,10 +432,10 @@ tr:nth-child(even){background-color: #f2f2f2}
         <li>
             <a href="?controller=checkHistory&action=index">
                 <i class='bx bx-notepad'></i>
-                <span class="link_name">ตรวจสอบประวัติการฝึกงาน</span>
+                <span class="link_name">ตรวจสอบประวัติการฝึกสหกิจ</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=checkHistory&action=index">ตรวจสอบประวัติการฝึกงาน</a></li>
+                <li><a class="link_name" href="?controller=checkHistory&action=index">ตรวจสอบประวัติการฝึกสหกิจ</a></li>
             </ul>
         </li>
         <li>
@@ -471,7 +471,7 @@ tr:nth-child(even){background-color: #f2f2f2}
     </div>
     <!-- เขียนตรงนี้นาจาาาาา -->
     <div class="header">
-        <h2>รายละเอียดสถานประกอบการที่ประสงค์รับนิสิตฝึกงาน</h2>
+        <h2>รายละเอียดสถานประกอบการที่ประสงค์รับนิสิตสหกิจ</h2>
 
     <h3>เพิ่มสถานประกอบการณ์ใหม่ <a href="?controller=companyP&action=newDetailCompanyP"> click!!! </a> </h3>
 </div>
