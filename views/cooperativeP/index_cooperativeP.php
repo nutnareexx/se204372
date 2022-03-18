@@ -7,6 +7,7 @@
         
         <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <style>
 
@@ -473,15 +474,15 @@ tr:nth-child(even){background-color: #f2f2f2}
     <div class="header">
         <h2>รายละเอียดสถานประกอบการที่ประสงค์รับนิสิตสหกิจ</h2>
 
-    <h3>เพิ่มสถานประกอบการณ์ใหม่ <a href="?controller=companyP&action=newDetailCompanyP"> click!!! </a> </h3>
+    <h3>เพิ่มสถานประกอบการณ์ใหม่ <a href="?controller=cooperativeP&action=newCooperative"> click!!! </a> </h3>
 </div>
 
 
 <form method="get" action="">
     <input type="text" name="key">
     <input type="hidden" name="controller" value="cooperativeP"/>
-    <button type="submit" name="action" value="search">
-Search</button>
+    <button type="submit" name="action" value="search"><i class='fas fa-search'></i></button>
+    
 </form>
 <table>
 <tr> <td><b>ที่</td>
@@ -495,8 +496,8 @@ Search</button>
 <td><b>ที่พัก</td>
 <td><b>สวัสดิการอื่นๆ</td>
 <td><b>การคัดเลือก</td>
-<td><b>Update</td>
-<td><b>Delete</td> </tr>
+<td><b>อัพเดตข้อมูล</td>
+<td><b>ลบข้อมูล</td> </tr>
 
 </section>
 
@@ -541,8 +542,8 @@ sidebarBtn.addEventListener("click", ()=>{
     <td>$c->c_room</td>
     <td>$c->c_benefit</td>
     <td>$c->c_select</td>
-    <td>  <a href=?controller=cooperativeP&action=updateforms&c_id=$c->c_id> update </a> </td>
-    <td>  <a href=?controller=cooperativeP&action=deleteconfirm&c_id=$c->c_id> delete</a> </td></tr>";
+    <td>  <a href=?controller=cooperativeP&action=updateforms&c_id=$c->c_id> <i class='fas fa-edit' style='font-size: 24px;'></i>  </a> </td>
+    <td>  <a href=?controller=cooperativeP&action=deleteconfirm&c_id=$c->c_id> <i class='fas fa-trash-alt' style='font-size: 24px;'></i></a> </td></tr>";
 }
 echo "</table>";
  ?>
