@@ -420,15 +420,6 @@
             </div>
 
         <dl class="nav-links">
-        <li>
-            <a href="?controller=nisit&action=index">
-            <i class='bx bx-home'></i>
-                <span class="link_name">หน้าแรก</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=nisit&action=index">หน้าแรก</a></li>
-            </ul>
-        </li>
         
             <li>
                 <a href="?controller=nisit&action=index">
@@ -530,6 +521,63 @@
         <div class="card" >
         <form method="get" action="">
             <table align="center">
+
+            <th colspan="2"> 
+                <br>
+                <label>ส่วนของนิสิต</label>
+            </th>
+
+                <tr>
+                    <td align="right" style="width: 30%;" ><label>วันที่เขียนคำร้อง :</label></td>
+                    <td> <input type="date" name="date"/></td>
+                </tr>
+                
+
+                <tr>
+                    <td align="right"><label>รหัสนิสิต :</label></td>
+                    <td><?php echo $userList->user_id;?></td>
+                    <!-- <td> <input type="text" name="user_id"/></td> -->
+                </tr>
+                
+                <tr>
+                    <td align="right"><label>คำนำหน้า : </label></td>
+                    <td><?php echo $userList->user_title?></td>
+                    <!-- <td><select name="name_id">
+                        <option value="">--เลือก--</option>
+                        <?php foreach($nametitleList as $newtt){
+                            echo "<option value=$newtt->name_id>$newtt->name_title</option>";
+                        }?>
+                        </select>
+                    </td> -->
+                </tr>
+
+                <tr>
+                    <td align="right"><label>ชื่อ : </label></td>
+                    <td><?php echo $userList->user_name?></td>
+                    <!-- <td><input type="text" name="user_name"/></td> -->
+                </tr>
+                <tr>
+                    <td align="right"><label>นามสกุล : </label></td>
+                    <td><?php echo $userList->user_surname?></td>
+                    <!-- <td><input type="text" name="user_surname"/></td> -->
+                </tr>
+
+
+                <tr>
+                    <td align="right"> <label>เบอร์โทรศัพท์ : </td>
+                    <td><input type="text" name="phone"/></label></td>
+                </tr>
+            
+                <tr>
+                    <td align="right"> <label>Facebook : </td>
+                    <td><input type="text" name="facebook"/></td>
+                </tr>
+
+                <tr>
+                    <td align="right"><label>ตำแน่งที่ไปฝึกงาน : </label></td>
+                    <td><input type="text" name="dc_position"/></td>
+                </tr>
+
             <th colspan="2"> 
                 <br>
                 <label>ส่วนของผู้ที่จะให้ภาควิชาฯ ออกหนังสือขอความอนุเคราะห์ฝึกงาน</label>
