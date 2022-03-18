@@ -325,20 +325,93 @@ body {
                 background-color: #f1f1f1;
                 text-align: center;
             }
+            button {
+            font-family: 'Prompt', sans-serif;
+            position: relative;
+            background-color: #397d54 ; 
+            border: 1px black;
+            color: white;
+            padding: 10px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            cursor: pointer;
+            width: 30%;
+            border-radius: 50px;
+        }
+        button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+        button:hover {
+            background-color: #73c088;
+            color: white;
+        }
 
-table {
-    font-family: 'Prompt', sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
+        input[type=text], select {
+                font-family: 'Prompt', sans-serif;
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 50px;
+                box-sizing: border-box;
+            }
 
-th, td {
-    text-align: left;
-    padding: 8px;
-}
+        table {
+            /* font-family: 'Prompt', sans-serif; */
+            /* border-collapse: collapse; */
+            font-size: 18px;
+            font-weight: bold;
+            width: 80%;
+            margin-left: 10px;
+        }
+        
+        .card {
+            font-family: 'Prompt', sans-serif;
+            
+            background-color: #f1f1f1;
+            padding: 20px 20px 20px 20px;
+            margin: 20px 20px 20px 20px;
+            border-radius: 50px;
+            
+        }
 
-tr:nth-child(odd){background-color: #cae3cc}
-tr:nth-child(even){background-color: #f2f2f2}
+        /* button {
+            font-family: 'Prompt', sans-serif;
+            position: relative;
+            background-color: #397d54 ; 
+            border: 1px black;
+            color: white;
+            padding: 10px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            cursor: pointer;
+            width: 30%;
+            border-radius: 50px;
+        }
+        button:not(:last-child) {
+            /* border-right: none; /* Prevent double borders
+        }  */
+        button:hover {
+            background-color: #73c088;
+            color: white;
+        } */
+
+        input[type=text], select {
+                font-family: 'Prompt', sans-serif;
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 50px;
+                box-sizing: border-box;
+            }
+       
 </style>
 
 
@@ -450,7 +523,7 @@ tr:nth-child(even){background-color: #f2f2f2}
             <div class="name-job">
                 <div class="profile_name">Name</div>
             </div>   
-            <a href="?controller=user&action=logoutAj">          
+            <a href="?controller=pages&action=home">          
                 <i class='bx bx-log-out '></i>
             </a>
     </div>
@@ -469,24 +542,61 @@ tr:nth-child(even){background-color: #f2f2f2}
     <h2><b>เพิ่มสถานประกอบการณ์ใหม่</h2>
 </div>
 
+<div class="card">
+    <form method="get" action="">
+    <table align="center">
+        <tr>
+            <td align="right">ชื่อสถานประกอบการ/หน่วยงาน : </td>
+            <td><input type = "text" name = "dc_name" /></td>
+        </tr>
+        <tr>
+            <td align="right">ตำแหน่งงานที่ต้องการรับ : </td>
+            <td><input type = "text" name = "dc_position" /> </td>
+        </tr>
+        <tr>
+            <td align="right">แผนกฝ่าย : </td>
+            <td><input type = "text" name = "dc_department" /></td>
+        </tr>
+        <tr>
+            <td align="right">จำนวน(คน) : </td>
+            <td><input type = "text" name = "dc_num" /></td>
+        </tr>
+        <tr>
+            <td align="right">ความสามารถทีมีหรือทักษะที่ควรมี : </td>
+            <td><input type = "text" name = "dc_skills" /></td>
+        </tr>
+        <tr>
+            <td align="right">ลักษณะงานที่ต้องปฏิบัติ : </td>
+            <td><input type = "text" name = "dc_nature" /></td>
+        </tr>
+        <tr>
+            <td align="right">จำนวนค่าตอบแทน : </td>
+            <td><input type = "text" name = "dc_pay" /></td>
+        </tr>
+        <tr>
+            <td align="right">ที่พัก : </td>
+            <td><input type = "text" name = "dc_room" /></td>
+        </tr>
+        <tr>
+            <td align="right">สวัสดิการอื่นๆ : </td>
+            <td><input type = "text" name = "dc_benefit" /></td>
+        </tr>
+        <tr>
+            <td align="right">การคัดเลือก : </td>
+            <td><input type = "text" name = "dc_select" /></td>
+        </tr>
+    </table>
 
-<form method="get" action="">
-<br><br><label> ชื่อสถานประกอบการ/หน่วยงาน <input type = "text" name = "dc_name" /> </label></br>
-<label> ตำแหน่งงานที่ต้องการรับ <input type = "text" name = "dc_position" /> </label></br>
-<label> แผนกฝ่าย <input type = "text" name = "dc_department" /> </label></br>
-<label> จำนวน(คน) <input type = "text" name = "dc_num" /> </label></br>
-<label> ความสามารถทีมีหรือทักษะที่ควรมี <input type = "text" name = "dc_skills" /> </label></br>
-<label> ลักษณะงานที่ต้องปฏิบัติ <input type = "text" name = "dc_nature" /> </label></br>
-<label> จำนวนค่าตอบแทน <input type = "text" name = "dc_pay" /> </label></br>
-<label> ที่พัก <input type = "text" name = "dc_room" /> </label></br>
-<label> สวัสดิการอื่นๆ <input type = "text" name = "dc_benefit" /> </label></br>
-<label> การคัดเลือก <input type = "text" name = "dc_select" /> </label></br>
+<div class="btn-group">
+    <input type="hidden" name="controller" value="companyP"/>
+    <button class="button" type="submit" name="action" value="indexP">Back</button>
+    <button class="button" type="submit" name="action" value="addDetailCompanyP">Save</button>
 
-<input type="hidden" name="controller" value="companyP"/>
-<button type="submit" name="action" value="indexP">Back</button>
-<button type="submit" name="action" value="addDetailCompanyP">Save</button>
+</div>
 
 </form>
+
+</div>
 
 </section>
 

@@ -328,22 +328,93 @@ body {
                 text-align: center;
             }
 
-.table {
-    font-family: 'Prompt', sans-serif;
-    border-collapse: collapse;
-    
-    text-align: center;
-    background: #f2f2f2;
-}
+            button {
+            font-family: 'Prompt', sans-serif;
+            position: relative;
+            background-color: #397d54 ; 
+            border: 1px black;
+            color: white;
+            padding: 10px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            cursor: pointer;
+            width: 30%;
+            border-radius: 50px;
+        }
+        button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+        button:hover {
+            background-color: #73c088;
+            color: white;
+        }
 
-th, td {
-    text-align: left;
-    padding: 8px;
-}
+        input[type=text], select {
+                font-family: 'Prompt', sans-serif;
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 50px;
+                box-sizing: border-box;
+            }
 
-tr:nth-child(odd){background-color: #cae3cc}
-tr:nth-child(even){background-color: #f2f2f2}
+        table {
+            /* font-family: 'Prompt', sans-serif; */
+            /* border-collapse: collapse; */
+            font-size: 18px;
+            /* font-weight: bold; */
+            width: 100%;
+            /* margin-left: 10px; */
+        }
 
+        
+        .card {
+            font-family: 'Prompt', sans-serif;
+            
+            background-color: #f1f1f1;
+            padding: 20px 20px 20px 20px;
+            margin: 20px 20px 20px 20px;
+            border-radius: 50px;
+            
+        }
+
+        button {
+            font-family: 'Prompt', sans-serif;
+            position: relative;
+            background-color: #397d54 ; 
+            border: 1px black;
+            color: white;
+            padding: 10px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            cursor: pointer;
+            width: 30%;
+            border-radius: 50px;
+        }
+        button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+        button:hover {
+            background-color: #73c088;
+            color: white;
+        }
+
+        input[type=text], select {
+                font-family: 'Prompt', sans-serif;
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 50px;
+                box-sizing: border-box;
+            }
 
 </style>
 
@@ -477,19 +548,54 @@ tr:nth-child(even){background-color: #f2f2f2}
     
 </div>
 
-<?php echo "  <br>
-            <br><b>ที่ : </b>   $DetailCompanyPList->dc_id  
-            <br><b>ชื่อสถานประกอบการ/หน่วยงาน : </b>  $DetailCompanyPList->dc_name
-            <br><b>ตำแหน่งงานที่ต้องการรับ : </b>  $DetailCompanyPList->dc_position
-            <br><b>แผนกฝ่าย : </b> $DetailCompanyPList->dc_department
-            <br><b>จำนวน(คน) : </b> $DetailCompanyPList->dc_num
-            <br><b>ความสามารถทีมีหรือทักษะที่ควรมี : </b> $DetailCompanyPList->dc_skills    
-            <br><b>ลักษณะงานที่ต้องปฏิบัติ : </b> $DetailCompanyPList->dc_nature 
-            <br><b>จำนวนค่าตอบแทน : </b> $DetailCompanyPList->dc_pay
-            <br><b>ที่พัก : </b> $DetailCompanyPList->dc_room
-            <br><b>สวัสดิการอื่นๆ : </b> $DetailCompanyPList->dc_benefit
-            <br><b>การคัดเลือก : </b> $DetailCompanyPList->dc_select
-            <br>";?>
+<div class="card">
+    <?php echo " <table align='center'>
+            <tr>
+                <th align='right'>ที่ : </th>
+                <td>$DetailCompanyPList->dc_id</td>
+            </tr>
+            <tr>
+                <th align='right'>ชื่อสถานประกอบการ/หน่วยงาน : </th>
+                <td>$DetailCompanyPList->dc_name</td>
+            </tr>
+            <tr>
+                <th align='right'>ตำแหน่งงานที่ต้องการรับ : </th>
+                <td>$DetailCompanyPList->dc_position</td>
+            </tr>
+            <tr>
+                <th align='right'>แผนกฝ่าย : </th>
+                <td>$DetailCompanyPList->dc_department</td>
+            </tr>
+            <tr>
+                <th align='right'>จำนวน(คน) : </th>
+                <td>$DetailCompanyPList->dc_num</td>
+            </tr>
+            <tr>
+                <th align='right'>ความสามารถทีมีหรือทักษะที่ควรมี : </th>
+                <td>$DetailCompanyPList->dc_skills</td>
+            </tr>
+            <tr>
+                <th align='right'>ลักษณะงานที่ต้องปฏิบัติ : </th>
+                <td>$DetailCompanyPList->dc_nature</td>
+            </tr>
+            <tr>
+                <th align='right'>จำนวนค่าตอบแทน : </th>
+                <td>$DetailCompanyPList->dc_pay</td>
+            </tr>
+            <tr>
+                <th align='right'>ที่พัก: </th>
+                <td>$DetailCompanyPList->dc_room</td>
+            </tr>
+            <tr>
+                <th align='right'>สวัสดิการอื่นๆ : </th>
+                <td>$DetailCompanyPList->dc_benefit</td>
+            </tr>
+            <tr>
+                <th align='right'>การคัดเลือก : </th>
+                <td>$DetailCompanyPList->dc_select</td>
+            </tr>
+</table>
+            ";?>
 
 <form method="get" action="">
     <input type="hidden" name="controller" value="companyP"/>
@@ -497,6 +603,8 @@ tr:nth-child(even){background-color: #f2f2f2}
     <br><button type="submit" name="action" value="indexP">Back</button>
     <button type="submit" name="action" value="deleteP">Delete</button>
 </form>
+
+</div>
 
 </section>
 
