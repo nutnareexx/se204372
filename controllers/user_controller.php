@@ -35,10 +35,16 @@ class userController{
 
     }
 
-    public function logout()
+    public function logoutNisit()
     {
         
-        require_once('views/login/index_logout.php');
+        require_once('views/login/logout_nisit.php');
     }
+    public function logoutAj()
+    {
+        require_once('views/login/logout_Aj.php');
+      
+    }
+
 }
 ?>
