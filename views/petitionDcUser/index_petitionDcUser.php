@@ -337,20 +337,20 @@
 
         .card {
             font-family: 'Prompt', sans-serif;
-            
+            width: 80%;
             background-color: #f1f1f1;
             padding: 20px 20px 20px 20px;
             margin: 20px 20px 20px 20px;
             border-radius: 50px;
             
         }
-        /* th, td {
-            text-align: left;
-            padding: 8px;
+        th, td {
+            padding: 5px 5px 5px 5px;
         }
 
-        tr:nth-child(odd){background-color: #cae3cc}
-        tr:nth-child(even){background-color: #f2f2f2} */
+        tr{
+            padding: 10px 10px 10px 10px;
+        }
 
         button {
             font-family: 'Prompt', sans-serif;
@@ -442,12 +442,12 @@
                 <div class="iocn-link">
                     <a href="#">
                         <i class='bx bx-buildings'></i>
-                        <span class="link_name">สถานประกอบการณ์</span>
+                        <span class="link_name">สถานประกอบการ</span>
                     </a>
                     <i class='bx bx-chevron-down arrow'></i>
                 </div>
                 <ul class="sub-menu">
-                    <li><a class="link_name" href="#">สถานประกอบการณ์</a></li>
+                    <li><a class="link_name" href="#">สถานประกอบการ</a></li>
                     <li><a href="?controller=company&action=index">ฝึกงาน</a></li>
                     <li><a href="?controller=cooperative&action=index">สหกิจ</a></li>
                 </ul>
@@ -525,166 +525,80 @@
 
         </div>
 
+        <center>
         <div class="card">
         <form method="get" action="">
             <table align="center">
-            <tr>
-                <td align="right"><label>วันที่เขียนคำร้อง :</label></td>
-                <td> <input type="date" name="date"/></td>
-            </tr>
-            
-
-            <tr>
-                <td align="right"><label>รหัสนิสิต :</label></td>
-                <td><?php echo $userList->user_id;?></td>
-                <!-- <td> <input type="text" name="user_id"/></td> -->
-            </tr>
-            
-            <tr>
-                <td align="right"><label>คำนำหน้า : </label></td>
-                <td><?php echo $userList->user_title?></td>
-                <!-- <td><select name="name_id">
-                    <option value="">--เลือก--</option>
-                    <?php foreach($nametitleList as $newtt){
-                        echo "<option value=$newtt->name_id>$newtt->name_title</option>";
-                    }?>
-                    </select>
-                </td> -->
-            </tr>
-
-            <tr>
-                <td align="right"><label>ชื่อ : </label></td>
-                <td><?php echo $userList->user_name?></td>
-                <!-- <td><input type="text" name="user_name"/></td> -->
-            
-                <td align="right"><label>นามสกุล : </label></td>
-                <td><?php echo $userList->user_surname?></td>
-                <!-- <td><input type="text" name="user_surname"/></td> -->
-            </tr>
-
-            <tr>
-                <td align="right"> <label>เบอร์โทรศัพท์ : </td>
-                <td><input type="text" name="phone"/></label></td>
-            </tr>
-           
-            <tr>
-                <td align="right"> <label>Facebook : </td>
-                <td><input type="text" name="facebook"/></td>
-            </tr>
-
-            <tr>
-                <td align="right"><label>ตำแน่งที่ไปฝึกงาน : </label></td>
-                <td><input type="text" name="dc_position"/></td>
-            </tr>
-
-            <tr>
-                <td align="center"><label>ส่วนของบริษัท</label><td>
-            </tr>
+                <tr>
+                    <td align="right" style="width: 30%;" ><label>วันที่เขียนคำร้อง :</label></td>
+                    <td> <input type="date" name="date"/></td>
+                </tr>
                 
-            <tr>
-                <td align="right"><label>ชื่อ : </label></td>
-                <td><input type="text" name="name_com"/></td>
-            </tr>
 
-            <tr>
-                <td align="right"><label>นามสกุล : </label></td>
-                <td><input type="text" name="lastname_com"/></td>
-            </tr>
+                <tr>
+                    <td align="right"><label>รหัสนิสิต :</label></td>
+                    <td><?php echo $userList->user_id;?></td>
+                    <!-- <td> <input type="text" name="user_id"/></td> -->
+                </tr>
+                
+                <tr>
+                    <td align="right"><label>คำนำหน้า : </label></td>
+                    <td><?php echo $userList->user_title?></td>
+                    <!-- <td><select name="name_id">
+                        <option value="">--เลือก--</option>
+                        <?php foreach($nametitleList as $newtt){
+                            echo "<option value=$newtt->name_id>$newtt->name_title</option>";
+                        }?>
+                        </select>
+                    </td> -->
+                </tr>
 
-            <tr>
-                <td align="right"><label>ตำแหน่ง : </label></td>
-                <td><input type="text" name="position"/></td>
-            </tr>
+                <tr>
+                    <td align="right"><label>ชื่อ : </label></td>
+                    <td><?php echo $userList->user_name?></td>
+                    <!-- <td><input type="text" name="user_name"/></td> -->
+                </tr>
+                <tr>
+                    <td align="right"><label>นามสกุล : </label></td>
+                    <td><?php echo $userList->user_surname?></td>
+                    <!-- <td><input type="text" name="user_surname"/></td> -->
+                </tr>
 
-            <tr>
-                <td align="right"><label>ชื่อสถานประกอบการ : </label></td>
-                <td><input type="text" name="dc_name"/></td>
-            </tr>
-
-            <tr>
-                <td align="right"><label>สถานที่ตั้งเลขที่ : </label></td>
-                <td><input type="text" name="no"/></td>
-            </tr>
-
-            <tr>
-                <td align="right"><label>ถนน : </label></td>
-                <td><input type="text" name="road"/></td>
-            </tr>
-
-            <tr>
-                <td align="right"><label>ตำบล/แขวง : </label></td>
-                <td><input type="text" name="Subdistrict"/></td>
-            </tr>
-
-            <tr>
-                <td align="right"><label>อำเภอ/เขต : </label></td>
-                <td><input type="text" name="district"/></td>
-            </tr>
-
-            <tr>
-                <td align="right"><label>จังหวัด : </label></td>
-                <td><input type="text" name="province"/></td>
-            </tr>
-
-            <tr>
-                <td align="right"><label>รหัสไปรษณีย์ : </label></td>
-                <td><input type="text" name="postcode"/></td>
-            </tr>
-
-            <tr>
-                <td align="right"><label>ชื่อผู้ประสานงาน : </label></td>
-                <td><input type="text" name="namehr"/></td>
-            </tr>
-
-            <tr>
-                <td align="right"><label>นามสกุลผู้ประสานงาน : </label></td>
-                <td><input type="text" name="lastnamehr"/></td>
-            </tr>
-
-            <tr>
-                <td align="right"><label>เบอร์โทรศัพท์ : </label></td>
-                <td><input type="text" name="phonehr"/></td>
-            </tr>
-
-            <tr>
-                <td align="right"><label>E-mail : </label></td>
-                <td><input type="mail" name="mail"/></td>
-            </tr>
-
-            <tr>
-                <td align="right"><label>เริ่มฝึกงาน : </label></td>
-                <td><input type="date" name="start_p"/></td>
-            </tr>
-
-            <tr>
-                <td align="right"><label>สิ้นสุดการฝึกงาน : </label></td>
-                <td><input type="date" name="finish_p"/></td>
-            </tr>
-
-            <tr>
-                <td align="right"><label>จำนวนค่าตอบแทน : </label></td>
-                <td><input type="text" name="pay"/></td>
-            </tr>
-
-            <tr>
-                <td align="right"><label>ที่พัก : </label></td>
-                <td><input type="radio" id="html" name="fav_language" value="HTML">
-                <label for="html"> มี </label><br>
-                <input type="radio" id="css" name="fav_language" value="CSS">
-                <label for="css"> ไม่มี </label><br>
-                <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-                <label for="javascript"> อื่นๆ </label><br><br></label></td>
-            </tr>
+                <tr>
+                    <td align="right"> <label>เบอร์โทรศัพท์ : </td>
+                    <td><input type="text" name="phone"/></label></td>
+                </tr>
             
-            
-            
-        </table>
+                <tr>
+                    <td align="right"> <label>Facebook : </td>
+                    <td><input type="text" name="facebook"/></td>
+                </tr>
+
+                <tr>
+                    <td align="right"><label>ตำแน่งที่ไปฝึกงาน : </label></td>
+                    <td><input type="text" name="dc_position"/></td>
+                </tr>
+
+                <tr>
+                    <td align="right"> <label> สถานประกอบการ : </label></td>
+                    <td> 
+                        <input type="radio" id="old" name="company" value="old">
+                        <label for="old"> สถานประกอบการที่ภาควิชามีอยู่ </label><br>
+                        <input type="radio" id="new" name="company" value="new">
+                        <label for="new"> สถานประกอบการใหม่ </label><br>
+                        
+                    </td>
+                </tr>
+            </table>
+            <br>
+
+            <input type="hidden" name="controller" value="petitionDCUser"/>
+            <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
+            <button type="submit" name="action" value="index"> BACK </button>
+            <button type="submit" name="action" value="index2"> NEXT </button>
         </form>
-
-        <input type="hidden" name="controller" value="petitionDCUser"/>
-        <button type="submit" name="action" value="index">Back</button>
-        <button type="submit" name="action" value="addpetitionDc">Save</button>
         </div>
+        </center>
         <br>
         <br>
 
