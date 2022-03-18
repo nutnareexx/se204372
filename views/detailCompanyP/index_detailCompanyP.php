@@ -380,6 +380,31 @@ input[type=text], select {
             background-color: #ddd;
             color: black;
         }
+
+        .btn-group2 .button2 {
+            font-family: 'Prompt', sans-serif;
+            position: relative;
+             background-color: #73c088 ; /*Green */
+            border: 1px black;
+            color: white;
+            padding: 7px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block; 
+            font-size: 16px;
+            cursor: pointer;
+            float: center;
+            border-radius: 50px;
+        }
+
+        .btn-group2 .button2:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+
+        .btn-group2 .button2:hover {
+            background-color: #ddd;
+            color: black;
+        }
 </style>
 
 
@@ -513,10 +538,10 @@ input[type=text], select {
 </div>
 
 <form method="get" action="">
-    <div class="btn-group">
+    <div class="btn-group2">
         <input type="text" name="key">
             <input type="hidden" name="controller" value="companyP"/>
-            <button class="button" type="submit" name="action" value="searchP">
+            <button class="button2" type="submit" name="action" value="searchP">
                 <i class='fas fa-search' style='font-size: 22px'></i> </button>
 
     </div>
