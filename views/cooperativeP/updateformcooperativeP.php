@@ -327,23 +327,85 @@ body {
                 text-align: center;
             }
 
-.table {
-    font-family: 'Prompt', sans-serif;
-    border-collapse: collapse;
-    
-    text-align: center;
-    background: #f2f2f2;
-}
+        /* table {
+            font-family: 'Prompt', sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            text-align: center;
+            background: #f2f2f2;
+        } */
 
-th, td {
-    text-align: left;
-    padding: 8px;
-}
+        /* th, td {
+            text-align: left;
+            padding: 8px;
+        } */
 
-tr:nth-child(odd){background-color: #cae3cc}
-tr:nth-child(even){background-color: #f2f2f2}
+        .card {
+            font-family: 'Prompt', sans-serif;
+            
+            background-color: #f1f1f1;
+            padding: 20px 20px 20px 20px;
+            margin: 20px 20px 20px 20px;
+            border-radius: 50px;
+            
+        }
 
+        
+        button {
+            font-family: 'Prompt', sans-serif;
+            position: relative;
+            background-color: #397d54 ; 
+            border: 1px black;
+            color: white;
+            padding: 10px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            cursor: pointer;
+            width: 30%;
+            border-radius: 50px;
+        }
+        button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+        button:hover {
+            background-color: #73c088;
+            color: white;
+        }
+        input[type=text], select {
+                font-family: 'Prompt', sans-serif;
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 50px;
+                box-sizing: border-box;
+            }
 
+        input[type=date], select {
+                font-family: 'Prompt', sans-serif;
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 50px;
+                box-sizing: border-box;
+            
+            }
+        input[type=mail], select {
+                font-family: 'Prompt', sans-serif;
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 50px;
+                box-sizing: border-box;
+            
+            }
 </style>
 
 
@@ -456,7 +518,7 @@ tr:nth-child(even){background-color: #f2f2f2}
             <div class="name-job">
                 <div class="profile_name">Name</div>
             </div>   
-            <a href="?controller=pages&action=home">          
+            <a href="?controller=user&action=logoutAj">          
                 <i class='bx bx-log-out '></i>
             </a>
     </div>
@@ -476,45 +538,64 @@ tr:nth-child(even){background-color: #f2f2f2}
     
 </div>
 
-
+<div class="card">
 <form method="get" action="">
+    <table align="center">
+    <tr>
         
-    <label><b>ชื่อสถานประกอบการ/หน่วยงาน <input type="text" name="c_name"
-        value="<?php echo  $cooperativePList->c_name;?>"/> </label><br>
+        <td align="right"><label> ชื่อสถานประกอบการ/หน่วยงาน </label></td>
+        <td><input type="text" name="c_name" 
+            value="<?php echo  $cooperativePList->c_name;?>"/> 
+        </td>
+    </tr>
 
-    <label><b>ตำแหน่งงานที่ต้องการรับ <input type="text" name="c_position"
-        value="<?php echo  $cooperativePList->c_position;?>"/> </label><br>
+    <tr>
+        <td align="right"><label><b>ตำแหน่งงานที่ต้องการรับ </label></td>
+        <td><input type="text" name="c_position" 
+            value="<?php echo  $cooperativePList->c_position;?>"/> 
+        </td>
+    </tr>
 
-    <label><b>แผนกฝ่าย <input type="text" name="c_department"
-        value="<?php echo  $cooperativePList->c_department;?>"/> </label><br>
+    <tr>
+        <td align="right"><label><b>แผนกฝ่าย </label></td>
+        <td><input type="text" name="c_department"
+            value="<?php echo  $cooperativePList->c_department;?>"/> 
+        </td>
+    </tr>
 
-    <label><b>จำนวน(คน) <input type="text" name="c_num"
-        value="<?php echo  $cooperativePList->c_num;?>"/> </label><br>
+    <tr>
+        <td align="right"><label><b>จำนวน(คน) </label></td>
+        <td><input type="text" name="c_num"
+            value="<?php echo  $cooperativePList->c_num;?>"/> 
+        </td>
+    </tr>
 
-    <label><b>ความสามารถทีหรือทักษะที่ควรมี <input type="text" name="c_skills"
-        value="<?php echo  $cooperativePList->c_skills;?>"/> </label><br>
+    <tr><td align="right"><label><b>ความสามารถทีหรือทักษะที่ควรมี <input type="text" name="c_skills"
+        value="<?php echo  $cooperativePList->c_skills;?>"/> </label><br></td></tr>
 
-    <label><b>ลักษณะงานที่ต้องปฏิบัติ <input type="text" name="c_nature"
-        value="<?php echo  $cooperativePList->c_nature;?>"/> </label><br>
+    <tr><td align="right"><label><b>ลักษณะงานที่ต้องปฏิบัติ <input type="text" name="c_nature"
+        value="<?php echo  $cooperativePList->c_nature;?>"/> </label><br></td></tr>
 
-    <label><b>จำนวนค่าตอบแทน <input type="text" name="c_pay"
-        value="<?php echo  $cooperativePList->c_pay;?>"/> </label><br>
+    <tr><td align="right"><label><b>จำนวนค่าตอบแทน <input type="text" name="c_pay"
+        value="<?php echo  $cooperativePList->c_pay;?>"/> </label><br></td></tr>
 
-    <label><b>ที่พัก <input type="text" name="c_room"
-        value="<?php echo  $cooperativePList->c_room;?>"/> </label><br>
+    <tr><td align="right"><label><b>ที่พัก <input type="text" name="c_room"
+        value="<?php echo  $cooperativePList->c_room;?>"/> </label><br></td></tr>
 
-    <label><b>สวัสดิการอื่นๆ <input type="text" name="c_benefit"
-        value="<?php echo  $cooperativePList->c_benefit;?>"/> </label><br>
+    <tr><td align="right"><label><b>สวัสดิการอื่นๆ <input type="text" name="c_benefit"
+        value="<?php echo  $cooperativePList->c_benefit;?>"/> </label><br></td></tr>
 
-    <label><b>การคัดเลือก <input type="text" name="c_select"
-        value="<?php echo  $cooperativePList->c_select;?>"/> </label><br>
+    <tr><td align="right"><label><b>การคัดเลือก <input type="text" name="c_select"
+        value="<?php echo  $cooperativePList->c_select;?>"/> </label><br></td></tr>
     
-    
+    </table>
+</form>
     <input type="hidden" name="controller" value="cooperativeP"/>
     <input type="hidden" name="cid" value="<?php echo $cooperativePList->c_id;?>"/>
     <button type="submit" name="action" value="index"> Back </button>
     <button type="submit" name="action" value="update"> Update </button>
-</form>
+       
+</div>
 
 
 </section>

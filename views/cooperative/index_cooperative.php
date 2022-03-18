@@ -331,10 +331,12 @@ body {
 
         
 
-table {
+.table {
     font-family: 'Prompt', sans-serif;
     border-collapse: collapse;
-    width: 100%;
+    
+    text-align: center;
+    background: #f2f2f2;
 }
 
 th, td {
@@ -344,6 +346,7 @@ th, td {
 
 tr:nth-child(odd){background-color: #cae3cc}
 tr:nth-child(even){background-color: #f2f2f2}
+
 </style>
 
 
@@ -429,7 +432,7 @@ tr:nth-child(even){background-color: #f2f2f2}
             <div class="name-job">
                 <div class="profile_name">Name</div>
             </div>   
-            <a href="?controller=pages&action=home">          
+            <a href="?controller=user&action=logoutNisit">          
                 <i class='bx bx-log-out '></i>
             </a>
     </div>
@@ -453,11 +456,13 @@ tr:nth-child(even){background-color: #f2f2f2}
 
 
 <form method="get" action="">
-    
-    <input type="text" name="key">
-    <input type="hidden" name="controller" value="cooperative"/>
-    <button type="submit" name="action" value="search">Search</button>
+    <div class="btn-group">
+        <input type="text" name="key">
+        <input type="hidden" name="controller" value="cooperative"/>
+        <button class="button" type="submit" name="action" value="search">Search</button>
 
+    </div>
+    
 </form>
     
 

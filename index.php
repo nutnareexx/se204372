@@ -33,14 +33,13 @@ else
         [<a href= "?controller=companyP&action=indexP">companyฝึกงานสำหรับอาจารย์</a>]
         [<a href= "?controller=companyC&action=index">companyสหกิจสำหรับอาจารย์</a>]-->
         [<a href= "?controller=Aj&action=index">hamburgerอาจารย์</a>]
-        [<a href= "?controller=cooperativeP&action=index">cooperativeP</a>]
         <!--[<a href= "?controller=considerAj&action=index">พิจาราณาคำร้อง/อาจารย์</a>]
         [<a href= "?controller=graphAj&action=index">กราฟคำร้อง/อาจารย์</a>]
         [<a href= "?controller=reportPetition&action=index">รายงานสรุป/อาจารย์</a>]
         [<a href= "?controller=bookAj&action=index">ออกหนังสือ/อาจารย์</a>]
         [<a href= "?controller=checkHistory&action=index">ตรวจสอบประวัติ/อาจารย์</a>]
         [<a href= "?controller=uploadAj&action=index">upload/อาจารย์</a>]-->
-        [<a href= "?controller=user&action=logout">logout</a>]
+        
         <?php require_once("routes.php");?>
     
 </body>
