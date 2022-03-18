@@ -536,28 +536,30 @@
 
             <tr>
                 <td align="right"><label>รหัสนิสิต :</label></td>
-                <td> <input type="text" name="user_id"/></td>
+                <td><?php echo $userList->user_id;?></td>
+                <!-- <td> <input type="text" name="user_id"/></td> -->
             </tr>
             
             <tr>
                 <td align="right"><label>คำนำหน้า : </label></td>
-                <td><select name="name_id">
+                <td><?php echo $userList->user_title?></td>
+                <!-- <td><select name="name_id">
                     <option value="">--เลือก--</option>
                     <?php foreach($nametitleList as $newtt){
                         echo "<option value=$newtt->name_id>$newtt->name_title</option>";
                     }?>
                     </select>
-                </td>
+                </td> -->
             </tr>
 
             <tr>
                 <td align="right"><label>ชื่อ : </label></td>
-                <td><input type="text" name="user_name"/></td>
-            </tr>
+                <td><?php echo $userList->user_name?></td>
+                <!-- <td><input type="text" name="user_name"/></td> -->
             
-            <tr>
                 <td align="right"><label>นามสกุล : </label></td>
-                <td><input type="text" name="user_surname"/></td>
+                <td><?php echo $userList->user_surname?></td>
+                <!-- <td><input type="text" name="user_surname"/></td> -->
             </tr>
 
             <tr>
