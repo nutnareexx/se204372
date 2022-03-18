@@ -341,6 +341,43 @@ th, td {
 
 tr:nth-child(odd){background-color: #cae3cc}
 tr:nth-child(even){background-color: #f2f2f2}
+
+input[type=text], select {
+            font-family: 'Prompt', sans-serif;
+            width: 50%;
+            padding: 5px 5px;
+            margin: 8px 0;
+            font-size: 16px;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 50px;
+            box-sizing: border-box;
+        }
+
+        .btn-group .button {
+            font-family: 'Prompt', sans-serif;
+            position: relative;
+            background-color: #73c088 ; /* Green */
+            border: 1px black;
+            color: white;
+            padding: 7px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            /*float: center;*/
+            border-radius: 50px;
+        }
+
+        .btn-group .button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+
+        .btn-group .button:hover {
+            background-color: #ddd;
+            color: black;
+        }
 </style>
 
 
@@ -448,11 +485,13 @@ tr:nth-child(even){background-color: #f2f2f2}
 
 
 <form method="get" action="">
-    
-    <input type="text" name="key">
+    <div class="btn-group">
+        <input type="text" name="key">
     <input type="hidden" name="controller" value="company"/>
-    <button type="submit" name="action" value="search">Search</button>
+    <button class="button" type="submit" name="action" value="search">Search</button>
 
+    </div>
+    
 </form>
     
 
