@@ -328,20 +328,84 @@ body {
             }
 
 .table {
-    font-family: 'Prompt', sans-serif;
-    border-collapse: collapse;
-    
-    text-align: center;
-    background: #f2f2f2;
+    /* font-family: 'Prompt', sans-serif;
+    border-collapse: collapse; */
+    width: 100%;
+    /* text-align: center;
+    background: #f2f2f2; */
 }
 
-th, td {
+/* th, td {
     text-align: left;
     padding: 8px;
-}
+} */
 
-tr:nth-child(odd){background-color: #cae3cc}
-tr:nth-child(even){background-color: #f2f2f2}
+.card {
+            font-family: 'Prompt', sans-serif;
+            width: 80%;
+            background-color: #f1f1f1;
+            padding: 20px 20px 20px 20px;
+            margin: 20px 20px 20px 20px;
+            border-radius: 50px;
+            
+        }
+
+        
+        button {
+            font-family: 'Prompt', sans-serif;
+            position: relative;
+            background-color: #397d54 ; 
+            border: 1px black;
+            color: white;
+            padding: 10px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            cursor: pointer;
+            width: 30%;
+            border-radius: 50px;
+        }
+        button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+        button:hover {
+            background-color: #73c088;
+            color: white;
+        }
+        input[type=text], select {
+                font-family: 'Prompt', sans-serif;
+                width: 100%;
+                padding: 12px 100px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 50px;
+                box-sizing: border-box;
+            }
+
+        input[type=date], select {
+                font-family: 'Prompt', sans-serif;
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 50px;
+                box-sizing: border-box;
+            
+            }
+        input[type=mail], select {
+                font-family: 'Prompt', sans-serif;
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 50px;
+                box-sizing: border-box;
+            
+            }
 
 
 </style>
@@ -476,25 +540,61 @@ tr:nth-child(even){background-color: #f2f2f2}
     
 </div>
 
-
+<center>
+<div class="card">
 <form method="get" action="">
-    <br>
-    <label> ชื่อสถานประกอบการ/หน่วยงาน <input type = "text" name = "c_name" /> </label></br>
-<label> ตำแหน่งงานที่ต้องการรับ <input type = "text" name = "c_position" /> </label></br>
-<label> แผนกฝ่าย <input type = "text" name = "c_department" /> </label></br>
-<label> จำนวน(คน) <input type = "text" name = "c_num" /> </label></br>
-<label> ความสามารถทีหรือทักษะที่ควรมี <input type = "text" name = "c_skills" /> </label></br>
-<label> ลักษณะงานที่ต้องปฏิบัติ <input type = "text" name = "c_nature" /> </label></br>
-<label> จำนวนค่าตอบแทน <input type = "text" name = "c_pay" /> </label></br>
-<label> ที่พัก <input type = "text" name = "c_room" /> </label></br>
-<label> สวัสดิการอื่นๆ <input type = "text" name = "c_benefit" /> </label></br>
-<label> การคัดเลือก <input type = "text" name = "c_select" /> </label></br>
+    <table align="center">
+        <tr>
+            <th align="right"><label> ชื่อสถานประกอบการ/หน่วยงาน </label></th>
+                <td><input type = "text" name = "c_name" /> </td>
+        </tr>
+        <tr>
+            <th align="right"><label> ตำแหน่งงานที่ต้องการรับ </label></th>
+                <td><input type = "text" name = "c_position" /> </td>
+        </tr>
+        <tr>
+            <th align="right"><label> แผนกฝ่าย </label></th>
+                <td><input type = "text" name = "c_department" /> </td>
+        </tr>
+        <tr>
+            <th align="right"><label> จำนวน(คน) </label></th>
+                <td><input type = "text" name = "c_num" /></td> 
+        </tr>
+        <tr>
+            <th align="right"><label> ความสามารถหรือทักษะที่ควรมี </label></th>
+                <td><input type = "text" name = "c_skills" /> </td>
+        </tr>
+        <tr>
+            <th align="right"><label> ลักษณะงานที่ต้องปฏิบัติ </label></th>
+                <td><input type = "text" name = "c_nature" /> </td>
+        </tr>
+        <tr>
+            <th align="right"><label> จำนวนค่าตอบแทน </label></th>
+                <td><input type = "text" name = "c_pay" /> </td>
+        </tr>
+        <tr>
+            <th align="right"><label> ที่พัก </label></th>
+                <td><input type = "text" name = "c_room" /> </td>
+        </tr>
+        <tr>
+            <th align="right"><label> สวัสดิการอื่นๆ</label></th> 
+                <td><input type = "text" name = "c_benefit" /> </td>
+        </tr>
+        <tr>
+            <th align="right"><label> การคัดเลือก </label></th>
+                <td><input type = "text" name = "c_select" /> </td>
+        </tr>
+
+</table>
 
 <input type="hidden" name="controller" value="cooperativeP"/>
 <button type="submit" name="action" value="index">Back</button>
 <button type="submit" name="action" value="addCooperative">Save</button>
     
 </form>
+</div>
+
+</center>
 
 
 
