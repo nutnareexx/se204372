@@ -33,10 +33,12 @@ class userController{
             echo "<br> Don't have user <br>";
         }
 
+    }
 
-
-
-
+    public function logout()
+    {
+        
+        require_once('views/login/index_logout.php');
     }
 }
 ?>
