@@ -485,13 +485,9 @@ tr:nth-child(even){background-color: #f2f2f2}
         <td><b>ลำดับที่</td>
         <td><b>รหัสนิสิต</td>
         <td><b>ชื่อ-นามสกุล</td>
-        <td><b>ระยะเวลาฝึกงาน</td>
-        <td><b>ตำแน่งที่ไปฝึกงาน</td>
         <td><b>ชื่อสถานประกอบการฝึกงาน</td>
-        <td><b>ค่าตอบแทน</td>
-        <td><b>ที่พัก</td>
+        <td><b>รายละเอียดการฝึกงาน</td>
         <td><b>สถานะ</td>
-        <td><b>อัพเดตสถานะ</td>
         <td><b>ลบข้อมูล</td>
     </tr>
 </section>
@@ -527,13 +523,9 @@ sidebarBtn.addEventListener("click", ()=>{
     echo "<tr> <td>$dclist->petition_id</td>
     <td>$dclist->user_id</td>
     <td>$dclist->name_title$dclist->user_name $dclist->user_surname</td>
-    <td>$dclist->start_p - $dclist->finish_p</td>
-    <td>$dclist->dc_position</td> 
-    <td>$dclist->dc_name</td>  
-    <td>$dclist->dc_pay</td> 
-    <td>$dclist->dc_room</td> 
-    <td>$dclist->status_name</td> 
-    <td> <a href=?controller=petitionDC&action=updateform&petition_id=$dclist->petition_id> update </a> </td>
+    <td>$dclist->dc_name</td>
+    <td>ปุ่มไปอีกหน้า</td>   
+    <td> <a href=?controller=petitionDC&action=updateform&petition_id=$dclist->petition_id> $dclist->status_name </a> </td>
     <td> <a href=?controller=petitionDC&action=deleteconfirm&petition_id=$dclist->petition_id> delete </a>
     </td></tr>";
 }
