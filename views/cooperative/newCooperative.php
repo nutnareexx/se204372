@@ -460,7 +460,7 @@ input[type=text], select {
             <div class="name-job">
                 <div class="profile_name">Name</div>
             </div>   
-            <a href="?controller=pages&action=home">          
+            <a href="?controller=user&action=logoutNisit">          
                 <i class='bx bx-log-out '></i>
             </a>
     </div>
