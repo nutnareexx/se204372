@@ -23,6 +23,7 @@ class userController{
             $checkList = userModel::get($userid);
             if($checkList->user_password == $password){
                 echo "<br> submit success <br>";
+                require_once("views/hamburger/index_hamburger.php");
             }
             else{
                 echo "<br> password worng <br>";
