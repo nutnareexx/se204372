@@ -331,10 +331,12 @@ body {
 
         
 
-table {
+.table {
     font-family: 'Prompt', sans-serif;
     border-collapse: collapse;
-    width: 100%;
+    
+    text-align: center;
+    background: #f2f2f2;
 }
 
 th, td {
@@ -344,6 +346,7 @@ th, td {
 
 tr:nth-child(odd){background-color: #cae3cc}
 tr:nth-child(even){background-color: #f2f2f2}
+
 </style>
 
 
