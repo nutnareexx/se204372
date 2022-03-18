@@ -399,7 +399,7 @@ body {
             </div>
             <ul class="sub-menu">
                 <li><a class="link_name" href="#">ยื่นคำร้อง</a></li>
-                <li><a href="?controller=petitionDCUser&action=index">ฝึกงาน</a></li>
+                <li><a href="?controller=petitionDCUser&action=index&userid=<?php echo $userid;?>">ฝึกงาน</a></li>
                 <li><a href="?controller=petitionCUser&action=index">สหกิจ</a></li>
             </ul>
         </li>
