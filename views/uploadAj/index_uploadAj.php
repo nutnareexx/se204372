@@ -151,7 +151,7 @@ body {
 .sidebar .nav-links li .sub-menu a{
     color: #fff;
     font-size: 15px;
-    padding: 5px 0;
+    padding: 5px 40px;
     white-space: nowrap;
     opacity: 0.6;
     transition: all 0.3 ease;
@@ -166,8 +166,8 @@ body {
     left: 100%;
     top: -10px;
     margin-top: 0;
-    padding: 10px 20px;
-    border-radius: 0 6px 6px 0;
+    padding: 10px;
+    border-radius: 10px;
     
     opacity: 0;
     display: block;
@@ -318,6 +318,85 @@ body {
   .sidebar a {font-size: 18px;}
 }
 
+.header {
+                font-family: 'Prompt', sans-serif;
+                background-color: #f1f1f1;
+                text-align: center;
+            }
+
+.topnav {
+            overflow: hidden;
+            background-color:#0974ba;
+        }
+
+    /* Style the topnav links */
+    .topnav a {
+            font-family: 'Prompt', sans-serif;
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* Change color on hover */
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+    .btn-group .button {
+      font-family: 'Prompt', sans-serif;
+      position: relative;
+      background-color: #397d54 ; /* Green */
+      border: 1px black;
+      color: white;
+      padding: 10px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+      /*float: center;*/
+      border-radius: 50px;
+    }
+
+    .btn-group .button:not(:last-child) {
+      border-right: none; /* Prevent double borders */
+    }
+
+    .btn-group .button:hover {
+      background-color: #ddd;
+      color: black;
+     }
+
+    .card2 {
+      font-family: 'Prompt', sans-serif;
+      background-color: #f1f1f1;
+      padding: 20px;
+      width: 50%;
+      border-radius: 10px;
+    }
+    input[type=file], select {
+      font-family: 'Prompt', sans-serif;
+      width: 80%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 50px;
+      box-sizing: border-box;
+    }
+
+    .center {
+            text-align: center;
+            border: none;
+            margin: auto;
+            width: 60%;
+            padding: 10px;
+
+            }
 
 </style>
 <body>
@@ -446,6 +525,33 @@ body {
     <div class="header">
         <h2>อัพโหลดประกาศต่างๆ</h2>
     </div>
+
+
+    <div class="card2 center">
+  <form action="add_file_db.php" method="post" enctype="multipart/form-data" name="upfile" id="upfile">
+    <center>
+      <div class="btn-group">
+      <label>
+        <input class="button" type="file" name="fileupload" id="fileupload"  required="required"/><br>
+      </label>
+      <br>
+  </div>
+  <div class="btn-group" >
+      <!--<input type="hidden" name="id" value="<?php echo $re->id;?>"/>
+      <input type="hidden" name="uid" value="<?php echo $re->uid;?>"/>
+      <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
+      <input type="hidden" name="resultsList[]" value="<?php echo $resultsList;?>"/>-->
+      <button class="button" type="submit" name="button" id="button" value="upStudent"> เพิ่มไฟล์ </button>
+      </div>
+      <br>
+  </form>
+  
+    </center>
+  
+</div>
+
+
+
 </section>
 
 <script>
