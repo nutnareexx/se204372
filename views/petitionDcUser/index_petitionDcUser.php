@@ -120,6 +120,7 @@
         .sidebar .nav-links li a{
             display: flex;
             align-items: center;
+            /* margin: 10px 10px 10px 10px; */
             text-decoration: none;
             white-space: nowrap;
         }
@@ -146,6 +147,7 @@
 
         .sidebar .nav-links li.showMenu .sub-menu{
             display: block;
+            
         }
 
         .sidebar .nav-links li .sub-menu a{
@@ -419,15 +421,6 @@
             </div>
 
         <dl class="nav-links">
-        <li>
-            <a href="?controller=nisit&action=index">
-            <i class='bx bx-home'></i>
-                <span class="link_name">หน้าแรก</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=nisit&action=index">หน้าแรก</a></li>
-            </ul>
-        </li>
         
             <li>
                 <a href="?controller=nisit&action=index">
@@ -563,21 +556,21 @@
                     <td><?php echo $userList->user_surname?></td>
                     <!-- <td><input type="text" name="user_surname"/></td> -->
                 </tr>
+                <th colspan="2">
+                    
+                        <label>รหัสนิสิต : <?php echo $userList->user_id;?></label>
+                        
+                        <label>คำนำหน้า : <?php echo $userList->user_title?></label>
+                
+                        <label>ชื่อ : <?php echo $userList->user_name?></label>
+                        
+                        <label>นามสกุล : <?php echo $userList->user_surname?></label>
+                        
+                    
+                    
+                </th>
 
-                <tr>
-                    <td align="right"> <label>เบอร์โทรศัพท์ : </td>
-                    <td><input type="text" name="phone"/></label></td>
-                </tr>
-            
-                <tr>
-                    <td align="right"> <label>Facebook : </td>
-                    <td><input type="text" name="facebook"/></td>
-                </tr>
-
-                <tr>
-                    <td align="right"><label>ตำแน่งที่ไปฝึกงาน : </label></td>
-                    <td><input type="text" name="dc_position"/></td>
-                </tr>
+                
 
                 <tr>
                     <td align="right"> <label> สถานประกอบการ : </label></td>
