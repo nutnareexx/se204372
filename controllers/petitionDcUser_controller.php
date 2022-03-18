@@ -13,13 +13,14 @@ class petitionDcUserController
 
     public function index2()
     {
-        $date = $_GET['date'];
+        // $date = $_GET['date'];
         $userid = $_GET['userid'];
-        $phone = $_GET['phone'];
-        $faceB = $_GET['facebook'];
-        $position = $_GET['dc_position'];
+        // $phone = $_GET['phone'];
+        // $faceB = $_GET['facebook'];
+        // $position = $_GET['dc_position'];
         $company = $_GET['company'];
         $comList = DetailCompanyModel::getAll();
+        $userList = userModel::get($userid);
 
         echo $userid.$company;
         require_once('views/petitionDcUser/newCompany_Dcuser.php');
