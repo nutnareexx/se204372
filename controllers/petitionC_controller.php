@@ -9,6 +9,14 @@ class petitionCController
         require_once('views/petitionC/index_petitionC.php');
     }
 
+    public function indexCall()
+    {
+        $userid = $_GET['userid'];
+        $petionCList = petitionCModel::getAll();
+        $userList = userModel::get($userid);
+        require_once('views/petitionC/index_allpetitionC.php');
+    }
+
     public function newpetitionC()
     {
         $userid = $_GET['userid'];
