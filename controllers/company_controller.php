@@ -3,6 +3,7 @@ class companyController
 {
     public function index()
     {
+        $userid = $_GET['userid'];
         $DetailCompanyList = DetailCompanyModel::getAll();
         require_once('views/detailCompany/index_detailCompany.php');
     }
