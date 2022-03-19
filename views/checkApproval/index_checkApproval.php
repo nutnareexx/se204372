@@ -349,45 +349,15 @@ th, td {
             width: 40%;
             text-align: center;
             align-items: center;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .card2 {
+            font-size: 30px;
         }
 
 
-        .column {
-  float: left;
-  width: 47%;
-  padding: 20px 20px 20px 20px;
 
-}
-
-/* Remove extra left and right margins, due to padding */
-.row {margin: 0 -5px;}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
-  }
-}
-
-
-/* Style the counter cards */
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 25px;
-  text-align: center;
-  background-color: #f1f1f1;
-  border-radius: 25px;
-  font-size: 25px;
-  
-}
 </style>
 
 
@@ -498,7 +468,7 @@ th, td {
 <table>
     
         
-        <th align='right'>ฝึกงาน</th>
+        <th>ฝึกงาน</th>
         
         
         
@@ -507,9 +477,9 @@ th, td {
 {
     echo " <tr><td>$clist->user_id</td></tr>
     <tr><td>$clist->name_title$clist->user_name $clist->user_surname</td></tr>
-    <tr><td>$clist->position_p</td></tr>
+    <tr><td>ตำแหน่ง $clist->position_p</td></tr>
     <tr><td>$clist->dc_name</td></tr>
-    <tr><td>$clist->start_p - $clist->finish_p</td></tr>
+    <tr><td>ช่วงเวลาในการทำงาน $clist->start_p - $clist->finish_p</td></tr>
     <tr><td>$clist->status_name</td>
     
     </tr>";
@@ -522,21 +492,22 @@ echo "</table>";
    
    <div class="card1">
 <table>
-    <tr>
+    
+    <div class="card2" align='center'>
+    <th>สหกิจ</th>
+</div>
         
-    <th align='right'>สหกิจ</th>
         
         
-        
-    </tr>
+    
 
     <?php foreach($checkCList as $clist)
 {
     echo " <tr><td>$clist->user_id</td></tr>
     <tr><td>$clist->name_title$clist->user_name $clist->user_surname</td></tr>
-    <tr><td>$clist->position_p</td></tr>
+    <tr><td>ตำแหน่ง $clist->position_p</td></tr>
     <tr><td>$clist->dc_name</td></tr>
-    <tr><td>$clist->start_p - $clist->finish_p</td></tr>
+    <tr><td>ช่วงเวลาในการทำงาน $clist->start_p - $clist->finish_p</td></tr>
     <tr><td>$clist->status_name</td>
     
     </tr>";
