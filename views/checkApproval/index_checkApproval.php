@@ -329,22 +329,65 @@ table {
     font-family: 'Prompt', sans-serif;
     border-collapse: collapse;
     width: 100%;
+    font-size: 18px;
+    text-align: center;
 }
 
 th, td {
-    text-align: right;
-    padding: 16px;
+    text-align: center;
+    padding: 10px;
+    align-items: center;
 }
 
-.card {
+.card1 {
             font-family: 'Prompt', sans-serif;
             
             background-color: #f1f1f1;
             padding: 20px 20px 20px 20px;
             margin: 20px 20px 20px 20px;
             border-radius: 50px;
-            
+            width: 40%;
+            text-align: center;
+            align-items: center;
         }
+
+
+        .column {
+  float: left;
+  width: 47%;
+  padding: 20px 20px 20px 20px;
+
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 25px;
+  text-align: center;
+  background-color: #f1f1f1;
+  border-radius: 25px;
+  font-size: 25px;
+  
+}
 </style>
 
 
@@ -428,7 +471,7 @@ th, td {
             
             <div class="name-job">
                 <div class="profile_name">
-                    <?php echo $userList->user_name;?> <?php echo $userList->user_surname;?>
+                    <?php echo $userList->user_name." ".$userList->user_surname;?>
                 </div>
             </div>   
             <a href="?controller=user&action=logoutNisit&userid=<?php echo $userid;?>">          
@@ -448,34 +491,61 @@ th, td {
     <div class="header">
   
         <h2><b>ตรวจสอบผลการอนุมัติ</h2>
-        <?php echo $userid;?>
     </div>
-<!--
-<div class="card">
-<?php echo "<br>
-            <br><b>ฝึกงาน : </b> $petionCList->user_id
-           
 
     
-";?>
+<div class="card1" align='center'>
+<table>
+    
+        
+        <th align='right'>ฝึกงาน</th>
+        
+        
+        
 
-<form method="get" action="">
-    <input type="hidden" name="controller" value="checkApproval"/>
-    <input type="hidden" name="petitionid" value="<?php echo $petionCList->petition_id;?>"/>
-</form>-->
+    <?php foreach($checkList as $clist)
+{
+    echo " <tr><td>$clist->user_id</td></tr>
+    <tr><td>$clist->name_title$clist->user_name $clist->user_surname</td></tr>
+    <tr><td>$clist->position_p</td></tr>
+    <tr><td>$clist->dc_name</td></tr>
+    <tr><td>$clist->start_p - $clist->finish_p</td></tr>
+    <tr><td>$clist->status_name</td>
+    
+    </tr>";
+}
+echo "</table>";
+ ?>
+   </div>
 
+   
+   
+   <div class="card1">
 <table>
     <tr>
         
-        <td><b>รหัสนิสิต</td>
-        <td><b>ชื่อ-นามสกุล</td>
-        <td><b>ชื่อสถานประกอบการฝึกงานที่ภาควิชามีอยู่</td>
+    <th align='right'>สหกิจ</th>
+        
+        
         
     </tr>
+
+    <?php foreach($checkCList as $clist)
+{
+    echo " <tr><td>$clist->user_id</td></tr>
+    <tr><td>$clist->name_title$clist->user_name $clist->user_surname</td></tr>
+    <tr><td>$clist->position_p</td></tr>
+    <tr><td>$clist->dc_name</td></tr>
+    <tr><td>$clist->start_p - $clist->finish_p</td></tr>
+    <tr><td>$clist->status_name</td>
     
+    </tr>";
+}
+echo "</table>";
+ ?>
 
 </div>
-
+    
 
 </section>
 
@@ -503,14 +573,3 @@ sidebarBtn.addEventListener("click", ()=>{
 </html> 
 
 
-<?php foreach($petionDcList as $dclist)
-{
-    echo " <tr>
-    <td>$dclist->user_id</td>
-    <td>$dclist->name_title$dclist->user_name $dclist->user_surname</td>
-    <td>$dclist->dc_name</td>
-    
-    </tr>";
-}
-echo "</table>";
- ?>
