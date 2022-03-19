@@ -305,9 +305,9 @@ class petitionCModel{
     {
         $petionCList = [];
         require("connection_connect.php");
-        $sql = "SELECT * FROM `petition` NATURAL JOIN `user` NATURAL JOIN `name_title` NATURAL JOIN `status` NATURAL JOIN `detail_cooperative` NATURAL JOIN `approve`           
-                WHERE (academicY_p like '%$key%')
-                ORDER BY petition_id";
+        $sql = "SELECT * FROM `petition` NATURAL JOIN `user`NATURAL JOIN `name_title` NATURAL JOIN `status` NATURAL JOIN `approve`
+                     WHERE (academicY_p like '%$key%' )
+                     ORDER BY petition_id";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
@@ -362,8 +362,8 @@ class petitionCModel{
     {
         $petionCList = [];
         require("connection_connect.php");
-        $sql = "SELECT * FROM `petition` NATURAL JOIN `user` NATURAL JOIN `name_title` NATURAL JOIN `status` NATURAL JOIN `detail_cooperative` NATURAL JOIN `approve`
-                WHERE (date_p like '%$key%')
+        $sql = "SELECT * FROM `petition` NATURAL JOIN `user`NATURAL JOIN `name_title` NATURAL JOIN `status` NATURAL JOIN `approve`            
+                WHERE (date_p like '%$key%' )
                 ORDER BY petition_id";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
