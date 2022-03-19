@@ -181,7 +181,7 @@
         or hrName_p like '%$key%' or hrSname_p like '%$key%' or hrPhone_p like '%$key%' or hrMail_p like '%$key%'
         or salary_p like '%$key%' or room_p like '%$key%' or type_p like '%$key%' or start_p like '%$key%' or finish_p like '%$key%'
         or status_id like '%$key%' or name_title like '%$key%' or user_name like '%$key%' or user_surname like '%$key%'
-        or status_name like '%$key%' or dc_name like '%$key%')
+        or status_name like '%$key%')
         ORDER BY petition_id";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
@@ -219,11 +219,11 @@
             $user_name = $my_row['user_name'];
             $user_surname = $my_row['user_surname'];
             $status_name = $my_row['status_name'];
-            $dc_name = $my_row['dc_name'];
+           
 
-            $petitionFornew[] = new petitionDcModel($petition_id, $date_p,$user_id, $FB_p, $phone_p, $position_p, $approverName_p, $approverSname_p, $approverP_p,
+            $petitionFornew[] = new petitionModelFornew($petition_id, $date_p,$user_id, $FB_p, $phone_p, $position_p, $approverName_p, $approverSname_p, $approverP_p,
             $dc_id, $c_id, $comName_p, $compNo_p, $compRoad_p, $compSubdist_p, $compDistrict_p, $compProvince_p, $compPost_p, $hrName_p, $hrSname_p,
-            $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, $dc_name);
+            $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name);
         }
         require("connection_close.php");
         return $petitionFornew;
