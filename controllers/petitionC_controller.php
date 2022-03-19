@@ -3,7 +3,7 @@ class petitionCController
 {
     public function indexC()
     {
-        $userid = $_GET['userid'];
+        //$userid = $_GET['userid'];
         $petionCList = petitionCModel::getAll();
         require_once('views/petitionC/index_petitionC.php');
     }
@@ -23,8 +23,8 @@ class petitionCController
 
     public function addpetitionC()
     {
-        echo "addp";
-        $userid = $_GET['userid'];
+       
+        //$userid = $_GET['userid'];
         $dc_id = $_GET['dc_id'];
         $petition_id = $_GET['petition_id'];
         $user_id = $_GET['user_id'];
@@ -44,12 +44,9 @@ class petitionCController
 
     public function updateformC()
     {
-        $userid = $_GET['userid'];
+        //$userid = $_GET['userid'];
         $dc = $_GET['petition_id'];
         $petionCList = petitionCModel::get($dc);
-        $nametitleList = nametitleModel::getAll();
-        $userList = userModel::getAll();
-        $cooperativeList =  cooperativeModel::getAll();
         $statusList = statusModel::getAll();
         require_once('views/petitionC/updateformC.php');
 
