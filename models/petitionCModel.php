@@ -238,7 +238,7 @@ class petitionCModel{
             $petition_id = $my_row['petition_id'];
             $date_p = $my_row['date_p'];
             $user_id = $my_row['user_id'];
-            $FB_p = $my_row['FB_p '];
+            $FB_p = $my_row['FB_p'];
             $phone_p = $my_row['phone_p'];
             $position_p = $my_row['position_p'];
             $approverName_p = $my_row['approverName_p'];
