@@ -535,43 +535,9 @@
                 </tr>
                 
                 <tr>
-                    <td align="right"><label>คำนำหน้า : </label></td>
-                    <td><?php echo $userList->user_title?></td>
-                    <!-- <td><select name="name_id">
-                        <option value="">--เลือก--</option>
-                        <?php foreach($nametitleList as $newtt){
-                            echo "<option value=$newtt->name_id>$newtt->name_title</option>";
-                        }?>
-                        </select>
-                    </td> -->
+                    <td align="right"><label>ชื่อ - นามสกุล : </label></td>
+                    <td><?php echo $userList->user_title?><?php echo $userList->user_name?> <?php echo $userList->user_surname?></td>
                 </tr>
-
-                <tr>
-                    <td align="right"><label>ชื่อ : </label></td>
-                    <td><?php echo $userList->user_name?></td>
-                    <!-- <td><input type="text" name="user_name"/></td> -->
-                </tr>
-                <tr>
-                    <td align="right"><label>นามสกุล : </label></td>
-                    <td><?php echo $userList->user_surname?></td>
-                    <!-- <td><input type="text" name="user_surname"/></td> -->
-                </tr>
-                <th colspan="2">
-                    
-                        <label>รหัสนิสิต : <?php echo $userList->user_id;?></label>
-                        
-                        <label>คำนำหน้า : <?php echo $userList->user_title?></label>
-                
-                        <label>ชื่อ : <?php echo $userList->user_name?></label>
-                        
-                        <label>นามสกุล : <?php echo $userList->user_surname?></label>
-                        
-                    
-                    
-                </th>
-
-                
-
                 <tr>
                     <td align="right"> <label> สถานประกอบการ : </label></td>
                     <td> 
