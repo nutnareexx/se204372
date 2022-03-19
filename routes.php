@@ -43,7 +43,7 @@ function call($controller,$action){
                             $controller = new companyPController();
                             break;
 
-        case "petitionDC":  require_once("models/petitionDcMoodel.php");
+        case "petitionDC":  require_once("models/petitionDcModel.php");
                             $controller = new petitionDcController();
                             break;
 
