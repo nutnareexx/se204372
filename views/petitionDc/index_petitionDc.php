@@ -596,7 +596,7 @@ echo "</table>";
     <td>$p->user_id</td>
     <td>$p->name_title$p->user_name $p->user_surname</td>
     <td>$p->comName_p</td>
-    <td><a href=?controller=petitionDC&action=indexDetail&petition_id=$p->petition_id&userid=$userid>รายละเอียด</td>   
+    <td><a href=?controller=petitionDC&action=indexDetailNoDc&petition_id=$p->petition_id&userid=$userid>รายละเอียด</td>   
     <td> <a href=?controller=petitionDC&action=updateform&petition_id=$p->petition_id> อนุมัติ </a> </td>
     <td> <a href=?controller=petitionDC&action=deleteconfirm&petition_id=$p->petition_id> ไม่อนุมัติ </a>
     </td></tr>";
