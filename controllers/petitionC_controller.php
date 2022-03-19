@@ -9,10 +9,11 @@ class petitionCController
         require_once('views/petitionC/index_petitionC.php');
     }
 
-    public function indexCall()
+    public function indexCshow()
     {
         $userid = $_GET['userid'];
-        $petionCList = petitionCModel::getAll();
+        $peti_id = $_GET['petition_id'];
+        $petionCList = petitionCModel::get($peti_id);
         $userList = userModel::get($userid);
         require_once('views/petitionC/index_allpetitionC.php');
     }
