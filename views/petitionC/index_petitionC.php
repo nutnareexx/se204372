@@ -473,6 +473,7 @@ tr:nth-child(even){background-color: #f2f2f2}
      
      <input type="text" name="key">
      <input type="hidden" name="controller" value="petitionC"/>
+     <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
      <button type="submit" name="action" value="searchC">Search</button>
  
  </form>
@@ -528,8 +529,8 @@ sidebarBtn.addEventListener("click", ()=>{
     <td>$clist->c_name</td>  
     <td>ปุ่มไปอีกหน้า</td>
     <td>$clist->status_name</td>  
-    <td> <a href=?controller=petitionC&action=updateformC&petition_id=$clist->petition_id> $clist->status_name </a> </td>
-    <td> <a href=?controller=petitionC&action=deleteconfirmC&petition_id=$clist->petition_id> delete </a>
+    <td> <a href=?controller=petitionC&action=updateformC&petition_id=$clist->petition_id> อนุมัติ </a> </td>
+    <td> <a href=?controller=petitionC&action=updateformC&petition_id=$clist->petition_id> ไม่อนุมัติ </a>
     </td></tr>";
 }
 echo "</table>";
