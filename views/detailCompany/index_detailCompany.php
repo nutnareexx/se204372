@@ -449,13 +449,14 @@ tr:nth-child(even){background-color: #f2f2f2}
      
     <h2>รายละเอียดสถานประกอบการที่ประสงค์รับนิสิตฝึกงาน</h2>
 </div>
-    <h3>เพิ่มสถานประกอบการณ์ใหม่ <a href="?controller=company&action=newDetailCompany"> click!!! </a> </h3>
+    <h3>เพิ่มสถานประกอบการณ์ใหม่ <a href="?controller=company&action=newDetailCompany&userid=<?php echo $userid;?>"> click!!! </a> </h3>
 
 
 <form method="get" action="">
     <div class="btn-group">
         <input type="text" name="key">
     <input type="hidden" name="controller" value="company"/>
+    <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
     <button class="button" type="submit" name="action" value="search">Search</button>
 
     </div>
