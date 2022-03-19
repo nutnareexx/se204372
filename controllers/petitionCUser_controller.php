@@ -37,25 +37,47 @@ class petitionCUserController
 
     public function addpetitionC()
     {
+        echo "<br>addp<br>";
+        $date = $_GET['p_date'];
         $userid = $_GET['userid'];
-        echo "addp";
-        // $c_id = $_GET['c_id'];
-        // // $petition_id = $_GET['petition_id'];
-        $user_id = $_GET['user_id'];
-        // $name_title = $_GET['name_title'];
-        // $user_name = $_GET['user_name'];
-        // $user_surname = $_GET['user_surname'];
-        $start_p = $_GET['start_p'];
-        $finish_p = $_GET['finish_p'];
-        $date_p = $_GET['date_p'];
-        // $status_id = $_GET['status_id'];
-        // $c_position = $_GET['c_position'];
-        // $c_name = $_GET['c_name'];
-        // $c_pay = $_GET['c_pay'];
-        // $c_room = $_GET['c_room'];
+        $phone = $_GET['phone'];
+        $faceB = $_GET['facebook'];
+        $position = $_GET['dc_position'];
+
+        $approve_name = $_GET['name_com'];
+        $approve_lastname = $_GET['lastname_com'];
+        $approve_position = $_GET['position'];
+
+
+        $company_no = $_GET['no'];
+        $company_road = $_GET['road'];
+        $company_sub = $_GET['Subdistrict'];
+        $company_dis = $_GET['district'];
+        $company_prov = $_GET['province'];
+        $company_code = $_GET['postcode'];
+
+        $hr_name = $_GET['namehr'];
+        $hr_lastname = $_GET['lastnamehr'];
+        $hr_phone = $_GET['phonehr'];
+        $hr_mail = $_GET['mailhr'];
+
+        $start = $_GET['start_p'];
+        $finish = $_GET['finish_p'];
+        $pay = $_GET['pay'];
+        $room = $_GET['room'];
         $userList=userModel::get($userid);
-        petitionCModel::Add($start_p, $finish_p, $date_p, $user_id);
-        petitionCUserController::index();
+
+
+        if(isset($_GET['company_id'])){
+            $company_id = $_GET['company_id'];
+            echo $company_id;
+            petitionCModel::addC_old($date,$userid,$faceB,$phone,$position,$approve_name,$approve_lastname,$approve_position,$company_id,$company_no,$company_road,$company_sub,$company_dis,$company_prov,$company_code,$hr_name,$hr_lastname,$hr_phone,$hr_mail,$pay,$room,$start,$finish);
+        }
+        if(isset($_GET['dc_name'])){
+            $company_name = $_GET['dc_name'];
+            echo $company_name;
+            petitionCModel::addC_new($date,$userid,$faceB,$phone,$position,$approve_name,$approve_lastname,$approve_position,$company_name,$company_no,$company_road,$company_sub,$company_dis,$company_prov,$company_code,$hr_name,$hr_lastname,$hr_phone,$hr_mail,$pay,$room,$start,$finish);
+        }
     }
 }
 ?>
