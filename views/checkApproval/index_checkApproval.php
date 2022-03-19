@@ -329,15 +329,35 @@ table {
     font-family: 'Prompt', sans-serif;
     border-collapse: collapse;
     width: 100%;
+    font-size: 18px;
+    text-align: center;
 }
 
 th, td {
-    text-align: left;
-    padding: 8px;
+    text-align: center;
+    padding: 10px;
+    align-items: center;
 }
 
-tr:nth-child(odd){background-color: #cae3cc}
-tr:nth-child(even){background-color: #f2f2f2}
+.card1 {
+            font-family: 'Prompt', sans-serif;
+            
+            background-color: #f1f1f1;
+            padding: 20px 20px 20px 20px;
+            margin: 20px 20px 20px 20px;
+            border-radius: 50px;
+            width: 40%;
+            text-align: center;
+            align-items: center;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .card2 {
+            font-size: 30px;
+        }
+
+
+
 </style>
 
 
@@ -421,7 +441,7 @@ tr:nth-child(even){background-color: #f2f2f2}
             
             <div class="name-job">
                 <div class="profile_name">
-                    <?php echo $userList->user_name;?> <?php echo $userList->user_surname;?>
+                    <?php echo $userList->user_name." ".$userList->user_surname;?>
                 </div>
             </div>   
             <a href="?controller=user&action=logoutNisit&userid=<?php echo $userid;?>">          
@@ -440,8 +460,64 @@ tr:nth-child(even){background-color: #f2f2f2}
     <!-- เขียนตรงนี้นาจาาาาาา -->
     <div class="header">
   
-    <h2><b>ตรวจสอบผลการอนุมัติ <a href='#'></h2>
+        <h2><b>ตรวจสอบผลการอนุมัติ</h2>
+    </div>
+
+    
+<div class="card1" align='center'>
+<table>
+    
+        
+        <th>ฝึกงาน</th>
+        
+        
+        
+
+    <?php foreach($checkList as $clist)
+{
+    echo " <tr><td>$clist->user_id</td></tr>
+    <tr><td>$clist->name_title$clist->user_name $clist->user_surname</td></tr>
+    <tr><td>ตำแหน่ง $clist->position_p</td></tr>
+    <tr><td>$clist->dc_name</td></tr>
+    <tr><td>ช่วงเวลาในการทำงาน $clist->start_p - $clist->finish_p</td></tr>
+    <tr><td>$clist->status_name</td>
+    
+    </tr>";
+}
+echo "</table>";
+ ?>
+   </div>
+
+   
+   
+   <div class="card1">
+<table>
+    
+    <div class="card2" align='center'>
+    <th>สหกิจ</th>
 </div>
+        
+        
+        
+    
+
+    <?php foreach($checkCList as $clist)
+{
+    echo " <tr><td>$clist->user_id</td></tr>
+    <tr><td>$clist->name_title$clist->user_name $clist->user_surname</td></tr>
+    <tr><td>ตำแหน่ง $clist->position_p</td></tr>
+    <tr><td>$clist->dc_name</td></tr>
+    <tr><td>ช่วงเวลาในการทำงาน $clist->start_p - $clist->finish_p</td></tr>
+    <tr><td>$clist->status_name</td>
+    
+    </tr>";
+}
+echo "</table>";
+ ?>
+
+</div>
+    
+
 </section>
 
 <script>
@@ -466,3 +542,5 @@ sidebarBtn.addEventListener("click", ()=>{
 
 </body>
 </html> 
+
+

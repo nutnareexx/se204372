@@ -6,9 +6,9 @@ $controllers = array('pages'=>['home','error'],'nisit'=>['index'],
                      'cooperative'=>['index','newCooperative','addCooperative','search'],
                      'cooperativeP'=>['index','newCooperative','addCooperative','search','updateforms','update', 'deleteconfirm', 'delete'],
                      'petitionDC'=>['index','indexDetail','indexDetailNoDc','updateform','update', 'deleteconfirm', 'delete','search'],
-                     'petitionC'=>['indexC','indexCshow', 'updateformC','updateC','deleteconfirmC','deleteC','searchC'],
-                     'petitionDCUser'=>['index','index2','index3','newpetitionDc', 'addpetitionDc'],
-                     'petitionCUser'=> ['index', 'index2','index3','newpetitionC','addpetitionC'],
+                     'petitionC'=>['indexC','indexCshow', 'indexnewCshow', 'updateformC','updateC','deleteconfirmC','deleteC','searchC'],
+                     'petitionDCUser'=>['index','index2','newpetitionDc', 'addpetitionDc'],
+                     'petitionCUser'=> ['index', 'index2','newpetitionC','addpetitionC'],
                      'checkApproval'=> ['index'],
                      'downloadStudent'=> ['index'],
                      'uploadStudent'=> ['index'],
@@ -65,6 +65,7 @@ function call($controller,$action){
                             require_once("models/statusModel.php");
                             require_once("models/companyModel.php");
                             require_once("models/cooperativeModel.php");
+                            require_once("models/petitionnewCModel.php");
                             $controller = new petitionCController();
                             break;                 
 
@@ -98,9 +99,17 @@ function call($controller,$action){
                             $controller = new cooperativePController();
                             break;    
                             
-        case "checkApproval":  require_once("models/userModel.php");
+        case "checkApproval":   require_once("models/petitionDcModel.php");
+                                require_once("models/petitionCModel.php");
+                                require_once("models/approveModel.php");
+                                require_once("models/nametitleModel.php");
+                                require_once("models/userModel.php");
+                                require_once("models/statusModel.php");
+                                require_once("models/companyModel.php");
+                                require_once("models/cooperativeModel.php");
+                                require_once("models/checkApprovalModel.php");
                                 $controller = new checkApprovalController();
-                            break;                     
+                                break;                     
         
         case "downloadStudent": require_once("models/userModel.php"); 
                                 $controller = new downloadStudentController();

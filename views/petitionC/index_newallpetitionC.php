@@ -468,37 +468,41 @@ tr:nth-child(even){background-color: #f2f2f2}
  </div>
  <div class="header">
      
-     <h2>แก้ไขคำร้องสหกิจ</h2>
+     <h2>ยืนยันที่จะลบคำร้องนี้หรือไม่?</h2>
  </div>
  
+<?php echo "  <br>
+            <br><b>ลำดับที่ : </b>   $petionCnewList->petition_id  
+            <br><b>รหัสนิสิต : </b>  $petionCnewList->user_id
+            <br><b>ชื่อ-นามสกุล : </b>  $petionCnewList->name_title$petionCnewList->user_name $petionCnewList->user_surname
+            <br><b>เบอร์โทรศัพท์มือถือ : </b>  $petionCnewList->phone_p
+            <br><b>ชื่อ-Facebook : </b>  $petionCnewList->FB_p
+            <br><b>วันที่ยื่นใบคำร้อง : </b>  $petionCnewList->position_p
+            <br><b>ปีการศึกษา : </b>  $petionCnewList->academicY_p
+            <br><b>ตำแหน่งที่ไปฝึกงาน : </b>  $petionCnewList->position_p
+            <br><b>ชื่อผู้อนุมัติฝึกสหกิจ : </b>  $petionCnewList->approverName_p $petionCnewList->approverSname_p
+            <br><b>ตำแหน่งผู้อนุมัติฝึกสหกิจ : </b>  $petionCnewList->approverP_p
+            <br><b>ชื่อสถานประกอบการสหกิจ : </b> $petionCnewList->comName_p
+            <br><b>สถานที่ตั้งเลขที่ : </b>  $petionCnewList->compNo_p
+            <br><b>ถนน : </b>  $petionCnewList->compRoad_p
+            <br><b>ตำบล/แขวง : </b>  $petionCnewList->compSubdist_p
+            <br><b>อำเภอ/เขต : </b>  $petionCnewList->compDistrict_p
+            <br><b>จังหวัด : </b>  $petionCnewList->compProvince_p
+            <br><b>รหัสไปรษณีย์ : </b>  $petionCnewList->compPost_p
+            <br><b>ชื่อผู้ประสานงาน : </b>  $petionCnewList->hrName_p $petionCnewList->hrSname_p 
+            <br><b>โทร : </b>  $petionCnewList->hrPhone_p
+            <br><b>E-mail : </b>  $petionCnewList->hrMail_p
+            <br><b>ระยะการฝึกงานตั้งแต่วันที่ : </b>  $petionCnewList->start_p <b>ถึงวันที่</b> $petionCnewList->finish_p
+            <br><b>สถานะ : </b> $petionCnewList->status_name<br>";?>
+
 <form method="get" action="">
-<?php echo "
-            <br><b>ลำดับที่ : </b>   $petionCList->petition_id  
-            <br><b>รหัสนิสิต : </b>  $petionCList->user_id
-            <br><b>ชื่อ-นามสกุล : </b>  $petionCList->name_title$petionCList->user_name $petionCList->user_surname
-            <br><b>ชื่อสถานประกอบการสหกิจ : </b> $petionCList->c_name <br>    
-            ";?>
-
-
-   
-    <label><b>อัพเดตสถานะ </b> <select name="status_id">
-        <?php foreach($statusList as $st){
-            echo "<option value=$st->status_id";
-            if($st->status_id==$petionCList->status_id){
-                echo " selected='selected'";
-            }
-            echo ">$st->status_name</option>";
-        }?>
-        </select></label><br> 
-        
     <input type="hidden" name="controller" value="petitionC"/>
-    <input type="hidden" name="petitionid" value="<?php echo $petionCList->petition_id;?>"/>
+    <input type="hidden" name="petitionid" value="<?php echo $petionCnewList->petition_id;?>"/>
     <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
-    <br><button type="submit" name="action" value="indexC"> Back </button>
-    <button type="submit" name="action" value="updateC"> Update </button>
-
+    <button type="submit" name="action" value="indexC"> Back </button>
+    
 </form>
- 
+
 </section>
 
 <script>
@@ -528,3 +532,4 @@ sidebarBtn.addEventListener("click", ()=>{
 </body>
 
 </html>
+
