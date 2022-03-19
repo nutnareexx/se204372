@@ -1,520 +1,587 @@
 <!DOCTYPE html>
 <html>
-<head>
+    <head>
+            <!-- <link rel ="stylesheet" href="hamburger.css"> -->
+            <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+            <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <link rel ="stylesheet" >
-        <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-        <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    </head>
 
-</head>
-<style>
-    body {
-    font-family: 'Prompt', sans-serif;
-}
+    <style>
 
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 360px;
-    background: #397d54;
-    z-index: 100;
-    transition: all 0.5s ease;
-}
+        body {
+            font-family: 'Prompt', sans-serif;
+        }
 
-.sidebar.close{
-    width: 78px;
-}
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 360px;
+            background: #397d54;
+            z-index: 100;
+            transition: all 0.5s ease;
+        }
 
-/*.sidebar a:hover {
-    color: #f1f1f1;
-}*/
-.sidebar .logo-details{
-    height: 60px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
+        .sidebar.close{
+            width: 78px;
+        }
 
-.sidebar .logo-details i{
-    font-size: 30px;
-    color: #fff;
-    height: 50px;
-    min-width: 78px;
-    text-align: center;
-    line-height:50px;
-    
-}
+        /*.sidebar a:hover {
+            color: #f1f1f1;
+        }*/
+        .sidebar .logo-details{
+            height: 60px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
 
-.sidebar .logo-details .logo_name{
-    font-size: 22px;
-    color: #fff;
-    font-weight: 600;
-    transition:  0.3s ease;
-    transition-delay: 0.1s;
-}
+        .sidebar .logo-details i{
+            font-size: 30px;
+            color: #fff;
+            height: 50px;
+            min-width: 78px;
+            text-align: center;
+            line-height:50px;
+            
+        }
 
-.sidebar.close .logo-details .logo_name{
-    transition-delay: 0s;
-    opacity: 0;
-    pointer-events: none;
-}
+        .sidebar .logo-details .logo_name{
+            font-size: 22px;
+            color: #fff;
+            font-weight: 600;
+            transition:  0.3s ease;
+            transition-delay: 0.1s;
+        }
 
-.sidebar .nav-links{
-     /*   background: red;*/
-    height: 100%;
-    padding-top:30px 0 150px 0;
-    overflow: auto;
-}
+        .sidebar.close .logo-details .logo_name{
+            transition-delay: 0s;
+            opacity: 0;
+            pointer-events: none;
+        }
 
-.sidebar .nav-links{
-    overflow: visible;
-}
+        .sidebar .nav-links{
+            /*   background: red;*/
+            height: 100%;
+            padding-top:30px 0 150px 0;
+            overflow: auto;
+        }
 
-.sidebar .nav-links::-webkit-scrollbar{
-    display: none;
-}
+        .sidebar .nav-links{
+            overflow: visible;
+        }
 
-.sidebar .nav-links li{
-    position: relative;
-    list-style: none;
-    transition: all 0.4s ease;
-}
+        .sidebar .nav-links::-webkit-scrollbar{
+            display: none;
+        }
 
-.sidebar .nav-links li:hover{
-    background: #73c088;
-}
+        .sidebar .nav-links li{
+            position: relative;
+            list-style: none;
+            transition: all 0.4s ease;
+        }
 
-.sidebar .nav-links li .iocn-link{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+        .sidebar .nav-links li:hover{
+            background: #73c088;
+        }
 
-.sidebar.close .nav-links li .iocn-link{
-    display: block;
-}
+        .sidebar .nav-links li .iocn-link{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-.sidebar .nav-links li i{
-    height: 50px;
-    min-width: 78px;
-    text-align: center;
-    line-height: 50px;
-    color: #fff;
-    font-size: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    
-}
+        .sidebar.close .nav-links li .iocn-link{
+            display: block;
+        }
 
-.sidebar .nav-links li.showMenu i.arrow{
-    transform: rotate(-180deg);
-}
-.sidebar.close .nav-links i.arrow{
-    display: none;
-}
+        .sidebar .nav-links li i{
+            height: 50px;
+            min-width: 78px;
+            text-align: center;
+            line-height: 50px;
+            color: #fff;
+            font-size: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            
+        }
 
-.sidebar .nav-links li a{
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    white-space: nowrap;
-}
+        .sidebar .nav-links li.showMenu i.arrow{
+            transform: rotate(-180deg);
+        }
+        .sidebar.close .nav-links i.arrow{
+            display: none;
+        }
 
-.sidebar .nav-links li a .link_name{
-    font-size: 18px;
-    font-weight: 400;
-    color: #fff;
-  
-    
-}
-.sidebar.close .nav-links li a .link_name{
-    opacity: 0;
-    pointer-events: none;
-}
+        .sidebar .nav-links li a{
+            display: flex;
+            align-items: center;
+            /* margin: 10px 10px 10px 10px; */
+            text-decoration: none;
+            white-space: nowrap;
+        }
 
-.sidebar .nav-links li .sub-menu{
-    padding: 6px 6px 14px 80px;
-    margin-top: -10px;
-    background: #397d54;
-    display: none;
-    
-}
+        .sidebar .nav-links li a .link_name{
+            font-size: 18px;
+            font-weight: 400;
+            color: #fff;
+        
+            
+        }
+        .sidebar.close .nav-links li a .link_name{
+            opacity: 0;
+            pointer-events: none;
+        }
 
-.sidebar .nav-links li.showMenu .sub-menu{
-    display: block;
-}
+        .sidebar .nav-links li .sub-menu{
+            padding: 6px 6px 14px 80px;
+            margin-top: -10px;
+            background: #397d54;
+            display: none;
+            
+        }
 
-.sidebar .nav-links li .sub-menu a{
-    color: #fff;
-    font-size: 15px;
-    padding: 5px 40px;
-    white-space: nowrap;
-    opacity: 0.6;
-    transition: all 0.3 ease;
-}
+        .sidebar .nav-links li.showMenu .sub-menu{
+            display: block;
+            
+        }
 
-.sidebar .nav-links li .sub-menu a:hover{
-    opacity: 1;
-}
+        .sidebar .nav-links li .sub-menu a{
+            color: #fff;
+            font-size: 15px;
+            padding: 5px 40px;
+            white-space: nowrap;
+            opacity: 0.6;
+            transition: all 0.3 ease;
+        }
 
-.sidebar.close .nav-links li .sub-menu{
-    position: absolute;
-    left: 100%;
-    top: -10px;
-    margin-top: 0;
-    padding: 10px;
-    border-radius: 10px;
-    
-    opacity: 0;
-    display: block;
-    pointer-events: none;
-    transition: 0s;
-}
+        .sidebar .nav-links li .sub-menu a:hover{
+            opacity: 1;
+        }
+
+        .sidebar.close .nav-links li .sub-menu{
+            position: absolute;
+            left: 100%;
+            top: -10px;
+            margin-top: 0;
+            padding: 10px;
+            border-radius: 10px;
+            
+            opacity: 0;
+            display: block;
+            pointer-events: none;
+            transition: 0s;
+        }
 
 
-.sidebar.close .nav-links li:hover .sub-menu{
-    top: 0;
-    opacity: 1;
-    pointer-events: auto;
-    transition: all 0.4s ease;
-}
+        .sidebar.close .nav-links li:hover .sub-menu{
+            top: 0;
+            opacity: 1;
+            pointer-events: auto;
+            transition: all 0.4s ease;
+        }
 
-.sidebar .nav-links li .sub-menu .link_name{
-    display: none;
-}
+        .sidebar .nav-links li .sub-menu .link_name{
+            display: none;
+        }
 
 
-.sidebar.close .nav-links li .sub-menu .link_name{
-    font-size: 18px;
-    opacity: 1;
-    display: block;
-}
+        .sidebar.close .nav-links li .sub-menu .link_name{
+            font-size: 18px;
+            opacity: 1;
+            display: block;
+        }
 
-.sidebar .nav-link li .sub-menu.blank{
-    opacity: 1;
-    pointer-events: auto;
-    padding: 3px 20px 6px 16px;
-    opacity: 0;
-    pointer-events: none;
-   
-}
+        .sidebar .nav-link li .sub-menu.blank{
+            opacity: 1;
+            pointer-events: auto;
+            padding: 3px 20px 6px 16px;
+            opacity: 0;
+            pointer-events: none;
+        
+        }
 
-.sidebar .nav-link li:hover .sub-menu.blank{
-    top: 50%;
-    transform: translateY(-50%);
-}
+        .sidebar .nav-link li:hover .sub-menu.blank{
+            top: 50%;
+            transform: translateY(-50%);
+        }
 
-.home-section{
-    position: relative;
-    background: #fff;
-    height: 100vh;
-    left: 360px;
-    width: calc(100% - 360px);
-    transition: all 0.5s ease;
-}
+        .home-section{
+            position: relative;
+            background: #fff;
+            height: 100vh;
+            left: 360px;
+            width: calc(100% - 360px);
+            transition: all 0.5s ease;
+        }
 
-.sidebar.close ~ .home-section{
-    left: 78px;
-    width: calc(100% - 78px);
-}
+        .sidebar.close ~ .home-section{
+            left: 78px;
+            width: calc(100% - 78px);
+        }
 
-.home-content{
-    background: #235d3a;
-}
+        .home-content{
+            background: #235d3a;
+        }
 
-.home-section .home-content{
-    height: 60px;
-    display: flex;
-    align-items: center;
-    
-}
+        .home-section .home-content{
+            height: 60px;
+            display: flex;
+            align-items: center;
+            
+        }
 
-.home-section .home-content .bx-menu,
-.home-section .home-content .text{
-    color: #fff;
-    font-size: 35px;
-    white-space: nowrap;
-}
+        .home-section .home-content .bx-menu,
+        .home-section .home-content .text{
+            color: #fff;
+            font-size: 35px;
+            white-space: nowrap;
+        }
 
-.home-section .home-content .bx-menu{
-    margin: 0 15px;
-    cursor: pointer;
-}
+        .home-section .home-content .bx-menu{
+            margin: 0 15px;
+            cursor: pointer;
+        }
 
-.home-section .home-content .text{
-    font-size: 26px;
-    font-weight: 500;
-   
-}
+        .home-section .home-content .text{
+            font-size: 26px;
+            font-weight: 500;
+        
+        }
 
-.sidebar .profile-details{
-    position: fixed;
-    bottom: 0;
-    width: 360px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 6px 0;
-    background: #73c088;
-    transition: all 0.4s ease;
-    white-space: nowrap;
-    
-}
+        .sidebar .profile-details{
+            position: fixed;
+            bottom: 0;
+            width: 360px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 6px 0;
+            background: #73c088;
+            transition: all 0.4s ease;
+            white-space: nowrap;
+            
+        }
 
-.sidebar.close .profile-details{
-    width: 78px;
-    
-}
+        .sidebar.close .profile-details{
+            width: 78px;
+            
+        }
 
-.sidebar .profile-details .profile-content{
-    display: flex;
-    align-items: center;
-    
-}
-.sidebar .profile-details li i{
-    height: 50px;
-    min-width: 78px;
-    text-align: center;
-    line-height: 50px;
-    color: #fff;
-    font-size: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-    
-    
-}
+        .sidebar .profile-details .profile-content{
+            display: flex;
+            align-items: center;
+            
+        }
+        .sidebar .profile-details li i{
+            height: 50px;
+            min-width: 78px;
+            text-align: center;
+            line-height: 50px;
+            color: #fff;
+            font-size: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            
+            
+        }
 
-.sidebar .profile-details .profile_name{
-    color: #fff;
-    font-size: 20px;
-    font-weight: 500;
-    width: 200px;
-    text-align: center;
-    white-space: nowrap;
-}
-.sidebar.close .profile-details li i,
-.sidebar.close .profile-details .profile_name,
-.sidebar.close .profile-details a{
-    display: none;
-    
-}
+        .sidebar .profile-details .profile_name{
+            color: #fff;
+            font-size: 20px;
+            font-weight: 500;
+            width: 200px;
+            text-align: center;
+            white-space: nowrap;
+        }
+        .sidebar.close .profile-details li i,
+        .sidebar.close .profile-details .profile_name,
+        .sidebar.close .profile-details a{
+            display: none;
+            
+        }
 
-.sidebar .profile-details a{
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    white-space: nowrap;
-}
+        .sidebar .profile-details a{
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            white-space: nowrap;
+        }
 
 
 
-@media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
-}
+        @media screen and (max-height: 450px) {
+        .sidebar {padding-top: 15px;}
+        .sidebar a {font-size: 18px;}
+        }
 
 
-    .header {
+
+            
+        .header {
+            font-family: 'Prompt', sans-serif;
+            background-color: #f1f1f1;
+            text-align: center;
+        }
+
+        table {
+            /* font-family: 'Prompt', sans-serif; */
+            /* border-collapse: collapse; */
+            font-size: 18px;
+            font-weight: bold;
+            width: 80%;
+        }
+
+        .card {
+            font-family: 'Prompt', sans-serif;
+            width: 80%;
+            background-color: #f1f1f1;
+            padding: 20px 20px 20px 20px;
+            margin: 20px 20px 20px 20px;
+            border-radius: 50px;
+            
+        }
+        th, td {
+            padding: 5px 5px 5px 5px;
+        }
+
+        tr{
+            padding: 10px 10px 10px 10px;
+        }
+
+        button {
+            font-family: 'Prompt', sans-serif;
+            position: relative;
+            background-color: #397d54 ; 
+            border: 1px black;
+            color: white;
+            padding: 10px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            cursor: pointer;
+            width: 30%;
+            border-radius: 50px;
+        }
+        button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+        button:hover {
+            background-color: #73c088;
+            color: white;
+        }
+
+        input[type=text], select {
                 font-family: 'Prompt', sans-serif;
-                background-color: #f1f1f1;
-                text-align: center;
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 50px;
+                box-sizing: border-box;
             }
 
-    table {
-        font-family: 'Prompt', sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    th, td {
-        text-align: left;
-        padding: 8px;
-    }
-
-    tr:nth-child(odd){background-color: #cae3cc}
-    tr:nth-child(even){background-color: #f2f2f2}
-
-    input[type=text], select {
-        font-family: 'Prompt', sans-serif;
-        width: 80%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        border-radius: 50px;
-        box-sizing: border-box;
-    }
-    input[type=date], select {
-        font-family: 'Prompt', sans-serif;
-        width: 80%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        border-radius: 50px;
-        box-sizing: border-box;
+        input[type=date], select {
+                font-family: 'Prompt', sans-serif;
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 50px;
+                box-sizing: border-box;
             
-    }
-</style>
+            }
+        input[type=mail], select {
+                font-family: 'Prompt', sans-serif;
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 50px;
+                box-sizing: border-box;
+            
+            }
+    </style>
 
-<body>
 
-<div class="sidebar close">
-        <div class="logo-details">
-            <i class='bx bxs-tree-alt'></i>
-            <span class="logo_name">KASETSART UNIVERSITY</span>
-        </div>
-    <dl class="nav-links">
-    <li>
-            <a href="?controller=nisit&action=index&userid=<?php echo $userid;?>">
-            <i class='bx bx-home'></i>
-                <span class="link_name">หน้าแรก</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=nisit&action=index&userid=<?php echo $userid;?>">หน้าแรก</a></li>
-            </ul>
-        </li>
-        <li>
-            <div class="iocn-link">
-                <a href="#">
-                    <i class='bx bx-buildings'></i>
-                    <span class="link_name">สถานประกอบการณ์</span>
-                </a>
-                <i class='bx bx-chevron-down arrow'></i>
+    <body>
+    <div class="sidebar close">
+            <div class="logo-details">
+                <i class='bx bxs-tree-alt'></i>
+                <span class="logo_name">KASETSART UNIVERSITY</span>
             </div>
-            <ul class="sub-menu">
-                <li><a class="link_name" href="#">สถานประกอบการณ์</a></li>
-                <li><a href="?controller=company&action=index&userid=<?php echo $userid;?>">ฝึกงาน</a></li>
-                <li><a href="?controller=cooperative&action=index&userid=<?php echo $userid;?>">สหกิจ</a></li>
-            </ul>
-        </li>
-        <li>
-            <div class="iocn-link">
-                <a href="#">
-                    <i class='bx bx-file-blank' ></i>
-                    <span class="link_name">ยื่นคำร้อง</span>
-                </a>
-                <i class='bx bx-chevron-down arrow'></i>
-            </div>
-            <ul class="sub-menu">
-                <li><a class="link_name" href="#">ยื่นคำร้อง</a></li>
-                <li><a href="?controller=petitionDCUser&action=index&userid=<?php echo $userid;?>">ฝึกงาน</a></li>
-                <li><a href="?controller=petitionCUser&action=index&userid=<?php echo $userid;?>">สหกิจ</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="?controller=checkApproval&action=index&userid=<?php echo $userid;?>">
-                <i class='bx bx-check-square' ></i>
-                <span class="link_name">ตรวจสอบผลการอนุมัติ</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=checkApproval&action=index&userid=<?php echo $userid;?>">ตรวจสอบผลการอนุมัติ</a></li>
-            </ul>
-        </li>
+
+        <dl class="nav-links">
         
-        <li>
-            <a href="?controller=downloadStudent&action=index&userid=<?php echo $userid;?>">
-            <i class='bx bx-download'></i>
-            <span class="link_name">download</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=downloadStudent&action=index&userid=<?php echo $userid;?>">download</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="?controller=uploadStudent&action=index&userid=<?php echo $userid;?>">
-            <i class='bx bx-upload'></i>
-            <span class="link_name">upload</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=uploadStudent&action=index&userid=<?php echo $userid;?>">upload</a></li>
-            </ul>
-        </li>
-        <li> 
-    <div class="profile-details">
-        <div class="profile-content">
-            <i class='bx bxs-user'></i>
-        </div>
-            
-            <div class="name-job">
-                <div class="profile_name">
-                    <?php echo $userList->user_name;?> <?php echo $userList->user_surname;?>
+            <li>
+                <a href="?controller=nisit&action=index">
+                <i class='bx bx-home'></i>
+                    <span class="link_name">หน้าแรก</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="?controller=nisit&action=index&userid=<?php echo $userid;?>">หน้าแรก</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class='bx bx-buildings'></i>
+                        <span class="link_name">สถานประกอบการ</span>
+                    </a>
+                    <i class='bx bx-chevron-down arrow'></i>
                 </div>
-            </div>   
-            <a href="?controller=user&action=logoutNisit&userid=<?php echo $userid;?>">          
-                <i class='bx bx-log-out '></i>
-            </a>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">สถานประกอบการ</a></li>
+                    <li><a href="?controller=company&action=index&userid=<?php echo $userid;?>">ฝึกงาน</a></li>
+                    <li><a href="?controller=cooperative&action=index&userid=<?php echo $userid;?>">สหกิจ</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class='bx bx-file-blank' ></i>
+                        <span class="link_name">ยื่นคำร้อง</span>
+                    </a>
+                    <i class='bx bx-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">ยื่นคำร้อง</a></li>
+                    <li><a href="?controller=petitionDCUser&action=index&userid=<?php echo $userid;?>">ฝึกงาน</a></li>
+                    <li><a href="?controller=petitionCUser&action=index&userid=<?php echo $userid;?>">สหกิจ</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="?controller=checkApproval&action=index">
+                    <i class='bx bx-check-square' ></i>
+                    <span class="link_name">ตรวจสอบผลการอนุมัติ</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#">ตรวจสอบผลการอนุมัติ</a></li>
+                </ul>
+            </li>
+            
+            <li>
+                <a href="?controller=downloadStudent&action=index">
+                <i class='bx bx-download'></i>
+                <span class="link_name">download</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#">download</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="?controller=uploadStudent&action=index">
+                <i class='bx bx-upload'></i>
+                <span class="link_name">upload</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#">upload</a></li>
+                </ul>
+            </li>
+            <li>
+            <div class="profile-details">
+                <div class="profile-content">
+                    <i class='bx bxs-user'></i>
+                </div>
+                
+                    <div class="name-job">
+                        <div class="profile_name"><?php echo $userList->user_name." ".$userList->user_surname?></div>
+                    </div>
+                
+                    <a href="?controller=user&action=logoutNisit">          
+                        <i class='bx bx-log-out '></i>
+                    </a>
+                
+            </div>
+            </li>
+        </dl>
     </div>
-    </li>
-    </dl>
-</div>
 
-<section class="home-section">
-    <div class="home-content">
-        <i class='bx bx-menu'></i>
-            <span class="text">ระบบบริหารจัดการการฝึกงานแบบออนไลน์</span>
-    </div>
-    <!-- เขียนตรงนี้นาจาาาาาา -->
-    <div class="header">
-     
-     <h2>ยื่นคำร้องสหกิจ</h2>
- </div>
-
- <form method="get" action="">
-    <br>
-
-   
-    <label>รหัสนิสิต : <input type="text" name="user_id"/></label><br><br>
+    <section class="home-section">
+        <div class="home-content">
+            <i class='bx bx-menu'></i>
+                <span class="text">ระบบบริหารจัดการการฝึกงานแบบออนไลน์</span>
+        </div>
+        <!-- เขียนตรงนี้นาจาาาาาา -->
+        <div class="header">
     
-    <label>คำนำหน้า : <select name="name_id">
-        <option value="">--เลือก--</option>
-        <?php foreach($nametitleList as $newtt){
-            echo "<option value=$newtt->name_id>$newtt->name_title</option>";
-        }?>
-        </select></label><br><br>
+        <h2><b>ยื่นคำร้องฝึกงานสหกิจ <br></h2>
 
-    <label>ชื่อ : <input type="text" name="user_name"/></label><br>
-    <label>นามสกุล : <input type="text" name="user_surname"/></label><br><br>
+        </div>
 
-    <label>เริ่มสหกิจ : <input type="date" name="start_p"/></label><br>
-    <label>สิ้นสุดสหกิจ : <input type="date" name="finish_p"/></label><br><br>
+        <center>
+        <div class="card">
+        <form method="get" action="">
+            <table align="center">
+                <tr>
+                    <td align="right" style="width: 30%;" ><label>วันที่เขียนคำร้อง :</label></td>
+                    <td> <input type="date" name="date"/></td>
+                </tr>
+                
 
-    <label>ตำแน่งที่ไปสหกิจ : <input type="text" name="c_position"/></label><br><br>
-    <label>ชื่อสถานประกอบการสหกิจ : <input type="text" name="c_name"/></label><br><br>
+                <tr>
+                    <td align="right"><label>รหัสนิสิต :</label></td>
+                    <td><?php echo $userList->user_id;?></td>
+                    <!-- <td> <input type="text" name="user_id"/></td> -->
+                </tr>
+                
+                <tr>
+                    <td align="right"><label>ชื่อ - นามสกุล : </label></td>
+                    <td><?php echo $userList->user_title?><?php echo $userList->user_name?> <?php echo $userList->user_surname?></td>
+                </tr>
+                <tr>
+                    <td align="right"> <label> สถานประกอบการ : </label></td>
+                    <td> 
+                        <input type="radio" id="old" name="company" value="old">
+                        <label for="old"> สถานประกอบการที่ภาควิชามีอยู่ </label><br>
+                        <input type="radio" id="new" name="company" value="new">
+                        <label for="new"> สถานประกอบการใหม่ </label><br>
+                        
+                    </td>
+                </tr>
+            </table>
+            <br>
 
-    <label>วันที่กรอกคำร้อง : <input type="date" name="date_p"/></label><br><br>
+            <input type="hidden" name="controller" value="petitionCUser"/>
+            <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
+            <button type="submit" name="action" value="index"> BACK </button>
+            <button type="submit" name="action" value="index2"> NEXT </button>
+        </form>
+        </div>
+        </center>
+        <br>
+        <br>
 
-   
-    <input type="hidden" name="controller" value="petitionCUser"/>
-    <button type="submit" name="action" value="index">Back</button>
-    <button type="submit" name="action" value="addpetitionC">Save</button>
+    </section>
 
-</section>
+    <script>
 
-<script>
+        let arrow = document.querySelectorAll(".arrow");
+        for (var i = 0; i < arrow.length; i++){
+            arrow[i].addEventListener("click", (e)=>{
+                let arrowParent = e.target.parentElement.parentElement;
+                arrowParent.classList.toggle("showMenu");
+            });
+        }
 
-let arrow = document.querySelectorAll(".arrow");
-for (var i = 0; i < arrow.length; i++){
-    arrow[i].addEventListener("click", (e)=>{
-        let arrowParent = e.target.parentElement.parentElement;
-        arrowParent.classList.toggle("showMenu");
-    });
-}
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".bx-menu");
+        console.log(sidebarBtn);
+        sidebarBtn.addEventListener("click", ()=>{
+            sidebar.classList.toggle("close");
+        });
 
-let sidebar = document.querySelector(".sidebar");
-let sidebarBtn = document.querySelector(".bx-menu");
-console.log(sidebarBtn);
-sidebarBtn.addEventListener("click", ()=>{
-    sidebar.classList.toggle("close");
-});
-
-</script>
+    </script>
 
 
-</body>
+    </body>
 </html> 

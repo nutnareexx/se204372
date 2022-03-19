@@ -238,7 +238,7 @@ class petitionCModel{
             $petition_id = $my_row['petition_id'];
             $date_p = $my_row['date_p'];
             $user_id = $my_row['user_id'];
-            $FB_p = $my_row['FB_p '];
+            $FB_p = $my_row['FB_p'];
             $phone_p = $my_row['phone_p'];
             $position_p = $my_row['position_p'];
             $approverName_p = $my_row['approverName_p'];
@@ -276,6 +276,38 @@ class petitionCModel{
         }
         require("connection_close.php");
         return $petionCList;
+    }
+
+    public static function addC_old($date,$userid,$faceB,$phone,$position,$approve_name,$approve_lastname,$approve_position,$company_id,$company_no,$company_road,$company_sub,$company_dis,$company_prov,$company_code,$hr_name,$hr_lastname,$hr_phone,$hr_mail,$pay,$room,$start,$finish){
+        require("connection_connect.php");
+        $sql = "INSERT INTO `petition`( `date_p`, `user_id`, `FB_p`, `phone_p`,`position_p`, 
+                                        `approverName_p`, `approverSname_p`, `approverP_p`, 
+                                        `dc_id`, `compNo_p`, `compRoad_p`, `compSubdist_p`, `compDistrict_p`, `compProvince_p`, `compPost_p`, 
+                                        `hrName_p`, `hrSname_p`, `hrPhone_p`, `hrMail_p`, 
+                                        `salary_p`, `room_p`, `type_p`, `start_p`, `finish_p`, `status_id`) 
+                                VALUES ('$date','$userid','$faceB','$phone','$position',
+                                        '$approve_name','$approve_lastname',',$approve_position',
+                                        '$company_id','$company_no','$company_road','$company_sub','$company_dis','$company_prov','$company_code',
+                                        '$hr_name','$hr_lastname','$hr_phone','$hr_mail',
+                                        '$pay','$room','c','$start','$finish','01')";
+        $result = $conn->query($sql);
+        require("connection_close.php");
+    }
+
+    public static function addC_new($date,$userid,$faceB,$phone,$position,$approve_name,$approve_lastname,$approve_position,$company_name,$company_no,$company_road,$company_sub,$company_dis,$company_prov,$company_code,$hr_name,$hr_lastname,$hr_phone,$hr_mail,$pay,$room,$start,$finish){
+        require("connection_connect.php");
+        $sql = "INSERT INTO `petition`( `date_p`, `user_id`, `FB_p`, `phone_p`, `position_p`,
+                                        `approverName_p`, `approverSname_p`, `approverP_p`, 
+                                        `comName_p`, `compNo_p`, `compRoad_p`, `compSubdist_p`, `compDistrict_p`, `compProvince_p`, `compPost_p`, 
+                                        `hrName_p`, `hrSname_p`, `hrPhone_p`, `hrMail_p`, 
+                                        `salary_p`, `room_p`, `type_p`, `start_p`, `finish_p`, `status_id`) 
+                                VALUES ('$date','$userid','$faceB','$phone','$position',
+                                        '$approve_name','$approve_lastname','$approve_position',
+                                        '$company_name','$company_no','$company_road','$company_sub','$company_dis','$company_prov','$company_code',
+                                        '$hr_name','$hr_lastname','$hr_phone','$hr_mail',
+                                        '$pay','$room','c','$start','$finish','01')";
+        $result = $conn->query($sql);
+        require("connection_close.php");
     }
 
 
