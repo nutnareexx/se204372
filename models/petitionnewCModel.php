@@ -245,7 +245,7 @@ class petitionnewCModel{
                     or hrName_p like '%$key%' or hrSname_p like '%$key%' or hrPhone_p like '%$key%' or hrMail_p like '%$key%'
                     or salary_p like '%$key%' or room_p like '%$key%' or type_p like '%$key%' or start_p like '%$key%' or finish_p like '%$key%'
                     or status_id like '%$key%' or name_title like '%$key%' or user_name like '%$key%' or user_surname like '%$key%'
-                    or status_name like '%$key%' or approve_id like '%$key%')
+                    or status_name like '%$key%' or approve_id like '%$key%') AND comName_p IS NOT NULL AND type_p ='c'
                     ORDER BY petition_id";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
@@ -301,8 +301,8 @@ class petitionnewCModel{
     {
         $petionCnewList = [];
         require("connection_connect.php");
-        $sql = "SELECT * FROM `petition` NATURAL JOIN `user`NATURAL JOIN `name_title` NATURAL JOIN `status` NATURAL JOIN `approve`            
-                WHERE (academicY_p like '%$key%' )
+        $sql = "SELECT * FROM `petition` NATURAL JOIN `user`NATURAL JOIN `name_title` NATURAL JOIN `status` NATURAL JOIN `approve`
+                WHERE (academicY_p like '%$key%' ) AND comName_p IS NOT NULL AND type_p ='c'
                 ORDER BY petition_id";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
@@ -359,7 +359,7 @@ class petitionnewCModel{
         $petionCnewList = [];
         require("connection_connect.php");
         $sql = "SELECT * FROM `petition` NATURAL JOIN `user`NATURAL JOIN `name_title` NATURAL JOIN `status` NATURAL JOIN `approve`            
-                WHERE (academicY_p like '%$key%' )
+                WHERE (date_p like '%$key%' ) AND comName_p IS NOT NULL AND type_p ='c'
                 ORDER BY petition_id";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
