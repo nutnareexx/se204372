@@ -3,12 +3,14 @@ class petitionCController
 {
     public function indexC()
     {
+        $userid = $_GET['userid'];
         $petionCList = petitionCModel::getAll();
         require_once('views/petitionC/index_petitionC.php');
     }
 
     public function newpetitionC()
     {
+        $userid = $_GET['userid'];
         $petionCList = petitionCModel::getAll();
         //$approveList = approveModel::getAll();
         $statusList = statusModel::getAll();
@@ -22,6 +24,7 @@ class petitionCController
     public function addpetitionC()
     {
         echo "addp";
+        $userid = $_GET['userid'];
         $dc_id = $_GET['dc_id'];
         $petition_id = $_GET['petition_id'];
         $user_id = $_GET['user_id'];
@@ -41,7 +44,7 @@ class petitionCController
 
     public function updateformC()
     {
-       
+        $userid = $_GET['userid'];
         $dc = $_GET['petition_id'];
         $petionCList = petitionCModel::get($dc);
         $nametitleList = nametitleModel::getAll();
@@ -54,7 +57,7 @@ class petitionCController
 
     public function updateC()
     {
-        
+        $userid = $_GET['userid'];
         $petition_id = $_GET['petitionid'];
         $status_id = $_GET['status_id'];
         petitionCModel::update( $petition_id, $status_id);
@@ -63,6 +66,7 @@ class petitionCController
 
     public function deleteconfirmC()
     {
+        $userid = $_GET['userid'];
         $dc = $_GET['petition_id'];
         $petionCList = petitionCModel::get($dc);
         require_once('views/petitionC/deleteconfirmC.php');
@@ -71,6 +75,7 @@ class petitionCController
 
     public function deleteC()
     {
+        $userid = $_GET['userid'];
         $petitionid = $_GET['petitionid'];
         petitionCModel::delete($petitionid);
         petitionCController::indexC();
@@ -78,6 +83,7 @@ class petitionCController
 
     public function searchC()
     {
+        $userid = $_GET['userid'];
         $key = $_GET['key'];
         $petionCList = petitionCModel::search($key);
         require_once('views/petitionC/index_petitionC.php');
