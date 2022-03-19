@@ -493,6 +493,7 @@ tr:nth-child(even){background-color: #f2f2f2}
         
     <input type="hidden" name="controller" value="petitionC"/>
     <input type="hidden" name="petitionid" value="<?php echo $petionCList->petition_id;?>"/>
+    <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
     <br><button type="submit" name="action" value="indexC"> Back </button>
     <button type="submit" name="action" value="updateC"> Update </button>
 

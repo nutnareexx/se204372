@@ -469,6 +469,7 @@ tr:nth-child(even){background-color: #f2f2f2}
  <div class="header">
      
      <h2>ตรวจสอบคำร้องสหกิจ</h2>
+     
  </div>
  
  <form method="get" action="">
@@ -531,8 +532,8 @@ sidebarBtn.addEventListener("click", ()=>{
     <td>$clist->c_name</td>  
     <td>ปุ่มไปอีกหน้า</td>
     <td>$clist->status_name</td>  
-    <td> <a href=?controller=petitionC&action=updateformC&petition_id=$clist->petition_id> อนุมัติ </a> </td>
-    <td> <a href=?controller=petitionC&action=updateformC&petition_id=$clist->petition_id> ไม่อนุมัติ </a>
+    <td> <a href=?controller=petitionC&action=updateformC&petition_id=$clist->petition_id&userid=$userid> อนุมัติ </a> </td>
+    <td> <a href=?controller=petitionC&action=updateformC&petition_id=$clist->petition_id&userid=$userid> ไม่อนุมัติ </a>
     </td></tr>";
 }
 echo "</table>";
