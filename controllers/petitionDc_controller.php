@@ -16,13 +16,24 @@ class petitionDcController
         $userid = $_GET['userid'];
         $petition_id = $_GET['petition_id'];
         $userList=userModel::get($userid);
-        $p2 = petitionModelFornew::get($petition_id);
         $p = petitionDcModel::get($petition_id);
-        $pelist = petitionModelFornew::getAll();
         $petionDcList = petitionDcModel::getAll();
         $nametitleList = nametitleModel::getAll();
         $DetailCompanyList = DetailCompanyModel::getAll();
         require_once('views/petitionDc/detail_petitionDc.php');
+
+        
+    }
+
+    public function indexDetailNoDc() {
+        $userid = $_GET['userid'];
+        $petition_id = $_GET['petition_id'];
+        $userList=userModel::get($userid);
+        $p2 = petitionModelFornew::get($petition_id);
+        $pelist = petitionModelFornew::getAll();
+        $nametitleList = nametitleModel::getAll();
+        $DetailCompanyList = DetailCompanyModel::getAll();
+        require_once('views/petitionDc/detailNoDC.php');
     }
 
     public function newpetitionDc()
