@@ -357,12 +357,12 @@ tr:nth-child(even){background-color: #f2f2f2}
         </div>
     <dl class="nav-links">
         <li>
-            <a href="?controller=Aj&action=index">
+            <a href="?controller=Aj&action=index&userid=<?php echo $userid;?>">
             <i class='bx bx-home'></i>
                 <span class="link_name">หน้าแรก</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=Aj&action=index">หน้าแรก</a></li>
+                <li><a class="link_name" href="?controller=Aj&action=index&userid=<?php echo $userid;?>">หน้าแรก</a></li>
             </ul>
         </li>
         <li>
@@ -375,8 +375,8 @@ tr:nth-child(even){background-color: #f2f2f2}
             </div>
             <ul class="sub-menu">
                 <li><a class="link_name" href="#">สถานประกอบการณ์</a></li>
-                <li><a href="?controller=companyP&action=indexP">ฝึกงาน</a></li>
-                <li><a href="?controller=companyC&action=index">สหกิจ</a></li>
+                <li><a href="?controller=companyP&action=indexP&userid=<?php echo $userid;?>">ฝึกงาน</a></li>
+                <li><a href="?controller=companyC&action=index&userid=<?php echo $userid;?>">สหกิจ</a></li>
             </ul>
         </li>
         <li>
@@ -389,63 +389,63 @@ tr:nth-child(even){background-color: #f2f2f2}
             </div>
             <ul class="sub-menu">
                 <li><a class="link_name" href="#">ตรวจสอบคำร้อง</a></li>
-                <li><a href="?controller=petitionDC&action=index">ฝึกงาน</a></li>
-                <li><a href="?controller=petitionC&action=indexC">สหกิจ</a></li>
+                <li><a href="?controller=petitionDC&action=index&userid=<?php echo $userid;?>">ฝึกงาน</a></li>
+                <li><a href="?controller=petitionC&action=indexC&userid=<?php echo $userid;?>">สหกิจ</a></li>
             </ul>
         </li>
         
         <li>
-            <a href="?controller=considerAj&action=index">
+            <a href="?controller=considerAj&action=index&userid=<?php echo $userid;?>">
                 <i class='bx bx-file'></i>
                 <span class="link_name">พิจาราณาคำร้องขอฝึกงาน</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=considerAj&action=index">พิจาราณาคำร้องขอฝึกงาน</a></li>
+                <li><a class="link_name" href="?controller=considerAj&action=index&userid=<?php echo $userid;?>">พิจาราณาคำร้องขอฝึกงาน</a></li>
             </ul>
         </li>
         <li>
-            <a href="?controller=graphAj&action=index">
+            <a href="?controller=graphAj&action=index&userid=<?php echo $userid;?>">
                 <i class='bx bx-line-chart' ></i>
                 <span class="link_name">สถานการณ์ยื่นคำร้องนิสิต</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=graphAj&action=index">สถานการณ์ยื่นคำร้องนิสิต</a></li>
+                <li><a class="link_name" href="?controller=graphAj&action=index&userid=<?php echo $userid;?>">สถานการณ์ยื่นคำร้องนิสิต</a></li>
             </ul>
         </li>
         <li>
-            <a href="?controller=reportPetition&action=index">
+            <a href="?controller=reportPetition&action=index&userid=<?php echo $userid;?>">
                 <i class='bx bx-file-blank' ></i>
                 <span class="link_name">รายงานสรุปการอนุมัติสหกิจ</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=reportPetition&action=index">รายงานสรุปการอนุมัติสหกิจ</a></li>
+                <li><a class="link_name" href="?controller=reportPetition&action=index&userid=<?php echo $userid;?>">รายงานสรุปการอนุมัติสหกิจ</a></li>
             </ul>
         </li>
         <li>
-            <a href="?controller=bookAj&action=index">
+            <a href="?controller=bookAj&action=index&userid=<?php echo $userid;?>">
                 <i class='bx bx-book' ></i>
                 <span class="link_name">ออกหนังสือขอความอนุเคราะห์</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=bookAj&action=index">ออกหนังสือขอความอนุเคราะห์</a></li>
+                <li><a class="link_name" href="?controller=bookAj&action=index&userid=<?php echo $userid;?>">ออกหนังสือขอความอนุเคราะห์</a></li>
             </ul>
         </li>
         <li>
-            <a href="?controller=checkHistory&action=index">
+            <a href="?controller=checkHistory&action=index&userid=<?php echo $userid;?>">
                 <i class='bx bx-notepad'></i>
                 <span class="link_name">ตรวจสอบประวัติการฝึกสหกิจ</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=checkHistory&action=index">ตรวจสอบประวัติการฝึกสหกิจ</a></li>
+                <li><a class="link_name" href="?controller=checkHistory&action=index&userid=<?php echo $userid;?>">ตรวจสอบประวัติการฝึกสหกิจ</a></li>
             </ul>
         </li>
         <li>
-            <a href="?controller=uploadAj&action=index">
+            <a href="?controller=uploadAj&action=index&userid=<?php echo $userid;?>">
                 <i class='bx bx-upload'></i>
                 <span class="link_name">อัพโหลดประกาศ</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=uploadAj&action=index">อัพโหลดประกาศ</a></li>
+                <li><a class="link_name" href="?controller=uploadAj&action=index&userid=<?php echo $userid;?>">อัพโหลดประกาศ</a></li>
             </ul>
         </li>
         <li> 
@@ -455,9 +455,11 @@ tr:nth-child(even){background-color: #f2f2f2}
         </div>
             
             <div class="name-job">
-                <div class="profile_name">Name</div>
+                <div class="profile_name">
+                <?php echo $userList->user_name;?> <?php echo $userList->user_surname;?>
+                </div>
             </div>   
-            <a href="?controller=user&action=logoutAj">          
+            <a href="?controller=user&action=logoutAj&userid=<?php echo $userid;?>">          
                 <i class='bx bx-log-out '></i>
             </a>
     </div>
@@ -474,7 +476,7 @@ tr:nth-child(even){background-color: #f2f2f2}
     <div class="header">
         <h2>รายละเอียดสถานประกอบการที่ประสงค์รับนิสิตสหกิจ</h2>
 
-    <h3>เพิ่มสถานประกอบการณ์ใหม่ <a href="?controller=cooperativeP&action=newCooperative"> click!!! </a> </h3>
+    <h3>เพิ่มสถานประกอบการณ์ใหม่ <a href="?controller=cooperativeP&action=newCooperative&userid=<?php echo $userid;?>"> click!!! </a> </h3>
 </div>
 
 
