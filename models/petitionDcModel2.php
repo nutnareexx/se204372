@@ -122,7 +122,8 @@
     {
         $petionDcList = [];
         require("connection_connect.php");
-        $sql = "SELECT * FROM `petition` NATURAL JOIN `user` NATURAL JOIN `name_title` NATURAL JOIN `status` WHERE comName_p IS NOT null  AND type_p = 'dc'";
+        $sql = "SELECT p.petition_id, p.date_p, p.user_id, p.academicY_p, nt.name_title, u.user_name, u.user_surname, p.FB_p, p.phone_p, p.position_p, p.approverName_p, p.approverSname_p, p.approverP_p, p.comName_p ,p.compNo_p, p.compRoad_p, p.compSubdist_p, p.compDistrict_p, p.compProvince_p, p.compPost_p, p.hrName_p, p.hrSname_p, p.hrPhone_p, p.hrMail_p, p.salary_p, p.room_p, p.type_p ,p.start_p, p.finish_p, p.status_id, s.status_name FROM `petition` AS p NATURAL JOIN `user` AS u NATURAL JOIN `name_title` AS nt NATURAL JOIN `status` AS s
+        WHERE p.comName_p IS NOT null  AND p.type_p = 'dc';";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
@@ -228,6 +229,14 @@
         require("connection_close.php");
         return $petitionFornew;
     }
+    public static function update($petition_id, $status_id)
+  {
+      require("connection_connect.php");
+      $sql = "UPDATE `petition` SET `status_id`='$status_id' WHERE petition_id = '$petition_id'";
+      $result = $conn->query($sql);
+      require("connection_close.php");
+      return "update success $result row";
+  }
 
     }
 ?>
