@@ -498,6 +498,8 @@ tr:nth-child(even){background-color: #f2f2f2}
 <form method="get" action="">
     <input type="hidden" name="controller" value="petitionC"/>
     <input type="hidden" name="petitionid" value="<?php echo $petionCList->petition_id;?>"/>
+    <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
+    <button type="submit" name="action" value="indexC"> Back </button>
     
 </form>
 
