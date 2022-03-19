@@ -37,11 +37,12 @@ class userController{
 
     public function logoutNisit()
     {
-        
+        $userid = $_GET['userid'];
         require_once('views/login/logout_nisit.php');
     }
     public function logoutAj()
     {
+        $userid = $_GET['userid'];
         require_once('views/login/logout_Aj.php');
       
     }
