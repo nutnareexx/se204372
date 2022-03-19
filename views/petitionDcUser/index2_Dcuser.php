@@ -398,7 +398,7 @@
                 box-sizing: border-box;
             
             }
-        input[type=mail], select {
+        input[type=email], select {
                 font-family: 'Prompt', sans-serif;
                 width: 100%;
                 padding: 12px 20px;
@@ -668,7 +668,7 @@
 
             <tr>
                 <td align="right"><label>E-mail : </label></td>
-                <td><input type="mail" name="mailhr"/></td>
+                <td><input type="email" name="mailhr"/></td>
             </tr>
 
             <th colspan="2">
@@ -700,6 +700,13 @@
                 <label for="dh"> ไม่มี </label><br>
                 
             </tr>
+
+            <!-- <tr>
+                <form action="petitionDcUser_controller.php" method="post" enctype="multipart/form-data" name="upfile" id="upfile">
+                <td align="right"><label>ใบคำร้องขอฝึกงาน : </label></td>
+                <td><input type="button" name="file_name" value="เพิ่มไฟล์"></td>
+                
+            </tr> -->
             
             </table>
             <br>
@@ -708,8 +715,9 @@
             <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
             <input type="hidden" name="y" value="<?php echo $y;?>"/>
             <button type="submit" name="action" value="index">Back</button>
-            <button type="submit" name="action" value="addpetitionDc">Save</button>
-        </form>
+            <button type="submit" name="action" value="index3">Save</button>
+            
+            </form>
         </div>
         </center>
         <br>
