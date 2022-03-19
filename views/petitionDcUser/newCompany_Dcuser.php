@@ -529,7 +529,8 @@
 
                 <tr>
                     <td align="right" style="width: 30%;" ><label>วันที่เขียนคำร้อง :</label></td>
-                    <td> <input type="date" name="date"/></td>
+                    <!-- <td> <input type="date" name="date"/></td> -->
+                    <td><label>  <input type="date" name="p_date" value="<?php echo $date;?>"/></label></td>
                 </tr>
                 
 
@@ -540,26 +541,8 @@
                 </tr>
                 
                 <tr>
-                    <td align="right"><label>คำนำหน้า : </label></td>
-                    <td><?php echo $userList->user_title?></td>
-                    <!-- <td><select name="name_id">
-                        <option value="">--เลือก--</option>
-                        <?php foreach($nametitleList as $newtt){
-                            echo "<option value=$newtt->name_id>$newtt->name_title</option>";
-                        }?>
-                        </select>
-                    </td> -->
-                </tr>
-
-                <tr>
-                    <td align="right"><label>ชื่อ : </label></td>
-                    <td><?php echo $userList->user_name?></td>
-                    <!-- <td><input type="text" name="user_name"/></td> -->
-                </tr>
-                <tr>
-                    <td align="right"><label>นามสกุล : </label></td>
-                    <td><?php echo $userList->user_surname?></td>
-                    <!-- <td><input type="text" name="user_surname"/></td> -->
+                    <td align="right"><label>ชื่อ - นามสกุล : </label></td>
+                    <td><?php echo $userList->user_title?><?php echo $userList->user_name?> <?php echo $userList->user_surname?></td>
                 </tr>
 
 
@@ -611,7 +594,7 @@
                 <td>
                 <?php 
                 if($company == "old"){
-                    echo "<select name='name_company'>
+                    echo "<select name='company_id'>
                     <option value=''>--เลือก--</option>";
                     foreach($comList as $c){
                         echo "<option value=$c->dc_id>$c->dc_name</option>";
@@ -680,7 +663,7 @@
 
             <tr>
                 <td align="right"><label>E-mail : </label></td>
-                <td><input type="mail" name="mail"/></td>
+                <td><input type="mail" name="mailhr"/></td>
             </tr>
 
             <th colspan="2">
@@ -706,12 +689,11 @@
 
             <tr>
                 <td align="right"><label>ที่พัก : </label></td>
-                <td><input type="radio" id="html" name="fav_language" value="HTML">
-                <label for="html"> มี </label><br>
-                <input type="radio" id="css" name="fav_language" value="CSS">
-                <label for="css"> ไม่มี </label><br>
-                <!-- <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-                <label for="javascript"> อื่นๆ </label><br><br></label></td> -->
+                <td><input type="radio" id="h" name="room" value="Have">
+                <label for="h"> มี </label><br>
+                <input type="radio" id="dh" name="room" value="Dont Have">
+                <label for="dh"> ไม่มี </label><br>
+                
             </tr>
             
             </table>
