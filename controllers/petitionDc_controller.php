@@ -121,6 +121,7 @@ class petitionDcController
         $key = $_GET['key'];
         $userList=userModel::get($userid);
         $petionDcList = petitionDcModel::search($key);
+        $petitionFornew = petitionModelFornew::search($key);
         require_once('views/petitionDc/index_petitionDc.php');
     }
 
