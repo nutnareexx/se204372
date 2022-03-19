@@ -398,7 +398,7 @@
                 box-sizing: border-box;
             
             }
-        input[type=mail], select {
+        input[type=email], select {
                 font-family: 'Prompt', sans-serif;
                 width: 100%;
                 padding: 12px 20px;
@@ -533,6 +533,11 @@
                     <td><label>  <input type="date" name="p_date" value="<?php echo $date;?>"/></label></td>
                 </tr>
                 
+                <tr>
+                    <td align="right"> <label>ปีการศึกกษา : </label></td>
+                    <td><?php echo $y;?></td>
+                </tr>
+                
 
                 <tr>
                     <td align="right"><label>รหัสนิสิต :</label></td>
@@ -663,7 +668,7 @@
 
             <tr>
                 <td align="right"><label>E-mail : </label></td>
-                <td><input type="mail" name="mailhr"/></td>
+                <td><input type="email" name="mailhr"/></td>
             </tr>
 
             <th colspan="2">
@@ -701,6 +706,7 @@
 
             <input type="hidden" name="controller" value="petitionCUser"/>
             <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
+            <input type="hidden" name="y" value="<?php echo $y;?>"/>
             <button type="submit" name="action" value="index">Back</button>
             <button type="submit" name="action" value="addpetitionC">Save</button>
         </form>
