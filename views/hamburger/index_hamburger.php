@@ -459,11 +459,11 @@ body {
             <div class="name-job">
                 <div class="profile_name">
                 
-                <?php echo $userList->user_name;?>
+                <?php echo $userList->user_name;?> <?php echo $userList->user_surname;?>
                 
                 </div>
             </div>   
-            <a href="?controller=user&action=logout&userid=<?php echo $userid;?>">          
+            <a href="?controller=user&action=logoutNisit&userid=<?php echo $userid;?>">          
                 <i class='bx bx-log-out '></i>
             </a>
     </div>
