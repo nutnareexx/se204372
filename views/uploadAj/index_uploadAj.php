@@ -539,10 +539,7 @@ body {
       <br>
   </div>
   <div class="btn-group" >
-      <!--<input type="hidden" name="id" value="<?php echo $re->id;?>"/>
-      <input type="hidden" name="uid" value="<?php echo $re->uid;?>"/>
-      <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
-      <input type="hidden" name="resultsList[]" value="<?php echo $resultsList;?>"/>-->
+  <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
       <button class="button" type="submit" name="button" id="button" value="upStudent"> เพิ่มไฟล์ </button>
       </div>
       <br>

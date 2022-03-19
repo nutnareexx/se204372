@@ -143,6 +143,7 @@ html {
                     <form method="get" action="" >
                         <div class="btn-group">
                             <input type="hidden" name="controller" value="pages"/>
+                            <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
                             <button class="button" type="submit" name="action" value="home"> ใช่ </button>
                         </div>
                     </form>
@@ -150,6 +151,7 @@ html {
                         <div class="btn-group">
                         
                             <input type="hidden" name="controller" value="nisit"/> 
+                            <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
                             <button class="button" type="submit" name="action" value="index"> ไม่ </button>
                         </div>
                     </form>
