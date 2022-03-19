@@ -513,20 +513,14 @@ tr:nth-child(even){background-color: #f2f2f2}
 </div>
 
 <form method="get" action="">
-<<<<<<< Updated upstream
-    
+        <div class="btn-group2">
     <input type="text" name="key">
     <input type="hidden" name="controller" value="petitionDC"/>
     <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
-    <button type="submit" name="action" value="search">Search</button>
-=======
-    <div class="btn-group2">
-        <input type="text" name="key">
-        <input type="hidden" name="controller" value="petitionDC"/>
-        <button class="button2" type="submit" name="action" value="search">
-        <i class='fas fa-search' style='font-size: 22px'></i>
-        </button>
->>>>>>> Stashed changes
+    <button class="button2" type="submit" name="action" value="search">
+        <i class='fas fa-search' style='font-size: 22px'></i></button>
+
+        
 
     </div>
     
