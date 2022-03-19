@@ -100,6 +100,7 @@ function call($controller,$action){
                             break;    
                             
         case "checkApproval":   require_once("models/petitionDcModel.php");
+                                require_once("models/petitionCModel.php");
                                 require_once("models/approveModel.php");
                                 require_once("models/nametitleModel.php");
                                 require_once("models/userModel.php");
