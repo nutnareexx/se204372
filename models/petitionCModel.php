@@ -3,6 +3,7 @@ class petitionCModel{
     public $petition_id;
     public $date_p;
     public $user_id;
+    public $academicY_p;
     public $FB_p;
     public $phone_p;
     public $position_p;
@@ -39,11 +40,13 @@ class petitionCModel{
 
     public function __construct($petition_id, $date_p,$user_id, $FB_p, $phone_p, $position_p, $approverName_p, $approverSname_p, $approverP_p,
     $dc_id, $c_id, $comName_p, $compNo_p, $compRoad_p, $compSubdist_p, $compDistrict_p, $compProvince_p, $compPost_p, $hrName_p, $hrSname_p,
-    $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, $c_name)
+    $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, 
+    $c_name, $academicY_p)
     {
         $this->petition_id = $petition_id;
         $this->date_p =  $date_p;
         $this->user_id = $user_id;
+        $this->academicY_p = $academicY_p;
         $this->FB_p = $FB_p;
         $this->phone_p = $phone_p;
         $this->position_p = $position_p;
@@ -93,6 +96,7 @@ class petitionCModel{
             $petition_id = $my_row['petition_id'];
             $date_p = $my_row['date_p'];
             $user_id = $my_row['user_id'];
+            $academicY_p = $my_row['academicY_p'];
             $FB_p = $my_row['FB_p'];
             $phone_p = $my_row['phone_p'];
             $position_p = $my_row['position_p'];
@@ -130,7 +134,7 @@ class petitionCModel{
 
         return new petitionCModel($petition_id, $date_p,$user_id, $FB_p, $phone_p, $position_p, $approverName_p, $approverSname_p, $approverP_p,
         $dc_id, $c_id, $comName_p, $compNo_p, $compRoad_p, $compSubdist_p, $compDistrict_p, $compProvince_p, $compPost_p, $hrName_p, $hrSname_p,
-        $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, $c_name);
+        $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, $c_name, $academicY_p);
     }
 
 
@@ -146,6 +150,7 @@ class petitionCModel{
             $petition_id = $my_row['petition_id'];
             $date_p = $my_row['date_p'];
             $user_id = $my_row['user_id'];
+            $academicY_p = $my_row['academicY_p'];
             $FB_p = $my_row['FB_p'];
             $phone_p = $my_row['phone_p'];
             $position_p = $my_row['position_p'];
@@ -180,7 +185,7 @@ class petitionCModel{
 
             $petionCList[] = new petitionCModel($petition_id, $date_p,$user_id, $FB_p, $phone_p, $position_p, $approverName_p, $approverSname_p, $approverP_p,
             $dc_id, $c_id, $comName_p, $compNo_p, $compRoad_p, $compSubdist_p, $compDistrict_p, $compProvince_p, $compPost_p, $hrName_p, $hrSname_p,
-            $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, $c_name);
+            $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, $c_name, $academicY_p);
 
         }
         require("connection_close.php");
@@ -223,7 +228,7 @@ class petitionCModel{
         $sql = "SELECT * FROM `petition` NATURAL JOIN `user` NATURAL JOIN `name_title` NATURAL JOIN `status` NATURAL JOIN `detail_cooperative`
                      
                     WHERE (petition_id like '%$key%' or date_p like '%$key%' 
-                    or user_id like '%$key%' or FB_p like '%$key%' or phone_p like '%$key%' or position_p like '%$key%'
+                    or user_id like '%$key%' or academicY_p like '%$key%' or FB_p like '%$key%' or phone_p like '%$key%' or position_p like '%$key%'
                     or approverName_p like '%$key%' or approverSname_p like '%$key%' or approverP_p like '%$key%' or dc_id like '%$key%'
                     or c_id like '%$key%'or comName_p like '%$key%' or compNo_p like '%$key%' or compRoad_p like '%$key%' 
                     or compSubdist_p like '%$key%' or compDistrict_p like '%$key%' or compProvince_p like '%$key%' or compPost_p like '%$key%'
@@ -238,6 +243,7 @@ class petitionCModel{
             $petition_id = $my_row['petition_id'];
             $date_p = $my_row['date_p'];
             $user_id = $my_row['user_id'];
+            $academicY_p = $my_row['academicY_p'];
             $FB_p = $my_row['FB_p'];
             $phone_p = $my_row['phone_p'];
             $position_p = $my_row['position_p'];
@@ -272,7 +278,7 @@ class petitionCModel{
 
             $petionCList[] = new petitionCModel($petition_id, $date_p,$user_id, $FB_p, $phone_p, $position_p, $approverName_p, $approverSname_p, $approverP_p,
             $dc_id, $c_id, $comName_p, $compNo_p, $compRoad_p, $compSubdist_p, $compDistrict_p, $compProvince_p, $compPost_p, $hrName_p, $hrSname_p,
-            $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, $c_name);
+            $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, $c_name, $academicY_p);
         }
         require("connection_close.php");
         return $petionCList;
