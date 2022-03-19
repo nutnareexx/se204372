@@ -10,6 +10,7 @@ class petitionCUserController
 
     public function newpetitionC()
     {
+        $userid = $_GET['userid'];
         $petionCList = petitionCModel::getAll();
         //$approveList = approveModel::getAll();
         $statusList = statusModel::getAll();
