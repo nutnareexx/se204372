@@ -361,7 +361,7 @@ tr:nth-child(even){background-color: #f2f2f2}
                 <span class="link_name">หน้าแรก</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=nisit&action=index">หน้าแรก</a></li>
+                <li><a class="link_name" href="?controller=nisit&action=index&userid=<?php echo $userid;?>">หน้าแรก</a></li>
             </ul>
         </li>
         <li>
@@ -374,8 +374,8 @@ tr:nth-child(even){background-color: #f2f2f2}
             </div>
             <ul class="sub-menu">
                 <li><a class="link_name" href="#">สถานประกอบการณ์</a></li>
-                <li><a href="?controller=company&action=index">ฝึกงาน</a></li>
-                <li><a href="?controller=cooperative&action=index">สหกิจ</a></li>
+                <li><a href="?controller=company&action=index&userid=<?php echo $userid;?>">ฝึกงาน</a></li>
+                <li><a href="?controller=cooperative&action=index&userid=<?php echo $userid;?>">สหกิจ</a></li>
             </ul>
         </li>
         <li>
@@ -388,8 +388,8 @@ tr:nth-child(even){background-color: #f2f2f2}
             </div>
             <ul class="sub-menu">
                 <li><a class="link_name" href="#">ยื่นคำร้อง</a></li>
-                <li><a href="?controller=petitionDCUser&action=index">ฝึกงาน</a></li>
-                <li><a href="?controller=petitionCUser&action=index">สหกิจ</a></li>
+                <li><a href="?controller=petitionDCUser&action=index&userid=<?php echo $userid;?>">ฝึกงาน</a></li>
+                <li><a href="?controller=petitionCUser&action=index&userid=<?php echo $userid;?>">สหกิจ</a></li>
             </ul>
         </li>
         <li>
