@@ -1,38 +1,78 @@
 <?php
 class petitionDcModel{
-    public $dc_id;
     public $petition_id;
+    public $date_p;
     public $user_id;
+    public $FB_p;
+    public $phone_p;
+    public $position_p;
+    public $approverName_p;
+    public $approverSname_p;
+    public $approverP_p;
+    public $dc_id;
+    public $c_id;
+    public $comName_p;
+    public $compNo_p;
+    public $compRoad_p;
+    public $compSubdist_p;
+    public $compDistrict_p;
+    public $compProvince_p;
+    public $compPost_p;
+    public $hrName_p;
+    public $hrSname_p;
+    public $hrPhone_p;
+    public $hrMail_p;
+    public $salary_p;
+    public $room_p;
+    public $type_p;
+    public $start_p;
+    public $finish_p; 
+    public $status_id;
+
     public $name_title;
     public $user_name;
     public $user_surname;
-    public $start_p;
-    public $finish_p;
-    public $dc_position;
-    public $dc_name;
-    public $dc_pay;
-    public $dc_room;
-    public $status_id;
     public $status_name;
-    public $c_id;
+    public $dc_name;
 
-    public function __construct($dc_id, $petition_id, $user_id, $name_title, $user_name, $user_surname, $start_p, $finish_p, 
-    $dc_position,$dc_name, $dc_pay, $dc_room, $status_id, $status_name)
+    public function __construct($petition_id, $date_p,$user_id, $FB_p, $phone_p, $position_p, $approverName_p, $approverSname_p, $approverP_p,
+    $dc_id, $c_id, $comName_p, $compNo_p, $compRoad_p, $compSubdist_p, $compDistrict_p, $compProvince_p, $compPost_p, $hrName_p, $hrSname_p,
+    $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, $dc_name)
     {
-        $this->dc_id = $dc_id;
         $this->petition_id = $petition_id;
+        $this->date_p =  $date_p;
         $this->user_id = $user_id;
+        $this->FB_p = $FB_p;
+        $this->phone_p = $phone_p;
+        $this->position_p = $position_p;
+        $this->approverName_p = $approverName_p;
+        $this->approverSname_p = $approverSname_p;
+        $this->approverP_p = $approverP_p;
+        $this->dc_id = $dc_id;
+        $this->c_id = $c_id;
+        $this->comName_p = $comName_p; 
+        $this->compNo_p = $compNo_p; 
+        $this->compRoad_p = $compRoad_p;
+        $this->compSubdist_p = $compSubdist_p;
+        $this->compDistrict_p = $compDistrict_p;
+        $this->compProvince_p = $compProvince_p;
+        $this->compPost_p = $compPost_p;
+        $this->hrName_p = $hrName_p;
+        $this->hrSname_p = $hrSname_p;
+        $this->hrPhone_p = $hrPhone_p;
+        $this->hrMail_p = $hrMail_p;
+        $this->salary_p = $salary_p;
+        $this->room_p = $room_p;
+        $this->type_p = $type_p;
+        $this->start_p = $start_p;
+        $this->finish_p = $finish_p; 
+        $this->status_id = $status_id;
+
         $this->name_title = $name_title;
         $this->user_name = $user_name;
         $this->user_surname = $user_surname;
-        $this->start_p = $start_p;
-        $this->finish_p = $finish_p;
-        $this->dc_position = $dc_position;
-        $this->dc_name = $dc_name;
-        $this->dc_pay = $dc_pay;
-        $this->dc_room = $dc_room;
-        $this->status_id = $status_id;
         $this->status_name = $status_name;
+        $this->dc_name = $dc_name;
        
         
     }
@@ -41,81 +81,101 @@ class petitionDcModel{
     {
         
         require("connection_connect.php");
-        $sql = "SELECT t.dc_id, t.petition_id, t.user_id, t.name_title, t.user_name, t.user_surname, t.start_p, t.finish_p, t.date_p, 
-        t.dc_position, t.dc_name, t.dc_pay, t.dc_room, t.status_id, status.status_name
-        FROM `status` INNER JOIN 
-            (SELECT userp.dc_id, userp.petition_id, userp.user_id, userp.name_id, name_title.name_title, userp.user_name, userp.user_surname, 
-             userp.start_p, userp.finish_p, userp.date_p, userp.dc_position, userp.dc_name, userp.dc_pay, userp.dc_room, userp.status_id
-                FROM `name_title` INNER JOIN 
-                (SELECT pdc.dc_id, pdc.petition_id, pdc.user_id, pdc.start_p, pdc.finish_p, pdc.date_p, pdc.dc_position, pdc.dc_name, pdc.dc_pay, pdc.dc_room, 
-                 user.name_id, user.user_name, user.user_surname, pdc.status_id
-                     FROM `user`  INNER JOIN
-                    (SELECT petition_id, start_p, finish_p, date_p, user_id, status_id, petition.dc_id,dc_name, dc_position, dc_pay, dc_room 
-                     FROM `petition` INNER JOIN `detail_company` ON petition.dc_id = detail_company.dc_id) AS pdc ON user.user_id = pdc.user_id) AS userp ON userp.name_id = name_title.name_id) AS t
-                     ON t.status_id = status.status_id
-                     WHERE petition_id = '$petition_id'
-                     ORDER BY petition_id";
+        $sql = "SELECT * FROM `petition` NATURAL JOIN `user` NATURAL JOIN `name_title` NATURAL JOIN `status`
+        NATURAL JOIN `detail_company`
+         WHERE petition_id = '$petition_id';";
         $result = $conn->query($sql);
         $my_row = $result->fetch_assoc();
-            $dc_id = $my_row['dc_id'];
-            $petition_id = $my_row['petition_id'];
-            $user_id = $my_row['user_id'];
-            $name_title = $my_row['name_title'];
-            $user_name = $my_row['user_name'];
-            $user_surname = $my_row['user_surname'];
-            $start_p = $my_row['start_p'];
-            $finish_p = $my_row['finish_p'];
-            $dc_position = $my_row['dc_position'];
-            $dc_name = $my_row['dc_name'];
-            $dc_pay = $my_row['dc_pay'];
-            $dc_room = $my_row['dc_room'];
-            $status_id = $my_row['status_id'];
-            $status_name = $my_row['status_name'];
-            $c_id = $my_row['c_id'];
+        $petition_id = $my_row['petition_id'];
+        $date_p = $my_row['date_p'];
+        $user_id = $my_row['user_id'];
+        $FB_p = $my_row['FB_p'];
+        $phone_p = $my_row['phone_p'];
+        $position_p = $my_row['position_p'];
+        $approverName_p = $my_row['approverName_p'];
+        $approverSname_p = $my_row['approverSname_p'];
+        $approverP_p = $my_row['approverP_p'];
+        $dc_id = $my_row['dc_id'];
+        $c_id = $my_row['c_id'];
+        $comName_p = $my_row['comName_p']; 
+        $compNo_p = $my_row['compNo_p']; 
+        $compRoad_p = $my_row['compRoad_p']; 
+        $compSubdist_p = $my_row['compSubdist_p']; 
+        $compDistrict_p = $my_row['compDistrict_p'];
+        $compProvince_p = $my_row['compProvince_p']; 
+        $compPost_p = $my_row['compPost_p']; 
+        $hrName_p = $my_row['hrName_p']; 
+        $hrSname_p = $my_row['hrSname_p']; 
+        $hrPhone_p = $my_row['hrPhone_p']; 
+        $hrMail_p = $my_row['hrMail_p']; 
+        $salary_p = $my_row['salary_p']; 
+        $room_p = $my_row['room_p'];
+        $type_p = $my_row['type_p']; 
+        $start_p = $my_row['start_p'];
+        $finish_p = $my_row['finish_p'];    
+        $status_id = $my_row['status_id'];
+
+        $name_title = $my_row['name_title'];
+        $user_name = $my_row['user_name'];
+        $user_surname = $my_row['user_surname'];
+        $status_name = $my_row['status_name'];
+        $dc_name = $my_row['dc_name'];
         require("connection_close.php");
 
-        return new petitionDcModel($dc_id, $petition_id, $user_id, $name_title, $user_name, $user_surname, $start_p, $finish_p, 
-        $dc_position,$dc_name, $dc_pay, $dc_room, $status_id, $status_name);
+        return new petitionDcModel($petition_id, $date_p,$user_id, $FB_p, $phone_p, $position_p, $approverName_p, $approverSname_p, $approverP_p,
+        $dc_id, $c_id, $comName_p, $compNo_p, $compRoad_p, $compSubdist_p, $compDistrict_p, $compProvince_p, $compPost_p, $hrName_p, $hrSname_p,
+        $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, $dc_name);
     }
+
+   
 
 
     public static function getAll()
     {
         $petionDcList = [];
         require("connection_connect.php");
-        $sql = "SELECT t.dc_id, t.petition_id, t.user_id, t.name_title, t.user_name, t.user_surname, t.start_p, t.finish_p, t.date_p, 
-        t.dc_position, t.dc_name, t.dc_pay, t.dc_room, t.status_id, status.status_name
-        FROM `status` INNER JOIN 
-            (SELECT userp.dc_id, userp.petition_id, userp.user_id, userp.name_id, name_title.name_title, userp.user_name, userp.user_surname, 
-             userp.start_p, userp.finish_p, userp.date_p, userp.dc_position, userp.dc_name, userp.dc_pay, userp.dc_room, userp.status_id
-                FROM `name_title` INNER JOIN 
-                (SELECT pdc.dc_id, pdc.petition_id, pdc.user_id, pdc.start_p, pdc.finish_p, pdc.date_p, pdc.dc_position, pdc.dc_name, pdc.dc_pay, pdc.dc_room, 
-                 user.name_id, user.user_name, user.user_surname, pdc.status_id
-                     FROM `user`  INNER JOIN
-                    (SELECT petition_id, start_p, finish_p, date_p, user_id, status_id, petition.dc_id, dc_name, dc_position, dc_pay, dc_room 
-                     FROM `petition` INNER JOIN `detail_company` ON petition.dc_id = detail_company.dc_id) AS pdc ON user.user_id = pdc.user_id) AS userp ON userp.name_id = name_title.name_id) AS t
-                     ON t.status_id = status.status_id
-                     ORDER BY petition_id;";
+        $sql = "SELECT * FROM `petition` NATURAL JOIN `user` NATURAL JOIN `name_title` NATURAL JOIN `status`
+        NATURAL JOIN `detail_company`";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
-            $dc_id = $my_row['dc_id'];
             $petition_id = $my_row['petition_id'];
+            $date_p = $my_row['date_p'];
             $user_id = $my_row['user_id'];
+            $FB_p = $my_row['FB_p'];
+            $phone_p = $my_row['phone_p'];
+            $position_p = $my_row['position_p'];
+            $approverName_p = $my_row['approverName_p'];
+            $approverSname_p = $my_row['approverSname_p'];
+            $approverP_p = $my_row['approverP_p'];
+            $dc_id = $my_row['dc_id'];
+            $c_id = $my_row['c_id'];
+            $comName_p = $my_row['comName_p']; 
+            $compNo_p = $my_row['compNo_p']; 
+            $compRoad_p = $my_row['compRoad_p']; 
+            $compSubdist_p = $my_row['compSubdist_p']; 
+            $compDistrict_p = $my_row['compDistrict_p'];
+            $compProvince_p = $my_row['compProvince_p']; 
+            $compPost_p = $my_row['compPost_p']; 
+            $hrName_p = $my_row['hrName_p']; 
+            $hrSname_p = $my_row['hrSname_p']; 
+            $hrPhone_p = $my_row['hrPhone_p']; 
+            $hrMail_p = $my_row['hrMail_p']; 
+            $salary_p = $my_row['salary_p']; 
+            $room_p = $my_row['room_p'];
+            $type_p = $my_row['type_p']; 
+            $start_p = $my_row['start_p'];
+            $finish_p = $my_row['finish_p'];    
+            $status_id = $my_row['status_id'];
+
             $name_title = $my_row['name_title'];
             $user_name = $my_row['user_name'];
             $user_surname = $my_row['user_surname'];
-            $start_p = $my_row['start_p'];
-            $finish_p = $my_row['finish_p'];
-            $dc_position = $my_row['dc_position'];
-            $dc_name = $my_row['dc_name'];
-            $dc_pay = $my_row['dc_pay'];
-            $dc_room = $my_row['dc_room'];
-            $status_id = $my_row['status_id'];
             $status_name = $my_row['status_name'];
-            // $c_id = $my_row['c_id'];
-            $petionDcList[] = new petitionDcModel($dc_id, $petition_id, $user_id, $name_title, $user_name, $user_surname, $start_p, $finish_p, 
-            $dc_position,$dc_name, $dc_pay, $dc_room, $status_id, $status_name);
+            $dc_name = $my_row['dc_name'];
+            $petionDcList[] = new petitionDcModel($petition_id, $date_p,$user_id, $FB_p, $phone_p, $position_p, $approverName_p, $approverSname_p, $approverP_p,
+            $dc_id, $c_id, $comName_p, $compNo_p, $compRoad_p, $compSubdist_p, $compDistrict_p, $compProvince_p, $compPost_p, $hrName_p, $hrSname_p,
+            $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, $dc_name);
 
         }
         require("connection_close.php");
@@ -123,11 +183,13 @@ class petitionDcModel{
 
     }
 
+    
+
     public static function Add($petition_id, $start_p, $finish_p, $date_p, $user_id, $status_id, $dc_id)
     {
         require("connection_connect.php");
-        $sql = "INSERT INTO `petition`(`petition_id`, `start_p`, `finish_p`, `date_p`, `user_id`, `status_id`, `dc_id`,) 
-        VALUES ('$petition_id','$start_p','$finish_p','$date_p','$user_id','$status_id','$dc_id')";
+        $sql = "INSERT INTO `petition`(`start_p`, `finish_p`, `date_p`, `user_id`, `status_id`) 
+        VALUES ('$start_p','$finish_p','$date_p','$user_id','01')";
         $result = $conn->query($sql);
         require("connection_close.php");
         return;
@@ -187,45 +249,59 @@ class petitionDcModel{
     {
         $petionDcList = [];
         require("connection_connect.php");
-        $sql = "SELECT t.dc_id, t.petition_id, t.user_id, t.name_title, t.user_name, t.user_surname, t.start_p, t.finish_p, t.date_p, 
-        t.dc_position, t.dc_name, t.dc_pay, t.dc_room, t.status_id, status.status_name, t.c_id
-        FROM `status` INNER JOIN 
-            (SELECT userp.dc_id, userp.petition_id, userp.user_id, userp.name_id, name_title.name_title, userp.user_name, userp.user_surname, 
-             userp.start_p, userp.finish_p, userp.date_p, userp.dc_position, userp.dc_name, userp.dc_pay, userp.dc_room, userp.status_id, userp.c_id 
-                FROM `name_title` INNER JOIN 
-                (SELECT pdc.dc_id, pdc.petition_id, pdc.user_id, pdc.start_p, pdc.finish_p, pdc.date_p, pdc.dc_position, pdc.dc_name, pdc.dc_pay, pdc.dc_room, 
-                 user.name_id, user.user_name, user.user_surname, pdc.status_id, pdc.c_id
-                     FROM `user`  INNER JOIN
-                    (SELECT petition_id, start_p, finish_p, date_p, user_id, status_id, petition.dc_id, c_id, dc_name, dc_position, dc_pay, dc_room 
-                     FROM `petition` INNER JOIN `detail_company` ON petition.dc_id = detail_company.dc_id) AS pdc ON user.user_id = pdc.user_id) AS userp ON userp.name_id = name_title.name_id) AS t
-                     ON t.status_id = status.status_id
+        $sql = "SELECT * FROM `petition` NATURAL JOIN `user` NATURAL JOIN `name_title` NATURAL JOIN `status` NATURAL JOIN `detail_company`
                      
-                    WHERE (t.dc_id like '%$key%' or t.petition_id like '%$key%' or t.user_id like '%$key%' 
-                    or t.name_title like '%$key%' or t.user_name like '%$key%' or t.user_surname like '%$key%' or t.start_p like '%$key%'
-                    or t.finish_p like '%$key%' or t.date_p like '%$key%' or t.dc_position like '%$key%' or t.dc_name like '%$key%'
-                    or t.dc_pay like '%$key%'or t.dc_room like '%$key%' or t.status_id like '%$key%' or status.status_name like '%$key%'
-                    or t.c_id like '%$key%')
-                    ORDER BY petition_id";
+        WHERE (petition_id like '%$key%' or date_p like '%$key%' 
+        or user_id like '%$key%' or FB_p like '%$key%' or phone_p like '%$key%' or position_p like '%$key%'
+        or approverName_p like '%$key%' or approverSname_p like '%$key%' or approverP_p like '%$key%' or dc_id like '%$key%'
+        or c_id like '%$key%'or comName_p like '%$key%' or compNo_p like '%$key%' or compRoad_p like '%$key%' 
+        or compSubdist_p like '%$key%' or compDistrict_p like '%$key%' or compProvince_p like '%$key%' or compPost_p like '%$key%'
+        or hrName_p like '%$key%' or hrSname_p like '%$key%' or hrPhone_p like '%$key%' or hrMail_p like '%$key%'
+        or salary_p like '%$key%' or room_p like '%$key%' or type_p like '%$key%' or start_p like '%$key%' or finish_p like '%$key%'
+        or status_id like '%$key%' or name_title like '%$key%' or user_name like '%$key%' or user_surname like '%$key%'
+        or status_name like '%$key%' or dc_name like '%$key%')
+        ORDER BY petition_id";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
-            $dc_id = $my_row['dc_id'];
             $petition_id = $my_row['petition_id'];
+            $date_p = $my_row['date_p'];
             $user_id = $my_row['user_id'];
+            $FB_p = $my_row['FB_p '];
+            $phone_p = $my_row['phone_p'];
+            $position_p = $my_row['position_p'];
+            $approverName_p = $my_row['approverName_p'];
+            $approverSname_p = $my_row['approverSname_p'];
+            $approverP_p = $my_row['approverP_p'];
+            $dc_id = $my_row['dc_id'];
+            $c_id = $my_row['c_id'];
+            $comName_p = $my_row['comName_p']; 
+            $compNo_p = $my_row['compNo_p']; 
+            $compRoad_p = $my_row['compRoad_p']; 
+            $compSubdist_p = $my_row['compSubdist_p']; 
+            $compDistrict_p = $my_row['compDistrict_p'];
+            $compProvince_p = $my_row['compProvince_p']; 
+            $compPost_p = $my_row['compPost_p']; 
+            $hrName_p = $my_row['hrName_p']; 
+            $hrSname_p = $my_row['hrSname_p']; 
+            $hrPhone_p = $my_row['hrPhone_p']; 
+            $hrMail_p = $my_row['hrMail_p']; 
+            $salary_p = $my_row['salary_p']; 
+            $room_p = $my_row['room_p'];
+            $type_p = $my_row['type_p']; 
+            $start_p = $my_row['start_p'];
+            $finish_p = $my_row['finish_p'];    
+            $status_id = $my_row['status_id'];
+
             $name_title = $my_row['name_title'];
             $user_name = $my_row['user_name'];
             $user_surname = $my_row['user_surname'];
-            $start_p = $my_row['start_p'];
-            $finish_p = $my_row['finish_p'];
-            $dc_position = $my_row['dc_position'];
-            $dc_name = $my_row['dc_name'];
-            $dc_pay = $my_row['dc_pay'];
-            $dc_room = $my_row['dc_room'];
-            $status_id = $my_row['status_id'];
             $status_name = $my_row['status_name'];
-            $c_id = $my_row['c_id'];
-            $petionDcList[] = new petitionDcModel($dc_id, $petition_id, $user_id, $name_title, $user_name, $user_surname, $start_p, $finish_p, 
-            $dc_position,$dc_name, $dc_pay, $dc_room, $status_id, $status_name, $c_id);
+            $dc_name = $my_row['dc_name'];
+
+            $petionDcList[] = new petitionDcModel($petition_id, $date_p,$user_id, $FB_p, $phone_p, $position_p, $approverName_p, $approverSname_p, $approverP_p,
+            $dc_id, $c_id, $comName_p, $compNo_p, $compRoad_p, $compSubdist_p, $compDistrict_p, $compProvince_p, $compPost_p, $hrName_p, $hrSname_p,
+            $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, $dc_name);
         }
         require("connection_close.php");
         return $petionDcList;

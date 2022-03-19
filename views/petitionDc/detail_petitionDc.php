@@ -328,55 +328,38 @@ body {
                 text-align: center;
             }
 
-table {
-    font-family: 'Prompt', sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
+            .card {
+            font-family: 'Prompt', sans-serif;
+            width: 80%;
+            background-color: #f1f1f1;
+            padding: 20px 20px 20px 20px;
+            margin: 20px 20px 20px 20px;
+            border-radius: 50px;
 
-th, td {
-    text-align: left;
-    padding: 8px;
-}
+        }
 
-tr:nth-child(odd){background-color: #cae3cc}
-tr:nth-child(even){background-color: #f2f2f2}
-
-.btn-group2 .button2 {
+        
+        button {
             font-family: 'Prompt', sans-serif;
             position: relative;
-             background-color: #73c088 ; /*Green */
+            background-color: #397d54 ; 
             border: 1px black;
             color: white;
-            padding: 7px 25px;
+            padding: 10px 32px;
             text-align: center;
             text-decoration: none;
-            display: inline-block; 
-            font-size: 16px;
+            display: inline-block;
+            font-size: 18px;
             cursor: pointer;
-            /* float: center; */
+            width: 30%;
             border-radius: 50px;
         }
-
-        .btn-group2 .button2:not(:last-child) {
+        button:not(:last-child) {
             border-right: none; /* Prevent double borders */
         }
-
-        .btn-group2 .button2:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        input[type=text], select {
-            font-family: 'Prompt', sans-serif;
-            width: 50%;
-            padding: 5px 5px;
-            margin: 8px 0;
-            font-size: 16px;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 50px;
-            box-sizing: border-box;
+        button:hover {
+            background-color: #73c088;
+            color: white;
         }
 </style>
 
@@ -389,13 +372,13 @@ tr:nth-child(even){background-color: #f2f2f2}
             <span class="logo_name">KASETSART UNIVERSITY</span>
         </div>
     <dl class="nav-links">
-    <li>
-            <a href="?controller=nisit&action=index&userid=<?php echo $userid;?>">
+        <li>
+            <a href="?controller=Aj&action=index">
             <i class='bx bx-home'></i>
                 <span class="link_name">หน้าแรก</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=nisit&action=index&userid=<?php echo $userid;?>">หน้าแรก</a></li>
+                <li><a class="link_name" href="?controller=Aj&action=index">หน้าแรก</a></li>
             </ul>
         </li>
         <li>
@@ -408,8 +391,8 @@ tr:nth-child(even){background-color: #f2f2f2}
             </div>
             <ul class="sub-menu">
                 <li><a class="link_name" href="#">สถานประกอบการณ์</a></li>
-                <li><a href="?controller=companyP&action=indexP&userid=<?php echo $userid;?>">ฝึกงาน</a></li>
-                <li><a href="?controller=cooperativeP&action=index&userid=<?php echo $userid;?>">สหกิจ</a></li>
+                <li><a href="?controller=companyP&action=indexP">ฝึกงาน</a></li>
+                <li><a href="?controller=cooperativeP&action=index">สหกิจ</a></li>
             </ul>
         </li>
         <li>
@@ -422,63 +405,63 @@ tr:nth-child(even){background-color: #f2f2f2}
             </div>
             <ul class="sub-menu">
                 <li><a class="link_name" href="#">ตรวจสอบคำร้อง</a></li>
-                <li><a href="?controller=petitionDC&action=index&userid=<?php echo $userid;?>">ฝึกงาน</a></li>
-                <li><a href="?controller=petitionC&action=indexC&userid=<?php echo $userid;?>">สหกิจ</a></li>
+                <li><a href="?controller=petitionDC&action=index">ฝึกงาน</a></li>
+                <li><a href="?controller=petitionC&action=indexC">สหกิจ</a></li>
             </ul>
         </li>
         
         <li>
-            <a href="?controller=considerAj&action=index&userid=<?php echo $userid;?>">
+            <a href="?controller=considerAj&action=index">
                 <i class='bx bx-file'></i>
                 <span class="link_name">พิจาราณาคำร้องขอฝึกงาน</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=considerAj&action=index&userid=<?php echo $userid;?>">พิจาราณาคำร้องขอฝึกงาน</a></li>
+                <li><a class="link_name" href="#">พิจาราณาคำร้องขอฝึกงาน</a></li>
             </ul>
         </li>
         <li>
-            <a href="?controller=graphAj&action=index&userid=<?php echo $userid;?>">
+            <a href="?controller=graphAj&action=index">
                 <i class='bx bx-line-chart' ></i>
                 <span class="link_name">สถานการณ์ยื่นคำร้องนิสิต</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=graphAj&action=index&userid=<?php echo $userid;?>">สถานการณ์ยื่นคำร้องนิสิต</a></li>
+                <li><a class="link_name" href="#">สถานการณ์ยื่นคำร้องนิสิต</a></li>
             </ul>
         </li>
         <li>
-            <a href="?controller=reportPetition&action=index&userid=<?php echo $userid;?>">
+            <a href="?controller=reportPetition&action=index">
                 <i class='bx bx-file-blank' ></i>
                 <span class="link_name">รายงานสรุปการอนุมัติฝึกงาน</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=reportPetition&action=index&userid=<?php echo $userid;?>">รายงานสรุปการอนุมัติฝึกงาน</a></li>
+                <li><a class="link_name" href="#">รายงานสรุปการอนุมัติฝึกงาน</a></li>
             </ul>
         </li>
         <li>
-            <a href="?controller=bookAj&action=index&userid=<?php echo $userid;?>">
+            <a href="?controller=bookAj&action=index">
                 <i class='bx bx-book' ></i>
                 <span class="link_name">ออกหนังสือขอความอนุเคราะห์</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=bookAj&action=index&userid=<?php echo $userid;?>">ออกหนังสือขอความอนุเคราะห์</a></li>
+                <li><a class="link_name" href="#">ออกหนังสือขอความอนุเคราะห์</a></li>
             </ul>
         </li>
         <li>
-            <a href="?controller=checkHistory&action=index&userid=<?php echo $userid;?>">
+            <a href="?controller=checkHistory&action=index">
                 <i class='bx bx-notepad'></i>
                 <span class="link_name">ตรวจสอบประวัติการฝึกงาน</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=checkHistory&action=index&userid=<?php echo $userid;?>">ตรวจสอบประวัติการฝึกงาน</a></li>
+                <li><a class="link_name" href="#">ตรวจสอบประวัติการฝึกงาน</a></li>
             </ul>
         </li>
         <li>
-            <a href="?controller=uploadAj&action=index&userid=<?php echo $userid;?>">
+            <a href="?controller=uploadAj&action=index">
                 <i class='bx bx-upload'></i>
                 <span class="link_name">อัพโหลดประกาศ</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=uploadAj&action=index&userid=<?php echo $userid;?>">อัพโหลดประกาศ</a></li>
+                <li><a class="link_name" href="#">อัพโหลดประกาศ</a></li>
             </ul>
         </li>
         <li> 
@@ -488,11 +471,9 @@ tr:nth-child(even){background-color: #f2f2f2}
         </div>
             
             <div class="name-job">
-                <div class="profile_name">
-                <?php echo $userList->user_name;?> <?php echo $userList->user_surname;?>
-                </div>
+                <div class="profile_name">Name</div>
             </div>   
-            <a href="?controller=pages&action=home&userid=<?php echo $userid;?>">          
+            <a href="?controller=user&action=logoutAj">          
                 <i class='bx bx-log-out '></i>
             </a>
     </div>
@@ -509,40 +490,117 @@ tr:nth-child(even){background-color: #f2f2f2}
     
 <div class="header">
      <!--width="20%" height="20%">-->
-    <h2>ตรวจสอบคำร้องฝึกงาน</h2>
+    <h2>รายละเอียดการฝึกงาน</h2>
 </div>
+<center>
+    <div class="card" align='center'>
+    <table>
+        <tr>
+            <th align="right">รหัสนิสิต : </th>
+            <td><?php echo $p->user_id;?></td>
+        </tr>
+        <tr>
+            <th align="right">ชื่อ-นามสกุล : </th>
+            <td><?php echo "$p->name_title$p->user_name   $p->user_surname";?></td>
+        </tr>
+        <tr>
+            <th align="right">เบอร์โทรศัพท์ : </th>
+            <td><?php echo "$p->phone_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">facebook : </th>
+            <td><?php echo "$p->FB_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">ตำแหน่งที่ไปฝึกงาน : </th>
+            <td><?php echo "$p->position_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">ชื่อผู้ที่จะให้ภาควิชาฯ ออกหนังสือขอความอนุเคราะห์ : </th>
+            <td><?php echo "$p->approverName_p  $p->approverSname_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">ตำแหน่งของผู้ที่จะให้ภาควิชาฯ ออกหนังสือขอความอนุเคราะห์ : </th>
+            <td><?php echo "$p->approverP_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">ชื่อสถานประกอบการ : </th>
+            <td><?php echo "$p->dc_name";?></td>
+        </tr>
+        <tr>
+            <th align="right">สถานที่ตั้งเลขที่ : </th>
+            <td><?php echo "$p->compNo_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">ถนน : </th>
+            <td><?php echo "$p->compRoad_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">ตำบล/แขวง : </th>
+            <td><?php echo "$p->compSubdist_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">อำเภอ/เขต : </th>
+            <td><?php echo "$p->compDistrict_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">จังหวัด : </th>
+            <td><?php echo "$p->compProvince_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">รหัสไปรษณีย์ : </th>
+            <td><?php echo "$p->compPost_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">ชื่อผู้ประสานงาน : </th>
+            <td><?php echo "$p->hrName_p   $p->hrSname_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">โทร : </th>
+            <td><?php echo "$p->hrPhone_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">อีเมล : </th>
+            <td><?php echo "$p->hrMail_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">ระยะการฝึกงานตั้งแต่วันที่ : </th>
+            <td><?php echo "$p->compRoad_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">ค่าตอบแทน : </th>
+            <td><?php echo "$p->salary_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">ที่พัก : </th>
+            <td><?php echo "$p->room_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">ระยะการเวลาการฝึกงาน : </th>
+            <td><?php echo "$p->start_p - $p->finish_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">ผลการอนุมัติ : </th>
+            <td><?php echo "$p->status_name";?></td>
+        </tr>
+    </table>
 
-<form method="get" action="">
-<<<<<<< Updated upstream
     
-    <input type="text" name="key">
-    <input type="hidden" name="controller" value="petitionDC"/>
-    <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
-    <button type="submit" name="action" value="search">Search</button>
-=======
-    <div class="btn-group2">
-        <input type="text" name="key">
         <input type="hidden" name="controller" value="petitionDC"/>
-        <button class="button2" type="submit" name="action" value="search">
-        <i class='fas fa-search' style='font-size: 22px'></i>
-        </button>
->>>>>>> Stashed changes
+        <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
+        <button class="button" type="submit" name="action" value="index">กลับ</button>
+        <button class="button" type="submit" name="action" value="update">อนุมัติ</button>
 
-    </div>
+</div>
+</center>
+
+    
+
     
 </form>
 
 
-<table>
-    <tr>
-        <td><b>ลำดับที่</td>
-        <td><b>รหัสนิสิต</td>
-        <td><b>ชื่อ-นามสกุล</td>
-        <td><b>ชื่อสถานประกอบการฝึกงานที่ภาควิชามีอยู่</td>
-        <td><b>รายละเอียดการฝึกงาน</td>
-        <td><b>อนุมัติ</td>
-        <td><b>ไม่อนุมัติ</td>
-    </tr>
+
 </section>
 
 <script>
@@ -571,41 +629,4 @@ sidebarBtn.addEventListener("click", ()=>{
 
 </html>
 
-<?php foreach( $petionDcList as $dclist)
-{
-    echo "<tr> <td>$dclist->petition_id</td>
-    <td>$dclist->user_id</td>
-    <td>$dclist->name_title$dclist->user_name $dclist->user_surname</td>
-    <td>$dclist->dc_name</td>
-    <td><a href=?controller=petitionDC&action=indexDetail&petition_id=$dclist->petition_id&userid=$userid>รายละเอียด</td>   
-    <td> <a href=?controller=petitionDC&action=updateform&petition_id=$dclist->petition_id> อนุมัติ </a> </td>
-    <td> <a href=?controller=petitionDC&action=deleteconfirm&petition_id=$dclist->petition_id> ไม่อนุมัติ </a>
-    </td></tr>";
-}
-echo "</table>";
- ?>
 
-<br>
-<table>
-    <tr>
-        <td><b>ลำดับที่</td>
-        <td><b>รหัสนิสิต</td>
-        <td><b>ชื่อ-นามสกุล</td>
-        <td><b>ชื่อสถานประกอบการฝึกงานที่เพิ่มใหม่</td>
-        <td><b>รายละเอียดการฝึกงาน</td>
-        <td><b>อนุมัติ</td>
-        <td><b>ไม่อนุมัติ</td>
-    </tr>
-<?php foreach( $pelist as $p)
-{
-    echo "<tr> <td>$p->petition_id</td>
-    <td>$p->user_id</td>
-    <td>$p->name_title$p->user_name $p->user_surname</td>
-    <td>$p->comName_p</td>
-    <td><a href=?controller=petitionDC&action=indexDetail&petition_id=$p->petition_id&userid=$userid>รายละเอียด</td>   
-    <td> <a href=?controller=petitionDC&action=updateform&petition_id=$p->petition_id> อนุมัติ </a> </td>
-    <td> <a href=?controller=petitionDC&action=deleteconfirm&petition_id=$p->petition_id> ไม่อนุมัติ </a>
-    </td></tr>";
-}
-echo "</table>";
- ?>
