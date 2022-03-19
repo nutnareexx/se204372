@@ -494,7 +494,9 @@ body {
 </div>
 <center>
     <div class="card" align='center'>
+        <form method="get" action="">
     <table>
+        
         <tr>
             <th align="right">รหัสนิสิต : </th>
             <td><?php echo $p->user_id;?></td>
@@ -588,16 +590,17 @@ body {
     
         <input type="hidden" name="controller" value="petitionDC"/>
         <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
-        <button class="button" type="submit" name="action" value="index">กลับ</button>
-        <button class="button" type="submit" name="action" value="update">อนุมัติ</button>
+        <button type="submit" name="action" value="index">กลับ</button>
+        <button type="submit" name="action" value="update">อนุมัติ</button>
 
 </div>
+</form>
 </center>
 
     
 
     
-</form>
+
 
 
 
