@@ -4,7 +4,7 @@ class userController{
     public function login(){
         $userid = $_GET['userid'];
         $password = $_GET['password'];
-
+        $userList=userModel::get($userid);
         $userList = userModel::getAll();
         
 
@@ -39,11 +39,13 @@ class userController{
     public function logoutNisit()
     {
         $userid = $_GET['userid'];
+        $userList=userModel::get($userid);
         require_once('views/login/logout_nisit.php');
     }
     public function logoutAj()
     {
         $userid = $_GET['userid'];
+        $userList=userModel::get($userid);
         require_once('views/login/logout_Aj.php');
       
     }
