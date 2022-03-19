@@ -529,6 +529,7 @@ input[type=text], select {
     
     <div class="btn-group">
             <input type="hidden" name="controller" value="company"/>
+            <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
         <button class="button" type="submit" name="action" value="index">Back</button>
         <button class="button" type="submit" name="action" value="addDetailCompany">Save</button>
 
