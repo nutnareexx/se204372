@@ -474,11 +474,8 @@ tr:nth-child(even){background-color: #f2f2f2}
             <br><b>ลำดับที่ : </b>   $petionCList->petition_id  
             <br><b>รหัสนิสิต : </b>  $petionCList->user_id
             <br><b>ชื่อ-นามสกุล : </b>  $petionCList->name_title$petionCList->user_name $petionCList->user_surname
-            <br><b>ระยะเวลาฝึกสหกิจ : </b> $petionCList->start_p - $petionCList->finish_p 
-            <br><b>ตำแหน่งที่ไปสหกิจ : </b> $petionCList->c_position
-            <br><b>ชื่อสถานประกอบการสหกิจ : </b> $petionCList->c_name    
-            <br><b>ค่าตอบแทน : </b> $petionCList->c_pay 
-            <br><b>ที่พัก : </b> $petionCList->c_room<br>";?>
+            <br><b>ชื่อสถานประกอบการสหกิจ : </b> $petionCList->c_name <br>    
+            ";?>
 
 
    
