@@ -105,6 +105,7 @@ function call($controller,$action){
                                 require_once("models/statusModel.php");
                                 require_once("models/companyModel.php");
                                 require_once("models/cooperativeModel.php");
+                                require_once("models/checkApprovalModel.php");
                                 $controller = new checkApprovalController();
                                 break;                     
         
