@@ -5,6 +5,7 @@ class petitionCController
     {
         $userid = $_GET['userid'];
         $petionCList = petitionCModel::getAll();
+        $petionCnewList = petitionnewCModel::getAllnew();
         $userList = userModel::get($userid);
         require_once('views/petitionC/index_petitionC.php');
     }
@@ -17,6 +18,16 @@ class petitionCController
         $userList = userModel::get($userid);
         require_once('views/petitionC/index_allpetitionC.php');
     }
+
+    public function indexnewCshow()
+    {
+        $userid = $_GET['userid'];
+        $peti_id = $_GET['petition_id'];
+        $petionCnewList = petitionnewCModel::getnew($peti_id);
+        $userList = userModel::get($userid);
+        require_once('views/petitionC/index_newallpetitionC.php');
+    }
+
 
     public function newpetitionC()
     {
@@ -98,6 +109,7 @@ class petitionCController
         $key = $_GET['key'];
         $userList=userModel::get($userid);
         $petionCList = petitionCModel::search($key);
+        $petionCnewList = petitionnewCModel::search($key);
         $userList = userModel::get($userid);
         require_once('views/petitionC/index_petitionC.php');
     }

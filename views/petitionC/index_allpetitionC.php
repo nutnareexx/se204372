@@ -482,7 +482,7 @@ tr:nth-child(even){background-color: #f2f2f2}
             <br><b>ตำแหน่งที่ไปฝึกงาน : </b>  $petionCList->position_p
             <br><b>ชื่อผู้อนุมัติฝึกสหกิจ : </b>  $petionCList->approverName_p $petionCList->approverSname_p
             <br><b>ตำแหน่งผู้อนุมัติฝึกสหกิจ : </b>  $petionCList->approverP_p
-            <br><b>ชื่อสถานประกอบการสหกิจ : </b> $petionCList->comName_p
+            <br><b>ชื่อสถานประกอบการสหกิจ : </b> $petionCList->c_name
             <br><b>สถานที่ตั้งเลขที่ : </b>  $petionCList->compNo_p
             <br><b>ถนน : </b>  $petionCList->compRoad_p
             <br><b>ตำบล/แขวง : </b>  $petionCList->compSubdist_p
