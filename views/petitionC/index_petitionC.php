@@ -483,14 +483,11 @@ tr:nth-child(even){background-color: #f2f2f2}
          <td><b>ลำดับที่</td>
          <td><b>รหัสนิสิต</td>
          <td><b>ชื่อ-นามสกุล</td>
-         <td><b>ระยะเวลาฝึกสหกิจ</td>
-         <td><b>ตำแน่งที่ไปสหกิจ</td>
          <td><b>ชื่อสถานประกอบการสหกิจ</td>
-         <td><b>ค่าตอบแทน</td>
-         <td><b>ที่พัก</td>
+         <td><b>รายละเอียดสหกิจ</td>
          <td><b>สถานะ</td>
-         <td><b>อัพเดตสถานะ</td>
-         <td><b>ลบข้อมูล</td>
+         <td><b>อนุมัติ</td>
+         <td><b>ไม่อนุมัติ</td>
      </tr>
 
 </section>
@@ -527,14 +524,11 @@ sidebarBtn.addEventListener("click", ()=>{
 {
     echo "<tr> <td>$clist->petition_id</td>
     <td>$clist->user_id</td>
-    <td>$clist->name_title$clist->user_name $clist->user_surname</td>
-    <td>$clist->start_p - $clist->finish_p</td>
-    <td>$clist->c_position</td> 
+    <td>$clist->name_title$clist->user_name $clist->user_surname</td> 
     <td>$clist->c_name</td>  
-    <td>$clist->c_pay</td> 
-    <td>$clist->c_room</td> 
-    <td>$clist->status_name</td> 
-    <td> <a href=?controller=petitionC&action=updateformC&petition_id=$clist->petition_id> update </a> </td>
+    <td>ปุ่มไปอีกหน้า</td>
+    <td>$clist->status_name</td>  
+    <td> <a href=?controller=petitionC&action=updateformC&petition_id=$clist->petition_id> $clist->status_name </a> </td>
     <td> <a href=?controller=petitionC&action=deleteconfirmC&petition_id=$clist->petition_id> delete </a>
     </td></tr>";
 }
