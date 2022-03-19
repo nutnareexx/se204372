@@ -23,7 +23,7 @@ class petitionDcUserController
         $userList = userModel::get($userid);
 
         echo $userid.$company;
-        require_once('views/petitionDcUser/newCompany_Dcuser.php');
+        require_once('views/petitionDcUser/index2_Dcuser.php');
     }
 
     
