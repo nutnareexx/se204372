@@ -3,8 +3,9 @@ class petitionCController
 {
     public function indexC()
     {
-        //$userid = $_GET['userid'];
+        $userid = $_GET['userid'];
         $petionCList = petitionCModel::getAll();
+        $userList = userModel::get($userid);
         require_once('views/petitionC/index_petitionC.php');
     }
 
@@ -44,10 +45,12 @@ class petitionCController
 
     public function updateformC()
     {
-        //$userid = $_GET['userid'];
-        $dc = $_GET['petition_id'];
-        $petionCList = petitionCModel::get($dc);
+        $userid = $_GET['userid'];
+        $c = $_GET['petition_id'];
+        $petionCList = petitionCModel::get($c);
         $statusList = statusModel::getAll();
+        $userList = userModel::get($userid);
+
         require_once('views/petitionC/updateformC.php');
 
     }
@@ -64,9 +67,9 @@ class petitionCController
     public function deleteconfirmC()
     {
         $userid = $_GET['userid'];
-        $dc = $_GET['petition_id'];
+        $c = $_GET['petition_id'];
         $userList=userModel::get($userid);
-        $petionCList = petitionCModel::get($dc);
+        $petionCList = petitionCModel::get($c);
         require_once('views/petitionC/deleteconfirmC.php');
 
     }
@@ -86,6 +89,7 @@ class petitionCController
         $key = $_GET['key'];
         $userList=userModel::get($userid);
         $petionCList = petitionCModel::search($key);
+        $userList = userModel::get($userid);
         require_once('views/petitionC/index_petitionC.php');
     }
 
