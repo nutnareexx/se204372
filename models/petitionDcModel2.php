@@ -167,5 +167,67 @@
 
     }
 
+    public static function search($key)
+    {
+        $petitionFornew = [];
+        require("connection_connect.php");
+        $sql = "SELECT * FROM `petition` NATURAL JOIN `user` NATURAL JOIN `name_title` NATURAL JOIN `status`
+                     
+        WHERE (petition_id like '%$key%' or date_p like '%$key%' 
+        or user_id like '%$key%' or FB_p like '%$key%' or phone_p like '%$key%' or position_p like '%$key%'
+        or approverName_p like '%$key%' or approverSname_p like '%$key%' or approverP_p like '%$key%' or dc_id like '%$key%'
+        or c_id like '%$key%'or comName_p like '%$key%' or compNo_p like '%$key%' or compRoad_p like '%$key%' 
+        or compSubdist_p like '%$key%' or compDistrict_p like '%$key%' or compProvince_p like '%$key%' or compPost_p like '%$key%'
+        or hrName_p like '%$key%' or hrSname_p like '%$key%' or hrPhone_p like '%$key%' or hrMail_p like '%$key%'
+        or salary_p like '%$key%' or room_p like '%$key%' or type_p like '%$key%' or start_p like '%$key%' or finish_p like '%$key%'
+        or status_id like '%$key%' or name_title like '%$key%' or user_name like '%$key%' or user_surname like '%$key%'
+        or status_name like '%$key%' or dc_name like '%$key%')
+        ORDER BY petition_id";
+        $result = $conn->query($sql);
+        while($my_row = $result->fetch_assoc())
+        {
+            $petition_id = $my_row['petition_id'];
+            $date_p = $my_row['date_p'];
+            $user_id = $my_row['user_id'];
+            $FB_p = $my_row['FB_p'];
+            $phone_p = $my_row['phone_p'];
+            $position_p = $my_row['position_p'];
+            $approverName_p = $my_row['approverName_p'];
+            $approverSname_p = $my_row['approverSname_p'];
+            $approverP_p = $my_row['approverP_p'];
+            $dc_id = $my_row['dc_id'];
+            $c_id = $my_row['c_id'];
+            $comName_p = $my_row['comName_p']; 
+            $compNo_p = $my_row['compNo_p']; 
+            $compRoad_p = $my_row['compRoad_p']; 
+            $compSubdist_p = $my_row['compSubdist_p']; 
+            $compDistrict_p = $my_row['compDistrict_p'];
+            $compProvince_p = $my_row['compProvince_p']; 
+            $compPost_p = $my_row['compPost_p']; 
+            $hrName_p = $my_row['hrName_p']; 
+            $hrSname_p = $my_row['hrSname_p']; 
+            $hrPhone_p = $my_row['hrPhone_p']; 
+            $hrMail_p = $my_row['hrMail_p']; 
+            $salary_p = $my_row['salary_p']; 
+            $room_p = $my_row['room_p'];
+            $type_p = $my_row['type_p']; 
+            $start_p = $my_row['start_p'];
+            $finish_p = $my_row['finish_p'];    
+            $status_id = $my_row['status_id'];
+
+            $name_title = $my_row['name_title'];
+            $user_name = $my_row['user_name'];
+            $user_surname = $my_row['user_surname'];
+            $status_name = $my_row['status_name'];
+            $dc_name = $my_row['dc_name'];
+
+            $petitionFornew[] = new petitionDcModel($petition_id, $date_p,$user_id, $FB_p, $phone_p, $position_p, $approverName_p, $approverSname_p, $approverP_p,
+            $dc_id, $c_id, $comName_p, $compNo_p, $compRoad_p, $compSubdist_p, $compDistrict_p, $compProvince_p, $compPost_p, $hrName_p, $hrSname_p,
+            $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, $dc_name);
+        }
+        require("connection_close.php");
+        return $petitionFornew;
+    }
+
     }
 ?>
