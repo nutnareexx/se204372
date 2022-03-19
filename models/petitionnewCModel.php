@@ -94,7 +94,7 @@ class petitionnewCModel{
         
         require("connection_connect.php");
         $sql = "SELECT * FROM `petition` NATURAL JOIN `user`NATURAL JOIN `name_title` NATURAL JOIN `status` NATURAL JOIN `approve`
-        WHERE comName_p IS NOT NULL";
+        WHERE comName_p IS NOT NULL AND type_p = 'c'";
         $result = $conn->query($sql);
         $my_row = $result->fetch_assoc();
             
@@ -150,7 +150,7 @@ class petitionnewCModel{
         $petionCnewList = [];
         require("connection_connect.php");
         $sql = "SELECT * FROM `petition` NATURAL JOIN `user`NATURAL JOIN `name_title` NATURAL JOIN `status` NATURAL JOIN `approve`
-        WHERE comName_p IS NOT NULL";
+        WHERE comName_p IS NOT NULL AND type_p = 'c'";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
