@@ -4,13 +4,23 @@ class petitionDcController
     public function index()
     {
         $userid = $_GET['userid'];
+        $userList=userModel::get($userid);
         $petionDcList = petitionDcModel::getAll();
         require_once('views/petitionDc/index_petitionDc.php');
+    }
+
+    public function indexDetail()
+    {
+        $userid = $_GET['userid'];
+        $userList=userModel::get($userid);
+        $petionDcList = petitionDcModel::getAll();
+        require_once('views/petitionDc/detail_petitionDc.php');
     }
 
     public function newpetitionDc()
     {
         $userid = $_GET['userid'];
+        $userList=userModel::get($userid);
         $petionDcList = petitionDcModel::getAll();
         //$approveList = approveModel::getAll();
         $statusList = statusModel::getAll();
@@ -24,6 +34,7 @@ class petitionDcController
     public function addpetitionDc()
     {
         echo "addp";
+        $userid = $_GET['userid'];
         $dc_id = $_GET['dc_id'];
         $petition_id = $_GET['petition_id'];
         $user_id = $_GET['user_id'];
@@ -36,6 +47,7 @@ class petitionDcController
         $dc_name = $_GET['dc_name'];
         $dc_pay = $_GET['dc_pay'];
         $dc_room = $_GET['dc_room'];
+        $userList=userModel::get($userid);
         petitionDcModel::Add($dc_id, $petition_id, $user_id, $name_title, $user_name, $user_surname, $start_p, $finish_p, 
         $dc_position,$dc_name, $dc_pay, $dc_room);
         petitionDcController::index();
@@ -45,6 +57,7 @@ class petitionDcController
     {
         $userid = $_GET['userid'];
         $dc = $_GET['petition_id'];
+        $userList=userModel::get($userid);
         $petionDcList = petitionDcModel::get($dc);
         $nametitleList = nametitleModel::getAll();
         $userList = userModel::getAll();
@@ -59,6 +72,7 @@ class petitionDcController
         $userid = $_GET['userid'];
         $petition_id = $_GET['petitionid'];
         $status_id = $_GET['status_id'];
+        $userList=userModel::get($userid);
         petitionDcModel::update( $petition_id, $status_id);
         petitionDcController::index();
     }
@@ -67,6 +81,7 @@ class petitionDcController
     {
         $userid = $_GET['userid'];
         $dc = $_GET['petition_id'];
+        $userList=userModel::get($userid);
         $petionDcList = petitionDcModel::get($dc);
         require_once('views/petitionDc/deleteconfirm.php');
 
@@ -76,6 +91,7 @@ class petitionDcController
     {
         $userid = $_GET['userid'];
         $petitionid = $_GET['petitionid'];
+        $userList=userModel::get($userid);
         petitionDcModel::delete($petitionid);
         petitionDcController::index();
     }
@@ -84,6 +100,7 @@ class petitionDcController
     {
         $userid = $_GET['userid'];
         $key = $_GET['key'];
+        $userList=userModel::get($userid);
         $petionDcList = petitionDcModel::search($key);
         require_once('views/petitionDc/index_petitionDc.php');
     }
