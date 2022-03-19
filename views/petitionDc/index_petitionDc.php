@@ -378,6 +378,116 @@ tr:nth-child(even){background-color: #f2f2f2}
             border-radius: 50px;
             box-sizing: border-box;
         }
+
+.button3 {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 48%;
+}
+
+.button3:hover {
+  /* opacity: 0.8; */
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: 48%;
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 50px;
+  width: 100%;
+
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
 </style>
 
 
@@ -561,9 +671,6 @@ sidebarBtn.addEventListener("click", ()=>{
 
 
 
-</body>
-
-</html>
 
 <?php foreach( $petionDcList as $dclist)
 {
@@ -572,34 +679,69 @@ sidebarBtn.addEventListener("click", ()=>{
     <td>$dclist->name_title$dclist->user_name $dclist->user_surname</td>
     <td>$dclist->dc_name</td>
     <td><a href=?controller=petitionDC&action=indexDetail&petition_id=$dclist->petition_id&userid=$userid>รายละเอียด</td>   
-    <td> <a href=?controller=petitionDC&action=updateform&petition_id=$dclist->petition_id> อนุมัติ </a> </td>
-    <td> <a href=?controller=petitionDC&action=deleteconfirm&petition_id=$dclist->petition_id> ไม่อนุมัติ </a>
+    <td> <a href=?controller=petitionDC&action=update&petition_id=$dclist->petition_id&userid=$userid> อนุมัติ </a> </td>
+    <td> <a href=?controller=petitionDC&action=update&petition_id=$dclist->petition_id&userid=$userid> ไม่อนุมัติ </a>
     </td></tr>";
 }
-echo "</table>";
- ?>
 
-<br>
-<table>
-    <tr>
-        <td><b>ลำดับที่</td>
-        <td><b>รหัสนิสิต</td>
-        <td><b>ชื่อ-นามสกุล</td>
-        <td><b>ชื่อสถานประกอบการฝึกงานที่เพิ่มใหม่</td>
-        <td><b>รายละเอียดการฝึกงาน</td>
-        <td><b>อนุมัติ</td>
-        <td><b>ไม่อนุมัติ</td>
-    </tr>
-<?php foreach( $pelist as $p)
+foreach( $pelist as $p)
 {
     echo "<tr> <td>$p->petition_id</td>
     <td>$p->user_id</td>
     <td>$p->name_title$p->user_name $p->user_surname</td>
     <td>$p->comName_p</td>
     <td><a href=?controller=petitionDC&action=indexDetailNoDc&petition_id=$p->petition_id&userid=$userid>รายละเอียด</td>   
-    <td> <a href=?controller=petitionDC&action=updateform&petition_id=$p->petition_id> อนุมัติ </a> </td>
-    <td> <a href=?controller=petitionDC&action=deleteconfirm&petition_id=$p->petition_id> ไม่อนุมัติ </a>
+    <td> <a href=?controller=petitionDC&action=updateform&petition_id=$p->petition_id&userid=$userid> อนุมัติ </a> </td>
+    <td> <a href=?controller=petitionDC&action=deleteconfirm&petition_id=$p->petition_id&userid=$userid> ไม่อนุมัติ </a>
     </td></tr>";
 }
 echo "</table>";
  ?>
+ 
+        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+    <div id="id01" class="modal">
+<!-- <div class="button3">     -->
+        <form class="modal-content animate" action="" method="get">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            </div>
+        
+            <div class="container">
+           
+            
+            <input type="hidden" name="controller" value="petitionDC"/>
+            <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
+            <input type="hidden" name="petition_id" value="<?php echo $petition_id;?>"/>
+            <input type="hidden" name="status_id" value="<?php echo $status_id;?>"/>
+            <div class="btn-group2">
+
+                <button class = "button2" type="submit" name="action" value="index">กลับ</button>
+                <button class = "button2" type="submit" name="action" value="update">อนุมัติ</button>
+            </div>
+            
+                </div>
+
+        </form>
+    </div>
+
+ <!-- </div> -->
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+
+
+
+</body>
+
+</html>
