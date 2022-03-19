@@ -548,7 +548,7 @@ foreach( $petionCnewList as $clistnew)
     <td>$clistnew->user_id</td>
     <td>$clistnew->name_title$clistnew->user_name $clistnew->user_surname</td> 
     <td>$clistnew->comName_p</td>  
-    <td> <a href=?controller=petitionC&action=indexCshow&petition_id=$clistnew->petition_id&userid=$userid> รายละเอียดเพิ่มเติม </a> </td>
+    <td> <a href=?controller=petitionC&action=indexnewCshow&petition_id=$clistnew->petition_id&userid=$userid> รายละเอียดเพิ่มเติม </a> </td>
     <td>$clistnew->status_name</td>  
     <td> <a href=?controller=petitionC&action=updateformC&petition_id=$clistnew->petition_id&userid=$userid> อนุมัติ </a> </td>
     <td> <a href=?controller=petitionC&action=updateformC&petition_id=$clistnew->petition_id&userid=$userid> ไม่อนุมัติ </a>
