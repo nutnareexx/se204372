@@ -590,6 +590,7 @@ body {
     
         <input type="hidden" name="controller" value="petitionDC"/>
         <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
+        
         <button type="submit" name="action" value="index">กลับ</button>
         <button type="submit" name="action" value="update">อนุมัติ</button>
 
