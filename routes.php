@@ -28,22 +28,26 @@ function call($controller,$action){
         case "pages":       $controller = new PagesController();
                             break;
 
-        case "nisit":      $controller = new nisitController();
+        case "nisit":       require_once("models/userModel.php");
+                            $controller = new nisitController();
                             break;
 
 
         case "Aj":          $controller = new AjController();
                             break;
 
-        case "company":     require_once("models/companyModel.php");
+        case "company":     require_once("models/userModel.php");
+                            require_once("models/companyModel.php");
                             $controller = new companyController();
                             break;
 
-        case "companyP":    require_once("models/companyModel.php");
+        case "companyP":    
+                            require_once("models/companyModel.php");
                             $controller = new companyPController();
                             break;
 
-        case "petitionDC":  require_once("models/petitionDcModel.php");
+        case "petitionDC":  
+                            require_once("models/petitionDcMoodel.php");
                             $controller = new petitionDcController();
                             break;
 
@@ -77,21 +81,26 @@ function call($controller,$action){
                                 $controller = new petitionCUserController();
                                 break;  
         
-        case "cooperative": require_once("models/cooperativeModel.php");
+        case "cooperative": require_once("models/userModel.php");
+                            require_once("models/cooperativeModel.php");
                             $controller = new cooperativeController();
                             break; 
                             
-        case "cooperativeP": require_once("models/cooperativeModel.php");
+        case "cooperativeP":
+                            require_once("models/cooperativeModel.php");
                             $controller = new cooperativePController();
                             break;    
                             
-        case "checkApproval":  $controller = new checkApprovalController();
+        case "checkApproval":  require_once("models/userModel.php");
+                                $controller = new checkApprovalController();
                             break;                     
         
-        case "downloadStudent":  $controller = new downloadStudentController();
+        case "downloadStudent": require_once("models/userModel.php"); 
+                                $controller = new downloadStudentController();
                             break; 
 
-        case "uploadStudent":  $controller = new uploadStudentController();
+        case "uploadStudent":   require_once("models/userModel.php");
+                                $controller = new uploadStudentController();
                             break; 
 
         case "considerAj":  $controller = new considerAjController();
