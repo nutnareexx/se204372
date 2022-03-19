@@ -33,7 +33,8 @@ function call($controller,$action){
                             break;
 
 
-        case "Aj":          $controller = new AjController();
+        case "Aj":          require_once("models/userModel.php");
+                            $controller = new AjController();
                             break;
 
         case "company":     require_once("models/userModel.php");
@@ -41,12 +42,12 @@ function call($controller,$action){
                             $controller = new companyController();
                             break;
 
-        case "companyP":    
+        case "companyP":    require_once("models/userModel.php");
                             require_once("models/companyModel.php");
                             $controller = new companyPController();
                             break;
 
-        case "petitionDC":  
+        case "petitionDC":  require_once("models/userModel.php");
                             require_once("models/petitionDcMoodel.php");
                             $controller = new petitionDcController();
                             break;
@@ -86,7 +87,7 @@ function call($controller,$action){
                             $controller = new cooperativeController();
                             break; 
                             
-        case "cooperativeP":
+        case "cooperativeP":require_once("models/userModel.php");
                             require_once("models/cooperativeModel.php");
                             $controller = new cooperativePController();
                             break;    
@@ -103,22 +104,28 @@ function call($controller,$action){
                                 $controller = new uploadStudentController();
                             break; 
 
-        case "considerAj":  $controller = new considerAjController();
+        case "considerAj":  require_once("models/userModel.php");
+                            $controller = new considerAjController();
                             break; 
 
-        case "graphAj":     $controller = new graphAjController();
+        case "graphAj":     require_once("models/userModel.php");
+                            $controller = new graphAjController();
                             break; 
 
-        case "reportPetition":  $controller = new reportPetitionController();
+        case "reportPetition":require_once("models/userModel.php");  
+                            $controller = new reportPetitionController();
                             break; 
 
-        case "bookAj":      $controller = new bookAjController();
+        case "bookAj":      require_once("models/userModel.php");
+                            $controller = new bookAjController();
                             break; 
 
-        case "checkHistory":  $controller = new checkHistoryController();
+        case "checkHistory":  require_once("models/userModel.php");
+                                $controller = new checkHistoryController();
                             break; 
 
-        case "uploadAj":    $controller = new uploadAjController();
+        case "uploadAj":    require_once("models/userModel.php");
+                            $controller = new uploadAjController();
                             break; 
                         
         case "user":        require_once("models/userModel.php");
