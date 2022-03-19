@@ -325,21 +325,51 @@ body {
                 text-align: center;
             }
 
-table {
-    font-family: 'Prompt', sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
+            button {
+            font-family: 'Prompt', sans-serif;
+            position: relative;
+            background-color: #397d54 ; 
+            border: 1px black;
+            color: white;
+            padding: 10px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            cursor: pointer;
+            width: 30%;
+            border-radius: 50px;
+        }
+        button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+        button:hover {
+            background-color: #73c088;
+            color: white;
+        }
 
-th, td {
-    text-align: left;
-    padding: 8px;
-}
+        input[type=text], select {
+                font-family: 'Prompt', sans-serif;
+                width: 50%;
+                /* padding: 7px 50px; */
+                /* margin: 8px 0; */
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 50px;
+                box-sizing: border-box;
 
-tr:nth-child(odd){background-color: #cae3cc}
-tr:nth-child(even){background-color: #f2f2f2}
-</style>
+            }
 
+            .card {
+            font-family: 'Prompt', sans-serif;
+            width: 80%;
+            background-color: #f1f1f1;
+            padding: 20px 20px 20px 20px;
+            margin: 20px 20px 20px 20px;
+            border-radius: 50px;
+            
+        }
+</style> 
 
 <body>
 
@@ -473,34 +503,72 @@ tr:nth-child(even){background-color: #f2f2f2}
  
 <form method="get" action="">
 
-<?php echo "
-            <br><b>ลำดับที่ : </b>   $petionDcList->petition_id  
-            <br><b>รหัสนิสิต : </b>  $petionDcList->user_id
-            <br><b>ชื่อ-นามสกุล : </b>  $petionDcList->name_title$petionDcList->user_name $petionDcList->user_surname
-            <br><b>ระยะเวลาฝึกงาน : </b> $petionDcList->start_p - $petionDcList->finish_p 
-            <br><b>ตำแหน่งที่ไปฝึกงาน : </b> $petionDcList->dc_position
-            <br><b>ชื่อสถานประกอบการฝึกงาน : </b> $petionDcList->dc_name    
-            <br><b>ค่าตอบแทน : </b> $petionDcList->dc_pay 
-            <br><b>ที่พัก : </b> $petionDcList->dc_room<br>";?>
+<center>
+<div class="card">
+    <table>
+                <tr>
+                    <th align='right'>ลำดับที่ : </th>
+                    <td><?php echo $petionDcList->petition_id;?></td>
+                </tr>
+                <tr>
+                    <th align='right'>รหัสนิสิต : </th>
+                    <td><?php echo $petionDcList->user_id;?></td>
+                </tr>
+                <tr>
+                    <th align='right'>ชื่อ-นามสกุล : </th>
+                    <td><?php echo "$petionDcList->name_title$petionDcList->user_name  $petionDcList->user_surname";?></td>
+                </tr>
+                <tr>
+                    <th align='right'>ระยะเวลาฝึกงาน : </th>
+                    <td><?php echo "$petionDcList->start_p - $petionDcList->finish_p";?></td>
+                </tr>
+                <tr>
+                    <th align='right'>ตำแหน่งที่ไปฝึกงาน : </th>
+                    <td><?php echo $petionDcList->position_p?></td>
+                </tr>
+                <tr>
+                    <th align='right'>ชื่อสถานประกอบการฝึกงาน : </th>
+                    <td><?php echo $petionDcList->dc_name?></td>
+                </tr>
+                <tr>
+                    <th align='right'>ค่าตอบแทน : </th>
+                    <td><?php echo $petionDcList->salary_p?></td>
+                </tr>
+                <tr>
+                    <th align='right'>ที่พัก : </th>
+                    <td><?php echo $petionDcList->room_p?></td>
+                </tr>
+                <tr>
+                    <th align='right'>อัพเดตสถานะ : </th>
+                    <td><select name='status_id'>
+                    <?php foreach($statusList as $st){
+                        echo "<option value=$st->status_id";
+                        if($st->status_id==$petionDcList->status_id){
+                            echo " selected='selected'";
+                        }
+                        echo ">$st->status_name</option>";
+                    }?>
+                    </select></td>
+                </tr>
+            </table>
+        <input type="hidden" name="controller" value="petitionDC"/>
+    
+        <br>
+    <input type="hidden" name="petitionid" value="<?php echo $petionDcList->petition_id;?>"/>
+    <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
+    <button type="submit" name="action" value="index"> Back </button>
+    <button type="submit" name="action" value="update"> Update </button>
+    
+
+</div>
 
 
-   
-    <label><b>อัพเดตสถานะ </b> <select name="status_id">
-        <?php foreach($statusList as $st){
-            echo "<option value=$st->status_id";
-            if($st->status_id==$petionDcList->status_id){
-                echo " selected='selected'";
-            }
-            echo ">$st->status_name</option>";
-        }?>
-        </select></label><br> 
+</center>
+
+
         
 
-    <input type="hidden" name="controller" value="petitionDC"/>
-    <input type="hidden" name="petitionid" value="<?php echo $petionDcList->petition_id;?>"/>
-    <br><button type="submit" name="action" value="index"> Back </button>
-    <button type="submit" name="action" value="update"> Update </button>
-
+    
 
 </form>
 
