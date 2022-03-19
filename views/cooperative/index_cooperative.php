@@ -461,6 +461,7 @@ tr:nth-child(even){background-color: #f2f2f2}
     <div class="btn-group">
         <input type="text" name="key">
         <input type="hidden" name="controller" value="cooperative"/>
+        <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
         <button class="button" type="submit" name="action" value="search">Search</button>
 
     </div>
