@@ -4,6 +4,7 @@ class petitionCUserController
     public function index()
     {
         $userid = $_GET['userid'];
+        $userList=userModel::get($userid);
         $nametitleList  = nametitleModel::getAll();
         require_once('views/petitionCUser/index_petitionCUser.php');
     }
@@ -11,6 +12,7 @@ class petitionCUserController
     public function newpetitionC()
     {
         $userid = $_GET['userid'];
+        $userList=userModel::get($userid);
         $petionCList = petitionCModel::getAll();
         //$approveList = approveModel::getAll();
         $statusList = statusModel::getAll();
@@ -39,6 +41,7 @@ class petitionCUserController
         // $c_name = $_GET['c_name'];
         // $c_pay = $_GET['c_pay'];
         // $c_room = $_GET['c_room'];
+        $userList=userModel::get($userid);
         petitionCModel::Add($start_p, $finish_p, $date_p, $user_id);
         petitionCUserController::index();
     }
