@@ -48,7 +48,7 @@ function call($controller,$action){
                             break;
 
         case "petitionDC":  require_once("models/userModel.php");
-                            require_once("models/petitionDcMoodel.php");
+                            require_once("models/petitionDcModel.php");
                             $controller = new petitionDcController();
                             break;
 
