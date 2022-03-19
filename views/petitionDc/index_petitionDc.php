@@ -477,6 +477,7 @@ tr:nth-child(even){background-color: #f2f2f2}
     
     <input type="text" name="key">
     <input type="hidden" name="controller" value="petitionDC"/>
+    <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
     <button type="submit" name="action" value="search">Search</button>
 
 </form>
