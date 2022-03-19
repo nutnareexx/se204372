@@ -475,6 +475,12 @@ tr:nth-child(even){background-color: #f2f2f2}
             <br><b>ลำดับที่ : </b>   $petionCList->petition_id  
             <br><b>รหัสนิสิต : </b>  $petionCList->user_id
             <br><b>ชื่อ-นามสกุล : </b>  $petionCList->name_title$petionCList->user_name $petionCList->user_surname
+            <br><b>เบอร์โทรศัพท์ : </b>  $petionCList->phone_p
+            <br><b>ชื่อ-Facebook : </b>  $petionCList->FB_p
+            <br><b>วันที่ยื่นใบคำร้อง : </b>  $petionCList->position_p
+            <br><b>ปีการศึกษา : </b>  $petionCList->academicY_p
+            <br><b>ตำแหน่งที่ไปฝึกงาน : </b>  $petionCList->position_p
+            <br><b>ตำแหน่งที่ไปฝึกงาน : </b>  $petionCList->position_p
             <br><b>ชื่อสถานประกอบการสหกิจ : </b> $petionCList->c_name    
             <br><b>สถานะ : </b> $petionCList->status_name<br>";?>
 
