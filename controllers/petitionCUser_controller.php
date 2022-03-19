@@ -3,6 +3,7 @@ class petitionCUserController
 {
     public function index()
     {
+        $userid = $_GET['userid'];
         $nametitleList  = nametitleModel::getAll();
         require_once('views/petitionCUser/index_petitionCUser.php');
     }
@@ -21,6 +22,7 @@ class petitionCUserController
 
     public function addpetitionC()
     {
+        $userid = $_GET['userid'];
         echo "addp";
         // $c_id = $_GET['c_id'];
         // // $petition_id = $_GET['petition_id'];
