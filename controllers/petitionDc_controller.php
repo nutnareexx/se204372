@@ -4,16 +4,24 @@ class petitionDcController
     public function index()
     {
         $userid = $_GET['userid'];
+        
         $userList=userModel::get($userid);
         $petionDcList = petitionDcModel::getAll();
+        $pelist = petitionModelFornew::getAll();
         require_once('views/petitionDc/index_petitionDc.php');
     }
 
     public function indexDetail()
     {
         $userid = $_GET['userid'];
+        $petition_id = $_GET['petition_id'];
         $userList=userModel::get($userid);
+        $p2 = petitionModelFornew::get($petition_id);
+        $p = petitionDcModel::get($petition_id);
+        $pelist = petitionModelFornew::getAll();
         $petionDcList = petitionDcModel::getAll();
+        $nametitleList = nametitleModel::getAll();
+        $DetailCompanyList = DetailCompanyModel::getAll();
         require_once('views/petitionDc/detail_petitionDc.php');
     }
 
