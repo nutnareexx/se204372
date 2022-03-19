@@ -10,12 +10,14 @@ class companyController
 
     public function newDetailCompany()
     {
+        $userid = $_GET['userid'];
         $DetailCompanyList = DetailCompanyModel::getAll();
         require_once('views/detailCompany/newdetailCompany.php');
     }
 
     public function addDetailCompany()
     {
+        $userid = $_GET['userid'];
         $dc_name = $_GET['dc_name'];
         $dc_position = $_GET['dc_position'];
         $dc_department = $_GET['dc_department'];
@@ -33,7 +35,7 @@ class companyController
     public function search()
     {
         $key = $_GET['key'];
-        
+        $userid = $_GET['userid'];
         $DetailCompanyList = DetailCompanyModel::search($key);
         require_once('views/detailCompany/index_detailCompany.php');
     }

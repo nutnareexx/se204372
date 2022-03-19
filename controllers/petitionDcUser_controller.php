@@ -23,7 +23,7 @@ class petitionDcUserController
         $userList = userModel::get($userid);
 
         echo $userid.$company;
-        require_once('views/petitionDcUser/newCompany_Dcuser.php');
+        require_once('views/petitionDcUser/index2_Dcuser.php');
     }
 
     
@@ -75,6 +75,7 @@ class petitionDcUserController
     }
     public function newpetitionDc()
         {
+            $userid = $_GET['userid'];
             $petionDcList = petitionDcModel::getAll();
             //$approveList = approveModel::getAll();
             $statusList = statusModel::getAll();
@@ -87,7 +88,7 @@ class petitionDcUserController
 
     public function updateform()
     {
-       
+        $userid = $_GET['userid'];
         $dc = $_GET['petition_id'];
         $petionDcList = petitionDcModel::get($dc);
         $nametitleList = nametitleModel::getAll();
@@ -100,7 +101,7 @@ class petitionDcUserController
 
     public function update()
     {
-        
+        $userid = $_GET['userid'];
         $petition_id = $_GET['petitionid'];
         $status_id = $_GET['status_id'];
         petitionDcModel::update( $petition_id, $status_id);
@@ -109,6 +110,7 @@ class petitionDcUserController
 
     public function deleteconfirm()
     {
+        $userid = $_GET['userid'];
         $dc = $_GET['petition_id'];
         $petionDcList = petitionDcModel::get($dc);
         require_once('views/petitionDc/deleteconfirm.php');
@@ -117,6 +119,7 @@ class petitionDcUserController
 
     public function delete()
     {
+        $userid = $_GET['userid'];
         $petitionid = $_GET['petitionid'];
         petitionDcModel::delete($petitionid);
         petitionDcUserController::index();
