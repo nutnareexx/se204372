@@ -332,12 +332,19 @@ table {
 }
 
 th, td {
-    text-align: left;
-    padding: 8px;
+    text-align: right;
+    padding: 16px;
 }
 
-tr:nth-child(odd){background-color: #cae3cc}
-tr:nth-child(even){background-color: #f2f2f2}
+.card {
+            font-family: 'Prompt', sans-serif;
+            
+            background-color: #f1f1f1;
+            padding: 20px 20px 20px 20px;
+            margin: 20px 20px 20px 20px;
+            border-radius: 50px;
+            
+        }
 </style>
 
 
@@ -440,8 +447,36 @@ tr:nth-child(even){background-color: #f2f2f2}
     <!-- เขียนตรงนี้นาจาาาาาา -->
     <div class="header">
   
-    <h2><b>ตรวจสอบผลการอนุมัติ <a href='#'></h2>
+        <h2><b>ตรวจสอบผลการอนุมัติ</h2>
+        <?php echo $userid;?>
+    </div>
+<!--
+<div class="card">
+<?php echo "<br>
+            <br><b>ฝึกงาน : </b> $petionCList->user_id
+           
+
+    
+";?>
+
+<form method="get" action="">
+    <input type="hidden" name="controller" value="checkApproval"/>
+    <input type="hidden" name="petitionid" value="<?php echo $petionCList->petition_id;?>"/>
+</form>-->
+
+<table>
+    <tr>
+        
+        <td><b>รหัสนิสิต</td>
+        <td><b>ชื่อ-นามสกุล</td>
+        <td><b>ชื่อสถานประกอบการฝึกงานที่ภาควิชามีอยู่</td>
+        
+    </tr>
+    
+
 </div>
+
+
 </section>
 
 <script>
@@ -466,3 +501,16 @@ sidebarBtn.addEventListener("click", ()=>{
 
 </body>
 </html> 
+
+
+<?php foreach($petionDcList as $dclist)
+{
+    echo " <tr>
+    <td>$dclist->user_id</td>
+    <td>$dclist->name_title$dclist->user_name $dclist->user_surname</td>
+    <td>$dclist->dc_name</td>
+    
+    </tr>";
+}
+echo "</table>";
+ ?>
