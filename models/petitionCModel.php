@@ -144,6 +144,8 @@ class petitionCModel{
         $c_name, $academicY_p, $approve_id);
     }
 
+    
+
 
     public static function getAll()
     {
@@ -202,6 +204,8 @@ class petitionCModel{
         return $petionCList;
 
     }
+
+    
 
     public static function Add($start_p, $finish_p, $date_p, $user_id)
     {
