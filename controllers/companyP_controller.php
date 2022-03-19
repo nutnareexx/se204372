@@ -4,6 +4,7 @@ class companyPController
     public function indexP()
     {
         $userid = $_GET['userid'];
+        $userList=userModel::get($userid);
         $DetailCompanyPList = DetailCompanyModel::getAll();
         require_once('views/detailCompanyP/index_detailCompanyP.php');
     }
@@ -11,6 +12,7 @@ class companyPController
     public function newDetailCompanyP()
     {
         $userid = $_GET['userid'];
+        $userList=userModel::get($userid);
         $DetailCompanyPList = DetailCompanyModel::getAll();
         require_once('views/detailCompanyP/newdetailCompanyP.php');
     }
@@ -28,6 +30,7 @@ class companyPController
         $dc_room = $_GET['dc_room'];
         $dc_benefit = $_GET['dc_benefit'];
         $dc_select = $_GET['dc_select'];
+        $userList=userModel::get($userid);
         DetailCompanyModel::add($dc_name,$dc_position,$dc_department,$dc_num,$dc_skills,$dc_nature,$dc_pay,$dc_room,$dc_benefit,$dc_select);
         companyPController::indexP();
     }
@@ -36,6 +39,7 @@ class companyPController
     {
         $userid = $_GET['userid'];
         $key = $_GET['key'];
+        $userList=userModel::get($userid);
         $DetailCompanyPList = DetailCompanyModel::search($key);
         require_once('views/detailCompanyP/index_detailCompanyP.php');
     }
@@ -44,6 +48,7 @@ class companyPController
     {
         $userid = $_GET['userid'];
         $dc = $_GET['dc_id'];
+        $userList=userModel::get($userid);
         $DetailCompanyPList = DetailCompanyModel::get($dc);
         require_once('views/detailCompanyP/updateformP.php');
 
@@ -63,6 +68,7 @@ class companyPController
         $dc_room = $_GET['dc_room'];
         $dc_benefit = $_GET['dc_benefit'];
         $dc_select = $_GET['dc_select'];
+        $userList=userModel::get($userid);
         DetailCompanyModel::update($dcid,$dc_name,$dc_position,$dc_department,$dc_num,
         $dc_skills,$dc_nature,$dc_pay,$dc_room,$dc_benefit,$dc_select);
         companyPController::indexP();
@@ -72,6 +78,7 @@ class companyPController
     {
        $dc_id = $_GET['dc_id'];
        $userid = $_GET['userid'];
+       $userList=userModel::get($userid);
        $DetailCompanyPList =  DetailCompanyModel::get($dc_id);
        require_once('./views/detailCompanyP/deleteconfirmP.php');
     }
@@ -80,6 +87,7 @@ class companyPController
     {
         $dcid = $_GET['dcid'];
         $userid = $_GET['userid'];
+        $userList=userModel::get($userid);
         DetailCompanyModel::delete($dcid);
         companyPController::indexP();
     }
