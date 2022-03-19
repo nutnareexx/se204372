@@ -230,7 +230,7 @@ class petitionDcModel{
   public static function update($petition_id, $status_id)
   {
       require("connection_connect.php");
-      $sql = "UPDATE `petition` SET `status_id`='$status_id'WHERE petition_id = '$petition_id'";
+      $sql = "UPDATE `petition` SET `status_id`='$status_id' WHERE petition_id = '$petition_id'";
       $result = $conn->query($sql);
       require("connection_close.php");
       return "update success $result row";
