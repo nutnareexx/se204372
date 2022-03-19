@@ -385,12 +385,12 @@ body {
         </div>
     <dl class="nav-links">
         <li>
-            <a href="?controller=nisit&action=index">
+            <a href="?controller=nisit&action=index&userid=<?php echo $userid;?>">
             <i class='bx bx-home'></i>
                 <span class="link_name">หน้าแรก</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=nisit&action=index">หน้าแรก</a></li>
+                <li><a class="link_name" href="?controller=nisit&action=index&userid=<?php echo $userid;?>">หน้าแรก</a></li>
             </ul>
         </li>
         <li>
@@ -403,8 +403,8 @@ body {
             </div>
             <ul class="sub-menu">
                 <li><a class="link_name" href="#">สถานประกอบการณ์</a></li>
-                <li><a href="?controller=company&action=index">ฝึกงาน</a></li>
-                <li><a href="?controller=cooperative&action=index">สหกิจ</a></li>
+                <li><a href="?controller=company&action=index&userid=<?php echo $userid;?>">ฝึกงาน</a></li>
+                <li><a href="?controller=cooperative&action=index&userid=<?php echo $userid;?>">สหกิจ</a></li>
             </ul>
         </li>
         <li>
@@ -422,31 +422,31 @@ body {
             </ul>
         </li>
         <li>
-            <a href="?controller=checkApproval&action=index">
+            <a href="?controller=checkApproval&action=index&userid=<?php echo $userid;?>">
                 <i class='bx bx-check-square' ></i>
                 <span class="link_name">ตรวจสอบผลการอนุมัติ</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=checkApproval&action=index">ตรวจสอบผลการอนุมัติ</a></li>
+                <li><a class="link_name" href="?controller=checkApproval&action=index&userid=<?php echo $userid;?>">ตรวจสอบผลการอนุมัติ</a></li>
             </ul>
         </li>
         
         <li>
-            <a href="?controller=downloadStudent&action=index">
+            <a href="?controller=downloadStudent&action=index&userid=<?php echo $userid;?>">
             <i class='bx bx-download'></i>
             <span class="link_name">download</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=downloadStudent&action=index">download</a></li>
+                <li><a class="link_name" href="?controller=downloadStudent&action=index&userid=<?php echo $userid;?>">download</a></li>
             </ul>
         </li>
         <li>
-            <a href="?controller=uploadStudent&action=index">
+            <a href="?controller=uploadStudent&action=index&userid=<?php echo $userid;?>">
             <i class='bx bx-upload'></i>
             <span class="link_name">upload</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=uploadStudent&action=index">upload</a></li>
+                <li><a class="link_name" href="?controller=uploadStudent&action=index&userid=<?php echo $userid;?>">upload</a></li>
             </ul>
         </li>
     
@@ -457,9 +457,13 @@ body {
         </div>
             
             <div class="name-job">
-                <div class="profile_name">Name</div>
+                <div class="profile_name">
+                
+                <?php echo $userList->user_name;?>
+                
+                </div>
             </div>   
-            <a href="?controller=user&action=logout">          
+            <a href="?controller=user&action=logout&userid=<?php echo $userid;?>">          
                 <i class='bx bx-log-out '></i>
             </a>
     </div>
@@ -481,13 +485,13 @@ body {
     <div class="row">
         <div class="column">
             <div class="card">
-                <a href="?controller=company&action=index">ข้อมูลสถานประกอบการณ์ฝึกงาน</a>    
+                <a href="?controller=company&action=index&userid=<?php echo $userid;?>">ข้อมูลสถานประกอบการณ์ฝึกงาน</a>    
             </div>
         </div>
 
         <div class="column">
             <div class="card">
-                <a href="?controller=cooperative&action=index">ข้อมูลสถานประกอบการณ์สหกิจ</a>    
+                <a href="?controller=cooperative&action=index&userid=<?php echo $userid;?>">ข้อมูลสถานประกอบการณ์สหกิจ</a>    
             </div>
         </div>
     </div>
