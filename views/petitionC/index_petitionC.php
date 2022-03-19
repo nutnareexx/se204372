@@ -534,7 +534,7 @@ sidebarBtn.addEventListener("click", ()=>{
     <td>$clist->user_id</td>
     <td>$clist->name_title$clist->user_name $clist->user_surname</td> 
     <td>$clist->comName_p</td>  
-    <td> <a href=?controller=petitionC&action=indexC&petition_id=$clist->petition_id&userid=$userid> รายละเอียดเพิ่มเติม </a> </td>
+    <td> <a href=?controller=petitionC&action=indexCshow&petition_id=$clist->petition_id&userid=$userid> รายละเอียดเพิ่มเติม </a> </td>
     <td>$clist->status_name</td>  
     <td> <a href=?controller=petitionC&action=updateformC&petition_id=$clist->petition_id&userid=$userid> อนุมัติ </a> </td>
     <td> <a href=?controller=petitionC&action=updateformC&petition_id=$clist->petition_id&userid=$userid> ไม่อนุมัติ </a>
