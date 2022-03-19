@@ -5,8 +5,20 @@ class petitionCUserController
     {
         $userid = $_GET['userid'];
         $userList=userModel::get($userid);
-        $nametitleList  = nametitleModel::getAll();
+        // $nametitleList  = nametitleModel::getAll();
         require_once('views/petitionCUser/index_petitionCUser.php');
+    }
+
+    public function index2()
+    {
+        $userid = $_GET['userid'];
+        $userList = userModel::get($userid);
+        $date = $_GET['date'];
+        $userid = $_GET['userid'];
+        $company = $_GET['company'];
+        $comList = DetailCompanyModel::getAll();
+        $userList = userModel::get($userid);
+        require_once('views/petitionCUser/index2_petitionCUser.php');
     }
 
     public function newpetitionC()
