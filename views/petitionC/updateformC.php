@@ -476,7 +476,7 @@ tr:nth-child(even){background-color: #f2f2f2}
             <br><b>ลำดับที่ : </b>   $petionCList->petition_id  
             <br><b>รหัสนิสิต : </b>  $petionCList->user_id
             <br><b>ชื่อ-นามสกุล : </b>  $petionCList->name_title$petionCList->user_name $petionCList->user_surname
-            <br><b>ชื่อสถานประกอบการสหกิจ : </b> $petionCList->c_name <br>    
+            <br><b>ชื่อสถานประกอบการสหกิจ : </b> $petionCList->comName_p <br>    
             ";?>
 
 
