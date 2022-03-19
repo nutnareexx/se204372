@@ -526,6 +526,11 @@
                     <td align="right" style="width: 30%;" ><label>วันที่เขียนคำร้อง :</label></td>
                     <td> <input type="date" name="date"/></td>
                 </tr>
+
+                <tr>
+                    <td align="right"> <label>ปีการศึกกษา : </label></td>
+                    <td><input type="text" name="y"></td>
+                </tr>
                 
 
                 <tr>

@@ -14,6 +14,7 @@ class petitionDcUserController
     public function index2()
     {
         $date = $_GET['date'];
+        $y = $_GET['y'];
         $userid = $_GET['userid'];
         // $phone = $_GET['phone'];
         // $faceB = $_GET['facebook'];
@@ -31,6 +32,7 @@ class petitionDcUserController
     {
         echo "<br>addp<br>";
         $date = $_GET['p_date'];
+        $y =$_GET['y'];
         $userid = $_GET['userid'];
         $phone = $_GET['phone'];
         $faceB = $_GET['facebook'];
@@ -63,12 +65,12 @@ class petitionDcUserController
         if(isset($_GET['company_id'])){
             $company_id = $_GET['company_id'];
             echo $company_id;
-            petitionDcModel::addDC_old($date,$userid,$faceB,$phone,$position,$approve_name,$approve_lastname,$approve_position,$company_id,$company_no,$company_road,$company_sub,$company_dis,$company_prov,$company_code,$hr_name,$hr_lastname,$hr_phone,$hr_mail,$pay,$room,$start,$finish);
+            petitionDcModel::addDC_old($date,$userid,$y,$faceB,$phone,$position,$approve_name,$approve_lastname,$approve_position,$company_id,$company_no,$company_road,$company_sub,$company_dis,$company_prov,$company_code,$hr_name,$hr_lastname,$hr_phone,$hr_mail,$pay,$room,$start,$finish);
         }
         if(isset($_GET['dc_name'])){
             $company_name = $_GET['dc_name'];
             echo $company_name;
-            petitionDcModel::addDC_new($date,$userid,$faceB,$phone,$position,$approve_name,$approve_lastname,$approve_position,$company_name,$company_no,$company_road,$company_sub,$company_dis,$company_prov,$company_code,$hr_name,$hr_lastname,$hr_phone,$hr_mail,$pay,$room,$start,$finish);
+            petitionDcModel::addDC_new($date,$userid,$y,$faceB,$phone,$position,$approve_name,$approve_lastname,$approve_position,$company_name,$company_no,$company_road,$company_sub,$company_dis,$company_prov,$company_code,$hr_name,$hr_lastname,$hr_phone,$hr_mail,$pay,$room,$start,$finish);
         }
         
         

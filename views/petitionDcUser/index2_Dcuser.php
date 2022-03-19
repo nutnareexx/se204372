@@ -532,6 +532,11 @@
                     <!-- <td> <input type="date" name="date"/></td> -->
                     <td><label>  <input type="date" name="p_date" value="<?php echo $date;?>"/></label></td>
                 </tr>
+
+                <tr>
+                    <td align="right"> <label>ปีการศึกกษา : </label></td>
+                    <td><?php echo $y;?></td>
+                </tr>
                 
 
                 <tr>
@@ -701,6 +706,7 @@
 
             <input type="hidden" name="controller" value="petitionDCUser"/>
             <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
+            <input type="hidden" name="y" value="<?php echo $y;?>"/>
             <button type="submit" name="action" value="index">Back</button>
             <button type="submit" name="action" value="addpetitionDc">Save</button>
         </form>
