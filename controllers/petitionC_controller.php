@@ -68,6 +68,7 @@ class petitionCController
     {
         $userid = $_GET['userid'];
         $dc = $_GET['petition_id'];
+        $userList=userModel::get($userid);
         $petionCList = petitionCModel::get($dc);
         require_once('views/petitionC/deleteconfirmC.php');
 
@@ -77,6 +78,7 @@ class petitionCController
     {
         $userid = $_GET['userid'];
         $petitionid = $_GET['petitionid'];
+        $userList=userModel::get($userid);
         petitionCModel::delete($petitionid);
         petitionCController::indexC();
     }
@@ -85,6 +87,7 @@ class petitionCController
     {
         $userid = $_GET['userid'];
         $key = $_GET['key'];
+        $userList=userModel::get($userid);
         $petionCList = petitionCModel::search($key);
         require_once('views/petitionC/index_petitionC.php');
     }
