@@ -11,9 +11,8 @@ class petitionCUserController
 
     public function index2()
     {
-        $userid = $_GET['userid'];
-        $userList = userModel::get($userid);
         $date = $_GET['date'];
+        $y = $_GET['y'];
         $userid = $_GET['userid'];
         $company = $_GET['company'];
         $comList = DetailCompanyModel::getAll();
@@ -39,6 +38,7 @@ class petitionCUserController
     {
         echo "<br>addp<br>";
         $date = $_GET['p_date'];
+        $y = $_GET['y'];
         $userid = $_GET['userid'];
         $phone = $_GET['phone'];
         $faceB = $_GET['facebook'];
@@ -71,12 +71,12 @@ class petitionCUserController
         if(isset($_GET['company_id'])){
             $company_id = $_GET['company_id'];
             echo $company_id;
-            petitionCModel::addC_old($date,$userid,$faceB,$phone,$position,$approve_name,$approve_lastname,$approve_position,$company_id,$company_no,$company_road,$company_sub,$company_dis,$company_prov,$company_code,$hr_name,$hr_lastname,$hr_phone,$hr_mail,$pay,$room,$start,$finish);
+            petitionCModel::addC_old($date,$userid,$y,$faceB,$phone,$position,$approve_name,$approve_lastname,$approve_position,$company_id,$company_no,$company_road,$company_sub,$company_dis,$company_prov,$company_code,$hr_name,$hr_lastname,$hr_phone,$hr_mail,$pay,$room,$start,$finish);
         }
         if(isset($_GET['dc_name'])){
             $company_name = $_GET['dc_name'];
             echo $company_name;
-            petitionCModel::addC_new($date,$userid,$faceB,$phone,$position,$approve_name,$approve_lastname,$approve_position,$company_name,$company_no,$company_road,$company_sub,$company_dis,$company_prov,$company_code,$hr_name,$hr_lastname,$hr_phone,$hr_mail,$pay,$room,$start,$finish);
+            petitionCModel::addC_new($date,$userid,$y,$faceB,$phone,$position,$approve_name,$approve_lastname,$approve_position,$company_name,$company_no,$company_road,$company_sub,$company_dis,$company_prov,$company_code,$hr_name,$hr_lastname,$hr_phone,$hr_mail,$pay,$room,$start,$finish);
         }
     }
 }

@@ -421,87 +421,87 @@
 
         <dl class="nav-links">
         
-            <li>
-                <a href="?controller=nisit&action=index">
-                <i class='bx bx-home'></i>
-                    <span class="link_name">หน้าแรก</span>
+        <li>
+            <a href="?controller=nisit&action=index&userid=<?php echo $userid;?>">
+            <i class='bx bx-home'></i>
+                <span class="link_name">หน้าแรก</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="?controller=nisit&action=index&userid=<?php echo $userid;?>">หน้าแรก</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="iocn-link">
+                <a href="#">
+                    <i class='bx bx-buildings'></i>
+                    <span class="link_name">สถานประกอบการณ์</span>
                 </a>
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="?controller=nisit&action=index&userid=<?php echo $userid;?>">หน้าแรก</a></li>
-                </ul>
-            </li>
-            <li>
-                <div class="iocn-link">
-                    <a href="#">
-                        <i class='bx bx-buildings'></i>
-                        <span class="link_name">สถานประกอบการ</span>
-                    </a>
-                    <i class='bx bx-chevron-down arrow'></i>
-                </div>
-                <ul class="sub-menu">
-                    <li><a class="link_name" href="#">สถานประกอบการ</a></li>
-                    <li><a href="?controller=company&action=index&userid=<?php echo $userid;?>">ฝึกงาน</a></li>
-                    <li><a href="?controller=cooperative&action=index&userid=<?php echo $userid;?>">สหกิจ</a></li>
-                </ul>
-            </li>
-            <li>
-                <div class="iocn-link">
-                    <a href="#">
-                        <i class='bx bx-file-blank' ></i>
-                        <span class="link_name">ยื่นคำร้อง</span>
-                    </a>
-                    <i class='bx bx-chevron-down arrow'></i>
-                </div>
-                <ul class="sub-menu">
-                    <li><a class="link_name" href="#">ยื่นคำร้อง</a></li>
-                    <li><a href="?controller=petitionDCUser&action=index&userid=<?php echo $userid;?>">ฝึกงาน</a></li>
-                    <li><a href="?controller=petitionCUser&action=index&userid=<?php echo $userid;?>">สหกิจ</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="?controller=checkApproval&action=index">
-                    <i class='bx bx-check-square' ></i>
-                    <span class="link_name">ตรวจสอบผลการอนุมัติ</span>
-                </a>
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">ตรวจสอบผลการอนุมัติ</a></li>
-                </ul>
-            </li>
-            
-            <li>
-                <a href="?controller=downloadStudent&action=index">
-                <i class='bx bx-download'></i>
-                <span class="link_name">download</span>
-                </a>
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">download</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="?controller=uploadStudent&action=index">
-                <i class='bx bx-upload'></i>
-                <span class="link_name">upload</span>
-                </a>
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">upload</a></li>
-                </ul>
-            </li>
-            <li>
-            <div class="profile-details">
-                <div class="profile-content">
-                    <i class='bx bxs-user'></i>
-                </div>
-                
-                    <div class="name-job">
-                        <div class="profile_name">Name</div>
-                    </div>
-                
-                    <a href="?controller=pages&action=home">          
-                        <i class='bx bx-log-out '></i>
-                    </a>
-                
+                <i class='bx bx-chevron-down arrow'></i>
             </div>
-            </li>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="#">สถานประกอบการณ์</a></li>
+                <li><a href="?controller=company&action=index&userid=<?php echo $userid;?>">ฝึกงาน</a></li>
+                <li><a href="?controller=cooperative&action=index&userid=<?php echo $userid;?>">สหกิจ</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="iocn-link">
+                <a href="#">
+                    <i class='bx bx-file-blank' ></i>
+                    <span class="link_name">ยื่นคำร้อง</span>
+                </a>
+                <i class='bx bx-chevron-down arrow'></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="#">ยื่นคำร้อง</a></li>
+                <li><a href="?controller=petitionDCUser&action=index&userid=<?php echo $userid;?>">ฝึกงาน</a></li>
+                <li><a href="?controller=petitionCUser&action=index&userid=<?php echo $userid;?>">สหกิจ</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="?controller=checkApproval&action=index&userid=<?php echo $userid;?>">
+                <i class='bx bx-check-square' ></i>
+                <span class="link_name">ตรวจสอบผลการอนุมัติ</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="?controller=checkApproval&action=index&userid=<?php echo $userid;?>">ตรวจสอบผลการอนุมัติ</a></li>
+            </ul>
+        </li>
+        
+        <li>
+            <a href="?controller=downloadStudent&action=index&userid=<?php echo $userid;?>">
+            <i class='bx bx-download'></i>
+            <span class="link_name">download</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="?controller=downloadStudent&action=index&userid=<?php echo $userid;?>">download</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="?controller=uploadStudent&action=index&userid=<?php echo $userid;?>">
+            <i class='bx bx-upload'></i>
+            <span class="link_name">upload</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="?controller=uploadStudent&action=index&userid=<?php echo $userid;?>">upload</a></li>
+            </ul>
+        </li>
+        <li> 
+    <div class="profile-details">
+        <div class="profile-content">
+            <i class='bx bxs-user'></i>
+        </div>
+            
+            <div class="name-job">
+                <div class="profile_name">
+                    <?php echo $userList->user_name;?> <?php echo $userList->user_surname;?>
+                </div>
+            </div>   
+            <a href="?controller=user&action=logoutNisit&userid=<?php echo $userid;?>">          
+                <i class='bx bx-log-out '></i>
+            </a>
+    </div>
+    </li>
         </dl>
     </div>
 
@@ -513,13 +513,12 @@
         <!-- เขียนตรงนี้นาจาาาาาา -->
         <div class="header">
     
-        <h2><b>ยื่นคำร้องฝึกงานสหกิจ <br></h2>
+        <h2><b>ยื่นคำร้องฝึกงาน <br></h2>
 
         </div>
 
         <center>
         <div class="card" >
-        <form method="get" action="">
             <table align="center">
 
             <th colspan="2"> 
@@ -532,7 +531,7 @@
                     <!-- <td> <input type="date" name="date"/></td> -->
                     <td><label>  <input type="date" name="p_date" value="<?php echo $date;?>"/></label></td>
                 </tr>
-                
+
                 <tr>
                     <td align="right"> <label>ปีการศึกกษา : </label></td>
                     <td><?php echo $y;?></td>
@@ -547,23 +546,23 @@
                 
                 <tr>
                     <td align="right"><label>ชื่อ - นามสกุล : </label></td>
-                    <td><?php echo $userList->user_title?><?php echo $userList->user_name?> <?php echo $userList->user_surname?></td>
+                    <td><?php echo $userList->user_title;?><?php echo $userList->user_name;?> <?php echo $userList->user_surname;?></td>
                 </tr>
 
 
                 <tr>
                     <td align="right"> <label>เบอร์โทรศัพท์ : </td>
-                    <td><input type="text" name="phone"/></label></td>
+                    <td><?php echo $phone;?></td>
                 </tr>
             
                 <tr>
                     <td align="right"> <label>Facebook : </td>
-                    <td><input type="text" name="facebook"/></td>
+                    <td><?php echo $faceB;?></td>
                 </tr>
 
                 <tr>
                     <td align="right"><label>ตำแน่งที่ไปฝึกงาน : </label></td>
-                    <td><input type="text" name="dc_position"/></td>
+                    <td><?php echo $position;?></td>
                 </tr>
 
             <th colspan="2"> 
@@ -575,17 +574,17 @@
             
             <tr>
                 <td align="right" style="width: 30%;" ><label>ชื่อ : </label></td>
-                <td ><input type="text" name="name_com"/></td>
+                <td ><?php echo $approve_name;?></td>
             </tr>
 
             <tr>
                 <td align="right"><label>นามสกุล : </label></td>
-                <td><input type="text" name="lastname_com"/></td>
+                <td><?php echo $approve_lastname;?></td>
             </tr>
 
             <tr>
                 <td align="right"><label>ตำแหน่ง : </label></td>
-                <td><input type="text" name="position"/></td>
+                <td><?php echo $approve_position;?></td>
             </tr>
 
             <th colspan="2">
@@ -594,22 +593,17 @@
                 
             </th>
 
+            <!-- ยังงไม่ได้แก้ -->
             <tr>
                 <td align="right"><label>ชื่อสถานประกอบการ : </label></td>
-                <td>
-                <?php 
-                if($company == "old"){
-                    echo "<select name='company_id'>
-                    <option value=''>--เลือก--</option>";
-                    foreach($comList as $c){
-                        echo "<option value=$c->dc_id>$c->dc_name</option>";
+                <td><?php 
+                    if($c=="cid"){
+                        echo $comList->dc_name;
                     }
-                    "</select>";
-                }
-                else if ($company == "new"){
-                    echo "<input type='text' name='dc_name'/>";
-                }
-                ?>
+                    else if($c=="name"){
+                        echo $company_name;
+                    }
+                    ?>
                 </td>
                 
                 
@@ -617,32 +611,32 @@
 
             <tr>
                 <td align="right"><label>สถานที่ตั้งเลขที่ : </label></td>
-                <td><input type="text" name="no"/></td>
+                <td><?php echo $company_no;?></td>
             </tr>
 
             <tr>
                 <td align="right"><label>ถนน : </label></td>
-                <td><input type="text" name="road"/></td>
+                <td><?php echo $company_road;?></td>
             </tr>
 
             <tr>
                 <td align="right"><label>ตำบล/แขวง : </label></td>
-                <td><input type="text" name="Subdistrict"/></td>
+                <td><?php echo $company_sub;?></td>
             </tr>
 
             <tr>
                 <td align="right"><label>อำเภอ/เขต : </label></td>
-                <td><input type="text" name="district"/></td>
+                <td><?php echo $company_dis;?></td>
             </tr>
 
             <tr>
                 <td align="right"><label>จังหวัด : </label></td>
-                <td><input type="text" name="province"/></td>
+                <td><?php echo $company_prov;?></td>
             </tr>
 
             <tr>
                 <td align="right"><label>รหัสไปรษณีย์ : </label></td>
-                <td><input type="text" name="postcode"/></td>
+                <td><?php echo $company_code;?></td>
             </tr>
 
             <th colspan="2">
@@ -653,63 +647,78 @@
 
             <tr>
                 <td align="right"><label>ชื่อผู้ประสานงาน : </label></td>
-                <td><input type="text" name="namehr"/></td>
+                <td><?php echo $hr_name;?></td>
             </tr>
 
             <tr>
                 <td align="right"><label>นามสกุลผู้ประสานงาน : </label></td>
-                <td><input type="text" name="lastnamehr"/></td>
+                <td><?php echo $hr_lastname;?></td>
             </tr>
 
             <tr>
                 <td align="right"><label>เบอร์โทรศัพท์ : </label></td>
-                <td><input type="text" name="phonehr"/></td>
+                <td><?php echo $hr_phone;?></td>
             </tr>
 
             <tr>
                 <td align="right"><label>E-mail : </label></td>
-                <td><input type="email" name="mailhr"/></td>
+                <td><?php echo $hr_mail;?></td>
             </tr>
 
             <th colspan="2">
                 <br><br>
-                <label>ส่วนของรายละเอียดการฝึกงานสหกิจ</label> 
+                <label>ส่วนของรายละเอียดการฝึกงาน</label> 
                 
             </th>
 
             <tr>
                 <td align="right"><label>เริ่มฝึกงาน : </label></td>
-                <td><input type="date" name="start_p"/></td>
+                <td><?php echo $start;?></td>
             </tr>
 
             <tr>
                 <td align="right"><label>สิ้นสุดการฝึกงาน : </label></td>
-                <td><input type="date" name="finish_p"/></td>
+                <td><?php echo $finish;?></td>
             </tr>
 
             <tr>
                 <td align="right"><label>จำนวนค่าตอบแทน : </label></td>
-                <td><input type="text" name="pay"/></td>
+                <td><?php echo $pay?></td>
             </tr>
 
             <tr>
                 <td align="right"><label>ที่พัก : </label></td>
-                <td><input type="radio" id="h" name="room" value="Have">
-                <label for="h"> มี </label><br>
-                <input type="radio" id="dh" name="room" value="Dont Have">
-                <label for="dh"> ไม่มี </label><br>
+                <td><?php 
+                    if($room == "Have"){
+                        echo "มีที่พัก";
+                    }
+                    else if($room == "Dont Have"){
+                        echo "ไม่มีที่พัก";
+                    }
+                    ?>
+                </td>
+                
+            </tr>
+
+            <tr>
+                <form action="views\addfile.php" method="post" enctype="multipart/form-data" name="upfile" id="upfile">
+                <td align="right"><label>ใบคำร้องขอฝึกงาน : </label></td>
+                <td><input class="button" type="file" name="fileupload" id="fileupload"  required="required"/></td>
                 
             </tr>
             
             </table>
             <br>
+            <button class="button" type="submit" name="button" id="button" value="upResult"> เพิ่มไฟล์ </button>
 
-            <input type="hidden" name="controller" value="petitionCUser"/>
+            </form>
+            <!-- <input type="hidden" name="controller" value="petitionDCUser"/>
             <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
             <input type="hidden" name="y" value="<?php echo $y;?>"/>
             <button type="submit" name="action" value="index">Back</button>
-            <button type="submit" name="action" value="addpetitionC">Save</button>
-        </form>
+            <button type="submit" name="action" value="addpetitionDc">Save</button> -->
+            
+            
         </div>
         </center>
         <br>
