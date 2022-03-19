@@ -319,7 +319,7 @@ body {
 
 
     
-    .header {
+.header {
                 font-family: 'Prompt', sans-serif;
                 background-color: #f1f1f1;
                 text-align: center;
@@ -329,10 +329,14 @@ table {
     font-family: 'Prompt', sans-serif;
     border-collapse: collapse;
     width: 100%;
+    align-items: center;
+    text-align: center;
+    background: #f2f2f2;
 }
 
 th, td {
-    text-align: left;
+    text-align: center;
+    border: 1px solid white;
     padding: 8px;
 }
 
@@ -482,7 +486,7 @@ tr:nth-child(even){background-color: #f2f2f2}
  </form>
  
  
- <table>
+ <table align="center"> 
      <tr>
          <td><b>ลำดับที่</td>
          <td><b>รหัสนิสิต</td>
