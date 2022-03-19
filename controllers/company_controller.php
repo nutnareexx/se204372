@@ -4,6 +4,7 @@ class companyController
     public function index()
     {
         $userid = $_GET['userid'];
+        $userList=userModel::get($userid);
         $DetailCompanyList = DetailCompanyModel::getAll();
         require_once('views/detailCompany/index_detailCompany.php');
     }
@@ -11,6 +12,7 @@ class companyController
     public function newDetailCompany()
     {
         $userid = $_GET['userid'];
+        $userList=userModel::get($userid);
         $DetailCompanyList = DetailCompanyModel::getAll();
         require_once('views/detailCompany/newdetailCompany.php');
     }
@@ -28,6 +30,7 @@ class companyController
         $dc_room = $_GET['dc_room'];
         $dc_benefit = $_GET['dc_benefit'];
         $dc_select = $_GET['dc_select'];
+        $userList=userModel::get($userid);
         DetailCompanyModel::add($dc_name,$dc_position,$dc_department,$dc_num,$dc_skills,$dc_nature,$dc_pay,$dc_room,$dc_benefit,$dc_select);
         companyController::index();
     }
@@ -36,6 +39,7 @@ class companyController
     {
         $key = $_GET['key'];
         $userid = $_GET['userid'];
+        $userList=userModel::get($userid);
         $DetailCompanyList = DetailCompanyModel::search($key);
         require_once('views/detailCompany/index_detailCompany.php');
     }

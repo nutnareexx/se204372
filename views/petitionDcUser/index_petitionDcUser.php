@@ -423,7 +423,7 @@
         <dl class="nav-links">
         
             <li>
-                <a href="?controller=nisit&action=index">
+                <a href="?controller=nisit&action=index<?php echo $userid;?>">
                 <i class='bx bx-home'></i>
                     <span class="link_name">หน้าแรก</span>
                 </a>
@@ -460,31 +460,31 @@
                 </ul>
             </li>
             <li>
-                <a href="?controller=checkApproval&action=index">
+                <a href="?controller=checkApproval&action=index<?php echo $userid;?>">
                     <i class='bx bx-check-square' ></i>
                     <span class="link_name">ตรวจสอบผลการอนุมัติ</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">ตรวจสอบผลการอนุมัติ</a></li>
+                    <li><a class="link_name" href="?controller=checkApproval&action=index<?php echo $userid;?>">ตรวจสอบผลการอนุมัติ</a></li>
                 </ul>
             </li>
             
             <li>
-                <a href="?controller=downloadStudent&action=index">
+                <a href="?controller=downloadStudent&action=index<?php echo $userid;?>">
                 <i class='bx bx-download'></i>
                 <span class="link_name">download</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">download</a></li>
+                    <li><a class="link_name" href="?controller=downloadStudent&action=index<?php echo $userid;?>">download</a></li>
                 </ul>
             </li>
             <li>
-                <a href="?controller=uploadStudent&action=index">
+                <a href="?controller=uploadStudent&action=index<?php echo $userid;?>">
                 <i class='bx bx-upload'></i>
                 <span class="link_name">upload</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">upload</a></li>
+                    <li><a class="link_name" href="?controller=uploadStudent&action=index<?php echo $userid;?>">upload</a></li>
                 </ul>
             </li>
             <li>
@@ -494,10 +494,12 @@
                 </div>
                 
                     <div class="name-job">
-                        <div class="profile_name">Name</div>
+                        <div class="profile_name">
+                            <?php echo $userList->user_name;?>
+                        </div>
                     </div>
                 
-                    <a href="?controller=user&action=logoutNisit">          
+                    <a href="?controller=user&action=logoutNisit<?php echo $userid;?>">          
                         <i class='bx bx-log-out '></i>
                     </a>
                 

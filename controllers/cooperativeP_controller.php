@@ -4,6 +4,7 @@ class cooperativePController
     public function index()
     {
         $userid = $_GET['userid'];
+        $userList=userModel::get($userid);
         $cooperativePList = cooperativeModel::getAll();
         require_once('views/cooperativeP/index_cooperativeP.php');
     }
@@ -11,6 +12,7 @@ class cooperativePController
     public function newCooperative()
     {
         $userid = $_GET['userid'];
+        $userList=userModel::get($userid);
         $cooperativePList = cooperativeModel::getAll();
         require_once('views/cooperativeP/newCooperativeP.php');
     
@@ -29,6 +31,7 @@ class cooperativePController
         $c_room = $_GET['c_room'];
         $c_benefit = $_GET['c_benefit'];
         $c_select = $_GET['c_select'];
+        $userList=userModel::get($userid);
         cooperativeModel::add($c_name,$c_position,$c_department,$c_num,$c_skills,$c_nature,$c_pay,$c_room,$c_benefit,$c_select);
         cooperativePController::index();
     }
@@ -37,6 +40,7 @@ class cooperativePController
     {
         $key = $_GET['key'];
         $userid = $_GET['userid'];
+        $userList=userModel::get($userid);
         $cooperativePList = cooperativeModel::search($key);
         require_once('views/cooperativeP/index_cooperativeP.php');
     }
@@ -45,6 +49,7 @@ class cooperativePController
      {
         $userid = $_GET['userid'];
          $c = $_GET['c_id'];
+         $userList=userModel::get($userid);
          $cooperativePList = cooperativeModel::get($c);
          require_once('views/cooperativeP/updateformcooperativeP.php');
      }
@@ -63,6 +68,7 @@ class cooperativePController
         $c_room = $_GET['c_room'];
         $c_benefit = $_GET['c_benefit'];
         $c_select = $_GET['c_select'];
+        $userList=userModel::get($userid);
         cooperativeModel::update($c_id,$c_name,$c_position,$c_department,$c_num,$c_skills,$c_nature,$c_pay,$c_room,$c_benefit,$c_select);
         cooperativePController::index();
      }
@@ -71,6 +77,7 @@ class cooperativePController
      {
         $c_id = $_GET['c_id'];
         $userid = $_GET['userid'];
+        $userList=userModel::get($userid);
         $cooperativePList = cooperativeModel::get($c_id);
         require_once('./views/cooperativeP/deleteconfirm.php');
      }
@@ -79,6 +86,7 @@ class cooperativePController
      {
          $cid = $_GET['cid'];
          $userid = $_GET['userid'];
+         $userList=userModel::get($userid);
          cooperativeModel::delete($cid);
          cooperativePController::index();
      }
