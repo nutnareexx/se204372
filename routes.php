@@ -99,9 +99,16 @@ function call($controller,$action){
                             $controller = new cooperativePController();
                             break;    
                             
-        case "checkApproval":  require_once("models/userModel.php");
+        case "checkApproval":   require_once("models/petitionDcModel.php");
+                                require_once("models/approveModel.php");
+                                require_once("models/nametitleModel.php");
+                                require_once("models/userModel.php");
+                                require_once("models/statusModel.php");
+                                require_once("models/companyModel.php");
+                                require_once("models/cooperativeModel.php");
+                                require_once("models/checkApprovalModel.php");
                                 $controller = new checkApprovalController();
-                            break;                     
+                                break;                     
         
         case "downloadStudent": require_once("models/userModel.php"); 
                                 $controller = new downloadStudentController();
