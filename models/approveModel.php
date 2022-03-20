@@ -3,16 +3,15 @@ class approveModel
 {
     public $approve_id;
     public $approve_date;
-    public $status_id;
-    public $status_name;
+    public $approve_reason;
+   
 
-    public function __construct($approve_id,$approve_date,$status_id,$status_name)
+    public function __construct($approve_id,$approve_date,$approve_reason)
     {
         
         $this->approve_id = $approve_id;
         $this->approve_date = $approve_date;
-        $this->status_id = $status_id;
-        $this->status_name = $status_name;
+        $this->approve_reason = $approve_reason;
 
     }
 
@@ -20,15 +19,14 @@ class approveModel
     {
         $approveList = [];
         require("connection_connect.php");
-        $sql = "SELECT * FROM `approve` as a NATURAL JOIN status as s WHERE a.status_id=s.status_id";
+        $sql = "SELECT * FROM `approve`";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
             $approve_id = $my_row['approve_id'];
             $approve_date = $my_row['approve_date'];
-            $status_id = $my_row['status_id'];
-            $status_name = $my_row['status_name'];
-            $approveList[] = new approveModel($approve_id,$approve_date,$status_id,$status_name);
+            $approve_reason = $my_row['approve_reason'];
+            $approveList[] = new approveModel($approve_id,$approve_date,$approve_reason);
 
         }
         require("connection_close.php");
@@ -39,16 +37,15 @@ class approveModel
     public static function get($approve_id)
     {
         require("connection_connect.php");
-        $sql = "SELECT * FROM `approve` as a NATURAL JOIN status as s WHERE a.status_id=s.status_id";
+        $sql = "SELECT * FROM `approve` WHERE approve_id=approve_id";
         $result = $conn->query($sql);
         $my_row = $result->fetch_assoc();
         $approve_id = $my_row['approve_id'];
         $approve_date = $my_row['approve_date'];
-        $status_id = $my_row['status_id'];
-        $status_name = $my_row['status_name'];
+        $approve_reason = $my_row['approve_reason'];
         require("connection_close.php");
 
-        return new approveModel($approve_id,$approve_date,$status_id,$status_name);
+        return new approveModel($approve_id,$approve_date,$approve_reason);
     }
 
 
