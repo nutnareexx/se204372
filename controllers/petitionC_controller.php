@@ -33,8 +33,8 @@ class petitionCController
     public function updateformC()
     {
         $userid = $_GET['userid'];
-        $c = $_GET['petition_id'];
-        $petionCList = petitionCModel::get($c);
+        $petition_id = $_GET['petition_id'];
+        $petionCList = petitionCModel::get($petition_id);
         $statusList = statusModel::getAll();
         $userList = userModel::get($userid);
 
@@ -47,12 +47,12 @@ class petitionCController
     public function updateformNoC()
     {
         $userid = $_GET['userid'];
-        $c = $_GET['petitionid'];
-        $petionCList = petitionCModel::get($c);
+        $petition_id = $_GET['petition_id'];
+        $petionCList = petitionCModel::get($petition_id);
         $statusList = statusModel::getAll();
         $userList = userModel::get($userid);
         $appove = approveModel::getAll();
-        petitionCModel::updateNo($c);
+        petitionCModel::updateNo($petition_id);
         require_once('views/petitionC/updateformNoC.php');
 
     }
@@ -60,7 +60,7 @@ class petitionCController
     public function updateC()
     {
         $userid = $_GET['userid'];
-        $petition_id = $_GET['petitionid'];
+        $petition_id = $_GET['petition_id'];
         //$status_id = $_GET['status_id'];
         petitionCModel::update($petition_id);
         petitionCController::indexC();
@@ -68,10 +68,15 @@ class petitionCController
 
     public function updateNoC()
     {
+        $numrand = (mt_rand(100,900));
         $userid = $_GET['userid'];
-        $petition_id = $_GET['petitionid'];
+        $petition_id = $_GET['petition_id'];
+        $app_rea =$_GET['approve_reason'];
         //$status_id = $_GET['status_id'];
-        petitionCModel::updateNo($petition_id);
+        $userList=userModel::get($userid);
+        approveModel::Add($numrand, $app_rea);
+        $aList = approveModel::get($numrand);
+        petitionCModel::updateappNo($petition_id, $numrand);
         petitionCController::indexC();
     }
 
