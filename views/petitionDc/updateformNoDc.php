@@ -611,11 +611,7 @@ body {
     <!-- <input type="hidden" name="status_id" value="<?php echo $status_id;?>"/> -->
     
     <button type="submit" name="action" value="update"> อนุมัติ </button>
-<<<<<<< Updated upstream
     <button type="submit" name="action" value="NoupForm"> ไม่อนุมัติ </button>
-=======
-    <button type="submit" name="action" value="NoupForm2"> ไม่มีอนุมัติ </button>
->>>>>>> Stashed changes
     <br><br>
     <button type="submit" name="action" value="updateformNodc"> กลับ </button>
 
