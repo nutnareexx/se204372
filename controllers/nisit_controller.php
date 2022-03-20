@@ -7,5 +7,11 @@ class nisitController{
         $userList=userModel::get($userid);
         require_once('views/hamburger/index_hamburger.php');
     }
+
+    public function indexHome()
+    {
+        
+        require_once('views/hamburger/index_home.php');
+    }
 }
 ?>
