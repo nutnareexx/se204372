@@ -496,10 +496,6 @@ body {
         <form method="get" action="">
             <table>
                 <tr>
-                    <th align="right">ลำดับที่ :</th>
-                    <td><?php echo "$petionCList->petition_id";?></td> 
-                </tr>
-                <tr>
                     <th align="right">รหัสนิสิต :</th>
                     <td><?php echo "$petionCList->user_id";?></td>
                 </tr>
@@ -576,8 +572,38 @@ body {
                     <td><?php echo "$petionCList->hrMail_p";?></td>
                 </tr>
                 <tr>
-                    <th align="right">ระยะการฝึกงานตั้งแต่วันที่ :</th>
-                    <td><?php echo "$petionCList->start_p <b>ถึงวันที่</b> $petionCList->finish_p";?></td>
+                    <th align="right">ค่าตอบแทน :</th>
+                    <td><?php echo "$petionCList->salary_p";?></td>
+                </tr>
+                <tr>
+                    <th align="right">ที่พัก :</th>
+                    <td><?php echo "$petionCList->room_p";?></td>
+                </tr>
+                
+                <tr>
+                    <th align="right">เริ่มฝึกงาน :</th>
+                    <td>
+                        <?php 
+                            // echo $start."<br>";
+                            $year = substr($petionCList->start_p, 0 ,4);
+                            $mont = substr($petionCList->start_p, 5 ,2);
+                            $day = substr($petionCList->start_p, 8 ,2);
+                            echo $day."/".$mont."/".$year;
+                        ?>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th align="right">สิ้นสุดการฝึกงาน :</th>
+                    <td>
+                        <?php 
+                            // echo $finish;
+                            $year = substr($petionCList->finish_p, 0 ,4);
+                            $mont = substr($petionCList->finish_p, 5 ,2);
+                            $day = substr($petionCList->finish_p, 8 ,2);
+                            echo $day."/".$mont."/".$year;
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <th align="right">สถานะ :</th>
