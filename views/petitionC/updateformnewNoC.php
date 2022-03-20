@@ -596,7 +596,7 @@ body {
                         if($petionCList->room_p == "Have"){
                             echo "มีที่พัก";
                         }
-                        else if($petionCList->room_p== "Dont Have"){
+                        else if($petionCList->room_p== "Don't Have"){
                             echo "ไม่มีที่พัก";
                         }
                     ?>
@@ -639,9 +639,9 @@ body {
             </table>
         
     <input type="hidden" name="controller" value="petitionC"/>
-    <input type="hidden" name="petitionid" value="<?php echo $petionCList->petition_id;?>"/>
+    <input type="hidden" name="petition_id" value="<?php echo $petionCList->petition_id;?>"/>
     <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
-    <button type="submit" name="action" value="indexC"> กลับ </button>
+    <button type="submit" name="action" value="updateformnewC"> กลับ </button>
     <button type="submit" name="action" value="updatenewNoC"> ยืนยัน </button>
     
 
