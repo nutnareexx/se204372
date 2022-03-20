@@ -19,7 +19,8 @@ else
     <body>
         <?php echo "controller = ".$controller." ,action = ".$action ;?>
         <br>
-        [<a href= "?controller=pages&action=home">Home</a>]
+        [<a href= "?controller=nisit&action=indexHome"> home </a>]
+        [<a href= "?controller=pages&action=home">login</a>]
         [<a href= "?controller=nisit&action=index"> Nisit </a>]
         <!--[<a href= "?controller=petitionDCUser&action=index">ยื่นคำร้องฝึกงานสำหรับนิสิต</a>]
         [<a href= "?controller=petitionCUser&action=index">ยื่นคำร้องสหกิจสำหรับนิสิต</a>]
