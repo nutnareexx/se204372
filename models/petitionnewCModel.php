@@ -209,10 +209,19 @@ class petitionnewCModel{
 
    
 
-  public static function update($petition_id, $status_id)
+  public static function update($petition_id)
   {
       require("connection_connect.php");
-      $sql = "UPDATE `petition` SET `status_id`='$status_id'WHERE petition_id = '$petition_id'";
+      $sql = "UPDATE `petition` SET `status_id`='02'WHERE petition_id = '$petition_id'";
+      $result = $conn->query($sql);
+      require("connection_close.php");
+      return "update success $result row";
+  }
+
+  public static function updateNo($petition_id)
+  {
+      require("connection_connect.php");
+      $sql = "UPDATE `petition` SET `status_id`='03'WHERE petition_id = '$petition_id'";
       $result = $conn->query($sql);
       require("connection_close.php");
       return "update success $result row";
