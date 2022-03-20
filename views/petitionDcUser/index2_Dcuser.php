@@ -534,7 +534,7 @@
                 </tr>
 
                 <tr>
-                    <td align="right"> <label>ปีการศึกกษา : </label></td>
+                    <td align="right"> <label>ปีการศึกษา : </label></td>
                     <td><?php echo $y;?></td>
                 </tr>
                 
@@ -715,7 +715,7 @@
             <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
             <input type="hidden" name="y" value="<?php echo $y;?>"/>
             <button type="submit" name="action" value="index">Back</button>
-            <button type="submit" name="action" value="index3">Save</button>
+            <button type="submit" name="action" value="index3">NEXT</button>
             
             </form>
         </div>
