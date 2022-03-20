@@ -60,12 +60,12 @@ class cooperativeModel{
     {
         $cooperativeList =[];
         require("connection_connect.php");
-        $sql = "SELECT * FROM `detail_cooperative` ";
+        $sql = "SELECT c.c_id,c.c_name ,c.c_position,c.c_department,c.c_num,c.c_skills,c.c_nature,c.c_pay,c.c_room,c.c_benefit,c.c_select 
+        FROM `detail_cooperative` AS c;";
         $result = $conn->query($sql);
-        $x=1;
         while($my_row = $result->fetch_assoc())
         {
-            $c_id = $my_row=['c_id'];
+            $c_id = $my_row['c_id'];
             $c_name = $my_row['c_name'];
             $c_position = $my_row['c_position'];
             $c_department = $my_row['c_department'];
@@ -76,6 +76,17 @@ class cooperativeModel{
             $c_room = $my_row['c_room'];
             $c_benefit = $my_row['c_benefit'];
             $c_select = $my_row['c_select'];
+            
+            // $c_name = $my_row['c_name'];
+            // $c_position = $my_row['c_position'];
+            // $c_department = $my_row['c_department'];
+            // $c_num = $my_row['c_num'];
+            // $c_skills = $my_row['c_skills'];
+            // $c_nature = $my_row['c_nature'];
+            // $c_pay = $my_row['c_pay'];
+            // $c_room = $my_row['c_room'];
+            // $c_benefit = $my_row['c_benefit'];
+            // $c_select = $my_row['c_select'];
             $cooperativeList[] = new cooperativeModel($c_id,$c_name,$c_position,$c_department,$c_num,$c_skills,$c_nature,$c_pay,$c_room,$c_benefit,$c_select);
 
         }
