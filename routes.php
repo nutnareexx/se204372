@@ -18,7 +18,8 @@ $controllers = array('pages'=>['home','error'],'nisit'=>['index'],
                      'bookAj'=> ['index'],
                      'checkHistory'=> ['index'],
                      'uploadAj'=> ['index'],
-                     'user'=>['login','logoutNisit','logoutAj']
+                     'user'=>['login','logoutNisit','logoutAj'],
+                     'test'=>['index']
                     );
 
 function call($controller,$action){
@@ -146,6 +147,8 @@ function call($controller,$action){
         case "user":        require_once("models/userModel.php");
                             $controller = new userController();
                             break;
+        case "test":        require_once("models/petitionCModel.php");
+                            $controller = new testController();
     }
     $controller->{$action}();
 }
