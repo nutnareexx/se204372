@@ -72,24 +72,6 @@ class petitionCController
         petitionCController::indexC();
     }
 
-    public function deleteconfirmC()
-    {
-        $userid = $_GET['userid'];
-        $c = $_GET['petition_id'];
-        $userList=userModel::get($userid);
-        $petionCList = petitionCModel::get($c);
-        require_once('views/petitionC/deleteconfirmC.php');
-
-    }
-
-    public function deleteC()
-    {
-        $userid = $_GET['userid'];
-        $petitionid = $_GET['petitionid'];
-        $userList=userModel::get($userid);
-        petitionCModel::delete($petitionid);
-        petitionCController::indexC();
-    }
 
     public function searchC()
     {
