@@ -519,7 +519,9 @@
 
         <center>
         <div class="card" >
+            
             <table align="center">
+            
 
             <th colspan="2"> 
                 <br>
@@ -673,7 +675,11 @@
 
             <tr>
                 <td align="right"><label>เริ่มฝึกงาน : </label></td>
-                <td><?php echo $start;?></td>
+                <td>
+                    <?php 
+                        echo $start;
+                    ?>
+                </td>
             </tr>
 
             <tr>
@@ -701,7 +707,7 @@
             </tr>
 
             <tr>
-                <form action="views\addfile.php" method="post" enctype="multipart/form-data" name="upfile" id="upfile">
+                <form action="addfile_Dc.php" method="post" enctype="multipart/form-data" name="upfile" id="upfile">
                 <td align="right"><label>ใบคำร้องขอฝึกงาน : </label></td>
                 <td><input class="button" type="file" name="fileupload" id="fileupload"  required="required"/></td>
                 
@@ -709,14 +715,53 @@
             
             </table>
             <br>
-            <button class="button" type="submit" name="button" id="button" value="upResult"> เพิ่มไฟล์ </button>
 
-            </form>
-            <!-- <input type="hidden" name="controller" value="petitionDCUser"/>
+            <input type="hidden" name="date" value="<?php echo $date;?>"/>
             <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
             <input type="hidden" name="y" value="<?php echo $y;?>"/>
-            <button type="submit" name="action" value="index">Back</button>
-            <button type="submit" name="action" value="addpetitionDc">Save</button> -->
+            <input type="hidden" name="phone" value="<?php echo $phone;?>"/>
+            <input type="hidden" name="faceB" value="<?php echo $faceB;?>"/>
+            <input type="hidden" name="position" value="<?php echo $position;?>"/>
+
+            <input type="hidden" name="approve_name" value="<?php echo $approve_name;?>"/>
+            <input type="hidden" name="approve_lastname" value="<?php echo $approve_lastname;?>"/>
+            <input type="hidden" name="approve_position" value="<?php echo $approve_position;?>"/>
+
+            <input type="hidden" name="company_no" value="<?php echo $company_no;?>"/>
+            <input type="hidden" name="company_road" value="<?php echo $company_road;?>"/>
+            <input type="hidden" name="company_sub" value="<?php echo $company_sub;?>"/>
+            <input type="hidden" name="company_dis" value="<?php echo $company_dis;?>"/>
+            <input type="hidden" name="company_prov" value="<?php echo $company_prov;?>"/>
+            <input type="hidden" name="company_code" value="<?php echo $company_code;?>"/>
+
+            <input type="hidden" name="hr_name" value="<?php echo $hr_name;?>"/>
+            <input type="hidden" name="hr_lastname" value="<?php echo $hr_lastname;?>"/>
+            <input type="hidden" name="hr_phone" value="<?php echo $hr_phone;?>"/>
+            <input type="hidden" name="hr_mail" value="<?php echo $hr_mail;?>"/>
+
+            <input type="hidden" name="start" value="<?php echo $start;?>"/>
+            <input type="hidden" name="finish" value="<?php echo $finish;?>"/>
+            <input type="hidden" name="pay" value="<?php echo $pay;?>"/>
+            <input type="hidden" name="room" value="<?php echo $room;?>"/>
+
+            <?php
+            if($c=="cid"){
+                // $company_id = $_GET['company_id'];
+                echo "cid";
+                echo "<input type='hidden' name='company_id' value='$company_id'/>";
+            }
+            else if($c=="name"){
+                // $company_name = $_GET['dc_name'];
+                echo $company_name;
+                echo "<input type='hidden' name='company_name' value='$company_name'/>";
+            }
+            ?>
+
+
+            <button  type="submit" name="button" value="upResult"> เพิ่มไฟล์ </button>
+
+            </form>
+            
             
             
         </div>
