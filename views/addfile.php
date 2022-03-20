@@ -1,7 +1,8 @@
 <?php
 	//1. เชื่อมต่อ database: 
 
-	require("C:/xampp/htdocs/se204372/connection_connect.php");
+	// require("C:/xampp/htdocs/se204372/connection_connect.php");
+	require("/connection_connect.php");
     //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้านี้
 
 	//$fileupload = $_POST['fileupload']; //รับค่าไฟล์จากฟอร์ม	
