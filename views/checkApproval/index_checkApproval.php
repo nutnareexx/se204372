@@ -328,16 +328,29 @@ body {
 table {
     font-family: 'Prompt', sans-serif;
     border-collapse: collapse;
-    width: 100%;
-    font-size: 18px;
-    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    width: 80%;
+    
 }
 
 th, td {
-    text-align: center;
-    padding: 10px;
-    align-items: center;
-}
+            padding: 5px 5px 5px 5px;
+        }
+
+        tr{
+            padding: 10px 10px 10px 10px;
+        }
+.card {
+            font-family: 'Prompt', sans-serif;
+            width: 80%;
+            background-color: #f1f1f1;
+            padding: 5px 20px 20px 20px;
+            margin: 20px 20px 20px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+        }
 
 .card1 {
             font-family: 'Prompt', sans-serif;
@@ -346,14 +359,19 @@ th, td {
             padding: 20px 20px 20px 20px;
             margin: 20px 20px 20px 20px;
             border-radius: 50px;
-            width: 40%;
+            width: 100%;
             text-align: center;
             align-items: center;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         }
 
         .card2 {
-            font-size: 30px;
+            
+            color: #235d3a;
+            font-size: 25px;
+            background-color: #73c088;
+            width: 20%;
+            border-radius: 20px;
         }
 
 
@@ -463,59 +481,91 @@ th, td {
         <h2><b>ตรวจสอบผลการอนุมัติ</h2>
     </div>
 
-    
-<div class="card1" align='center'>
-<table>
-    
-        
-        <th>ฝึกงาน</th>
-        
-        
-        
+    <center>    
 
-    <?php foreach($checkList as $clist)
-{
-    echo " <tr><td>$clist->user_id</td></tr>
-    <tr><td>$clist->name_title$clist->user_name $clist->user_surname</td></tr>
-    <tr><td>ตำแหน่ง $clist->position_p</td></tr>
-    <tr><td>$clist->dc_name</td></tr>
-    <tr><td>ช่วงเวลาในการทำงาน $clist->start_p - $clist->finish_p</td></tr>
-    <tr><td>$clist->status_name</td>
-    
-    </tr>";
-}
-echo "</table>";
- ?>
-   </div>
+   <?php foreach($checkList as $clist){
+       echo "
+       <div class='card'>
+            <div class='card2'>
+                <h3>ฝึกงาน</h3>
+            </div>
+        <table align='center'>
+        <tr>
+            <td align='right' style='width: 45%;' >สถานะ :</td>
+            <td>$clist->status_name</td>
+        </tr>
+        <tr>
+            <td align='right' >รหัสนิสิต :</td>
+            <td>$clist->user_id</td>
+        </tr>
+        <tr>
+            <td align='right' >ชื่อ :</td>
+            <td>$clist->name_title$clist->user_name $clist->user_surname</td>
+        </tr>
+        <tr>
+            <td align='right' >บริษัท :</td>
+            <td>$clist->dc_name</td>
+        </tr>
+        <tr>
+            <td align='right' >ตำแหน่ง :</td>
+            <td>$clist->position_p</td>
+        </tr>
+        <tr>
+            <td align='right' >ช่วงเวลา :</td>
+            <td>$clist->start_p - $clist->finish_p</td>
+        </tr>
+        <tr>
+            <td align='right' >เหตุผล :</td>
+            <td>$clist->approve_reason</td>
+        </tr>
+        </table>
+        </div><br>";
+   }?>
 
+   <?php foreach($checkCList as $clist){
+       echo "
+       <div class='card'>
+            <div class='card2'>
+                <h3>สหกิจ</h3>
+            </div>
+        <table align='center'>
+        <tr>
+            <td align='right' style='width: 45%;' >สถานะ :</td>
+            <td>$clist->status_name</td>
+        </tr>
+        <tr>
+            <td align='right' >รหัสนิสิต :</td>
+            <td>$clist->user_id</td>
+        </tr>
+        <tr>
+            <td align='right' >ชื่อ :</td>
+            <td>$clist->name_title$clist->user_name $clist->user_surname</td>
+        </tr>
+        <tr>
+            <td align='right' >บริษัท :</td>
+            <td>$clist->dc_name</td>
+        </tr>
+        <tr>
+            <td align='right' >ตำแหน่ง :</td>
+            <td>$clist->position_p</td>
+        </tr>
+        <tr>
+            <td align='right' >ช่วงเวลา :</td>
+            <td>$clist->start_p - $clist->finish_p</td>
+        </tr>
+        <tr>
+            <td align='right' >เหตุผล :</td>
+            <td>$clist->approve_reason</td>
+        </tr>
+        </table>
+        </div><br>";
+   }?>
+
+
+
+    </center>   
    
    
-   <div class="card1">
-<table>
-    
-    <div class="card2" align='center'>
-    <th>สหกิจ</th>
-</div>
-        
-        
-        
-    
-
-    <?php foreach($checkCList as $clist)
-{
-    echo " <tr><td>$clist->user_id</td></tr>
-    <tr><td>$clist->name_title$clist->user_name $clist->user_surname</td></tr>
-    <tr><td>ตำแหน่ง $clist->position_p</td></tr>
-    <tr><td>$clist->dc_name</td></tr>
-    <tr><td>ช่วงเวลาในการทำงาน $clist->start_p - $clist->finish_p</td></tr>
-    <tr><td>$clist->status_name</td>
-    
-    </tr>";
-}
-echo "</table>";
- ?>
-
-</div>
     
 
 </section>
