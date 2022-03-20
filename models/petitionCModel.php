@@ -231,14 +231,7 @@ class petitionCModel{
       return "update success $result row";
   }
 
-  public static function delete($petition_id)
-  {
-      require("connection_connect.php");
-      $sql = "DELETE FROM `petition` WHERE petition_id = '$petition_id'";
-      $result = $conn->query($sql);
-      require("connection_close.php");
-      return "delete success $result row";
-  }
+  
 
   public static function search($key)
     {
