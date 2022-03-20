@@ -602,7 +602,7 @@
                     echo "<select name='company_id'>
                     <option value=''>--เลือก--</option>";
                     foreach($comList as $c){
-                        echo "<option value=$c->dc_id>$c->dc_name</option>";
+                        echo "<option value=$c->c_id>$c->c_name</option>";
                     }
                     "</select>";
                 }
@@ -708,7 +708,7 @@
             <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
             <input type="hidden" name="y" value="<?php echo $y;?>"/>
             <button type="submit" name="action" value="index">Back</button>
-            <button type="submit" name="action" value="addpetitionC">Save</button>
+            <button type="submit" name="action" value="index3">Next</button>
         </form>
         </div>
         </center>
