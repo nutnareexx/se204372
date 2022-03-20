@@ -5,6 +5,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
    
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
 </head>
 <style>
 
@@ -481,7 +485,7 @@ tr:nth-child(even){background-color: #f2f2f2}
      <input type="text" name="key">
      <input type="hidden" name="controller" value="petitionC"/>
      <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
-     <button type="submit" name="action" value="searchC">Search</button>
+     <button type="submit" name="action" value="searchC"><i class='fas fa-search' style='font-size: 22px'></i></button>
  
  </form>
  
