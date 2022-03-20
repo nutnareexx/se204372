@@ -36,10 +36,10 @@ class checkApprovalModel{
     {
         $checkList = [];
         require("connection_connect.php");
-        $sql = "SELECT u.user_id,n.name_title,u.user_name,u.user_surname, p.position_p, d.dc_name,s.status_name ,
-        DATE_FORMAT(p.start_p,'%d/%m/%Y') AS date_s,DATE_FORMAT(p.finish_p,'%d/%m/%Y') AS date_f ,a.approve_reason
+        $sql = "SELECT u.user_id,n.name_title,u.user_name,u.user_surname, p.position_p, d.dc_name,s.status_name ,a.approve_reason,
+        DATE_FORMAT(p.start_p,'%d/%m/%Y') AS date_s,DATE_FORMAT(p.finish_p,'%d/%m/%Y') AS date_f 
         FROM `petition`AS p NATURAL JOIN `user` AS u NATURAL JOIN `name_title`AS n 
-        NATURAL JOIN `status` AS s NATURAL JOIN `detail_company` AS d NATURAL JOIN `approve` AS a
+        NATURAL JOIN `status` AS s NATURAL JOIN `detail_company` AS d  LEFT JOIN `approve` as a ON a.approve_id=p.approve_id
         WHERE u.user_id ='$user_id';";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
@@ -69,10 +69,10 @@ class checkApprovalModel{
     {
         $checkCList = [];
         require("connection_connect.php");
-        $sql = "SELECT u.user_id,n.name_title,u.user_name,u.user_surname, p.position_p, d.c_name,s.status_name ,
-        DATE_FORMAT(p.start_p,'%d/%m/%Y') AS date_s,DATE_FORMAT(p.finish_p,'%d/%m/%Y') AS date_f ,a.approve_reason
+        $sql = "SELECT u.user_id,n.name_title,u.user_name,u.user_surname, p.position_p, d.c_name,s.status_name,a.approve_reason,
+        DATE_FORMAT(p.start_p,'%d/%m/%Y') AS date_s,DATE_FORMAT(p.finish_p,'%d/%m/%Y') AS date_f 
         FROM `petition`AS p NATURAL JOIN `user` AS u NATURAL JOIN `name_title`AS n 
-        NATURAL JOIN `status` AS s NATURAL JOIN `detail_cooperative` AS d NATURAL JOIN `approve` AS a
+        NATURAL JOIN `status` AS s NATURAL JOIN `detail_cooperative` AS d LEFT JOIN `approve` as a ON a.approve_id=p.approve_id
         WHERE u.user_id ='$user_id';";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
@@ -105,7 +105,7 @@ class checkApprovalModel{
         $sql = "SELECT u.user_id,n.name_title,u.user_name,u.user_surname, p.position_p,p.comName_p,s.status_name ,a.approve_reason,
         DATE_FORMAT(p.start_p,'%d/%m/%Y') AS date_s,DATE_FORMAT(p.finish_p,'%d/%m/%Y') AS date_f 
         FROM `petition`AS p NATURAL JOIN `user` AS u NATURAL JOIN `name_title`AS n 
-        NATURAL JOIN `status` AS s NATURAL JOIN `approve`AS a
+        NATURAL JOIN `status` AS s  LEFT JOIN `approve` as a ON a.approve_id=p.approve_id
         WHERE u.user_id ='$user_id' AND p.comName_p IS NOT null AND p.type_p = 'dc';";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
@@ -138,7 +138,7 @@ class checkApprovalModel{
         $sql = "SELECT u.user_id,n.name_title,u.user_name,u.user_surname, p.position_p,p.comName_p,s.status_name ,a.approve_reason,
         DATE_FORMAT(p.start_p,'%d/%m/%Y') AS date_s,DATE_FORMAT(p.finish_p,'%d/%m/%Y') AS date_f 
         FROM `petition`AS p NATURAL JOIN `user` AS u NATURAL JOIN `name_title`AS n 
-        NATURAL JOIN `status` AS s NATURAL JOIN `approve`AS a
+        NATURAL JOIN `status` AS s LEFT JOIN `approve` as a ON a.approve_id=p.approve_id
         WHERE u.user_id ='$user_id' AND p.comName_p IS NOT null AND p.type_p = 'c';";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
