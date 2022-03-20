@@ -137,7 +137,7 @@ class petitionCController
         $userList=userModel::get($userid);
         $petionCList = petitionCModel::search($key);
         $petionCnewList = petitionnewCModel::search($key);
-        $userList = userModel::get($userid);
+       
         require_once('views/petitionC/index_petitionC.php');
     }
 
