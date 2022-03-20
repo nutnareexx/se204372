@@ -155,22 +155,31 @@ class petitionDcController
 
     public function NoupForm2() {
         $userid = $_GET['userid'];
-        $dc = $_GET['petition_id'];
+        $petition_id = $_GET['petition_id'];
         $userList=userModel::get($userid);
-        $petionDcList = petitionModelFornew::get($dc);
+        $petionDcList = petitionModelFornew::get($petition_id);
         $nametitleList = nametitleModel::getAll();
         $userList = userModel::getAll();
         $DetailCompanyList = DetailCompanyModel::getAll();
         $statusList = statusModel::getAll();
         $pelist = petitionModelFornew::getAll();
-        petitionDcModel::update2( $dc);
+        petitionDcModel::update2($petition_id);
         require_once('views/petitionDc/NoConfirmNC.php');
     }
 
     public function Noup2() {
+        $numrand = (mt_rand(100,999));
         $userid = $_GET['userid'];
-        $dc = $_GET['petition_id'];
+        $petition_id = $_GET['petition_id'];
+        $app_rea =$_GET['approve_reason'];
         $userList=userModel::get($userid);
+        echo $numrand;
+        approveModel::Add($numrand, $app_rea);
+        $aList = approveModel::get($numrand);
+        echo "<br>".$petition_id." ".$numrand."<br>";
+        petitionDcModel::updateApp($petition_id,$numrand);
+        // petitionDcModel::updateApp()
+        petitionDcController::index();
         
     }
 
