@@ -322,15 +322,34 @@ body {
             text-align: center;
         }
 
-.card {
+        .card {
             font-family: 'Prompt', sans-serif;
-            
             background-color: #f1f1f1;
+            width:80%;
             padding: 20px 20px 20px 20px;
             margin: 20px 20px 20px 20px;
-            border-radius: 25px;
-            font-size: 18px;
-            text-align: left;
+            border-radius: 50px;
+            
+        }
+        th, td {
+            padding: 5px 5px 5px 5px;
+        }
+
+        tr{
+            padding: 10px 10px 10px 10px;
+        }
+
+        #c .a:link, .a:visited {
+            background-color: #f44336;
+            color: white;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        #c .a:hover, .a:active {
+            background-color: red;
         }
 
 </style>
@@ -437,11 +456,21 @@ body {
     <h2><b>หนังสือขอความอนุเคราะห์การฝึกงาน และหนังสือส่งตัว</h2>
     </div>
 
+    <center>
     <div class="card">
-    <li>หนังสือขอความอนุเคราะห์การฝึกงาน<a href="https://bit.ly/3HPMQyY">download</a></li>
-    <br>
-    <li>หนังสือส่งตัว<a href="#">download</a></li>
+        <table>
+            <tr>
+                <td align="right" style="width: 30%;">หนังสือขอความอนุเคราะห์การฝึกงาน :</td>
+                <td><a href="https://bit.ly/3HPMQyY" class="c">download</a></td>
+            </tr>
+
+            <tr>
+                <td>หนังสือส่งตัว : </td>
+                <td><a href="#">download</a></td>
+            </tr>
+        </table>
     </div>
+    </center>
 
 </section>
 
