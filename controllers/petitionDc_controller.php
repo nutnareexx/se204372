@@ -139,7 +139,7 @@ class petitionDcController
     }
 
     public function Noup() {
-        $numrand = (mt_rand(100,900));
+        $numrand = (mt_rand(100,999));
         $userid = $_GET['userid'];
         $petition_id = $_GET['petition_id'];
         $app_rea =$_GET['approve_reason'];
