@@ -528,7 +528,7 @@
                 </tr>
 
                 <tr>
-                    <td align="right"> <label>ปีการศึกกษา : </label></td>
+                    <td align="right"> <label>ปีการศึกษา : </label></td>
                     <td><input type="text" name="y"></td>
                 </tr>
                 
