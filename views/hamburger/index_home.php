@@ -1,16 +1,17 @@
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
-       
+
+<meta charset="UTF-8">
+  
+        <link rel ="stylesheet" >
         <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
 </head>
 <style>
-
 body {
     font-family: 'Prompt', sans-serif;
 }
@@ -40,7 +41,7 @@ body {
     align-items: center;
 }
 
-.sidebar .logo-details i{
+.sidebar .logo-details .logo_icon{
     font-size: 30px;
     color: #fff;
     height: 50px;
@@ -50,7 +51,10 @@ body {
     
 }
 
+
+
 .sidebar .logo-details .logo_name{
+    display: flex;
     font-size: 22px;
     color: #fff;
     font-weight: 600;
@@ -142,7 +146,7 @@ body {
     margin-top: -10px;
     background: #397d54;
     display: none;
-    
+    border-radius: 10px;
 }
 
 .sidebar .nav-links li.showMenu .sub-menu{
@@ -153,6 +157,7 @@ body {
     color: #fff;
     font-size: 15px;
     padding: 5px 40px;
+    
     white-space: nowrap;
     opacity: 0.6;
     transition: all 0.3 ease;
@@ -174,6 +179,7 @@ body {
     display: block;
     pointer-events: none;
     transition: 0s;
+    
 }
 
 
@@ -234,6 +240,12 @@ body {
     
 }
 
+.home-section .home-content a .link_name{
+    width: 200px;
+    align-items: center;
+    background:red;
+}
+
 .home-section .home-content .bx-menu,
 .home-section .home-content .text{
     color: #fff;
@@ -249,8 +261,9 @@ body {
 .home-section .home-content .text{
     font-size: 26px;
     font-weight: 500;
-   
+    width: 200px;
 }
+
 
 .sidebar .profile-details{
     position: fixed;
@@ -301,7 +314,7 @@ body {
 .sidebar.close .profile-details li i,
 .sidebar.close .profile-details .profile_name,
 .sidebar.close .profile-details a{
-    display: none;
+    display: block;
     
 }
 
@@ -319,49 +332,73 @@ body {
   .sidebar a {font-size: 18px;}
 }
 
+.card1 {
+           
+            background-color: #f1f1f1;
+            padding: 20px 20px 20px 20px;
+            margin: 20px 20px 20px 20px;
+            border-radius: 25px;
+            font-size: 30px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.column {
+  float: left;
+  width: 47%;
+  padding: 20px 20px 20px 20px;
 
-
-    
-    .header {
-                font-family: 'Prompt', sans-serif;
-                background-color: #f1f1f1;
-                text-align: center;
-            }
-
-.table {
-    font-family: 'Prompt', sans-serif;
-    border-collapse: collapse;
-    
-    text-align: center;
-    background: #f2f2f2;
 }
 
-th, td {
-    text-align: left;
-    padding: 8px;
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-tr:nth-child(odd){background-color: #cae3cc}
-tr:nth-child(even){background-color: #f2f2f2}
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 25px;
+  text-align: center;
+  background-color: #f1f1f1;
+  border-radius: 25px;
+  font-size: 25px;
+}
+.card a{
+    text-decoration: none;
+}
+
+
+
 
 </style>
-
-
 <body>
 
 <div class="sidebar close">
         <div class="logo-details">
-            <i class='bx bxs-tree-alt'></i>
+            <span class="logo_icon">KU</span>
             <span class="logo_name">KASETSART UNIVERSITY</span>
         </div>
     <dl class="nav-links">
         <li>
-            <a href="?controller=nisit&action=index&userid=<?php echo $userid;?>">
+            <a href="?controller=nisit&action=indexHome">
             <i class='bx bx-home'></i>
                 <span class="link_name">หน้าแรก</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=nisit&action=index&userid=<?php echo $userid;?>">หน้าแรก</a></li>
+                <li><a class="link_name" href="?controller=nisit&action=indexHome">หน้าแรก</a></li>
             </ul>
         </li>
         <li>
@@ -374,76 +411,30 @@ tr:nth-child(even){background-color: #f2f2f2}
             </div>
             <ul class="sub-menu">
                 <li><a class="link_name" href="#">สถานประกอบการณ์</a></li>
-                <li><a href="?controller=company&action=index&userid=<?php echo $userid;?>">ฝึกงาน</a></li>
-                <li><a href="?controller=cooperative&action=index&userid=<?php echo $userid;?>">สหกิจ</a></li>
-            </ul>
-        </li>
-        <li>
-            <div class="iocn-link">
-                <a href="#">
-                    <i class='bx bx-file-blank' ></i>
-                    <span class="link_name">ยื่นคำร้อง</span>
-                </a>
-                <i class='bx bx-chevron-down arrow'></i>
-            </div>
-            <ul class="sub-menu">
-                <li><a class="link_name" href="#">ยื่นคำร้อง</a></li>
-                <li><a href="?controller=petitionDCUser&action=index&userid=<?php echo $userid;?>">ฝึกงาน</a></li>
-                <li><a href="?controller=petitionCUser&action=index&userid=<?php echo $userid;?>">สหกิจ</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="?controller=checkApproval&action=index&userid=<?php echo $userid;?>">
-                <i class='bx bx-check-square' ></i>
-                <span class="link_name">ตรวจสอบผลการอนุมัติ</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=checkApproval&action=index&userid=<?php echo $userid;?>">ตรวจสอบผลการอนุมัติ</a></li>
-            </ul>
-        </li>
-        
-        <li>
-            <a href="?controller=downloadStudent&action=index&userid=<?php echo $userid;?>">
-            <i class='bx bx-download'></i>
-            <span class="link_name">download</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=downloadStudent&action=index&userid=<?php echo $userid;?>">download</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="?controller=uploadStudent&action=index&userid=<?php echo $userid;?>">
-            <i class='bx bx-upload'></i>
-            <span class="link_name">upload</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=uploadStudent&action=index&userid=<?php echo $userid;?>">upload</a></li>
+                <li><a href="?controller=company&action=index&userid=x">ฝึกงาน</a></li>
+                <li><a href="?controller=cooperative&action=index">สหกิจ</a></li>
             </ul>
         </li>
         <li> 
     <div class="profile-details">
         <div class="profile-content">
-            <i class='bx bxs-user'></i>
-        </div>
-            
-            <div class="name-job">
-                <div class="profile_name">
-                <?php 
-                if($userid !="x"){
-                    echo $userList->user_name;?> <?php echo $userList->user_surname;
-                }
-                else{
-                    echo "<a href=#>";
-                }
-                ?>
-                
-                </div>
-            </div>   
-            <a href="?controller=user&action=logoutNisit&userid=<?php echo $userid;?>">          
-                <i class='bx bx-log-out '></i>
+            <a href= "?controller=pages&action=home">
+            <i class='bx bx-log-in'></i>
+                <span class="link_name">Login</span>
             </a>
+        </div>
+        <ul class="sub-menu blank">
+                <li><a class="link_name" href="?controller=pages&action=home">Login</a></li>
+            </ul>
+            
+            
+            
     </div>
     </li>
+        
+    
+    
+    
     </dl>
 </div>
 
@@ -451,41 +442,31 @@ tr:nth-child(even){background-color: #f2f2f2}
     <div class="home-content">
         <i class='bx bx-menu'></i>
             <span class="text">ระบบบริหารจัดการการฝึกงานแบบออนไลน์</span>
-    </div>
-    <!-- เขียนตรงนี้นาจาาาาาา -->
-    <div class="header">
-     
-    <h2>รายละเอียดสถานประกอบการที่ประสงค์รับนิสิตฝึกงาน</h2>
-</div>
-    <h3>เพิ่มสถานประกอบการณ์ใหม่ <a href="?controller=company&action=newDetailCompany&userid=<?php echo $userid;?>"> click!!! </a> </h3>
-
-
-<form method="get" action="">
-    <div class="btn-group">
-        <input type="text" name="key">
-    <input type="hidden" name="controller" value="company"/>
-    <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
-    <button class="button" type="submit" name="action" value="search">Search</button>
-
-    </div>
+        <a href="?controller=pages&action=home">
+        <i class='bx bx-log-in'></i>
+        </a>
     
-</form>
-    
+    </div>
 
-<table>
-    <tr>
-        <td>ที่</td>
-        <td>ชื่อสถานประกอบการ/หน่วยงาน</td>
-        <td>ตำแหน่งงานที่ต้องการรับ</td>
-        <td>แผนกฝ่าย</td>
-        <td>จำนวน(คน)</td>
-        <td>ความสามารถทีมีหรือทักษะที่ควรมี</td>
-        <td>ลักษณะงานที่ต้องปฏิบัติ</td>
-        <td>จำนวนค่าตอบแทน</td>
-        <td>ที่พัก</td>
-        <td>สวัสดิการอื่นๆ</td>
-        <td>การคัดเลือก</td>
-    </tr>
+    <div class="card1">
+        <b>ประกาศ</b>    
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <a href="?controller=company&action=index&userid=x">ข้อมูลสถานประกอบการณ์ฝึกงาน</a>    
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <a href="?controller=cooperative&action=index">ข้อมูลสถานประกอบการณ์สหกิจ</a>    
+            </div>
+        </div>
+    </div>
+
+
 </section>
 
 <script>
@@ -508,30 +489,5 @@ sidebarBtn.addEventListener("click", ()=>{
 </script>
 
 
-
-
 </body>
-
-</html>
-
-<?php foreach($DetailCompanyList as $c)
-{
-    echo "<tr>
-    <td>$c->dc_id</td>
-    <td>$c->dc_name</td>
-    <td>$c->dc_position</td>
-    <td>$c->dc_department</td>
-    <td>$c->dc_num</td>
-    <td>$c->dc_skills</td>
-    <td>$c->dc_nature</td>
-    <td>$c->dc_pay</td>
-    <td>$c->dc_room</td>
-    <td>$c->dc_benefit</td>
-    <td>$c->dc_select</td>
-    </tr>
-    ";
-} 
-
-echo "</table>";
-?>
-
+</html> 

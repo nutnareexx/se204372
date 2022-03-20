@@ -13,6 +13,7 @@ class checkApprovalController
         $uList = userModel::getAll();
         $DetailCompanyList = DetailCompanyModel::getAll();
         $statusList = statusModel::getAll();
+        $ApproveList = approveModel::getAll();
         require_once('views/checkApproval/index_checkApproval.php');
     }
 

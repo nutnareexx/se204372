@@ -1,5 +1,5 @@
 <?php
-$controllers = array('pages'=>['home','error'],'nisit'=>['index'],
+$controllers = array('pages'=>['home','error'],'nisit'=>['index','indexHome'],
                      'Aj' => ['index'],
                      'company'=>['index','newDetailCompany','addDetailCompany','search'],
                      'companyP'=>['indexP','newDetailCompanyP','addDetailCompanyP','searchP','updateformP','updateP','deleteconfirmP','deleteP'],
