@@ -82,19 +82,85 @@ class checkApprovalModel{
         $user_name = $my_row['user_name'];
         $user_surname = $my_row['user_surname'];
         $position_p = $my_row['position_p'];
-        $c_name = $my_row['c_name'];
+        $dc_name = $my_row['c_name'];
         $status_name = $my_row['status_name'];
         
         $start_p = $my_row['date_s'];
         $finish_p = $my_row['date_f']; 
         $approve_reason = $my_row['approve_reason'];   
         
-        $checkCList[] = new checkApprovalModel($user_id, $c_name, $status_name, $position_p, $name_title, 
+        $checkCList[] = new checkApprovalModel($user_id, $dc_name, $status_name, $position_p, $name_title, 
         $user_name, $user_surname, $start_p, $finish_p, $approve_reason);
         }
         
         require("connection_close.php");
         return $checkCList;
+        
+    }
+
+    public static function getdcName($user_id)
+    {
+        $checkDCNameList = [];
+        require("connection_connect.php");
+        $sql = "SELECT u.user_id,n.name_title,u.user_name,u.user_surname, p.position_p,p.comName_p,s.status_name ,a.approve_reason,
+        DATE_FORMAT(p.start_p,'%d/%m/%Y') AS date_s,DATE_FORMAT(p.finish_p,'%d/%m/%Y') AS date_f 
+        FROM `petition`AS p NATURAL JOIN `user` AS u NATURAL JOIN `name_title`AS n 
+        NATURAL JOIN `status` AS s NATURAL JOIN `approve`AS a
+        WHERE u.user_id ='$user_id' AND p.comName_p IS NOT null AND p.type_p = 'dc';";
+        $result = $conn->query($sql);
+        while($my_row = $result->fetch_assoc())
+        {
+        $user_id = $my_row['user_id'];
+        $name_title = $my_row['name_title'];
+        $user_name = $my_row['user_name'];
+        $user_surname = $my_row['user_surname'];
+        $position_p = $my_row['position_p'];
+        $dc_name = $my_row['comName_p'];
+        $status_name = $my_row['status_name'];
+        
+        $start_p = $my_row['date_s'];
+        $finish_p = $my_row['date_f']; 
+        $approve_reason = $my_row['approve_reason'];   
+        
+        $checkDCNameList[] = new checkApprovalModel($user_id, $dc_name, $status_name, $position_p, $name_title, 
+        $user_name, $user_surname, $start_p, $finish_p, $approve_reason);
+        }
+        
+        require("connection_close.php");
+        return $checkDCNameList;
+        
+    }
+
+    public static function getcName($user_id)
+    {
+        $checkCNameList = [];
+        require("connection_connect.php");
+        $sql = "SELECT u.user_id,n.name_title,u.user_name,u.user_surname, p.position_p,p.comName_p,s.status_name ,a.approve_reason,
+        DATE_FORMAT(p.start_p,'%d/%m/%Y') AS date_s,DATE_FORMAT(p.finish_p,'%d/%m/%Y') AS date_f 
+        FROM `petition`AS p NATURAL JOIN `user` AS u NATURAL JOIN `name_title`AS n 
+        NATURAL JOIN `status` AS s NATURAL JOIN `approve`AS a
+        WHERE u.user_id ='$user_id' AND p.comName_p IS NOT null AND p.type_p = 'c';";
+        $result = $conn->query($sql);
+        while($my_row = $result->fetch_assoc())
+        {
+        $user_id = $my_row['user_id'];
+        $name_title = $my_row['name_title'];
+        $user_name = $my_row['user_name'];
+        $user_surname = $my_row['user_surname'];
+        $position_p = $my_row['position_p'];
+        $dc_name = $my_row['comName_p'];
+        $status_name = $my_row['status_name'];
+        
+        $start_p = $my_row['date_s'];
+        $finish_p = $my_row['date_f']; 
+        $approve_reason = $my_row['approve_reason'];   
+        
+        $checkCNameList[] = new checkApprovalModel($user_id, $dc_name, $status_name, $position_p, $name_title, 
+        $user_name, $user_surname, $start_p, $finish_p, $approve_reason);
+        }
+        
+        require("connection_close.php");
+        return $checkCNameList;
         
     }
 
