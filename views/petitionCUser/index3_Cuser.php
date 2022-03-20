@@ -600,7 +600,7 @@
                 <td align="right"><label>ชื่อสถานประกอบการ : </label></td>
                 <td><?php 
                     if($c=="cid"){
-                        echo $comList->dc_name;
+                        echo $comList->c_name;
                     }
                     else if($c=="name"){
                         echo $company_name;
@@ -707,7 +707,7 @@
             </tr>
 
             <tr>
-                <form action="addfile_Dc.php" method="post" enctype="multipart/form-data" name="upfile" id="upfile">
+                <form action="addfile_C.php" method="post" enctype="multipart/form-data" name="upfile" id="upfile">
                 <td align="right"><label>ใบคำร้องขอฝึกงานสหกิจ : </label></td>
                 <td><input class="button" type="file" name="fileupload" id="fileupload"  required="required"/></td>
                 
