@@ -147,8 +147,7 @@ function call($controller,$action){
         case "user":        require_once("models/userModel.php");
                             $controller = new userController();
                             break;
-        case "test":        require_once("models/petitionCModel.php");
-                            $controller = new testController();
+        
     }
     $controller->{$action}();
 }
