@@ -574,8 +574,16 @@ body {
             <td><?php echo "$p->salary_p";?></td>
         </tr>
         <tr>
-            <th align="right">ที่พัก : </th>
-            <td><?php echo "$p->room_p";?></td>
+            <th align="right"><label>ที่พัก : </label></th>
+            <td><?php 
+                    if($p->room_p == "Have"){
+                        echo "มีที่พัก";
+                    }
+                    else if($p->room_p== "Dont Have"){
+                        echo "ไม่มีที่พัก";
+                    }
+                    ?>
+                </td>
         </tr>
         <tr>
             <th align="right">ระยะการเวลาการฝึกงาน : </th>
@@ -587,12 +595,12 @@ body {
         </tr>
     </table>
 
-    
+    <br>
         <input type="hidden" name="controller" value="petitionDC"/>
         <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
-        
+        <input type="hidden" name="petition_id" value="<?php echo $petition_id;?>"/>
         <button type="submit" name="action" value="index">กลับ</button>
-        <button type="submit" name="action" value="update">อนุมัติ</button>
+        <!-- <button type="submit" name="action" value="update">อนุมัติ</button> -->
 
 </div>
 </form>
