@@ -31,10 +31,11 @@
         public $user_name;
         public $user_surname;
         public $status_name;
+        public $approve_id;
 
     public function __construct($petition_id, $date_p,$user_id, $FB_p, $phone_p, $position_p, $approverName_p, $approverSname_p, $approverP_p,
     $comName_p, $compNo_p, $compRoad_p, $compSubdist_p, $compDistrict_p, $compProvince_p, $compPost_p, $hrName_p, $hrSname_p,
-    $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name)
+    $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name,$approve_id)
     {
         $this->petition_id = $petition_id;
         $this->date_p =  $date_p;
@@ -67,7 +68,7 @@
         $this->user_name = $user_name;
         $this->user_surname = $user_surname;
         $this->status_name = $status_name;
-       
+        $this->approve_id = $approve_id;
         
     }
 
@@ -110,11 +111,12 @@
         $user_name = $my_row['user_name'];
         $user_surname = $my_row['user_surname'];
         $status_name = $my_row['status_name'];
+        $approve_id = $my_row['approve_id'];
         require("connection_close.php");
 
         return new petitionModelFornew($petition_id, $date_p,$user_id, $FB_p, $phone_p, $position_p, $approverName_p, $approverSname_p, $approverP_p,
         $comName_p, $compNo_p, $compRoad_p, $compSubdist_p, $compDistrict_p, $compProvince_p, $compPost_p, $hrName_p, $hrSname_p,
-        $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name);
+        $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name,$approve_id);
     }
 
     
@@ -122,7 +124,7 @@
     {
         $petionDcList = [];
         require("connection_connect.php");
-        $sql = "SELECT p.petition_id, p.date_p, p.user_id, p.academicY_p, nt.name_title, u.user_name, u.user_surname, p.FB_p, p.phone_p, p.position_p, p.approverName_p, p.approverSname_p, p.approverP_p, p.comName_p ,p.compNo_p, p.compRoad_p, p.compSubdist_p, p.compDistrict_p, p.compProvince_p, p.compPost_p, p.hrName_p, p.hrSname_p, p.hrPhone_p, p.hrMail_p, p.salary_p, p.room_p, p.type_p ,p.start_p, p.finish_p, p.status_id, s.status_name FROM `petition` AS p NATURAL JOIN `user` AS u NATURAL JOIN `name_title` AS nt NATURAL JOIN `status` AS s
+        $sql = "SELECT * FROM `petition` AS p NATURAL JOIN `user` AS u NATURAL JOIN `name_title` AS nt NATURAL JOIN `status` AS s
         WHERE p.comName_p IS NOT null  AND p.type_p = 'dc';";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
@@ -158,9 +160,10 @@
             $user_name = $my_row['user_name'];
             $user_surname = $my_row['user_surname'];
             $status_name = $my_row['status_name'];
+            $approve_id = $my_row['approve_id'];
             $petionDcList[] = new petitionModelFornew($petition_id, $date_p,$user_id, $FB_p, $phone_p, $position_p, $approverName_p, $approverSname_p, $approverP_p,
             $comName_p, $compNo_p, $compRoad_p, $compSubdist_p, $compDistrict_p, $compProvince_p, $compPost_p, $hrName_p, $hrSname_p,
-            $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name);
+            $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name,$approve_id);
 
         }
         require("connection_close.php");
@@ -172,17 +175,17 @@
     {
         $petitionFornew = [];
         require("connection_connect.php");
-        $sql = "SELECT * FROM `petition` NATURAL JOIN `user` NATURAL JOIN `name_title` NATURAL JOIN `status`
+        $sql = "SELECT * FROM `petition` NATURAL JOIN `user`NATURAL JOIN `name_title` NATURAL JOIN `status` 
                      
         WHERE (petition_id like '%$key%' or date_p like '%$key%' 
-        or user_id like '%$key%' or FB_p like '%$key%' or phone_p like '%$key%' or position_p like '%$key%'
+        or user_id like '%$key%' or academicY_p like '%$key%' or FB_p like '%$key%' or phone_p like '%$key%' or position_p like '%$key%'
         or approverName_p like '%$key%' or approverSname_p like '%$key%' or approverP_p like '%$key%' or dc_id like '%$key%'
         or c_id like '%$key%'or comName_p like '%$key%' or compNo_p like '%$key%' or compRoad_p like '%$key%' 
         or compSubdist_p like '%$key%' or compDistrict_p like '%$key%' or compProvince_p like '%$key%' or compPost_p like '%$key%'
         or hrName_p like '%$key%' or hrSname_p like '%$key%' or hrPhone_p like '%$key%' or hrMail_p like '%$key%'
         or salary_p like '%$key%' or room_p like '%$key%' or type_p like '%$key%' or start_p like '%$key%' or finish_p like '%$key%'
         or status_id like '%$key%' or name_title like '%$key%' or user_name like '%$key%' or user_surname like '%$key%'
-        or status_name like '%$key%')
+        or status_name like '%$key%' or approve_id like '%$key%') AND comName_p IS NOT NULL AND type_p ='dc'
         ORDER BY petition_id";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
@@ -220,11 +223,11 @@
             $user_name = $my_row['user_name'];
             $user_surname = $my_row['user_surname'];
             $status_name = $my_row['status_name'];
-           
-
+            $approve_id = $my_row['approve_id'];
+            
             $petitionFornew[] = new petitionModelFornew($petition_id, $date_p,$user_id, $FB_p, $phone_p, $position_p, $approverName_p, $approverSname_p, $approverP_p,
-            $dc_id, $c_id, $comName_p, $compNo_p, $compRoad_p, $compSubdist_p, $compDistrict_p, $compProvince_p, $compPost_p, $hrName_p, $hrSname_p,
-            $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name);
+            $comName_p, $compNo_p, $compRoad_p, $compSubdist_p, $compDistrict_p, $compProvince_p, $compPost_p, $hrName_p, $hrSname_p,
+            $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name,$approve_id);
         }
         require("connection_close.php");
         return $petitionFornew;

@@ -592,7 +592,7 @@ body {
                         if($petionCList->room_p == "Have"){
                             echo "มีที่พัก";
                         }
-                        else if($petionCList->room_p== "Dont Have"){
+                        else if($petionCList->room_p== "Don't Have"){
                             echo "ไม่มีที่พัก";
                         }
                     ?>
