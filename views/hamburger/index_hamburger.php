@@ -332,6 +332,7 @@ body {
             margin: 20px 20px 20px 20px;
             border-radius: 25px;
             font-size: 30px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .column {
   float: left;
