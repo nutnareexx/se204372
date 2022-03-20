@@ -35,11 +35,11 @@ class petitionDcModel{
     public $status_name;
     public $dc_name;
     public $approve_id;
-    public $approve_reason;
+
 
     public function __construct($petition_id, $date_p,$user_id, $FB_p, $phone_p, $position_p, $approverName_p, $approverSname_p, $approverP_p,
     $dc_id, $c_id, $comName_p, $compNo_p, $compRoad_p, $compSubdist_p, $compDistrict_p, $compProvince_p, $compPost_p, $hrName_p, $hrSname_p,
-    $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, $dc_name,$approve_id,$approve_reason)
+    $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, $dc_name,$approve_id)
     {
         $this->petition_id = $petition_id;
         $this->date_p =  $date_p;
@@ -77,7 +77,7 @@ class petitionDcModel{
         $this->dc_name = $dc_name;
        
         $this->approve_id = $approve_id;
-        $this->approve_reason = $approve_reason;
+
     }
 
     public static function get($petition_id)
@@ -85,7 +85,7 @@ class petitionDcModel{
         
         require("connection_connect.php");
         $sql = "SELECT * FROM `petition` NATURAL JOIN `user` NATURAL JOIN `name_title` NATURAL JOIN `status`
-        NATURAL JOIN `detail_company` NATURAL JOIN approve
+        NATURAL JOIN `detail_company` 
          WHERE petition_id = '$petition_id';";
         $result = $conn->query($sql);
         $my_row = $result->fetch_assoc();
@@ -124,12 +124,12 @@ class petitionDcModel{
         $status_name = $my_row['status_name'];
         $dc_name = $my_row['dc_name'];
         $approve_id = $my_row['approve_id'];
-        $approve_reason = $my_row['approve_reason'];
+
         require("connection_close.php");
 
         return new petitionDcModel($petition_id, $date_p,$user_id, $FB_p, $phone_p, $position_p, $approverName_p, $approverSname_p, $approverP_p,
         $dc_id, $c_id, $comName_p, $compNo_p, $compRoad_p, $compSubdist_p, $compDistrict_p, $compProvince_p, $compPost_p, $hrName_p, $hrSname_p,
-        $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, $dc_name,$approve_id,$approve_reason);
+        $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, $dc_name,$approve_id);
     }
 
    
@@ -140,7 +140,7 @@ class petitionDcModel{
         $petionDcList = [];
         require("connection_connect.php");
         $sql = "SELECT * FROM `petition` NATURAL JOIN `user` NATURAL JOIN `name_title` NATURAL JOIN `status`
-        NATURAL JOIN `detail_company` NATURAL JOIN approve";
+        NATURAL JOIN `detail_company`";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
@@ -179,10 +179,9 @@ class petitionDcModel{
             $status_name = $my_row['status_name'];
             $dc_name = $my_row['dc_name'];
             $approve_id = $my_row['approve_id'];
-            $approve_reason = $my_row['approve_reason'];
             $petionDcList[] = new petitionDcModel($petition_id, $date_p,$user_id, $FB_p, $phone_p, $position_p, $approverName_p, $approverSname_p, $approverP_p,
             $dc_id, $c_id, $comName_p, $compNo_p, $compRoad_p, $compSubdist_p, $compDistrict_p, $compProvince_p, $compPost_p, $hrName_p, $hrSname_p,
-            $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, $dc_name,$approve_id,$approve_reason);
+            $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, $dc_name,$approve_id);
 
         }
         require("connection_close.php");
@@ -252,6 +251,16 @@ class petitionDcModel{
       return "update success $result row";
   }
 
+  public static function updateApp($petition_id,$numrand)
+  {
+    
+      require("connection_connect.php");
+      $sql = "UPDATE `petition` SET `approve_id`='$numrand' WHERE petition_id = '$petition_id'";
+      $result = $conn->query($sql);
+      require("connection_close.php");
+      return "update success $result row";
+  }
+
   public static function delete($petition_id)
   {
       require("connection_connect.php");
@@ -315,10 +324,10 @@ class petitionDcModel{
             $status_name = $my_row['status_name'];
             $dc_name = $my_row['dc_name'];
             $approve_id = $my_row['approve_id'];
-            $approve_reason = $my_row['approve_reason'];
+
             $petionDcList[] = new petitionDcModel($petition_id, $date_p,$user_id, $FB_p, $phone_p, $position_p, $approverName_p, $approverSname_p, $approverP_p,
             $dc_id, $c_id, $comName_p, $compNo_p, $compRoad_p, $compSubdist_p, $compDistrict_p, $compProvince_p, $compPost_p, $hrName_p, $hrSname_p,
-            $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, $dc_name,$approve_id,$approve_reason);
+            $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, $dc_name,$approve_id);
         }
         require("connection_close.php");
         return $petionDcList;
