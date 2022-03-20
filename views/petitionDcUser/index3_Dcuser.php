@@ -533,7 +533,7 @@
                 </tr>
 
                 <tr>
-                    <td align="right"> <label>ปีการศึกกษา : </label></td>
+                    <td align="right"> <label>ปีการศึกษา : </label></td>
                     <td><?php echo $y;?></td>
                 </tr>
                 
