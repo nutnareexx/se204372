@@ -29,6 +29,7 @@ class petitionCModel{
     public $start_p;
     public $finish_p; 
     public $status_id;
+    
 
     public $name_title;
     public $user_name;
