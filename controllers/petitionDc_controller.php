@@ -80,6 +80,7 @@ class petitionDcController
         $userList = userModel::getAll();
         $DetailCompanyList = DetailCompanyModel::getAll();
         $statusList = statusModel::getAll();
+        // $pelist = petitionModelFornew::getAll();
         require_once('views/petitionDc/updateform.php');
 
     }
@@ -88,31 +89,81 @@ class petitionDcController
     {
         $userid = $_GET['userid'];
         $petition_id = $_GET['petition_id'];
-        $status_id = $_GET['status_id'];
+        // $status_id = $_GET['status_id'];
         $userList=userModel::get($userid);
-        petitionDcModel::update( $petition_id, $status_id);
+        petitionDcModel::update( $petition_id);
         petitionDcController::index();
 
 
     }
 
-    public function deleteconfirm()
+    public function updateformNodc()
     {
         $userid = $_GET['userid'];
         $dc = $_GET['petition_id'];
         $userList=userModel::get($userid);
-        $petionDcList = petitionDcModel::get($dc);
-        require_once('views/petitionDc/deleteconfirm.php');
+        $petionDcList = petitionModelFornew::get($dc);
+        $nametitleList = nametitleModel::getAll();
+        $userList = userModel::getAll();
+        $DetailCompanyList = DetailCompanyModel::getAll();
+        $statusList = statusModel::getAll();
+        $pelist = petitionModelFornew::getAll();
+        require_once('views/petitionDc/updateformNoDc.php');
 
     }
 
-    public function delete()
+    public function updateNodc()
     {
         $userid = $_GET['userid'];
-        $petitionid = $_GET['petitionid'];
+        $petition_id = $_GET['petition_id'];
+        // $status_id = $_GET['status_id'];
         $userList=userModel::get($userid);
-        petitionDcModel::delete($petitionid);
+        petitionModelFornew::update( $petition_id);
         petitionDcController::index();
+
+
+    }
+
+    public function NoupForm() {
+        $userid = $_GET['userid'];
+        $dc = $_GET['petition_id'];
+        $userList=userModel::get($userid);
+        $petionDcList = petitionDcModel::get($dc);
+        $nametitleList = nametitleModel::getAll();
+        $userList = userModel::getAll();
+        $DetailCompanyList = DetailCompanyModel::getAll();
+        $statusList = statusModel::getAll();
+        $pelist = petitionModelFornew::getAll();
+        petitionDcModel::update2( $dc);
+        require_once('views/petitionDc/NoConfirm.php');
+    }
+
+    public function Noup() {
+        $userid = $_GET['userid'];
+        $dc = $_GET['petition_id'];
+        $userList=userModel::get($userid);
+        
+    }
+
+    public function NoupForm2() {
+        $userid = $_GET['userid'];
+        $dc = $_GET['petition_id'];
+        $userList=userModel::get($userid);
+        $petionDcList = petitionModelFornew::get($dc);
+        $nametitleList = nametitleModel::getAll();
+        $userList = userModel::getAll();
+        $DetailCompanyList = DetailCompanyModel::getAll();
+        $statusList = statusModel::getAll();
+        $pelist = petitionModelFornew::getAll();
+        petitionDcModel::update2( $dc);
+        require_once('views/petitionDc/NoConfirmNC.php');
+    }
+
+    public function Noup2() {
+        $userid = $_GET['userid'];
+        $dc = $_GET['petition_id'];
+        $userList=userModel::get($userid);
+        
     }
 
     public function search()
