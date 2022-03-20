@@ -324,29 +324,7 @@ body {
                 text-align: center;
             }
 
-.topnav {
-            overflow: hidden;
-            background-color:#0974ba;
-        }
-
-    /* Style the topnav links */
-    .topnav a {
-            font-family: 'Prompt', sans-serif;
-            float: left;
-            display: block;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        /* Change color on hover */
-        .topnav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-    .btn-group .button {
+    button {
       font-family: 'Prompt', sans-serif;
       position: relative;
       background-color: #397d54 ; /* Green */
@@ -362,22 +340,60 @@ body {
       border-radius: 50px;
     }
 
-    .btn-group .button:not(:last-child) {
+    button:not(:last-child) {
       border-right: none; /* Prevent double borders */
     }
 
-    .btn-group .button:hover {
+    button:hover {
       background-color: #ddd;
       color: black;
      }
 
+    table{
+        width: 100%;
+    }
+    td{
+        font-weight: bold;
+      font-size: 18px;
+    }
+
     .card2 {
       font-family: 'Prompt', sans-serif;
       background-color: #f1f1f1;
-      padding: 20px;
-      width: 50%;
+      
+      text-align: center;
+      /* padding: 20px; */
+      width: 100%;
       border-radius: 10px;
     }
+
+    .leftcolumn {
+        font-family: 'Prompt', sans-serif;
+                float: left;
+                width: 40%;
+                margin-left: 20px;
+                /* margin-top: 100px; */
+                /* text-align: center; */
+                /*text-shadow: 3px 2px 6px black;*/
+                
+            }
+
+    /* Right column */
+    .rightcolumn {
+                float: right;
+                /* margin-top: 20px; */
+                width: 58%;
+            
+
+            }
+
+    /* Clear floats after the columns */
+    .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
     input[type=file], select {
       font-family: 'Prompt', sans-serif;
       width: 80%;
@@ -387,16 +403,8 @@ body {
       border: 1px solid #ccc;
       border-radius: 50px;
       box-sizing: border-box;
+      /* background-color: #235d3a; */
     }
-
-    .center {
-            text-align: center;
-            border: none;
-            margin: auto;
-            width: 60%;
-            padding: 10px;
-
-            }
 
 </style>
 <body>
@@ -529,25 +537,46 @@ body {
     </div>
 
 
-    <div class="card2 center">
-  <form action="add_file_db.php" method="post" enctype="multipart/form-data" name="upfile" id="upfile">
-    <center>
-      <div class="btn-group">
-      <label>
-        <input class="button" type="file" name="fileupload" id="fileupload"  required="required"/><br>
-      </label>
-      <br>
-  </div>
-  <div class="btn-group" >
-  <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
-      <button class="button" type="submit" name="button" id="button" value="upStudent"> เพิ่มไฟล์ </button>
-      </div>
-      <br>
-  </form>
-  
-    </center>
-  
-</div>
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card2">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+        <div class="rightcolumn">
+            
+            <div class="card2">
+                    <br>
+                    <br>
+                    <table>
+                        <tr>
+                            <form action="addfileAj.php" method="post" enctype="multipart/form-data" name="upfile" id="upfile">
+                            <td align="right" style="width: 30%;"><label>ใบคำร้องขอฝึกงานสหกิจ : </label></td>
+                            <td><input class="button" type="file" name="fileupload" id="fileupload"  required="required"/></td>
+                    
+                            
+                        </tr>
+                    </table>
+                    <br>
+                    <br>
+                    <input type="hidden" name="userid" value="<?php echo $userid;?>">
+                    <button  type="submit" name="button" value="upResult"> เพิ่มไฟล์ </button>
+                    </form>
+                    <br>
+                    <br>
+            </div>
+        </div>
+    </div>
 
 
 

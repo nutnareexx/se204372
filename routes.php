@@ -5,8 +5,8 @@ $controllers = array('pages'=>['home','error'],'nisit'=>['index'],
                      'companyP'=>['indexP','newDetailCompanyP','addDetailCompanyP','searchP','updateformP','updateP','deleteconfirmP','deleteP'],
                      'cooperative'=>['index','newCooperative','addCooperative','search'],
                      'cooperativeP'=>['index','newCooperative','addCooperative','search','updateforms','update', 'deleteconfirm', 'delete'],
-                     'petitionDC'=>['index','indexDetail','indexDetailNoDc','updateform','update', 'deleteconfirm', 'delete','search'],
                      'petitionC'=>['indexC','indexCshow', 'indexnewCshow', 'updateformC', 'updateformNoC','updateC', 'updateNoC','updateformnewC', 'updateformnewNoC', 'updatenewC', 'updatenewNoC','searchC'],
+                     'petitionDC'=>['index','indexDetail','indexDetailNoDc','updateform','update','update2', 'updateformNodc','updateNodc','NoupForm', 'Noup','search'],
                      'petitionDCUser'=>['index','index2','index3','newpetitionDc', 'addpetitionDc'],
                      'petitionCUser'=> ['index', 'index2','index3','newpetitionC','addpetitionC'],
                      'checkApproval'=> ['index'],
@@ -141,6 +141,7 @@ function call($controller,$action){
                             break; 
 
         case "uploadAj":    require_once("models/userModel.php");
+                            require_once("models/fileModel.php;");
                             $controller = new uploadAjController();
                             break; 
                         
