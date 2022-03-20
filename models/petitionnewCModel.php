@@ -227,6 +227,15 @@ class petitionnewCModel{
       return "update success $result row";
   }
 
+  public static function updateappNo($petition_id, $numrand)
+  {
+      require("connection_connect.php");
+      $sql = "UPDATE `petition` SET `approve_id`='$numrand'WHERE petition_id = '$petition_id'";
+      $result = $conn->query($sql);
+      require("connection_close.php");
+      return "update success $result row";
+  }
+
   
 
   public static function search($key)
