@@ -498,7 +498,7 @@ body {
  </div>
  <div class="header">
      
-     <h2>แก้ไขคำร้องสหกิจ</h2>
+     <h2>การอนุมัติการฝึกงาน</h2>
  </div>
  
 <form method="get" action="">
@@ -506,58 +506,111 @@ body {
 <center>
 <div class="card">
     <table>
-                <tr>
-                    <th align='right'>ลำดับที่ : </th>
-                    <td><?php echo $petionDcList->petition_id;?></td>
-                </tr>
-                <tr>
-                    <th align='right'>รหัสนิสิต : </th>
-                    <td><?php echo $petionDcList->user_id;?></td>
-                </tr>
-                <tr>
-                    <th align='right'>ชื่อ-นามสกุล : </th>
-                    <td><?php echo "$petionDcList->name_title$petionDcList->user_name  $petionDcList->user_surname";?></td>
-                </tr>
-                <tr>
-                    <th align='right'>ระยะเวลาฝึกงาน : </th>
-                    <td><?php echo "$petionDcList->start_p - $petionDcList->finish_p";?></td>
-                </tr>
-                <tr>
-                    <th align='right'>ตำแหน่งที่ไปฝึกงาน : </th>
-                    <td><?php echo $petionDcList->position_p?></td>
-                </tr>
-                <tr>
-                    <th align='right'>ชื่อสถานประกอบการฝึกงาน : </th>
-                    <td><?php echo $petionDcList->dc_name?></td>
-                </tr>
-                <tr>
-                    <th align='right'>ค่าตอบแทน : </th>
-                    <td><?php echo $petionDcList->salary_p?></td>
-                </tr>
-                <tr>
-                    <th align='right'>ที่พัก : </th>
-                    <td><?php echo $petionDcList->room_p?></td>
-                </tr>
-                <tr>
-                    <th align='right'>อัพเดตสถานะ : </th>
-                    <td><select name='status_id'>
-                    <?php foreach($statusList as $st){
-                        echo "<option value=$st->status_id";
-                        if($st->status_id==$petionDcList->status_id){
-                            echo " selected='selected'";
-                        }
-                        echo ">$st->status_name</option>";
-                    }?>
-                    </select></td>
-                </tr>
+        <tr>
+            <th align="right">รหัสนิสิต : </th>
+            <td><?php echo $petionDcList->user_id;?></td>
+        </tr>
+        <tr>
+            <th align="right">ชื่อ-นามสกุล : </th>
+            <td><?php echo "$petionDcList->name_title$petionDcList->user_name   $petionDcList->user_surname";?></td>
+        </tr>
+        <tr>
+            <th align="right">เบอร์โทรศัพท์ : </th>
+            <td><?php echo "$petionDcList->phone_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">facebook : </th>
+            <td><?php echo "$petionDcList->FB_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">ตำแหน่งที่ไปฝึกงาน : </th>
+            <td><?php echo "$petionDcList->position_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">ชื่อผู้ที่จะให้ภาควิชาฯ ออกหนังสือขอความอนุเคราะห์ : </th>
+            <td><?php echo "$petionDcList->approverName_p  $petionDcList->approverSname_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">ตำแหน่งของผู้ที่จะให้ภาควิชาฯ ออกหนังสือขอความอนุเคราะห์ : </th>
+            <td><?php echo "$petionDcList->approverP_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">ชื่อสถานประกอบการ : </th>
+            <td><?php echo "$petionDcList->dc_name";?></td>
+        </tr>
+        <tr>
+            <th align="right">สถานที่ตั้งเลขที่ : </th>
+            <td><?php echo "$petionDcList->compNo_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">ถนน : </th>
+            <td><?php echo "$petionDcList->compRoad_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">ตำบล/แขวง : </th>
+            <td><?php echo "$petionDcList->compSubdist_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">อำเภอ/เขต : </th>
+            <td><?php echo "$petionDcList->compDistrict_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">จังหวัด : </th>
+            <td><?php echo "$petionDcList->compProvince_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">รหัสไปรษณีย์ : </th>
+            <td><?php echo "$petionDcList->compPost_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">ชื่อผู้ประสานงาน : </th>
+            <td><?php echo "$petionDcList->hrName_p   $petionDcList->hrSname_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">โทร : </th>
+            <td><?php echo "$petionDcList->hrPhone_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">อีเมล : </th>
+            <td><?php echo "$petionDcList->hrMail_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">ระยะการฝึกงานตั้งแต่วันที่ : </th>
+            <td><?php echo "$petionDcList->compRoad_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">ค่าตอบแทน : </th>
+            <td><?php echo "$petionDcList->salary_p";?></td>
+        </tr>
+        <tr>
+            <th align="right"><label>ที่พัก : </label></th>
+            <td><?php 
+                    if($petionDcList->room_p == "Have"){
+                        echo "มีที่พัก";
+                    }
+                    else if($petionDcList->room_p== "Dont Have"){
+                        echo "ไม่มีที่พัก";
+                    }
+                    ?>
+                </td>
+        </tr>
+        <tr>
+            <th align="right">ระยะการเวลาการฝึกงาน : </th>
+            <td><?php echo "$petionDcList->start_p - $petionDcList->finish_p";?></td>
+        </tr>
+        <tr>
+            <th align="right">ผลการอนุมัติ : </th>
+            <td><?php echo "$petionDcList->status_name";?></td>
+        </tr>
             </table>
         <input type="hidden" name="controller" value="petitionDC"/>
     
         <br>
-    <input type="hidden" name="petitionid" value="<?php echo $petionDcList->petition_id;?>"/>
+    <input type="hidden" name="petition_id" value="<?php echo $dc;?>"/>
     <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
-    <button type="submit" name="action" value="index"> Back </button>
-    <button type="submit" name="action" value="update"> Update </button>
+    <!-- <input type="hidden" name="status_id" value="<?php echo $status_id;?>"/> -->
+    <button type="submit" name="action" value="NoupForm"> ไม่อนุมัติ </button>
+    <button type="submit" name="action" value="update"> อนุมัติ </button>
     
 
 </div>
