@@ -73,9 +73,9 @@ class petitionDcController
     public function updateform()
     {
         $userid = $_GET['userid'];
-        $dc = $_GET['petition_id'];
+        $petition_id = $_GET['petition_id'];
         $userList=userModel::get($userid);
-        $petionDcList = petitionDcModel::get($dc);
+        $petionDcList = petitionDcModel::get($petition_id);
         $nametitleList = nametitleModel::getAll();
         $userList = userModel::getAll();
         $DetailCompanyList = DetailCompanyModel::getAll();
@@ -100,9 +100,9 @@ class petitionDcController
     public function updateformNodc()
     {
         $userid = $_GET['userid'];
-        $dc = $_GET['petition_id'];
+        $petition_id = $_GET['petition_id'];
         $userList=userModel::get($userid);
-        $petionDcList = petitionModelFornew::get($dc);
+        $petionDcList = petitionModelFornew::get($petition_id);
         $nametitleList = nametitleModel::getAll();
         $userList = userModel::getAll();
         $DetailCompanyList = DetailCompanyModel::getAll();
@@ -139,10 +139,15 @@ class petitionDcController
     }
 
     public function Noup() {
+        $numrand = (mt_rand());
         $userid = $_GET['userid'];
         $dc = $_GET['petition_id'];
+        $app_rea =$_GET['approve_reason'];
         $userList=userModel::get($userid);
+        petitionDcModel::updateApp($dc,$numrand);
+        approveModel::Add($numrand, $app_rea);
         
+        petitionDcController::index();
     }
 
     public function NoupForm2() {
