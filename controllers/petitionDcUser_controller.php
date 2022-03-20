@@ -39,7 +39,6 @@ class petitionDcUserController
         $approve_lastname = $_GET['lastname_com'];
         $approve_position = $_GET['position'];
 
-
         $company_no = $_GET['no'];
         $company_road = $_GET['road'];
         $company_sub = $_GET['Subdistrict'];
@@ -58,7 +57,6 @@ class petitionDcUserController
         $room = $_GET['room'];
         $userList=userModel::get($userid);
 
-         
         if(isset($_GET['company_id'])){
             $c="cid";
             $company_id = $_GET['company_id'];
@@ -72,6 +70,7 @@ class petitionDcUserController
             echo $company_name;
             // petitionDcModel::addDC_new($date,$userid,$y,$faceB,$phone,$position,$approve_name,$approve_lastname,$approve_position,$company_name,$company_no,$company_road,$company_sub,$company_dis,$company_prov,$company_code,$hr_name,$hr_lastname,$hr_phone,$hr_mail,$pay,$room,$start,$finish);
         }
+        
         require_once('views/petitionDcUser/index3_Dcuser.php');
 
     }
