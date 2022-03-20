@@ -319,25 +319,45 @@ body {
 
 
     
-    .header {
+.header {
                 font-family: 'Prompt', sans-serif;
                 background-color: #f1f1f1;
                 text-align: center;
             }
 
-table {
-    font-family: 'Prompt', sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
+            .card {
+            font-family: 'Prompt', sans-serif;
+            width: 80%;
+            background-color: #f1f1f1;
+            padding: 20px 20px 20px 20px;
+            margin: 20px 20px 20px 20px;
+            border-radius: 50px;
 
-th, td {
-    text-align: left;
-    padding: 8px;
-}
+        }
 
-tr:nth-child(odd){background-color: #cae3cc}
-tr:nth-child(even){background-color: #f2f2f2}
+        
+        button {
+            font-family: 'Prompt', sans-serif;
+            position: relative;
+            background-color: #397d54 ; 
+            border: 1px black;
+            color: white;
+            padding: 10px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            cursor: pointer;
+            width: 30%;
+            border-radius: 50px;
+        }
+        button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+        button:hover {
+            background-color: #73c088;
+            color: white;
+        }
 </style>
 
 
@@ -468,40 +488,145 @@ tr:nth-child(even){background-color: #f2f2f2}
  </div>
  <div class="header">
      
-     <h2>ยืนยันที่จะลบคำร้องนี้หรือไม่?</h2>
+     <h2>รายละเอียดเอกสารยื่นคำร้องสหกิจ</h2>
  </div>
- 
-<?php echo "  <br>
-            <br><b>ลำดับที่ : </b>   $petionCnewList->petition_id  
-            <br><b>รหัสนิสิต : </b>  $petionCnewList->user_id
-            <br><b>ชื่อ-นามสกุล : </b>  $petionCnewList->name_title$petionCnewList->user_name $petionCnewList->user_surname
-            <br><b>เบอร์โทรศัพท์มือถือ : </b>  $petionCnewList->phone_p
-            <br><b>ชื่อ-Facebook : </b>  $petionCnewList->FB_p
-            <br><b>วันที่ยื่นใบคำร้อง : </b>  $petionCnewList->position_p
-            <br><b>ปีการศึกษา : </b>  $petionCnewList->academicY_p
-            <br><b>ตำแหน่งที่ไปฝึกงาน : </b>  $petionCnewList->position_p
-            <br><b>ชื่อผู้อนุมัติฝึกสหกิจ : </b>  $petionCnewList->approverName_p $petionCnewList->approverSname_p
-            <br><b>ตำแหน่งผู้อนุมัติฝึกสหกิจ : </b>  $petionCnewList->approverP_p
-            <br><b>ชื่อสถานประกอบการสหกิจ : </b> $petionCnewList->comName_p
-            <br><b>สถานที่ตั้งเลขที่ : </b>  $petionCnewList->compNo_p
-            <br><b>ถนน : </b>  $petionCnewList->compRoad_p
-            <br><b>ตำบล/แขวง : </b>  $petionCnewList->compSubdist_p
-            <br><b>อำเภอ/เขต : </b>  $petionCnewList->compDistrict_p
-            <br><b>จังหวัด : </b>  $petionCnewList->compProvince_p
-            <br><b>รหัสไปรษณีย์ : </b>  $petionCnewList->compPost_p
-            <br><b>ชื่อผู้ประสานงาน : </b>  $petionCnewList->hrName_p $petionCnewList->hrSname_p 
-            <br><b>โทร : </b>  $petionCnewList->hrPhone_p
-            <br><b>E-mail : </b>  $petionCnewList->hrMail_p
-            <br><b>ระยะการฝึกงานตั้งแต่วันที่ : </b>  $petionCnewList->start_p <b>ถึงวันที่</b> $petionCnewList->finish_p
-            <br><b>สถานะ : </b> $petionCnewList->status_name<br>";?>
 
-<form method="get" action="">
+ <center>
+     <div class="card" align='center'>
+     <form method="get" action="">
+ 
+     <table>
+                <tr>
+                    <th align="right">รหัสนิสิต :</th>
+                    <td><?php echo "$petionCnewList->user_id";?></td>
+                </tr>
+                <tr>
+                    <th align="right">ชื่อ-นามสกุล :</th>
+                    <td><?php echo "$petionCnewList->name_title$petionCnewList->user_name $petionCnewList->user_surname";?></td>
+                </tr>
+                <tr>
+                    <th align="right">เบอร์โทรศัพท์มือถือ :</th>
+                    <td><?php echo "$petionCnewList->phone_p";?></td>
+                </tr>
+                <tr>
+                    <th align="right">ชื่อ-Facebook :</th>
+                    <td><?php echo "$petionCnewList->FB_p";?></td>
+                </tr>
+                <tr>
+                    <th align="right">วันที่ยื่นใบคำร้อง :</th>
+                    <td><?php echo "$petionCnewList->date_p";?></td>
+                </tr>
+                <tr>
+                    <th align="right">ปีการศึกษา :</th>
+                    <td><?php echo "$petionCnewList->academicY_p";?></td>
+                </tr>
+                <tr>
+                    <th align="right">ตำแหน่งที่ไปฝึกงาน :</th>
+                    <td><?php echo "$petionCnewList->position_p";?></td>
+                </tr>
+                <tr>
+                    <th align="right">ชื่อผู้อนุมัติฝึกสหกิจ :</th>
+                    <td><?php echo "$petionCnewList->approverName_p $petionCnewList->approverSname_p";?></td>
+                </tr>
+                <tr>
+                    <th align="right">ตำแหน่งผู้อนุมัติฝึกสหกิจ :</th>
+                    <td><?php echo "$petionCnewList->approverP_p";?></td>
+                </tr>
+                <tr>
+                    <th align="right">ชื่อสถานประกอบการสหกิจ :</th>
+                    <td><?php echo "$petionCnewList->comName_p";?></td>
+                </tr>
+                <tr>
+                    <th align="right">สถานที่ตั้งเลขที่ :</th>
+                    <td><?php echo "$petionCnewList->compNo_p";?></td>
+                </tr>
+                <tr>
+                    <th align="right">ถนน :</th>
+                    <td><?php echo "$petionCnewList->compRoad_p";?></td>
+                </tr>
+                <tr>
+                    <th align="right">ตำบล/แขวง :</th>
+                    <td><?php echo "$petionCnewList->compSubdist_p";?></td>
+                </tr>
+                <tr>
+                    <th align="right">อำเภอ/เขต :</th>
+                    <td><?php echo "$petionCnewList->compDistrict_p";?></td>
+                </tr>
+                <tr>
+                    <th align="right">จังหวัด :</th>
+                    <td><?php echo "$petionCnewList->compProvince_p";?></td>
+                </tr>
+                <tr>
+                    <th align="right">รหัสไปรษณีย์ :</th>
+                    <td><?php echo "$petionCnewList->compPost_p";?></td>
+                </tr>
+                <tr>
+                    <th align="right">ชื่อผู้ประสานงาน :</th>
+                    <td><?php echo "$petionCnewList->hrName_p $petionCnewList->hrSname_p";?></td>
+                </tr>
+                <tr>
+                    <th align="right">โทร :</th>
+                    <td><?php echo "$petionCnewList->hrPhone_p";?></td>
+                </tr>
+                <tr>
+                    <th align="right">E-mail :</th>
+                    <td><?php echo "$petionCnewList->hrMail_p";?></td>
+                </tr>
+                <tr>
+                    <th align="right">ค่าตอบแทน :</th>
+                    <td><?php echo "$petionCnewList->salary_p";?></td>
+                </tr>
+                <th align="right"><label>ที่พัก : </label></th>
+                    <td><?php 
+                        if($petionCnewList->room_p == "Have"){
+                            echo "มีที่พัก";
+                        }
+                        else if($petionCnewList->room_p== "Dont Have"){
+                            echo "ไม่มีที่พัก";
+                        }
+                    ?>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <th align="right">เริ่มฝึกงาน :</th>
+                    <td>
+                        <?php 
+                            // echo $start."<br>";
+                            $year = substr($petionCnewList->start_p, 0 ,4);
+                            $mont = substr($petionCnewList->start_p, 5 ,2);
+                            $day = substr($petionCnewList->start_p, 8 ,2);
+                            echo $day."/".$mont."/".$year;
+                        ?>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th align="right">สิ้นสุดการฝึกงาน :</th>
+                    <td>
+                        <?php 
+                            // echo $finish;
+                            $year = substr($petionCnewList->finish_p, 0 ,4);
+                            $mont = substr($petionCnewList->finish_p, 5 ,2);
+                            $day = substr($petionCnewList->finish_p, 8 ,2);
+                            echo $day."/".$mont."/".$year;
+                        ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th align="right">สถานะ :</th>
+                    <td><?php echo "$petionCnewList->status_name";?></td>
+                </tr>
+
+            </table>
+
     <input type="hidden" name="controller" value="petitionC"/>
     <input type="hidden" name="petitionid" value="<?php echo $petionCnewList->petition_id;?>"/>
     <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
-    <button type="submit" name="action" value="indexC"> Back </button>
-    
+    <button type="submit" name="action" value="indexC"> กลับ </button>
+    </div> 
 </form>
+ </center>
 
 </section>
 

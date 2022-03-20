@@ -325,18 +325,7 @@ body {
                 text-align: center;
             }
 
-            .card {
-            font-family: 'Prompt', sans-serif;
-            width: 80%;
-            background-color: #f1f1f1;
-            padding: 20px 20px 20px 20px;
-            margin: 20px 20px 20px 20px;
-            border-radius: 50px;
-
-        }
-
-        
-        button {
+            button {
             font-family: 'Prompt', sans-serif;
             position: relative;
             background-color: #397d54 ; 
@@ -357,6 +346,28 @@ body {
         button:hover {
             background-color: #73c088;
             color: white;
+        }
+
+        input[type=text], select {
+                font-family: 'Prompt', sans-serif;
+                width: 50%;
+                /* padding: 7px 50px; */
+                /* margin: 8px 0; */
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 50px;
+                box-sizing: border-box;
+
+            }
+
+            .card {
+            font-family: 'Prompt', sans-serif;
+            width: 80%;
+            background-color: #f1f1f1;
+            padding: 20px 20px 20px 20px;
+            margin: 20px 20px 20px 20px;
+            border-radius: 50px;
+            
         }
 </style>
 
@@ -488,13 +499,17 @@ body {
  </div>
  <div class="header">
      
-     <h2>รายละเอียดเอกสารยื่นคำร้องสหกิจ</h2>
+     <h2>แก้ไขคำร้องสหกิจ</h2>
  </div>
- 
+
  <center>
      <div class="card" align='center'>
-        <form method="get" action="">
-            <table>
+<form method="get" action="">
+<table>
+                <tr>
+                    <th align="right">ลำดับที่ :</th>
+                    <td><?php echo "$petionCList->petition_id";?></td> 
+                </tr>
                 <tr>
                     <th align="right">รหัสนิสิต :</th>
                     <td><?php echo "$petionCList->user_id";?></td>
@@ -533,7 +548,7 @@ body {
                 </tr>
                 <tr>
                     <th align="right">ชื่อสถานประกอบการสหกิจ :</th>
-                    <td><?php echo "$petionCList->c_name";?></td>
+                    <td><?php echo "$petionCList->comName_p";?></td>
                 </tr>
                 <tr>
                     <th align="right">สถานที่ตั้งเลขที่ :</th>
@@ -575,6 +590,7 @@ body {
                     <th align="right">ค่าตอบแทน :</th>
                     <td><?php echo "$petionCList->salary_p";?></td>
                 </tr>
+                <tr>
                 <th align="right"><label>ที่พัก : </label></th>
                     <td><?php 
                         if($petionCList->room_p == "Have"){
@@ -586,7 +602,6 @@ body {
                     ?>
                     </td>
                 </tr>
-                
                 <tr>
                     <th align="right">เริ่มฝึกงาน :</th>
                     <td>
@@ -613,20 +628,28 @@ body {
                     </td>
                 </tr>
                 <tr>
-                    <th align="right">สถานะ :</th>
-                    <td><?php echo "$petionCList->status_name";?></td>
+                <th align="right">ผลการอนุมัติ : </th>
+                        <td><?php echo "ไม่อนุมัติ";?></td>
                 </tr>
+                <tr>
+                    <th align="right">เหตุผลการไม่อนุมัติ : </th>
+                        <td><input type = "text" name = "approve_reason" /></td>
+                 </tr>
 
             </table>
+        
     <input type="hidden" name="controller" value="petitionC"/>
     <input type="hidden" name="petitionid" value="<?php echo $petionCList->petition_id;?>"/>
     <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
     <button type="submit" name="action" value="indexC"> กลับ </button>
- 
-</div>
+    <button type="submit" name="action" value="updatenewNoC"> ยืนยัน </button>
+    
+
+    
+    </div>
 </form>
  </center>
-
+ 
 </section>
 
 <script>
@@ -656,4 +679,3 @@ sidebarBtn.addEventListener("click", ()=>{
 </body>
 
 </html>
-
