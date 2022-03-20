@@ -4,7 +4,10 @@ class companyController
     public function index()
     {
         $userid = $_GET['userid'];
-        $userList=userModel::get($userid);
+        if($userid != "x"){
+            $userList=userModel::get($userid);
+        }
+        
         $DetailCompanyList = DetailCompanyModel::getAll();
         require_once('views/detailCompany/index_detailCompany.php');
     }
