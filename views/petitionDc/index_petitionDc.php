@@ -690,7 +690,7 @@ sidebarBtn.addEventListener("click", ()=>{
 }
 
 
-foreach( $pelist as $p)
+    foreach($pelist as $p)
 {
 
 
@@ -707,51 +707,7 @@ echo "</table>";
 
  ?>
  
- <!-- <?php echo "<a href='?controller=petitionDC&action=updateformNodc&petition_id=$p->petition_id&userid=$userid' class='button' role='button'>" ?>
- <button class="button" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button> -->
-
-    <div id="id01" class="modal">
-        
-
-      <form class="modal-content animate" action="" method="get">
-            <div class="imgcontainer">
-                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-            </div>
-        
-            <div class="container">
-           
-                <input type="hidden" name="controller" value="petitionDC"/>
-                <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
-                <input type="hidden" name="petition_id" value="<?php echo $petition_id;?>"/>
-                <input type="hidden" name="status_id" value="<?php echo $status_id;?>"/>
-                <div class="btn-group2">
-
-                <button class = "button2" type="submit" name="action" value="index">กลับ</button>
-                <button class = "button2" type="submit" name="action" value="update">อนุมัติ</button>
-                </div>
-            
-            </div>
-
-        </form>
-    </div> 
-
-
-
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-
-function box(p){
-    document.write(p);
-}
-</script>
+ 
 
 
 
