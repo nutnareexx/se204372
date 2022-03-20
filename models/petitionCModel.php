@@ -38,14 +38,14 @@ class petitionCModel{
     public $c_name;
 
     public $approve_id;
-    public $approve_reason;
+    
     
  
 
     public function __construct($petition_id, $date_p,$user_id, $FB_p, $phone_p, $position_p, $approverName_p, $approverSname_p, $approverP_p,
     $dc_id, $c_id, $comName_p, $compNo_p, $compRoad_p, $compSubdist_p, $compDistrict_p, $compProvince_p, $compPost_p, $hrName_p, $hrSname_p,
     $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, 
-    $c_name, $academicY_p, $approve_id, $approve_reason)
+    $c_name, $academicY_p, $approve_id)
     {
         $this->petition_id = $petition_id;
         $this->date_p =  $date_p;
@@ -84,7 +84,6 @@ class petitionCModel{
         $this->c_name = $c_name;
 
         $this->approve_id = $approve_id;
-        $this->approve_reason = $approve_reason;
        
         
         
@@ -95,7 +94,7 @@ class petitionCModel{
         
         require("connection_connect.php");
         $sql = "SELECT * FROM `petition` NATURAL JOIN `user` NATURAL JOIN `name_title` NATURAL JOIN `status`
-        NATURAL JOIN `detail_cooperative` NATURAL JOIN `approve`
+        NATURAL JOIN `detail_cooperative` 
          WHERE petition_id = '$petition_id'";
         $result = $conn->query($sql);
         $my_row = $result->fetch_assoc();
@@ -137,7 +136,7 @@ class petitionCModel{
             $c_name = $my_row['c_name'];
 
             $approve_id =$my_row['approve_id'];
-            $approve_reason = $my_row['approve_reason'];
+            
             
             
         require("connection_close.php");
@@ -145,7 +144,7 @@ class petitionCModel{
         return new petitionCModel($petition_id, $date_p,$user_id, $FB_p, $phone_p, $position_p, $approverName_p, $approverSname_p, $approverP_p,
         $dc_id, $c_id, $comName_p, $compNo_p, $compRoad_p, $compSubdist_p, $compDistrict_p, $compProvince_p, $compPost_p, $hrName_p, $hrSname_p,
         $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, 
-        $c_name, $academicY_p, $approve_id, $approve_reason);
+        $c_name, $academicY_p, $approve_id);
     }
 
     
@@ -156,7 +155,7 @@ class petitionCModel{
         $petionCList = [];
         require("connection_connect.php");
         $sql = "SELECT * FROM `petition` NATURAL JOIN `user` NATURAL JOIN `name_title` NATURAL JOIN `status`
-        NATURAL JOIN `detail_cooperative` NATURAL JOIN `approve`";
+        NATURAL JOIN `detail_cooperative`";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
@@ -197,12 +196,12 @@ class petitionCModel{
             $c_name = $my_row['c_name'];
 
             $approve_id =$my_row['approve_id'];
-            $approve_reason = $my_row['approve_reason'];
+            
 
             $petionCList[] = new petitionCModel($petition_id, $date_p,$user_id, $FB_p, $phone_p, $position_p, $approverName_p, $approverSname_p, $approverP_p,
             $dc_id, $c_id, $comName_p, $compNo_p, $compRoad_p, $compSubdist_p, $compDistrict_p, $compProvince_p, $compPost_p, $hrName_p, $hrSname_p,
             $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, 
-            $c_name, $academicY_p, $approve_id, $approve_reason);
+            $c_name, $academicY_p, $approve_id);
 
         }
         require("connection_close.php");
@@ -225,7 +224,16 @@ class petitionCModel{
   public static function updateNo($petition_id)
   {
       require("connection_connect.php");
-      $sql = "UPDATE `petition` SET `status_id`='03'WHERE petition_id = '$petition_id'";
+      $sql = "UPDATE `petition` SET `status_id`='03' WHERE petition_id = '$petition_id'";
+      $result = $conn->query($sql);
+      require("connection_close.php");
+      return "update success $result row";
+  }
+
+  public static function updateappNo($petition_id, $numrand)
+  {
+      require("connection_connect.php");
+      $sql = "UPDATE `petition` SET `approve_id` = '$numrand' WHERE petition_id = '$petition_id'";
       $result = $conn->query($sql);
       require("connection_close.php");
       return "update success $result row";
@@ -237,7 +245,7 @@ class petitionCModel{
     {
         $petionCList = [];
         require("connection_connect.php");
-        $sql = "SELECT * FROM `petition` NATURAL JOIN `user` NATURAL JOIN `name_title` NATURAL JOIN `status` NATURAL JOIN `detail_cooperative` NATURAL JOIN `approve`
+        $sql = "SELECT * FROM `petition` NATURAL JOIN `user` NATURAL JOIN `name_title` NATURAL JOIN `status` NATURAL JOIN `detail_cooperative` 
                      
                     WHERE (petition_id like '%$key%' or date_p like '%$key%' 
                     or user_id like '%$key%' or academicY_p like '%$key%' or FB_p like '%$key%' or phone_p like '%$key%' or position_p like '%$key%'
@@ -247,7 +255,7 @@ class petitionCModel{
                     or hrName_p like '%$key%' or hrSname_p like '%$key%' or hrPhone_p like '%$key%' or hrMail_p like '%$key%'
                     or salary_p like '%$key%' or room_p like '%$key%' or type_p like '%$key%' or start_p like '%$key%' or finish_p like '%$key%'
                     or status_id like '%$key%' or name_title like '%$key%' or user_name like '%$key%' or user_surname like '%$key%'
-                    or status_name like '%$key%' or c_name like '%$key%' or approve_id like '%$key%' or approve_reason like '%$key%')
+                    or status_name like '%$key%' or c_name like '%$key%' or approve_id like '%$key%')
                     ORDER BY petition_id";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
@@ -289,12 +297,12 @@ class petitionCModel{
             $c_name = $my_row['c_name'];
 
             $approve_id = $my_row['approve_id'];
-            $approve_reason = $my_row['approve_reason'];
+            
 
             $petionCList[] = new petitionCModel($petition_id, $date_p,$user_id, $FB_p, $phone_p, $position_p, $approverName_p, $approverSname_p, $approverP_p,
             $dc_id, $c_id, $comName_p, $compNo_p, $compRoad_p, $compSubdist_p, $compDistrict_p, $compProvince_p, $compPost_p, $hrName_p, $hrSname_p,
             $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, 
-            $c_name, $academicY_p, $approve_id, $approve_reason);
+            $c_name, $academicY_p, $approve_id);
         }
         require("connection_close.php");
         return $petionCList;
