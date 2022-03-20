@@ -251,11 +251,13 @@ class petitionDcModel{
       return "update success $result row";
   }
 
-  public static function updateApp($petition_id,$numrand)
+  public static function updateApp($p,$num)
   {
-    
+    echo"in".$num;
       require("connection_connect.php");
-      $sql = "UPDATE `petition` SET `approve_id`='$numrand' WHERE petition_id = '$petition_id'";
+      $sql = "UPDATE `petition` 
+                SET `approve_id`= '$num'
+                WHERE petition_id = '$p'";
       $result = $conn->query($sql);
       require("connection_close.php");
       return "update success $result row";
