@@ -615,7 +615,7 @@ body {
         <input type="hidden" name="controller" value="petitionDC"/>
         <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
         <input type="hidden" name="petition_id" value="<?php echo $petition_id;?>"/>
-        <button type="submit" name="action" value="index">กลับ</button>
+        <button type="submit" name="action" value="updateform">กลับ</button>
         <button type="submit" name="action" value="Noup">ยืนยัน</button>
 
 </div>
