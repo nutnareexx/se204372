@@ -65,7 +65,7 @@ class cooperativeModel{
         $x=1;
         while($my_row = $result->fetch_assoc())
         {
-            $c_id = $x++;
+            $c_id = $my_row=['c_id'];
             $c_name = $my_row['c_name'];
             $c_position = $my_row['c_position'];
             $c_department = $my_row['c_department'];
