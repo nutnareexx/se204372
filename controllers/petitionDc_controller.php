@@ -134,7 +134,7 @@ class petitionDcController
         $DetailCompanyList = DetailCompanyModel::getAll();
         $statusList = statusModel::getAll();
         $pelist = petitionModelFornew::getAll();
-        petitionDcModel::update2($petition_id);
+        // petitionDcModel::update2($petition_id);
         require_once('views/petitionDc/NoConfirm.php');
     }
 
@@ -145,6 +145,7 @@ class petitionDcController
         $app_rea =$_GET['approve_reason'];
         $userList=userModel::get($userid);
         echo $numrand;
+        petitionDcModel::update2($petition_id);
         approveModel::Add($numrand, $app_rea);
         $aList = approveModel::get($numrand);
         echo "<br>".$petition_id." ".$numrand."<br>";
@@ -163,7 +164,7 @@ class petitionDcController
         $DetailCompanyList = DetailCompanyModel::getAll();
         $statusList = statusModel::getAll();
         $pelist = petitionModelFornew::getAll();
-        petitionDcModel::update2($petition_id);
+        // petitionDcModel::update2($petition_id);
         require_once('views/petitionDc/NoConfirmNC.php');
     }
 
@@ -174,6 +175,7 @@ class petitionDcController
         $app_rea =$_GET['approve_reason'];
         $userList=userModel::get($userid);
         echo $numrand;
+        petitionDcModel::update2($petition_id);
         approveModel::Add($numrand, $app_rea);
         $aList = approveModel::get($numrand);
         echo "<br>".$petition_id." ".$numrand."<br>";
