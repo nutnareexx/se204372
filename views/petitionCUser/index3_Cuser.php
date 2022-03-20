@@ -676,15 +676,25 @@
             <tr>
                 <td align="right"><label>เริ่มฝึกงาน : </label></td>
                 <td>
-                    <?php 
-                        echo $start;
+                <?php 
+                        // echo $start."<br>";
+                        $year = substr($start, 0 ,4);
+                        $mont = substr($start, 5 ,2);
+                        $day = substr($start, 8 ,2);
+                        echo $day."/".$mont."/".$year;
                     ?>
                 </td>
             </tr>
 
             <tr>
                 <td align="right"><label>สิ้นสุดการฝึกงาน : </label></td>
-                <td><?php echo $finish;?></td>
+                <td><?php 
+                        // echo $finish;
+                        $year = substr($finish, 0 ,4);
+                        $mont = substr($finish, 5 ,2);
+                        $day = substr($finish, 8 ,2);
+                        echo $day."/".$mont."/".$year;
+                    ?></td>
             </tr>
 
             <tr>
