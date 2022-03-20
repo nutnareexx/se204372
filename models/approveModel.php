@@ -23,8 +23,7 @@ class approveModel
         {
             $approve_id = $my_row['approve_id'];
             $approve_date = $my_row['approve_date'];
-            $status_id = $my_row['status_id'];
-            $status_name = $my_row['status_name'];
+            $approve_reason = $my_row['approve_reason'];
             $approveList[] = new approveModel($approve_id,$approve_date,$approve_reason);
 
         }
