@@ -498,8 +498,7 @@ tr:nth-child(even){background-color: #f2f2f2}
          <td><b>ชื่อสถานประกอบการสหกิจ</td>
          <td><b>รายละเอียดสหกิจ</td>
          <td><b>สถานะ</td>
-         <td><b>อนุมัติ</td>
-         <td><b>ไม่อนุมัติ</td>
+         
      </tr>
 
 </section>
@@ -540,9 +539,7 @@ foreach( $petionCList as $clist)
     <td>$clist->name_title$clist->user_name $clist->user_surname</td> 
     <td>$clist->c_name</td>  
     <td> <a href=?controller=petitionC&action=indexCshow&petition_id=$clist->petition_id&userid=$userid> รายละเอียดเพิ่มเติม </a> </td>
-    <td>$clist->status_name</td>  
-    <td> <a href=?controller=petitionC&action=updateformC&petition_id=$clist->petition_id&userid=$userid> อนุมัติ </a> </td>
-    <td> <a href=?controller=petitionC&action=updateformC&petition_id=$clist->petition_id&userid=$userid> ไม่อนุมัติ </a>
+    <td> <a href=?controller=petitionC&action=updateformC&petition_id=$clist->petition_id&userid=$userid> $clist->status_name </a> </td>
     </td></tr>";
 }
 
@@ -552,10 +549,8 @@ foreach( $petionCnewList as $clistnew)
     <td>$clistnew->user_id</td>
     <td>$clistnew->name_title$clistnew->user_name $clistnew->user_surname</td> 
     <td>$clistnew->comName_p</td>  
-    <td> <a href=?controller=petitionC&action=indexnewCshow&petition_id=$clistnew->petition_id&userid=$userid> รายละเอียดเพิ่มเติม </a> </td>
-    <td>$clistnew->status_name</td>  
-    <td> <a href=?controller=petitionC&action=updateformnewC&petition_id=$clistnew->petition_id&userid=$userid> อนุมัติ </a> </td>
-    <td> <a href=?controller=petitionC&action=updateformnewC&petition_id=$clistnew->petition_id&userid=$userid> ไม่อนุมัติ </a>
+    <td> <a href=?controller=petitionC&action=indexnewCshow&petition_id=$clistnew->petition_id&userid=$userid> รายละเอียดเพิ่มเติม </a> </td> 
+    <td> <a href=?controller=petitionC&action=updateformnewC&petition_id=$clistnew->petition_id&userid=$userid> $clistnew->status_name </a> </td>
     </td></tr>";
 }
 
