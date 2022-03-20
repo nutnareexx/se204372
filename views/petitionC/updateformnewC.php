@@ -593,7 +593,7 @@ body {
                         if($petionCnewList->room_p == "Have"){
                             echo "มีที่พัก";
                         }
-                        else if($petionCnewList->room_p== "Dont Have"){
+                        else if($petionCnewList->room_p== "Don't Have"){
                             echo "ไม่มีที่พัก";
                         }
                     ?>
@@ -632,7 +632,7 @@ body {
             </table>
         
     <input type="hidden" name="controller" value="petitionC"/>
-    <input type="hidden" name="petitionid" value="<?php echo $petionCnewList->petition_id;?>"/>
+    <input type="hidden" name="petition_id" value="<?php echo $petionCnewList->petition_id;?>"/>
     <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
     <button type="submit" name="action" value="updatenewC"> อนุมัติ </button> 
     <button type="submit" name="action" value="updateformnewNoC"> ไม่อนุมัติ </button> 

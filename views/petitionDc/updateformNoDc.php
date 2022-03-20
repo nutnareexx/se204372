@@ -611,9 +611,9 @@ body {
     <!-- <input type="hidden" name="status_id" value="<?php echo $status_id;?>"/> -->
     
     <button type="submit" name="action" value="update"> อนุมัติ </button>
-    <button type="submit" name="action" value="NoupForm"> ไม่มีอนุมัติ </button>
+    <button type="submit" name="action" value="NoupForm2"> ไม่อนุมัติ </button>
     <br><br>
-    <button type="submit" name="action" value="updateformNodc"> กลับ </button>
+    <button type="submit" name="action" value="index"> กลับ </button>
 
 </div>
 

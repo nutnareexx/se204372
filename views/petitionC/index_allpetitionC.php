@@ -575,16 +575,17 @@ body {
                     <th align="right">ค่าตอบแทน :</th>
                     <td><?php echo "$petionCList->salary_p";?></td>
                 </tr>
-                <th align="right"><label>ที่พัก : </label></th>
-                    <td><?php 
-                        if($petionCList->room_p == "Have"){
-                            echo "มีที่พัก";
-                        }
-                        else if($petionCList->room_p== "Dont Have"){
-                            echo "ไม่มีที่พัก";
-                        }
-                    ?>
-                    </td>
+                <tr>
+                    <th align="right"><label>ที่พัก : </label></th>
+                        <td><?php 
+                            if($petionCList->room_p == "Have"){
+                                echo "มีที่พัก";
+                            }
+                            else if($petionCList->room_p== "Dont Have"){
+                                echo "ไม่มีที่พัก";
+                            }
+                        ?>
+                        </td>
                 </tr>
                 
                 <tr>

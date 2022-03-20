@@ -631,7 +631,7 @@ body {
             </table>
         
     <input type="hidden" name="controller" value="petitionC"/>
-    <input type="hidden" name="petitionid" value="<?php echo $petionCList->petition_id;?>"/>
+    <input type="hidden" name="petition_id" value="<?php echo $petition_id;?>"/>
     <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
     <button type="submit" name="action" value="updateC"> อนุมัติ </button>
     <button type="submit" name="action" value="updateformNoC"> ไม่อนุมัติ </button>
