@@ -540,17 +540,14 @@ body {
     <div class="row">
         <div class="leftcolumn">
             <div class="card2">
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
+                        <?php
+                        foreach($fList as $f){
+                        echo "<image src='annoucement/$f->fname' style='width:50%'>";
+                        echo "<br>";
+                        }
+                        ?>
+                        <br>
+            
             </div>
         </div>
         <div class="rightcolumn">
