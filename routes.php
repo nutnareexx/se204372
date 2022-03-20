@@ -141,7 +141,7 @@ function call($controller,$action){
                             break; 
 
         case "uploadAj":    require_once("models/userModel.php");
-                            require_once("models/fileModel.php;");
+                            require_once("models/fileModel.php");
                             $controller = new uploadAjController();
                             break; 
                         
