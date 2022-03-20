@@ -428,7 +428,15 @@ tr:nth-child(even){background-color: #f2f2f2}
             
             <div class="name-job">
                 <div class="profile_name">
-                <?php echo $userList->user_name;?> <?php echo $userList->user_surname;?>
+                <?php 
+                if($userid !="x"){
+                    echo $userList->user_name;?> <?php echo $userList->user_surname;
+                }
+                else{
+                    echo "<a href=#>";
+                }
+                ?>
+                
                 </div>
             </div>   
             <a href="?controller=user&action=logoutNisit&userid=<?php echo $userid;?>">          
