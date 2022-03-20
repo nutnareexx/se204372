@@ -328,13 +328,13 @@ body {
             <span class="logo_name">KASETSART UNIVERSITY</span>
         </div>
     <dl class="nav-links">
-        <li>
-            <a href="?controller=Aj&action=index">
+    <li>
+            <a href="?controller=Aj&action=index&userid=<?php echo $userid;?>">
             <i class='bx bx-home'></i>
                 <span class="link_name">หน้าแรก</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=Aj&action=index">หน้าแรก</a></li>
+                <li><a class="link_name" href="?controller=Aj&action=index&userid=<?php echo $userid;?>">หน้าแรก</a></li>
             </ul>
         </li>
         <li>
@@ -347,8 +347,8 @@ body {
             </div>
             <ul class="sub-menu">
                 <li><a class="link_name" href="#">สถานประกอบการณ์</a></li>
-                <li><a href="?controller=companyP&action=indexP">ฝึกงาน</a></li>
-                <li><a href="?controller=cooperativeP&action=index">สหกิจ</a></li>
+                <li><a href="?controller=companyP&action=indexP&userid=<?php echo $userid;?>">ฝึกงาน</a></li>
+                <li><a href="?controller=cooperativeP&action=index&userid=<?php echo $userid;?>">สหกิจ</a></li>
             </ul>
         </li>
         <li>
@@ -361,63 +361,63 @@ body {
             </div>
             <ul class="sub-menu">
                 <li><a class="link_name" href="#">ตรวจสอบคำร้อง</a></li>
-                <li><a href="?controller=petitionDC&action=index">ฝึกงาน</a></li>
-                <li><a href="?controller=petitionC&action=indexC">สหกิจ</a></li>
+                <li><a href="?controller=petitionDC&action=index&userid=<?php echo $userid;?>">ฝึกงาน</a></li>
+                <li><a href="?controller=petitionC&action=indexC&userid=<?php echo $userid;?>">สหกิจ</a></li>
             </ul>
         </li>
         
         <li>
-            <a href="?controller=considerAj&action=index">
+            <a href="?controller=considerAj&action=index&userid=<?php echo $userid;?>">
                 <i class='bx bx-file'></i>
                 <span class="link_name">พิจาราณาคำร้องขอฝึกงาน</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">พิจาราณาคำร้องขอฝึกงาน</a></li>
+                <li><a class="link_name" href="?controller=considerAj&action=index&userid=<?php echo $userid;?>">พิจาราณาคำร้องขอฝึกงาน</a></li>
             </ul>
         </li>
         <li>
-            <a href="?controller=graphAj&action=index">
+            <a href="?controller=graphAj&action=index&userid=<?php echo $userid;?>">
                 <i class='bx bx-line-chart' ></i>
                 <span class="link_name">สถานการณ์ยื่นคำร้องนิสิต</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">สถานการณ์ยื่นคำร้องนิสิต</a></li>
+                <li><a class="link_name" href="?controller=graphAj&action=index&userid=<?php echo $userid;?>">สถานการณ์ยื่นคำร้องนิสิต</a></li>
             </ul>
         </li>
         <li>
-            <a href="?controller=reportPetition&action=index">
+            <a href="?controller=reportPetition&action=index&userid=<?php echo $userid;?>">
                 <i class='bx bx-file-blank' ></i>
                 <span class="link_name">รายงานสรุปการอนุมัติฝึกงาน</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">รายงานสรุปการอนุมัติฝึกงาน</a></li>
+                <li><a class="link_name" href="?controller=reportPetition&action=index&userid=<?php echo $userid;?>">รายงานสรุปการอนุมัติฝึกงาน</a></li>
             </ul>
         </li>
         <li>
-            <a href="?controller=bookAj&action=index">
+            <a href="?controller=bookAj&action=index&userid=<?php echo $userid;?>">
                 <i class='bx bx-book' ></i>
                 <span class="link_name">ออกหนังสือขอความอนุเคราะห์</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">ออกหนังสือขอความอนุเคราะห์</a></li>
+                <li><a class="link_name" href="?controller=bookAj&action=index&userid=<?php echo $userid;?>">ออกหนังสือขอความอนุเคราะห์</a></li>
             </ul>
         </li>
         <li>
-            <a href="?controller=checkHistory&action=index">
+            <a href="?controller=checkHistory&action=index&userid=<?php echo $userid;?>">
                 <i class='bx bx-notepad'></i>
                 <span class="link_name">ตรวจสอบประวัติการฝึกงาน</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">ตรวจสอบประวัติการฝึกงาน</a></li>
+                <li><a class="link_name" href="?controller=checkHistory&action=index&userid=<?php echo $userid;?>">ตรวจสอบประวัติการฝึกงาน</a></li>
             </ul>
         </li>
         <li>
-            <a href="?controller=uploadAj&action=index">
+            <a href="?controller=uploadAj&action=index&userid=<?php echo $userid;?>">
                 <i class='bx bx-upload'></i>
                 <span class="link_name">อัพโหลดประกาศ</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">อัพโหลดประกาศ</a></li>
+                <li><a class="link_name" href="?controller=uploadAj&action=index&userid=<?php echo $userid;?>">อัพโหลดประกาศ</a></li>
             </ul>
         </li>
         <li> 
@@ -427,9 +427,11 @@ body {
         </div>
             
             <div class="name-job">
-                <div class="profile_name">Name</div>
+                <div class="profile_name">
+                    <?php echo $userList->user_name;?> <?php echo $userList->user_surname;?>
+                </div>
             </div>   
-            <a href="?controller=user&action=logoutAj">          
+            <a href="?controller=user&action=logoutAj&userid=<?php echo $userid;?>">          
                 <i class='bx bx-log-out '></i>
             </a>
     </div>
