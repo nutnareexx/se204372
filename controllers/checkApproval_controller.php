@@ -9,11 +9,13 @@ class checkApprovalController
 
         $checkList = checkApprovalModel::getdc($userid);
         $checkCList = checkApprovalModel::getc($userid);
+        $checkDCNameList = checkApprovalModel::getdcName($userid);
+        $checkCNameList = checkApprovalModel::getcName($userid);
         $nametitleList = nametitleModel::getAll();
         $uList = userModel::getAll();
         $DetailCompanyList = DetailCompanyModel::getAll();
         $statusList = statusModel::getAll();
-        $ApproveList = approveModel::getAll();
+        $approveList = approveModel::getAll();
         require_once('views/checkApproval/index_checkApproval.php');
     }
 
