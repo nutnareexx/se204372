@@ -601,7 +601,7 @@
                 if($company == "old"){
                     echo "<select name='company_id'>
                     <option value=''>--เลือก--</option>";
-                    foreach($comList as $c){
+                    foreach($cList as $c){
                         echo "<option value=$c->c_id>$c->c_name</option>";
                     }
                     "</select>";
