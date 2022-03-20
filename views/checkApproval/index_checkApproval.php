@@ -526,7 +526,7 @@ th, td {
        echo "
        <div class='card'>
             <div class='card2'>
-                <h3>ฝึกงาน</h3>
+                <h3>สหกิจ</h3>
             </div>
         <table align='center'>
         <tr>
@@ -566,7 +566,7 @@ th, td {
        echo "
        <div class='card'>
             <div class='card2'>
-                <h3>สหกิจ</h3>
+                <h3>ฝึกงาน</h3>
             </div>
         <table align='center'>
         <tr>
