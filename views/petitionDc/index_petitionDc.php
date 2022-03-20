@@ -332,9 +332,15 @@ table {
     font-family: 'Prompt', sans-serif;
     border-collapse: collapse;
     width: 100%;
+    border-color: white;
 }
 
-th, td {
+th
+{
+    text-align: center;
+    padding: 8px;
+}
+ td {
     text-align: left;
     padding: 8px;
 }
@@ -637,15 +643,15 @@ span.psw {
 </form>
 
 
-<table>
+<table border="1">
     <tr>
-        <td><b>ลำดับที่</td>
-        <td><b>รหัสนิสิต</td>
-        <td><b>ชื่อ-นามสกุล</td>
-        <td><b>ชื่อสถานประกอบการฝึกงานที่ภาควิชามีอยู่</td>
-        <td><b>รายละเอียดการฝึกงาน</td>
-        <td><b>อนุมัติ</td>
-        <td><b>ไม่อนุมัติ</td>
+        <th>ลำดับที่</th>
+        <th>รหัสนิสิต</th>
+        <th>ชื่อ-นามสกุล</th>
+        <th>ชื่อสถานประกอบการฝึกงานที่ภาควิชามีอยู่</th>
+        <th>รายละเอียดการฝึกงาน</th>
+        <th>สถานะ</th>
+
     </tr>
 </section>
 
@@ -678,54 +684,58 @@ sidebarBtn.addEventListener("click", ()=>{
     <td>$dclist->user_id</td>
     <td>$dclist->name_title$dclist->user_name $dclist->user_surname</td>
     <td>$dclist->dc_name</td>
-    <td><a href=?controller=petitionDC&action=indexDetail&petition_id=$dclist->petition_id&userid=$userid>รายละเอียด</td>   
-    <td> <a href=?controller=petitionDC&action=update&petition_id=$dclist->petition_id&userid=$userid> อนุมัติ </a> </td>
-    <td> <a href=?controller=petitionDC&action=update&petition_id=$dclist->petition_id&userid=$userid> ไม่อนุมัติ </a>
+    <td><a href=?controller=petitionDC&action=indexDetail&petition_id=$dclist->petition_id&userid=$userid>รายละเอียดเพิ่มเติม</td>   
+    <td> <a href=?controller=petitionDC&action=updateform&petition_id=$dclist->petition_id&userid=$userid> $dclist->status_name </a> </td>
     </td></tr>";
 }
 
+
 foreach( $pelist as $p)
 {
+
+
     echo "<tr> <td>$p->petition_id</td>
     <td>$p->user_id</td>
     <td>$p->name_title$p->user_name $p->user_surname</td>
     <td>$p->comName_p</td>
-    <td><a href=?controller=petitionDC&action=indexDetailNoDc&petition_id=$p->petition_id&userid=$userid>รายละเอียด</td>   
-    <td> <a href=?controller=petitionDC&action=updateform&petition_id=$p->petition_id&userid=$userid> อนุมัติ </a> </td>
-    <td> <a href=?controller=petitionDC&action=deleteconfirm&petition_id=$p->petition_id&userid=$userid> ไม่อนุมัติ </a>
+    <td><a href=?controller=petitionDC&action=indexDetailNoDc&petition_id=$p->petition_id&userid=$userid> รายละเอียดเพิ่มเติม </td>  
+    <td> <a href=?controller=petitionDC&action=updateformNodc&petition_id=$p->petition_id&userid=$userid> $p->status_name </td>
+
     </td></tr>";
 }
 echo "</table>";
+
  ?>
  
-        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+ <!-- <?php echo "<a href='?controller=petitionDC&action=updateformNodc&petition_id=$p->petition_id&userid=$userid' class='button' role='button'>" ?>
+ <button class="button" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button> -->
 
     <div id="id01" class="modal">
-<!-- <div class="button3">     -->
-        <form class="modal-content animate" action="" method="get">
+        
+
+      <form class="modal-content animate" action="" method="get">
             <div class="imgcontainer">
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
             </div>
         
             <div class="container">
            
-            
-            <input type="hidden" name="controller" value="petitionDC"/>
-            <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
-            <input type="hidden" name="petition_id" value="<?php echo $petition_id;?>"/>
-            <input type="hidden" name="status_id" value="<?php echo $status_id;?>"/>
-            <div class="btn-group2">
+                <input type="hidden" name="controller" value="petitionDC"/>
+                <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
+                <input type="hidden" name="petition_id" value="<?php echo $petition_id;?>"/>
+                <input type="hidden" name="status_id" value="<?php echo $status_id;?>"/>
+                <div class="btn-group2">
 
                 <button class = "button2" type="submit" name="action" value="index">กลับ</button>
                 <button class = "button2" type="submit" name="action" value="update">อนุมัติ</button>
-            </div>
-            
                 </div>
+            
+            </div>
 
         </form>
-    </div>
+    </div> 
 
- <!-- </div> -->
+
 
 <script>
 // Get the modal
@@ -736,6 +746,10 @@ window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
+}
+
+function box(p){
+    document.write(p);
 }
 </script>
 
