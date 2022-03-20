@@ -346,6 +346,43 @@ th, td {
 
 tr:nth-child(odd){background-color: #cae3cc}
 tr:nth-child(even){background-color: #f2f2f2}
+
+.btn-group2 .button2 {
+            font-family: 'Prompt', sans-serif;
+            position: relative;
+             background-color: #73c088 ; /*Green */
+            border: 1px black;
+            color: white;
+            padding: 7px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block; 
+            font-size: 16px;
+            cursor: pointer;
+            /* float: center; */
+            border-radius: 50px;
+        }
+
+        .btn-group2 .button2:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+
+        .btn-group2 .button2:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        input[type=text], select {
+            font-family: 'Prompt', sans-serif;
+            width: 50%;
+            padding: 5px 5px;
+            margin: 8px 0;
+            font-size: 16px;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 50px;
+            box-sizing: border-box;
+        }
 </style>
 
 
@@ -481,12 +518,13 @@ tr:nth-child(even){background-color: #f2f2f2}
  </div>
  
  <form method="get" action="">
+ <div class="btn-group2">
      
      <input type="text" name="key">
      <input type="hidden" name="controller" value="petitionC"/>
      <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
-     <button type="submit" name="action" value="searchC"><i class='fas fa-search' style='font-size: 22px'></i></button>
- 
+     <button class="button2" type="submit" name="action" value="searchC"><i class='fas fa-search' style='font-size: 22px'></i></button>
+ </div>
  </form>
  
  
