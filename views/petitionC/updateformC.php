@@ -499,17 +499,14 @@ body {
  </div>
  <div class="header">
      
-     <h2>แก้ไขคำร้องสหกิจ</h2>
+     <h2>การอนุมัติเอกสารยื่นคำร้องสหกิจ</h2>
  </div>
 
  <center>
      <div class="card" align='center'>
 <form method="get" action="">
 <table>
-                <tr>
-                    <th align="right">ลำดับที่ :</th>
-                    <td><?php echo "$petionCList->petition_id";?></td> 
-                </tr>
+                
                 <tr>
                     <th align="right">รหัสนิสิต :</th>
                     <td><?php echo "$petionCList->user_id";?></td>
@@ -590,9 +587,16 @@ body {
                     <th align="right">ค่าตอบแทน :</th>
                     <td><?php echo "$petionCList->salary_p";?></td>
                 </tr>
-                <tr>
-                    <th align="right">ที่พัก :</th>
-                    <td><?php echo "$petionCList->room_p";?></td>
+                <th align="right"><label>ที่พัก : </label></th>
+                    <td><?php 
+                        if($petionCList->room_p == "Have"){
+                            echo "มีที่พัก";
+                        }
+                        else if($petionCList->room_p== "Dont Have"){
+                            echo "ไม่มีที่พัก";
+                        }
+                    ?>
+                    </td>
                 </tr>
                 <tr>
                     <th align="right">เริ่มฝึกงาน :</th>
