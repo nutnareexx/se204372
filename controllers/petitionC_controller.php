@@ -42,12 +42,36 @@ class petitionCController
 
     }
 
+   
+
+    public function updateformNoC()
+    {
+        $userid = $_GET['userid'];
+        $c = $_GET['petitionid'];
+        $petionCList = petitionCModel::get($c);
+        $statusList = statusModel::getAll();
+        $userList = userModel::get($userid);
+        $appove = approveModel::getAll();
+        petitionCModel::updateNo($c);
+        require_once('views/petitionC/updateformNoC.php');
+
+    }
+
     public function updateC()
     {
         $userid = $_GET['userid'];
         $petition_id = $_GET['petitionid'];
-        $status_id = $_GET['status_id'];
-        petitionCModel::update( $petition_id, $status_id);
+        //$status_id = $_GET['status_id'];
+        petitionCModel::update($petition_id);
+        petitionCController::indexC();
+    }
+
+    public function updateNoC()
+    {
+        $userid = $_GET['userid'];
+        $petition_id = $_GET['petitionid'];
+        //$status_id = $_GET['status_id'];
+        petitionCModel::updateNo($petition_id);
         petitionCController::indexC();
     }
 
