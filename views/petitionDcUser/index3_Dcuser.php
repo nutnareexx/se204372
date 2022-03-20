@@ -409,6 +409,17 @@
                 box-sizing: border-box;
             
             }
+        input[type=file], select {
+                font-family: 'Prompt', sans-serif;
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 50px;
+                box-sizing: border-box;
+            
+            }
     </style>
 
 
@@ -677,14 +688,26 @@
                 <td align="right"><label>เริ่มฝึกงาน : </label></td>
                 <td>
                     <?php 
-                        echo $start;
+                        // echo $start."<br>";
+                        $year = substr($start, 0 ,4);
+                        $mont = substr($start, 5 ,2);
+                        $day = substr($start, 8 ,2);
+                        echo $day."/".$mont."/".$year;
                     ?>
                 </td>
             </tr>
 
             <tr>
                 <td align="right"><label>สิ้นสุดการฝึกงาน : </label></td>
-                <td><?php echo $finish;?></td>
+                <td>
+                    <?php 
+                        // echo $finish;
+                        $year = substr($finish, 0 ,4);
+                        $mont = substr($finish, 5 ,2);
+                        $day = substr($finish, 8 ,2);
+                        echo $day."/".$mont."/".$year;
+                    ?>
+                </td>
             </tr>
 
             <tr>
@@ -747,12 +770,12 @@
             <?php
             if($c=="cid"){
                 // $company_id = $_GET['company_id'];
-                echo "cid";
+                // echo "cid";
                 echo "<input type='hidden' name='company_id' value='$company_id'/>";
             }
             else if($c=="name"){
                 // $company_name = $_GET['dc_name'];
-                echo $company_name;
+                // echo $company_name;
                 echo "<input type='hidden' name='company_name' value='$company_name'/>";
             }
             ?>
