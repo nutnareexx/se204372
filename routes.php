@@ -1,5 +1,6 @@
 <?php
-$controllers = array('pages'=>['home','error'],'nisit'=>['index','indexHome'],
+$controllers = array('pages'=>['home','error'],
+                     'nisit'=>['index'],
                      'Aj' => ['index'],
                      'company'=>['index','newDetailCompany','addDetailCompany','search'],
                      'companyP'=>['indexP','newDetailCompanyP','addDetailCompanyP','searchP','updateformP','updateP','deleteconfirmP','deleteP'],
@@ -18,7 +19,7 @@ $controllers = array('pages'=>['home','error'],'nisit'=>['index','indexHome'],
                      'bookAj'=> ['index'],
                      'checkHistory'=> ['index'],
                      'uploadAj'=> ['index'],
-                     'user'=>['login','logoutNisit','logoutAj'],
+                     'user'=>['login','logoutNisit','logoutAj','indexHome','indexLogin'],
                      'test'=>['index']
                     );
 

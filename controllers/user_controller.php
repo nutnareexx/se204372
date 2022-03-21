@@ -57,5 +57,17 @@ class userController{
       
     }
 
+    public function indexHome()
+    {
+        
+        
+        require_once('views/hamburger/index_home.php');
+    }
+
+    public function indexLogin(){
+
+        require_once('views/login/index_login.php');
+    }
+
 }
 ?>

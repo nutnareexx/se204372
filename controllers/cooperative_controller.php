@@ -4,7 +4,9 @@ class cooperativeController
     public function index()
     {
         $userid = $_GET['userid'];
-        $userList=userModel::get($userid);
+        if($userid != "x"){
+            $userList=userModel::get($userid);
+        }
         $cooperativeList = cooperativeModel::getAll();
         require_once('views/cooperative/index_cooperative.php');
     }
@@ -12,7 +14,9 @@ class cooperativeController
     public function newCooperative()
     {
         $userid = $_GET['userid'];
-        $userList=userModel::get($userid);
+        if($userid != "x"){
+            $userList=userModel::get($userid);
+        }
         $cooperativeList = cooperativeModel::getAll();
         require_once('views/cooperative/newCooperative.php');
     
@@ -40,7 +44,9 @@ class cooperativeController
     {
         $key = $_GET['key'];
         $userid = $_GET['userid'];
-        $userList=userModel::get($userid);
+        if($userid != "x"){
+            $userList=userModel::get($userid);
+        }
         $cooperativeList = cooperativeModel::search($key);
         require_once('views/cooperative/index_cooperative.php');
     }

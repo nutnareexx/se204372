@@ -173,7 +173,7 @@ body {
     top: -10px;
     margin-top: 0;
     padding: 10px;
-    border-radius: 10px;
+    
     
     opacity: 0;
     display: block;
@@ -393,12 +393,12 @@ body {
         </div>
     <dl class="nav-links">
         <li>
-            <a href="?controller=nisit&action=indexHome">
+            <a href="?controller=nisit&action=indexHome&userid=x">
             <i class='bx bx-home'></i>
                 <span class="link_name">หน้าแรก</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=nisit&action=indexHome">หน้าแรก</a></li>
+                <li><a class="link_name" href="?controller=nisit&action=indexHome&userid=x">หน้าแรก</a></li>
             </ul>
         </li>
         <li>
@@ -412,19 +412,19 @@ body {
             <ul class="sub-menu">
                 <li><a class="link_name" href="#">สถานประกอบการณ์</a></li>
                 <li><a href="?controller=company&action=index&userid=x">ฝึกงาน</a></li>
-                <li><a href="?controller=cooperative&action=index">สหกิจ</a></li>
+                <li><a href="?controller=cooperative&action=index&userid=x">สหกิจ</a></li>
             </ul>
         </li>
         <li> 
     <div class="profile-details">
         <div class="profile-content">
-            <a href= "?controller=pages&action=home">
+            <a href= "?controller=user&action=indexLogin">
             <i class='bx bx-log-in'></i>
                 <span class="link_name">Login</span>
             </a>
         </div>
         <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=pages&action=home">Login</a></li>
+                <li><a class="link_name" href="?controller=user&action=indexLogin">Login</a></li>
             </ul>
             
             
@@ -442,9 +442,7 @@ body {
     <div class="home-content">
         <i class='bx bx-menu'></i>
             <span class="text">ระบบบริหารจัดการการฝึกงานแบบออนไลน์</span>
-        <a href="?controller=pages&action=home">
-        <i class='bx bx-log-in'></i>
-        </a>
+        
     
     </div>
 
@@ -461,7 +459,7 @@ body {
 
         <div class="column">
             <div class="card">
-                <a href="?controller=cooperative&action=index">ข้อมูลสถานประกอบการณ์สหกิจ</a>    
+                <a href="?controller=cooperative&action=index&userid=x">ข้อมูลสถานประกอบการณ์สหกิจ</a>    
             </div>
         </div>
     </div>
