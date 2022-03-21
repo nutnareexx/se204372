@@ -396,7 +396,7 @@ tr:nth-child(even){background-color: #f2f2f2}
         </div>
     <dl class="nav-links">
     <li>
-            <a href="?controller=nisit&action=index&userid=<?php echo $userid;?>">
+            <a href="?controller=Aj&action=index&userid=<?php echo $userid;?>">
             <i class='bx bx-home'></i>
                 <span class="link_name">หน้าแรก</span>
             </a>
