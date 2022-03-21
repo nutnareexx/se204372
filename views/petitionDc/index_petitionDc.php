@@ -694,8 +694,8 @@ sidebarBtn.addEventListener("click", ()=>{
     <h2>สถานประกอบการฝึกงานที่มีอยู่</h2>
 
 <table border="1">
-    <form method="get" action="">
-        <div class="btn-group">
+    <!-- <form method="get" action="">
+        <div class="btn-group"> -->
             
             <tr>
             <th><?php echo "<a href=?controller=petitionDC&action=upY&userid=$userid>
