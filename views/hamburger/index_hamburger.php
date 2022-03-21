@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
   
         <link rel ="stylesheet" >
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -373,6 +374,17 @@ body {
     text-decoration: none;
 }
 
+.card3 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 25px;
+  text-align: center;
+  background-color: #f1f1f1;
+  border-radius: 25px;
+  font-size: 25px;
+  width: 100%;
+  height: 650px;
+}
+
 
 
 
@@ -479,9 +491,22 @@ body {
     
     </div>
 
-    <div class="card1">
-        <b>ประกาศ</b>    
     </div>
+    <br>
+    <div class="card3">
+        <div class="w3-content w3-display-container">
+            <?php foreach($fList as $f){
+                echo "<div class='w3-display-container mySlides'>
+                            <image src='annoucement/$f->fname' style='width:45%'>
+                      </div>";
+            }?>
+        </div> 
+
+        <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+
+    </div>
+
 
     <div class="row">
         <div class="column">
@@ -517,7 +542,29 @@ sidebarBtn.addEventListener("click", ()=>{
     sidebar.classList.toggle("close");
 });
 
+
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+
+
 </script>
+
+
 
 
 </body>
