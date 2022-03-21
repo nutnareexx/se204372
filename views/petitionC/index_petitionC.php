@@ -530,7 +530,8 @@ tr:nth-child(even){background-color: #f2f2f2}
  
  <table align="center"> 
      <tr>
-         <td><b>ลำดับที่</td>
+         <td><b>ปีการศึกษา</td>
+         <td><b>วันที่ส่งคำร้อง</td>
          <td><b>รหัสนิสิต</td>
          <td><b>ชื่อ-นามสกุล</td>
          <td><b>ชื่อสถานประกอบการสหกิจ</td>
@@ -572,7 +573,8 @@ sidebarBtn.addEventListener("click", ()=>{
 <?php 
 foreach( $petionCList as $clist)
 {
-    echo "<tr> <td>$clist->petition_id</td>
+    echo "<tr> <td>$clist->academicY_p</td>
+    <td>$clist->date_p</td>
     <td>$clist->user_id</td>
     <td>$clist->name_title$clist->user_name $clist->user_surname</td> 
     <td>$clist->c_name</td>  
@@ -583,7 +585,8 @@ foreach( $petionCList as $clist)
 
 foreach( $petionCnewList as $clistnew)
 {
-    echo "<tr> <td>$clistnew->petition_id</td>
+    echo "<tr> <td>$clistnew->academicY_p</td>
+    <td>$clistnew->date_p</td>
     <td>$clistnew->user_id</td>
     <td>$clistnew->name_title$clistnew->user_name $clistnew->user_surname</td> 
     <td>$clistnew->comName_p</td>  
