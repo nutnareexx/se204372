@@ -97,7 +97,7 @@ class petitionCController
        
         $userid = $_GET['userid'];
         $petition_id = $_GET['petition_id'];
-        $petionCList = petitionnewCModel::getnew($petition_id);
+        $petionCnewList = petitionnewCModel::getnew($petition_id);
         $statusList = statusModel::getAll();
         $userList = userModel::get($userid);
         $appove = approveModel::getAll();
