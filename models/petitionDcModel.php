@@ -256,18 +256,17 @@ class petitionDcModel{
         p.FB_p, p.phone_p, p.position_p, p.approverName_p, p.approverSname_p, p.approverP_p, p.dc_id, dc.dc_name, p.compNo_p, p.compNo_p, p.compRoad_p, 
         p.compSubdist_p, p.compDistrict_p, p.compProvince_p, p.compPost_p, p.hrName_p, p.hrSname_p, p.hrPhone_p, p.hrMail_p, p.salary_p, p.room_p, 
         p.type_p, DATE_FORMAT(p.start_p,'%d/%m/%Y') AS stp, DATE_FORMAT(p.finish_p,'%d/%m/%Y') AS fip, p.status_id, s.status_name, p.approve_id FROM `petition` AS p 
-        NATURAL JOIN `user` AS u NATURAL JOIN `name_title` AS nt NATURAL JOIN `status` AS s NATURAL JOIN `detail_company` AS dc; 
+        NATURAL JOIN `user` AS u NATURAL JOIN `name_title` AS nt NATURAL JOIN `status` AS s NATURAL JOIN `detail_company` AS dc
                      
-        WHERE (petition_id like '%$key%' or date_p like '%$key%' 
-                    or user_id like '%$key%' or academicY_p like '%$key%' or FB_p like '%$key%' or phone_p like '%$key%' or position_p like '%$key%'
-                    or approverName_p like '%$key%' or approverSname_p like '%$key%' or approverP_p like '%$key%' or dc_id like '%$key%'
-                    or c_id like '%$key%'or comName_p like '%$key%' or compNo_p like '%$key%' or compRoad_p like '%$key%' 
-                    or compSubdist_p like '%$key%' or compDistrict_p like '%$key%' or compProvince_p like '%$key%' or compPost_p like '%$key%'
-                    or hrName_p like '%$key%' or hrSname_p like '%$key%' or hrPhone_p like '%$key%' or hrMail_p like '%$key%'
-                    or salary_p like '%$key%' or room_p like '%$key%' or type_p like '%$key%' or start_p like '%$key%' or finish_p like '%$key%'
-                    or status_id like '%$key%' or name_title like '%$key%' or user_name like '%$key%' or user_surname like '%$key%'
-                    or status_name like '%$key%' or dc_name like '%$key%' or approve_id like '%$key%')
-                    ORDER BY petition_id";
+        WHERE (p.petition_id like '%$key%' or p.date_p like '%$key%' or p.user_id like '%$key%' or p.academicY_p like '%$key%' or p.FB_p like '%$key%' 
+        or p.phone_p like '%$key%' or p.position_p like '%$key%' or p.approverName_p like '%$key%' or p.approverSname_p like '%$key%' 
+        or p.approverP_p like '%$key%' or p.dc_id like '%$key%' or p.compNo_p like '%$key%' or p.compRoad_p like '%$key%' 
+        or p.compSubdist_p like '%$key%' or p.compDistrict_p like '%$key%' or p.compProvince_p like '%$key%' or p.compPost_p like '%$key%'
+        or p.hrName_p like '%$key%' or p.hrSname_p like '%$key%' or p.hrPhone_p like '%$key%' or p.hrMail_p like '%$key%'
+        or p.salary_p like '%$key%' or p.room_p like '%$key%' or p.type_p like '%$key%' or p.start_p like '%$key%' or p.finish_p like '%$key%'
+        or p.status_id like '%$key%' or nt.name_title like '%$key%' or u.user_name like '%$key%' or u.user_surname like '%$key%'
+        or s.status_name like '%$key%' or dc.dc_name like '%$key%' or p.approve_id like '%$key%')
+        ORDER BY p.petition_id";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
@@ -314,9 +313,353 @@ class petitionDcModel{
         return $petionDcList;
     }
 
+    public static function getAllupY()
+    {
+        $petionDcList = [];
+        require("connection_connect.php");
+        $sql = "SELECT p.petition_id, DATE_FORMAT(p.date_p,'%d/%m/%Y') AS dt, p.academicY_p, p.user_id, nt.name_title, u.user_name, u.user_surname, 
+        p.FB_p, p.phone_p, p.position_p, p.approverName_p, p.approverSname_p, p.approverP_p, p.dc_id, dc.dc_name, p.compNo_p, p.compNo_p, 
+        p.compRoad_p, p.compSubdist_p, p.compDistrict_p, p.compProvince_p, p.compPost_p, p.hrName_p, p.hrSname_p, p.hrPhone_p, p.hrMail_p, 
+        p.salary_p, p.room_p, p.type_p, DATE_FORMAT(p.start_p,'%d/%m/%Y') AS stp, DATE_FORMAT(p.finish_p,'%d/%m/%Y') AS fip, p.status_id, s.status_name, 
+        p.approve_id FROM `petition` AS p NATURAL JOIN `user` AS u NATURAL JOIN `name_title` AS nt NATURAL JOIN `status` AS s 
+        NATURAL JOIN `detail_company` AS dc
+        ORDER BY p.academicY_p ASC;";
+        $result = $conn->query($sql);
+        while($my_row = $result->fetch_assoc())
+        {
+            $petition_id = $my_row['petition_id'];
+            $date_p = $my_row['dt'];
+            $user_id = $my_row['user_id'];
+            $FB_p = $my_row['FB_p'];
+            $phone_p = $my_row['phone_p'];
+            $position_p = $my_row['position_p'];
+            $approverName_p = $my_row['approverName_p'];
+            $approverSname_p = $my_row['approverSname_p'];
+            $approverP_p = $my_row['approverP_p'];
+            $dc_id = $my_row['dc_id']; 
+            $compNo_p = $my_row['compNo_p']; 
+            $compRoad_p = $my_row['compRoad_p']; 
+            $compSubdist_p = $my_row['compSubdist_p']; 
+            $compDistrict_p = $my_row['compDistrict_p'];
+            $compProvince_p = $my_row['compProvince_p']; 
+            $compPost_p = $my_row['compPost_p']; 
+            $hrName_p = $my_row['hrName_p']; 
+            $hrSname_p = $my_row['hrSname_p']; 
+            $hrPhone_p = $my_row['hrPhone_p']; 
+            $hrMail_p = $my_row['hrMail_p']; 
+            $salary_p = $my_row['salary_p']; 
+            $room_p = $my_row['room_p'];
+            $type_p = $my_row['type_p']; 
+            $start_p = $my_row['stp'];
+            $finish_p = $my_row['fip'];    
+            $status_id = $my_row['status_id'];
 
+            $name_title = $my_row['name_title'];
+            $user_name = $my_row['user_name'];
+            $user_surname = $my_row['user_surname'];
+            $status_name = $my_row['status_name'];
+            $dc_name = $my_row['dc_name'];
+            $approve_id = $my_row['approve_id'];
+            $academicY_p = $my_row['academicY_p'];
+            $petionDcList[] = new petitionDcModel($petition_id, $date_p,$user_id, $FB_p, $phone_p, $position_p, $approverName_p, $approverSname_p, $approverP_p,
+            $dc_id, $compNo_p, $compRoad_p, $compSubdist_p, $compDistrict_p, $compProvince_p, $compPost_p, $hrName_p, $hrSname_p,
+            $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, $dc_name,$approve_id,$academicY_p);
+
+        }
+        require("connection_close.php");
+        return $petionDcList;
+
+    }
+
+    public static function getAlldownY()
+    {
+        $petionDcList = [];
+        require("connection_connect.php");
+        $sql = "SELECT p.petition_id, DATE_FORMAT(p.date_p,'%d/%m/%Y') AS dt, p.academicY_p, p.user_id, nt.name_title, u.user_name, u.user_surname, 
+        p.FB_p, p.phone_p, p.position_p, p.approverName_p, p.approverSname_p, p.approverP_p, p.dc_id, dc.dc_name, p.compNo_p, p.compNo_p, 
+        p.compRoad_p, p.compSubdist_p, p.compDistrict_p, p.compProvince_p, p.compPost_p, p.hrName_p, p.hrSname_p, p.hrPhone_p, p.hrMail_p, 
+        p.salary_p, p.room_p, p.type_p, DATE_FORMAT(p.start_p,'%d/%m/%Y') AS stp, DATE_FORMAT(p.finish_p,'%d/%m/%Y') AS fip, p.status_id, s.status_name, 
+        p.approve_id FROM `petition` AS p NATURAL JOIN `user` AS u NATURAL JOIN `name_title` AS nt NATURAL JOIN `status` AS s 
+        NATURAL JOIN `detail_company` AS dc
+        ORDER BY p.academicY_p DESC;";
+        $result = $conn->query($sql);
+        while($my_row = $result->fetch_assoc())
+        {
+            $petition_id = $my_row['petition_id'];
+            $date_p = $my_row['dt'];
+            $user_id = $my_row['user_id'];
+            $FB_p = $my_row['FB_p'];
+            $phone_p = $my_row['phone_p'];
+            $position_p = $my_row['position_p'];
+            $approverName_p = $my_row['approverName_p'];
+            $approverSname_p = $my_row['approverSname_p'];
+            $approverP_p = $my_row['approverP_p'];
+            $dc_id = $my_row['dc_id']; 
+            $compNo_p = $my_row['compNo_p']; 
+            $compRoad_p = $my_row['compRoad_p']; 
+            $compSubdist_p = $my_row['compSubdist_p']; 
+            $compDistrict_p = $my_row['compDistrict_p'];
+            $compProvince_p = $my_row['compProvince_p']; 
+            $compPost_p = $my_row['compPost_p']; 
+            $hrName_p = $my_row['hrName_p']; 
+            $hrSname_p = $my_row['hrSname_p']; 
+            $hrPhone_p = $my_row['hrPhone_p']; 
+            $hrMail_p = $my_row['hrMail_p']; 
+            $salary_p = $my_row['salary_p']; 
+            $room_p = $my_row['room_p'];
+            $type_p = $my_row['type_p']; 
+            $start_p = $my_row['stp'];
+            $finish_p = $my_row['fip'];    
+            $status_id = $my_row['status_id'];
+
+            $name_title = $my_row['name_title'];
+            $user_name = $my_row['user_name'];
+            $user_surname = $my_row['user_surname'];
+            $status_name = $my_row['status_name'];
+            $dc_name = $my_row['dc_name'];
+            $approve_id = $my_row['approve_id'];
+            $academicY_p = $my_row['academicY_p'];
+            $petionDcList[] = new petitionDcModel($petition_id, $date_p,$user_id, $FB_p, $phone_p, $position_p, $approverName_p, $approverSname_p, $approverP_p,
+            $dc_id, $compNo_p, $compRoad_p, $compSubdist_p, $compDistrict_p, $compProvince_p, $compPost_p, $hrName_p, $hrSname_p,
+            $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, $dc_name,$approve_id,$academicY_p);
+
+        }
+        require("connection_close.php");
+        return $petionDcList;
+
+    }
     
+    public static function getAllupD()
+    {
+        $petionDcList = [];
+        require("connection_connect.php");
+        $sql = "SELECT p.petition_id, DATE_FORMAT(p.date_p,'%d/%m/%Y') AS dt, p.academicY_p, p.user_id, nt.name_title, u.user_name, u.user_surname, 
+        p.FB_p, p.phone_p, p.position_p, p.approverName_p, p.approverSname_p, p.approverP_p, p.dc_id, dc.dc_name, p.compNo_p, p.compNo_p, 
+        p.compRoad_p, p.compSubdist_p, p.compDistrict_p, p.compProvince_p, p.compPost_p, p.hrName_p, p.hrSname_p, p.hrPhone_p, p.hrMail_p, 
+        p.salary_p, p.room_p, p.type_p, DATE_FORMAT(p.start_p,'%d/%m/%Y') AS stp, DATE_FORMAT(p.finish_p,'%d/%m/%Y') AS fip, p.status_id, s.status_name, 
+        p.approve_id FROM `petition` AS p NATURAL JOIN `user` AS u NATURAL JOIN `name_title` AS nt NATURAL JOIN `status` AS s 
+        NATURAL JOIN `detail_company` AS dc
+        ORDER BY p.date_p ASC;";
+        $result = $conn->query($sql);
+        while($my_row = $result->fetch_assoc())
+        {
+            $petition_id = $my_row['petition_id'];
+            $date_p = $my_row['dt'];
+            $user_id = $my_row['user_id'];
+            $FB_p = $my_row['FB_p'];
+            $phone_p = $my_row['phone_p'];
+            $position_p = $my_row['position_p'];
+            $approverName_p = $my_row['approverName_p'];
+            $approverSname_p = $my_row['approverSname_p'];
+            $approverP_p = $my_row['approverP_p'];
+            $dc_id = $my_row['dc_id']; 
+            $compNo_p = $my_row['compNo_p']; 
+            $compRoad_p = $my_row['compRoad_p']; 
+            $compSubdist_p = $my_row['compSubdist_p']; 
+            $compDistrict_p = $my_row['compDistrict_p'];
+            $compProvince_p = $my_row['compProvince_p']; 
+            $compPost_p = $my_row['compPost_p']; 
+            $hrName_p = $my_row['hrName_p']; 
+            $hrSname_p = $my_row['hrSname_p']; 
+            $hrPhone_p = $my_row['hrPhone_p']; 
+            $hrMail_p = $my_row['hrMail_p']; 
+            $salary_p = $my_row['salary_p']; 
+            $room_p = $my_row['room_p'];
+            $type_p = $my_row['type_p']; 
+            $start_p = $my_row['stp'];
+            $finish_p = $my_row['fip'];    
+            $status_id = $my_row['status_id'];
 
+            $name_title = $my_row['name_title'];
+            $user_name = $my_row['user_name'];
+            $user_surname = $my_row['user_surname'];
+            $status_name = $my_row['status_name'];
+            $dc_name = $my_row['dc_name'];
+            $approve_id = $my_row['approve_id'];
+            $academicY_p = $my_row['academicY_p'];
+            $petionDcList[] = new petitionDcModel($petition_id, $date_p,$user_id, $FB_p, $phone_p, $position_p, $approverName_p, $approverSname_p, $approverP_p,
+            $dc_id, $compNo_p, $compRoad_p, $compSubdist_p, $compDistrict_p, $compProvince_p, $compPost_p, $hrName_p, $hrSname_p,
+            $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, $dc_name,$approve_id,$academicY_p);
+
+        }
+        require("connection_close.php");
+        return $petionDcList;
+
+    }
+
+    public static function getAlldownD()
+    {
+        $petionDcList = [];
+        require("connection_connect.php");
+        $sql = "SELECT p.petition_id, DATE_FORMAT(p.date_p,'%d/%m/%Y') AS dt, p.academicY_p, p.user_id, nt.name_title, u.user_name, u.user_surname, 
+        p.FB_p, p.phone_p, p.position_p, p.approverName_p, p.approverSname_p, p.approverP_p, p.dc_id, dc.dc_name, p.compNo_p, p.compNo_p, 
+        p.compRoad_p, p.compSubdist_p, p.compDistrict_p, p.compProvince_p, p.compPost_p, p.hrName_p, p.hrSname_p, p.hrPhone_p, p.hrMail_p, 
+        p.salary_p, p.room_p, p.type_p, DATE_FORMAT(p.start_p,'%d/%m/%Y') AS stp, DATE_FORMAT(p.finish_p,'%d/%m/%Y') AS fip, p.status_id, s.status_name, 
+        p.approve_id FROM `petition` AS p NATURAL JOIN `user` AS u NATURAL JOIN `name_title` AS nt NATURAL JOIN `status` AS s 
+        NATURAL JOIN `detail_company` AS dc
+        ORDER BY p.date_p DESC;";
+        $result = $conn->query($sql);
+        while($my_row = $result->fetch_assoc())
+        {
+            $petition_id = $my_row['petition_id'];
+            $date_p = $my_row['dt'];
+            $user_id = $my_row['user_id'];
+            $FB_p = $my_row['FB_p'];
+            $phone_p = $my_row['phone_p'];
+            $position_p = $my_row['position_p'];
+            $approverName_p = $my_row['approverName_p'];
+            $approverSname_p = $my_row['approverSname_p'];
+            $approverP_p = $my_row['approverP_p'];
+            $dc_id = $my_row['dc_id']; 
+            $compNo_p = $my_row['compNo_p']; 
+            $compRoad_p = $my_row['compRoad_p']; 
+            $compSubdist_p = $my_row['compSubdist_p']; 
+            $compDistrict_p = $my_row['compDistrict_p'];
+            $compProvince_p = $my_row['compProvince_p']; 
+            $compPost_p = $my_row['compPost_p']; 
+            $hrName_p = $my_row['hrName_p']; 
+            $hrSname_p = $my_row['hrSname_p']; 
+            $hrPhone_p = $my_row['hrPhone_p']; 
+            $hrMail_p = $my_row['hrMail_p']; 
+            $salary_p = $my_row['salary_p']; 
+            $room_p = $my_row['room_p'];
+            $type_p = $my_row['type_p']; 
+            $start_p = $my_row['stp'];
+            $finish_p = $my_row['fip'];    
+            $status_id = $my_row['status_id'];
+
+            $name_title = $my_row['name_title'];
+            $user_name = $my_row['user_name'];
+            $user_surname = $my_row['user_surname'];
+            $status_name = $my_row['status_name'];
+            $dc_name = $my_row['dc_name'];
+            $approve_id = $my_row['approve_id'];
+            $academicY_p = $my_row['academicY_p'];
+            $petionDcList[] = new petitionDcModel($petition_id, $date_p,$user_id, $FB_p, $phone_p, $position_p, $approverName_p, $approverSname_p, $approverP_p,
+            $dc_id, $compNo_p, $compRoad_p, $compSubdist_p, $compDistrict_p, $compProvince_p, $compPost_p, $hrName_p, $hrSname_p,
+            $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, $dc_name,$approve_id,$academicY_p);
+
+        }
+        require("connection_close.php");
+        return $petionDcList;
+
+    }
+
+    public static function getAllupA()
+    {
+        $petionDcList = [];
+        require("connection_connect.php");
+        $sql = "SELECT p.petition_id, DATE_FORMAT(p.date_p,'%d/%m/%Y') AS dt, p.academicY_p, p.user_id, nt.name_title, u.user_name, u.user_surname, 
+        p.FB_p, p.phone_p, p.position_p, p.approverName_p, p.approverSname_p, p.approverP_p, p.dc_id, dc.dc_name, p.compNo_p, p.compNo_p, 
+        p.compRoad_p, p.compSubdist_p, p.compDistrict_p, p.compProvince_p, p.compPost_p, p.hrName_p, p.hrSname_p, p.hrPhone_p, p.hrMail_p, 
+        p.salary_p, p.room_p, p.type_p, DATE_FORMAT(p.start_p,'%d/%m/%Y') AS stp, DATE_FORMAT(p.finish_p,'%d/%m/%Y') AS fip, p.status_id, s.status_name, 
+        p.approve_id FROM `petition` AS p NATURAL JOIN `user` AS u NATURAL JOIN `name_title` AS nt NATURAL JOIN `status` AS s 
+        NATURAL JOIN `detail_company` AS dc
+        ORDER BY p.status_id ASC;";
+        $result = $conn->query($sql);
+        while($my_row = $result->fetch_assoc())
+        {
+            $petition_id = $my_row['petition_id'];
+            $date_p = $my_row['dt'];
+            $user_id = $my_row['user_id'];
+            $FB_p = $my_row['FB_p'];
+            $phone_p = $my_row['phone_p'];
+            $position_p = $my_row['position_p'];
+            $approverName_p = $my_row['approverName_p'];
+            $approverSname_p = $my_row['approverSname_p'];
+            $approverP_p = $my_row['approverP_p'];
+            $dc_id = $my_row['dc_id']; 
+            $compNo_p = $my_row['compNo_p']; 
+            $compRoad_p = $my_row['compRoad_p']; 
+            $compSubdist_p = $my_row['compSubdist_p']; 
+            $compDistrict_p = $my_row['compDistrict_p'];
+            $compProvince_p = $my_row['compProvince_p']; 
+            $compPost_p = $my_row['compPost_p']; 
+            $hrName_p = $my_row['hrName_p']; 
+            $hrSname_p = $my_row['hrSname_p']; 
+            $hrPhone_p = $my_row['hrPhone_p']; 
+            $hrMail_p = $my_row['hrMail_p']; 
+            $salary_p = $my_row['salary_p']; 
+            $room_p = $my_row['room_p'];
+            $type_p = $my_row['type_p']; 
+            $start_p = $my_row['stp'];
+            $finish_p = $my_row['fip'];    
+            $status_id = $my_row['status_id'];
+
+            $name_title = $my_row['name_title'];
+            $user_name = $my_row['user_name'];
+            $user_surname = $my_row['user_surname'];
+            $status_name = $my_row['status_name'];
+            $dc_name = $my_row['dc_name'];
+            $approve_id = $my_row['approve_id'];
+            $academicY_p = $my_row['academicY_p'];
+            $petionDcList[] = new petitionDcModel($petition_id, $date_p,$user_id, $FB_p, $phone_p, $position_p, $approverName_p, $approverSname_p, $approverP_p,
+            $dc_id, $compNo_p, $compRoad_p, $compSubdist_p, $compDistrict_p, $compProvince_p, $compPost_p, $hrName_p, $hrSname_p,
+            $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, $dc_name,$approve_id,$academicY_p);
+
+        }
+        require("connection_close.php");
+        return $petionDcList;
+
+    }
+
+    public static function getAlldownA()
+    {
+        $petionDcList = [];
+        require("connection_connect.php");
+        $sql = "SELECT p.petition_id, DATE_FORMAT(p.date_p,'%d/%m/%Y') AS dt, p.academicY_p, p.user_id, nt.name_title, u.user_name, u.user_surname, 
+        p.FB_p, p.phone_p, p.position_p, p.approverName_p, p.approverSname_p, p.approverP_p, p.dc_id, dc.dc_name, p.compNo_p, p.compNo_p, 
+        p.compRoad_p, p.compSubdist_p, p.compDistrict_p, p.compProvince_p, p.compPost_p, p.hrName_p, p.hrSname_p, p.hrPhone_p, p.hrMail_p, 
+        p.salary_p, p.room_p, p.type_p, DATE_FORMAT(p.start_p,'%d/%m/%Y') AS stp, DATE_FORMAT(p.finish_p,'%d/%m/%Y') AS fip, p.status_id, s.status_name, 
+        p.approve_id FROM `petition` AS p NATURAL JOIN `user` AS u NATURAL JOIN `name_title` AS nt NATURAL JOIN `status` AS s 
+        NATURAL JOIN `detail_company` AS dc
+        ORDER BY p.status_id DESC;";
+        $result = $conn->query($sql);
+        while($my_row = $result->fetch_assoc())
+        {
+            $petition_id = $my_row['petition_id'];
+            $date_p = $my_row['dt'];
+            $user_id = $my_row['user_id'];
+            $FB_p = $my_row['FB_p'];
+            $phone_p = $my_row['phone_p'];
+            $position_p = $my_row['position_p'];
+            $approverName_p = $my_row['approverName_p'];
+            $approverSname_p = $my_row['approverSname_p'];
+            $approverP_p = $my_row['approverP_p'];
+            $dc_id = $my_row['dc_id']; 
+            $compNo_p = $my_row['compNo_p']; 
+            $compRoad_p = $my_row['compRoad_p']; 
+            $compSubdist_p = $my_row['compSubdist_p']; 
+            $compDistrict_p = $my_row['compDistrict_p'];
+            $compProvince_p = $my_row['compProvince_p']; 
+            $compPost_p = $my_row['compPost_p']; 
+            $hrName_p = $my_row['hrName_p']; 
+            $hrSname_p = $my_row['hrSname_p']; 
+            $hrPhone_p = $my_row['hrPhone_p']; 
+            $hrMail_p = $my_row['hrMail_p']; 
+            $salary_p = $my_row['salary_p']; 
+            $room_p = $my_row['room_p'];
+            $type_p = $my_row['type_p']; 
+            $start_p = $my_row['stp'];
+            $finish_p = $my_row['fip'];    
+            $status_id = $my_row['status_id'];
+
+            $name_title = $my_row['name_title'];
+            $user_name = $my_row['user_name'];
+            $user_surname = $my_row['user_surname'];
+            $status_name = $my_row['status_name'];
+            $dc_name = $my_row['dc_name'];
+            $approve_id = $my_row['approve_id'];
+            $academicY_p = $my_row['academicY_p'];
+            $petionDcList[] = new petitionDcModel($petition_id, $date_p,$user_id, $FB_p, $phone_p, $position_p, $approverName_p, $approverSname_p, $approverP_p,
+            $dc_id, $compNo_p, $compRoad_p, $compSubdist_p, $compDistrict_p, $compProvince_p, $compPost_p, $hrName_p, $hrSname_p,
+            $hrPhone_p, $hrMail_p, $salary_p, $room_p, $type_p, $start_p, $finish_p, $status_id, $name_title, $user_name, $user_surname, $status_name, $dc_name,$approve_id,$academicY_p);
+
+        }
+        require("connection_close.php");
+        return $petionDcList;
+
+    }
 
 
 }?>
