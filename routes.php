@@ -29,15 +29,18 @@ function call($controller,$action){
     require_once("controllers/".$controller."_controller.php");
     switch($controller)
     {
-        case "pages":       $controller = new PagesController();
+        case "pages":       require_once("models/fileModel.php");
+                            $controller = new PagesController();
                             break;
 
-        case "nisit":       require_once("models/userModel.php");
+        case "nisit":       require_once("models/fileModel.php");
+                            require_once("models/userModel.php");
                             $controller = new nisitController();
                             break;
 
 
-        case "Aj":          require_once("models/userModel.php");
+        case "Aj":          require_once("models/fileModel.php");
+                            require_once("models/userModel.php");
                             $controller = new AjController();
                             break;
 
@@ -149,6 +152,7 @@ function call($controller,$action){
                             break; 
                         
         case "user":        require_once("models/userModel.php");
+                            require_once("models/fileModel.php");
                             $controller = new userController();
                             break;
         
