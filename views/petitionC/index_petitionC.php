@@ -526,6 +526,12 @@ tr:nth-child(even){background-color: #f2f2f2}
      <button class="button2" type="submit" name="action" value="searchC"><i class='fas fa-search' style='font-size: 22px'></i></button>
  </div>
  </form>
+
+ <div class="header">
+     
+     <h3>สถานประกอบการสหกิจที่ทางมหาวิทยาลัยมีอยู่แล้ว</h3>
+     
+ </div>
  
  
  <table align="center"> 
@@ -555,6 +561,14 @@ foreach( $petionCList as $clist)
 
 echo "</table><br><br>";
  ?>
+
+<div class="header">
+     
+     <h3>สถานประกอบการสหกิจใหม่</h3>
+     
+ </div>
+
+
 
 <table align="center"> 
      <tr>
