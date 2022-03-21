@@ -601,29 +601,14 @@ body {
                 </tr>
                 <tr>
                     <th align="right">เริ่มฝึกงาน :</th>
-                    <td>
-                        <?php 
-                            // echo $start."<br>";
-                            $year = substr($petionCnewList->start_p, 0 ,4);
-                            $mont = substr($petionCnewList->start_p, 5 ,2);
-                            $day = substr($petionCnewList->start_p, 8 ,2);
-                            echo $day."/".$mont."/".$year;
-                        ?>
-                    </td>
+                    <td><?php echo "$petionCnewList->start_p";?></td>
                 </tr>
-
                 <tr>
                     <th align="right">สิ้นสุดการฝึกงาน :</th>
-                    <td>
-                        <?php 
-                            // echo $finish;
-                            $year = substr($petionCnewList->finish_p, 0 ,4);
-                            $mont = substr($petionCnewList->finish_p, 5 ,2);
-                            $day = substr($petionCnewList->finish_p, 8 ,2);
-                            echo $day."/".$mont."/".$year;
-                        ?>
-                    </td>
+                    <td><?php echo "$petionCnewList->finish_p";?></td>
                 </tr>
+
+                
                 <tr>
                     <th align="right">สถานะ :</th>
                     <td><?php echo "$petionCnewList->status_name";?></td>
