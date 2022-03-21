@@ -529,20 +529,32 @@ tr:nth-child(even){background-color: #f2f2f2}
 
  <div class="header">
      
-     <h3>สถานประกอบการสหกิจที่ทางมหาวิทยาลัยมีอยู่แล้ว</h3>
+    <h2>สถานประกอบการสหกิจที่มีอยู่</h2>
      
  </div>
  
  
  <table align="center"> 
      <tr>
-         <td><b>ปีการศึกษา</td>
-         <td><b>วันที่ส่งคำร้อง</td>
-         <td><b>รหัสนิสิต</td>
-         <td><b>ชื่อ-นามสกุล</td>
-         <td><b>ชื่อสถานประกอบการสหกิจ</td>
-         <td><b>รายละเอียดสหกิจ</td>
-         <td><b>สถานะ</td>
+         <th>
+         <?php echo "<a href=?controller=petitionC&action=upY&userid=$userid>
+                <i class='fas fa-caret-up' style='font-size:24px'></i></a>" ?>
+                <?php echo "<a href=?controller=petitionC&action=downY&userid=$userid>
+                <i class='fas fa-caret-down' style='font-size:24px'></i></a>" ?>ปีการศึกษา</th>
+         <th>
+         <?php echo "<a href=?controller=petitionC&action=upD&userid=$userid>
+                <i class='fas fa-caret-up' style='font-size:24px'></i></a>" ?>
+                <?php echo "<a href=?controller=petitionC&action=downD&userid=$userid>
+                <i class='fas fa-caret-down' style='font-size:24px'></i></a>" ?>วันที่ส่งคำร้อง</th>
+         <th>รหัสนิสิต</th>
+         <th>ชื่อ-นามสกุล</th>
+         <th>ชื่อสถานประกอบการสหกิจ</th>
+         <th>รายละเอียดสหกิจ</th>
+         <th>
+         <?php echo "<a href=?controller=petitionC&action=upS&userid=$userid>
+                <i class='fas fa-caret-up' style='font-size:24px'></i></a>" ?>
+                <?php echo "<a href=?controller=petitionC&action=downS&userid=$userid>
+                <i class='fas fa-caret-down' style='font-size:24px'></i></a>" ?>สถานะ</th>
          
      </tr>
 
@@ -564,7 +576,7 @@ echo "</table><br><br>";
 
 <div class="header">
      
-     <h3>สถานประกอบการสหกิจใหม่</h3>
+     <h2>สถานประกอบการสหกิจที่เพิ่มใหม่</h2>
      
  </div>
 
@@ -572,13 +584,25 @@ echo "</table><br><br>";
 
 <table align="center"> 
      <tr>
-         <td><b>ปีการศึกษา</td>
-         <td><b>วันที่ส่งคำร้อง</td>
-         <td><b>รหัสนิสิต</td>
-         <td><b>ชื่อ-นามสกุล</td>
-         <td><b>ชื่อสถานประกอบการสหกิจใหม่</td>
-         <td><b>รายละเอียดสหกิจ</td>
-         <td><b>สถานะ</td>
+         <th>
+         <?php echo "<a href=?controller=petitionC&action=upY2&userid=$userid>
+                <i class='fas fa-caret-up' style='font-size:24px'></i></a>" ?>
+                <?php echo "<a href=?controller=petitionC&action=downY2&userid=$userid>
+                <i class='fas fa-caret-down' style='font-size:24px'></i></a>" ?>ปีการศึกษา</th>
+         <th>
+         <?php echo "<a href=?controller=petitionC&action=upD2&userid=$userid>
+                <i class='fas fa-caret-up' style='font-size:24px'></i></a>" ?>
+                <?php echo "<a href=?controller=petitionC&action=downD2&userid=$userid>
+                <i class='fas fa-caret-down' style='font-size:24px'></i></a>" ?>วันที่ส่งคำร้อง</th>
+         <th>รหัสนิสิต</th>
+         <th>ชื่อ-นามสกุล</th>
+         <th>ชื่อสถานประกอบการสหกิจใหม่</th>
+         <th>รายละเอียดสหกิจ</th>
+         <th>
+         <?php echo "<a href=?controller=petitionC&action=upS2&userid=$userid>
+                <i class='fas fa-caret-up' style='font-size:24px'></i></a>" ?>
+                <?php echo "<a href=?controller=petitionC&action=downS2&userid=$userid>
+                <i class='fas fa-caret-down' style='font-size:24px'></i></a>" ?>สถานะ</th>
          
      </tr>
 
