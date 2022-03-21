@@ -25,11 +25,12 @@ class userController{
                 echo "<br> submit success <br>";
                 $userList =userModel::get($userid);
                 if($userid == 'aj'){
+                    $fList = fileModel::getAll();
                     require_once('views/hamburger/index_hamburgerAj.php');
                 }
                 else{
-                    
-                require_once("views/hamburger/index_hamburger.php");
+                    $fList = fileModel::getAll();
+                    require_once("views/hamburger/index_hamburger.php");
                 }
                 
             }
@@ -60,7 +61,7 @@ class userController{
     public function indexHome()
     {
         
-        
+        $fList = fileModel::getAll();
         require_once('views/hamburger/index_home.php');
     }
 
