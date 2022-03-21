@@ -3,7 +3,7 @@ class PagesController
 {
     public function home()
     {
-        require_once('views/login/index_login.php');
+        require_once('views/hamburger/index_home.php');
     }
     public function error()
     {
