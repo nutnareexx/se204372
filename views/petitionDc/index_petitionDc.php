@@ -373,6 +373,32 @@ tr:nth-child(even){background-color: #f2f2f2}
             color: black;
         }
 
+    .btn-group .button {
+            font-family: 'Prompt', sans-serif;
+            position: relative;
+             background-color: #73c088 ; /*Green */
+            border: 1px black;
+            color: white;
+            padding: 7px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block; 
+            font-size: 16px;
+            cursor: pointer;
+            /* float: center; */
+            border-radius: 50px;
+        }
+
+        .btn-group .button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+
+        .btn-group .button:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+
         input[type=text], select {
             font-family: 'Prompt', sans-serif;
             width: 50%;
@@ -398,6 +424,8 @@ tr:nth-child(even){background-color: #f2f2f2}
 .button3:hover {
   /* opacity: 0.8; */
 }
+
+
 
 /* Extra styles for the cancel button */
 .cancelbtn {
@@ -643,19 +671,6 @@ span.psw {
 </form>
 
 
-<table border="1">
-    <tr>
-        <th>ปีการศึกษา</th>
-        <th>วันที่ส่งคำร้อง</th>
-        <th>รหัสนิสิต</th>
-        <th>ชื่อ-นามสกุล</th>
-        <th>ชื่อสถานประกอบการฝึกงาน</th>
-        <th>รายละเอียดการฝึกงาน</th>
-        <th>สถานะ</th>
-
-    </tr>
-</section>
-
 <script>
 
 let arrow = document.querySelectorAll(".arrow");
@@ -676,6 +691,42 @@ sidebarBtn.addEventListener("click", ()=>{
 </script>
 
 
+    <h2>สถานประกอบการฝึกงานที่มีอยู่</h2>
+
+<table border="1">
+    <form method="get" action="">
+        <div class="btn-group">
+            
+            <tr>
+            <th><?php echo "<a href=?controller=petitionDC&action=upY&userid=$userid>
+                <i class='fas fa-caret-up' style='font-size:24px'></i></a>" ?>
+                <?php echo "<a href=?controller=petitionDC&action=downY&userid=$userid>
+                <i class='fas fa-caret-down' style='font-size:24px'></i></a>" ?>
+            ปีการศึกษา</th>
+            <th><?php echo "<a href=?controller=petitionDC&action=upD&userid=$userid>
+                <i class='fas fa-caret-up' style='font-size:24px'></i></a>" ?>
+                <?php echo "<a href=?controller=petitionDC&action=downD&userid=$userid>
+                <i class='fas fa-caret-down' style='font-size:24px'></i></a>" ?>
+            วันที่ส่งคำร้อง</th>
+            <th>รหัสนิสิต</th>
+            <th>ชื่อ-นามสกุล</th>
+            <th>ชื่อสถานประกอบการฝึกงานที่มีอยู่</th>
+            <th>รายละเอียดการฝึกงาน</th>
+            <th><?php echo "<a href=?controller=petitionDC&action=upA&userid=$userid>
+                <i class='fas fa-caret-up' style='font-size:24px'></i></a>" ?>
+                <?php echo "<a href=?controller=petitionDC&action=downA&userid=$userid>
+                <i class='fas fa-caret-down' style='font-size:24px'></i></a>" ?>
+            สถานะ</th>
+
+        </tr>
+        </div>
+       
+    </form>
+    
+
+
+
+
 
 
 
@@ -689,9 +740,39 @@ sidebarBtn.addEventListener("click", ()=>{
     <td><a href=?controller=petitionDC&action=indexDetail&petition_id=$dclist->petition_id&userid=$userid>รายละเอียดเพิ่มเติม</td>   
     <td> <a href=?controller=petitionDC&action=updateform&petition_id=$dclist->petition_id&userid=$userid> $dclist->status_name </a> </td>
     </td></tr>";
-}
+}?>
 
 
+
+<table border="1">
+        <tr>
+        <th><?php echo "<a href=?controller=petitionDC&action=upY2&userid=$userid>
+                <i class='fas fa-caret-up' style='font-size:24px'></i></a>" ?>
+                <?php echo "<a href=?controller=petitionDC&action=downY2&userid=$userid>
+                <i class='fas fa-caret-down' style='font-size:24px'></i></a>" ?>
+        ปีการศึกษา</th>
+        <th><?php echo "<a href=?controller=petitionDC&action=upD2&userid=$userid>
+                <i class='fas fa-caret-up' style='font-size:24px'></i></a>" ?>
+                <?php echo "<a href=?controller=petitionDC&action=downD2&userid=$userid>
+                <i class='fas fa-caret-down' style='font-size:24px'></i></a>" ?>
+        วันที่ส่งคำร้อง</th>
+        <th>รหัสนิสิต</th>
+        <th>ชื่อ-นามสกุล</th>
+        <th>ชื่อสถานประกอบการฝึกงานที่เพิ่มใหม่</th>
+        <th>รายละเอียดการฝึกงาน</th>
+        <th><?php echo "<a href=?controller=petitionDC&action=upA2&userid=$userid>
+                <i class='fas fa-caret-up' style='font-size:24px'></i></a>" ?>
+                <?php echo "<a href=?controller=petitionDC&action=downA2&userid=$userid>
+                <i class='fas fa-caret-down' style='font-size:24px'></i></a>" ?>
+        สถานะ</th>
+
+    </tr>
+    </form>
+
+    <br><br>
+    <h2>สถานประกอบการฝึกงานที่เพิ่มใหม่</h2>
+
+<?php
     foreach($pelist as $p)
 {
 
@@ -713,7 +794,7 @@ echo "</table>";
  
 
 
-
+</section>
 
 </body>
 
