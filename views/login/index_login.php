@@ -84,7 +84,6 @@
             <label>Password : <input type="password" name="password"></label>
             <br><br>
             <input type="hidden" name="controller" value="user"/>
-            
             <button type="submit" name="action" value="indexHome">BACK</button>
             <button type="submit" name="action" value="login">LOG IN</button>
         </form>
