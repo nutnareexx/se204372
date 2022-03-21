@@ -506,7 +506,7 @@ span.psw {
         </div>
     <dl class="nav-links">
     <li>
-            <a href="?controller=nisit&action=index&userid=<?php echo $userid;?>">
+            <a href="?controller=Aj&action=index&userid=<?php echo $userid;?>">
             <i class='bx bx-home'></i>
                 <span class="link_name">หน้าแรก</span>
             </a>
@@ -645,7 +645,8 @@ span.psw {
 
 <table border="1">
     <tr>
-        <th>ลำดับที่</th>
+        <th>ปีการศึกษา</th>
+        <th>วันที่ส่งคำร้อง</th>
         <th>รหัสนิสิต</th>
         <th>ชื่อ-นามสกุล</th>
         <th>ชื่อสถานประกอบการฝึกงาน</th>
@@ -680,7 +681,8 @@ sidebarBtn.addEventListener("click", ()=>{
 
 <?php foreach( $petionDcList as $dclist)
 {
-    echo "<tr> <td>$dclist->petition_id</td>
+    echo "<tr> <td>$dclist->academicY_p</td>
+    <td>$dclist->date_p</td>
     <td>$dclist->user_id</td>
     <td>$dclist->name_title$dclist->user_name $dclist->user_surname</td>
     <td>$dclist->dc_name</td>
@@ -694,7 +696,8 @@ sidebarBtn.addEventListener("click", ()=>{
 {
 
 
-    echo "<tr> <td>$p->petition_id</td>
+    echo "<tr> <td>$p->academicY_p</td>
+    <td>$p->date_p</td>
     <td>$p->user_id</td>
     <td>$p->name_title$p->user_name $p->user_surname</td>
     <td>$p->comName_p</td>
