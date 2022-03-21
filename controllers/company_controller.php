@@ -15,7 +15,9 @@ class companyController
     public function newDetailCompany()
     {
         $userid = $_GET['userid'];
-        $userList=userModel::get($userid);
+        if($userid != "x"){
+            $userList=userModel::get($userid);
+        }
         $DetailCompanyList = DetailCompanyModel::getAll();
         require_once('views/detailCompany/newdetailCompany.php');
     }
@@ -42,7 +44,9 @@ class companyController
     {
         $key = $_GET['key'];
         $userid = $_GET['userid'];
-        $userList=userModel::get($userid);
+        if($userid != "x"){
+            $userList=userModel::get($userid);
+        }
         $DetailCompanyList = DetailCompanyModel::search($key);
         require_once('views/detailCompany/index_detailCompany.php');
     }
