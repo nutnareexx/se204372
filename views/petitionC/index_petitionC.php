@@ -540,6 +540,57 @@ tr:nth-child(even){background-color: #f2f2f2}
          
      </tr>
 
+     <?php 
+foreach( $petionCList as $clist)
+{
+    echo "<tr> <td>$clist->academicY_p</td>
+    <td>$clist->date_p</td>
+    <td>$clist->user_id</td>
+    <td>$clist->name_title$clist->user_name $clist->user_surname</td> 
+    <td>$clist->c_name</td>  
+    <td> <a href=?controller=petitionC&action=indexCshow&petition_id=$clist->petition_id&userid=$userid> รายละเอียดเพิ่มเติม </a> </td>
+    <td> <a href=?controller=petitionC&action=updateformC&petition_id=$clist->petition_id&userid=$userid> $clist->status_name </a> </td>
+    </td></tr>";
+}
+
+echo "</table><br><br>";
+ ?>
+
+<table align="center"> 
+     <tr>
+         <td><b>ปีการศึกษา</td>
+         <td><b>วันที่ส่งคำร้อง</td>
+         <td><b>รหัสนิสิต</td>
+         <td><b>ชื่อ-นามสกุล</td>
+         <td><b>ชื่อสถานประกอบการสหกิจใหม่</td>
+         <td><b>รายละเอียดสหกิจ</td>
+         <td><b>สถานะ</td>
+         
+     </tr>
+
+<?php 
+
+
+foreach( $petionCnewList as $clistnew)
+{
+    echo "<tr> <td>$clistnew->academicY_p</td>
+    <td>$clistnew->date_p</td>
+    <td>$clistnew->user_id</td>
+    <td>$clistnew->name_title$clistnew->user_name $clistnew->user_surname</td> 
+    <td>$clistnew->comName_p</td>  
+    <td> <a href=?controller=petitionC&action=indexnewCshow&petition_id=$clistnew->petition_id&userid=$userid> รายละเอียดเพิ่มเติม </a> </td> 
+    <td> <a href=?controller=petitionC&action=updateformnewC&petition_id=$clistnew->petition_id&userid=$userid> $clistnew->status_name </a> </td>
+    </td></tr>";
+}
+
+
+echo "</table>";
+
+ ?>
+
+
+     
+
 </section>
 
 <script>
@@ -570,32 +621,3 @@ sidebarBtn.addEventListener("click", ()=>{
 
 </html>
 
-<?php 
-foreach( $petionCList as $clist)
-{
-    echo "<tr> <td>$clist->academicY_p</td>
-    <td>$clist->date_p</td>
-    <td>$clist->user_id</td>
-    <td>$clist->name_title$clist->user_name $clist->user_surname</td> 
-    <td>$clist->c_name</td>  
-    <td> <a href=?controller=petitionC&action=indexCshow&petition_id=$clist->petition_id&userid=$userid> รายละเอียดเพิ่มเติม </a> </td>
-    <td> <a href=?controller=petitionC&action=updateformC&petition_id=$clist->petition_id&userid=$userid> $clist->status_name </a> </td>
-    </td></tr>";
-}
-
-foreach( $petionCnewList as $clistnew)
-{
-    echo "<tr> <td>$clistnew->academicY_p</td>
-    <td>$clistnew->date_p</td>
-    <td>$clistnew->user_id</td>
-    <td>$clistnew->name_title$clistnew->user_name $clistnew->user_surname</td> 
-    <td>$clistnew->comName_p</td>  
-    <td> <a href=?controller=petitionC&action=indexnewCshow&petition_id=$clistnew->petition_id&userid=$userid> รายละเอียดเพิ่มเติม </a> </td> 
-    <td> <a href=?controller=petitionC&action=updateformnewC&petition_id=$clistnew->petition_id&userid=$userid> $clistnew->status_name </a> </td>
-    </td></tr>";
-}
-
-
-echo "</table>";
-
- ?>
