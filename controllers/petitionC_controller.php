@@ -141,6 +141,104 @@ class petitionCController
         require_once('views/petitionC/index_petitionC.php');
     }
 
+    public function upY() {
+        $userid = $_GET['userid'];
+        $userList=userModel::get($userid);
+        $petionCList = petitionCModel::getAllupY();
+        $petionCnewList = petitionnewCModel::getAllnew();
+        require_once('views/petitionC/index_petitionC.php');
+    }
+
+    public function downY() {
+        $userid = $_GET['userid'];
+        $userList=userModel::get($userid);
+        $petionCList = petitionCModel::getAlldownY();
+        $petionCnewList = petitionnewCModel::getAllnew();
+        require_once('views/petitionC/index_petitionC.php');
+    
+    }
+
+    public function upD() {
+        $userid = $_GET['userid'];
+        $userList=userModel::get($userid);
+        $petionCList = petitionCModel::getAllupD();
+        $petionCnewList = petitionnewCModel::getAllnew();
+        require_once('views/petitionC/index_petitionC.php');
+    }
+
+    public function downD() {
+        $userid = $_GET['userid'];
+        $userList=userModel::get($userid);
+        $petionCList = petitionCModel::getAlldownD();
+        $petionCnewList = petitionnewCModel::getAllnew();
+        require_once('views/petitionC/index_petitionC.php');
+    }
+
+    public function upS() {
+        $userid = $_GET['userid'];
+        $userList=userModel::get($userid);
+        $petionCList = petitionCModel::getAllupS();
+        $petionCnewList = petitionnewCModel::getAllnew();
+        require_once('views/petitionC/index_petitionC.php');
+    }
+
+    public function downS() {
+        $userid = $_GET['userid'];
+        $userList=userModel::get($userid);
+        $petionCList = petitionCModel::getAlldownS();
+        $petionCnewList = petitionnewCModel::getAllnew();
+        require_once('views/petitionC/index_petitionC.php');
+    }
+
+    public function upY2() {
+        $userid = $_GET['userid'];
+        $userList=userModel::get($userid);
+        $petionCList = petitionCModel::getAll();
+        $petionCnewList = petitionnewCModel::getAllnewupY();
+        require_once('views/petitionC/index_petitionC.php');
+    }
+
+    public function downY2() {
+        $userid = $_GET['userid'];
+        $userList=userModel::get($userid);
+        $petionCList = petitionCModel::getAll();
+        $petionCnewList = petitionnewCModel::getAllnewdownY();
+        require_once('views/petitionC/index_petitionC.php');
+    }
+
+    public function upD2() {
+        $userid = $_GET['userid'];
+        $userList=userModel::get($userid);
+        $petionCList = petitionCModel::getAll();
+        $petionCnewList = petitionnewCModel::getAllnewupD();
+        require_once('views/petitionC/index_petitionC.php');
+    }
+
+    public function downD2() {
+        $userid = $_GET['userid'];
+        $userList=userModel::get($userid);
+        $petionCList = petitionCModel::getAll();
+        $petionCnewList = petitionnewCModel::getAllnewdownD();
+        require_once('views/petitionC/index_petitionC.php');
+    }
+
+    public function upS2() {
+        $userid = $_GET['userid'];
+        $userList=userModel::get($userid);
+        $petionCList = petitionCModel::getAll();
+        $petionCnewList = petitionnewCModel::getAllnewupS();
+        require_once('views/petitionC/index_petitionC.php');
+    }
+
+    public function downS2() {
+        $userid = $_GET['userid'];
+        $userList=userModel::get($userid);
+        $petionCList = petitionCModel::getAll();
+        $petionCnewList = petitionnewCModel::getAllnewdownS();
+        require_once('views/petitionC/index_petitionC.php');
+    }
+
+
 
 
 }?>
