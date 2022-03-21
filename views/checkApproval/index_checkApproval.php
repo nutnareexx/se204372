@@ -482,13 +482,13 @@ th, td {
     </div>
 
     <center>    
-
+<div class='card'>
+    <div class='card2'>
+        <h3>ฝึกงาน</h3>
+    </div>
    <?php foreach($checkList as $clist){
        echo "
-       <div class='card'>
-            <div class='card2'>
-                <h3>ฝึกงาน</h3>
-            </div>
+       
         <table align='center'>
         <tr>
             <td align='right' style='width: 45%;' >สถานะ :</td>
@@ -519,15 +519,54 @@ th, td {
             <td>$clist->approve_reason</td>
         </tr>
         </table>
-        </div><br>";
+        <br>----------------------------------------------------</br>";
    }?>
+
+<?php foreach($checkDCNameList as $clist){
+       echo "
+       
+        <table align='center'>
+        <tr>
+            <td align='right' style='width: 45%;' >สถานะ :</td>
+            <td>$clist->status_name</td>
+        </tr>
+        <tr>
+            <td align='right' >รหัสนิสิต :</td>
+            <td>$clist->user_id</td>
+        </tr>
+        <tr>
+            <td align='right' >ชื่อ :</td>
+            <td>$clist->name_title$clist->user_name $clist->user_surname</td>
+        </tr>
+        <tr>
+            <td align='right' >บริษัท :</td>
+            <td>$clist->dc_name</td>
+        </tr>
+        <tr>
+            <td align='right' >ตำแหน่ง :</td>
+            <td>$clist->position_p</td>
+        </tr>
+        <tr>
+            <td align='right' >ช่วงเวลา :</td>
+            <td>$clist->start_p - $clist->finish_p</td>
+        </tr>
+        <tr>
+            <td align='right' >เหตุผล :</td>
+            <td>$clist->approve_reason</td>
+        </tr>
+        </table>
+        <br>----------------------------------------------------</br>";
+   }?>
+   </div>
+
+   <div class='card'>
+        <div class='card2'>
+                <h3>สหกิจ</h3>
+            </div>
 
 <?php foreach($checkCList as $clist){
        echo "
-       <div class='card'>
-            <div class='card2'>
-                <h3>สหกิจ</h3>
-            </div>
+    
         <table align='center'>
         <tr>
             <td align='right' style='width: 45%;' >สถานะ :</td>
@@ -558,55 +597,15 @@ th, td {
             <td>$clist->approve_reason</td>
         </tr>
         </table>
-        </div><br>";
+        <br>----------------------------------------------------</br>";
    }?>
 
 
-   <?php foreach($checkDCNameList as $clist){
-       echo "
-       <div class='card'>
-            <div class='card2'>
-                <h3>ฝึกงาน</h3>
-            </div>
-        <table align='center'>
-        <tr>
-            <td align='right' style='width: 45%;' >สถานะ :</td>
-            <td>$clist->status_name</td>
-        </tr>
-        <tr>
-            <td align='right' >รหัสนิสิต :</td>
-            <td>$clist->user_id</td>
-        </tr>
-        <tr>
-            <td align='right' >ชื่อ :</td>
-            <td>$clist->name_title$clist->user_name $clist->user_surname</td>
-        </tr>
-        <tr>
-            <td align='right' >บริษัท :</td>
-            <td>$clist->dc_name</td>
-        </tr>
-        <tr>
-            <td align='right' >ตำแหน่ง :</td>
-            <td>$clist->position_p</td>
-        </tr>
-        <tr>
-            <td align='right' >ช่วงเวลา :</td>
-            <td>$clist->start_p - $clist->finish_p</td>
-        </tr>
-        <tr>
-            <td align='right' >เหตุผล :</td>
-            <td>$clist->approve_reason</td>
-        </tr>
-        </table>
-        </div><br>";
-   }?>
+   
 
 <?php foreach($checkCNameList as $clist){
        echo "
-       <div class='card'>
-            <div class='card2'>
-                <h3>สหกิจ</h3>
-            </div>
+       
         <table align='center'>
         <tr>
             <td align='right' style='width: 45%;' >สถานะ :</td>
@@ -637,12 +636,12 @@ th, td {
             <td>$clist->approve_reason</td>
         </tr>
         </table>
-        </div><br>";
+        <br>----------------------------------------------------</br>";
    }?>
 
+</div>
 
-
-
+<br><br>
 
     </center>   
    
