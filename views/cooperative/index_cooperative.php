@@ -5,6 +5,7 @@
 <html>
 <head>
         <link rel ="stylesheet" >
+        
         <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -359,16 +360,12 @@ tr:nth-child(even){background-color: #f2f2f2}
         </div>
     <dl class="nav-links">
     <li>
-            <?php if($userid !="x"){  echo "<a class=link_name href=?controller=nisit&action=indexHome&userid=$userid>"; }
-                else{ echo "<a class=link_name href=?controller=nisit&action=indexHome&userid='x'>"; }?>
+            <a href="?controller=nisit&action=index&userid=<?php echo $userid;?>">
             <i class='bx bx-home'></i>
                 <span class="link_name">หน้าแรก</span>
             </a>
             <ul class="sub-menu blank">
-                <li>
-                <?php if($userid !="x"){  echo "<a class=link_name href=?controller=nisit&action=indexHome&userid=$userid>"; }
-                else{ echo "<a class=link_name href=?controller=nisit&action=indexHome&userid='x'>"; }?>
-                หน้าแรก</a></li>
+                <li><a class="link_name" href="?controller=nisit&action=index&userid=<?php echo $userid;?>">หน้าแรก</a></li>
             </ul>
         </li>
         <li>
@@ -381,14 +378,8 @@ tr:nth-child(even){background-color: #f2f2f2}
             </div>
             <ul class="sub-menu">
                 <li><a class="link_name" href="#">สถานประกอบการณ์</a></li>
-                <li>
-                <?php if($userid !="x"){  echo "<a href=?controller=company&action=index&userid=$userid>ฝึกงาน</a>"; }
-                else{ echo "<a href=?controller=company&action=index&userid=x>ฝึกงาน</a>"; }?>
-                </li>
-                <li>
-                <?php if($userid !="x"){  echo "<a href=?controller=cooperative&action=index&userid=$userid>สหกิจ</a>"; }
-                else{ echo "<a href=?controller=cooperative&action=index&userid=x>สหกิจ</a>"; }?>
-                </li>
+                <li><a href="?controller=company&action=index&userid=<?php echo $userid;?>">ฝึกงาน</a></li>
+                <li><a href="?controller=cooperative&action=index&userid=<?php echo $userid;?>">สหกิจ</a></li>
             </ul>
         </li>
         <li>
@@ -401,53 +392,36 @@ tr:nth-child(even){background-color: #f2f2f2}
             </div>
             <ul class="sub-menu">
                 <li><a class="link_name" href="#">ยื่นคำร้อง</a></li>
-                <li>
-                <?php if($userid !="x"){  echo "<a href=?controller=petitionDCUser&action=index&userid=$userid>"; }
-                else{ echo "<a href=?controller=pages&action=home&userid='x'>"; }?>
-                ฝึกงาน</a></li>
-                <li>
-                <?php if($userid !="x"){  echo "<a href=?controller=petitionCUser&action=index&userid=$userid>"; }
-                else{ echo "<a =?controller=pages&action=home&userid='x'>"; }?>
-                สหกิจ</a></li>
+                <li><a href="?controller=petitionDCUser&action=index&userid=<?php echo $userid;?>">ฝึกงาน</a></li>
+                <li><a href="?controller=petitionCUser&action=index&userid=<?php echo $userid;?>">สหกิจ</a></li>
             </ul>
         </li>
         <li>
-            <?php if($userid !="x"){  echo "<a class=link_name href=?controller=checkApproval&action=index&userid=$userid>"; }
-                else{ echo "<a class=link_name href=?controller=pages&action=home&userid='x'>"; }?>
+            <a href="?controller=checkApproval&action=index&userid=<?php echo $userid;?>">
                 <i class='bx bx-check-square' ></i>
                 <span class="link_name">ตรวจสอบผลการอนุมัติ</span>
             </a>
             <ul class="sub-menu blank">
-                <li>
-                <?php if($userid !="x"){  echo "<a class=link_name href=?controller=checkApproval&action=index&userid=$userid>"; }
-                else{ echo "<a class=link_name href=?controller=pages&action=home&userid='x'>"; }?>
-                ตรวจสอบผลการอนุมัติ</a></li>
+                <li><a class="link_name" href="?controller=checkApproval&action=index&userid=<?php echo $userid;?>">ตรวจสอบผลการอนุมัติ</a></li>
             </ul>
         </li>
         
         <li>
-            <?php if($userid !="x"){  echo "<a class=link_name href=?controller=downloadStudent&action=index&userid=$userid>"; }
-                else{ echo "<a class=link_name href=?controller=pages&action=home&userid='x'>"; }?>
+            <a href="?controller=downloadStudent&action=index&userid=<?php echo $userid;?>">
             <i class='bx bx-download'></i>
             <span class="link_name">download</span>
             </a>
             <ul class="sub-menu blank">
-                <li>
-                <?php if($userid !="x"){  echo "<a class=link_name href=?controller=downloadStudent&action=index&userid=$userid>"; }
-                else{ echo "<a class=link_name href=?controller=pages&action=home&userid='x'>"; }?>
-                download</a></li>
+                <li><a class="link_name" href="?controller=downloadStudent&action=index&userid=<?php echo $userid;?>">download</a></li>
             </ul>
         </li>
         <li>
-            <?php if($userid !="x"){  echo "<a class=link_name href=?controller=uploadStudent&action=index&userid=$userid>"; }
-                else{ echo "<a class=link_name href=?controller=pages&action=home&userid='x'>"; }?>
+            <a href="?controller=uploadStudent&action=index&userid=<?php echo $userid;?>">
             <i class='bx bx-upload'></i>
             <span class="link_name">upload</span>
             </a>
             <ul class="sub-menu blank">
-                <li>
-                <?php if($userid !="x"){  echo "<a class=link_name href=?controller=uploadStudent&action=index&userid=$userid>"; }
-                else{ echo "<a class=link_name href=?controller=pages&action=home&userid='x'>"; }?>upload </a></li>
+                <li><a class="link_name" href="?controller=uploadStudent&action=index&userid=<?php echo $userid;?>">upload</a></li>
             </ul>
         </li>
         <li> 
@@ -458,18 +432,10 @@ tr:nth-child(even){background-color: #f2f2f2}
             
             <div class="name-job">
                 <div class="profile_name">
-                <?php 
-                if($userid !="x"){
-                    echo $userList->user_name;?> <?php echo $userList->user_surname;
-                }
-                else{
-                    echo "<a href=#>";
-                }
-                ?>
-                
+                <?php echo $userList->user_name;?> <?php echo $userList->user_surname;?>
                 </div>
             </div>   
-            <a href="?controller=pages&action=home&userid='x'">          
+            <a href="?controller=user&action=logoutNisit&userid=<?php echo $userid;?>">          
                 <i class='bx bx-log-out '></i>
             </a>
     </div>
@@ -487,13 +453,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 <div class="header">
      <h2>รายละเอียดสถานประกอบการที่ประสงค์รับนิสิตสหกิจ</h2>
 
-    <h3>เพิ่มสถานประกอบการณ์ใหม่ 
-    <?php if($userid !="x"){  
-        echo "<a href=?controller=cooperative&action=newCooperative&userid=$userid>";
-     }
-                else{
-                     echo "<a href=?controller=pages&action=home&userid=x>"; 
-                     }?> click!!! </a> </h3>
+    <h3>เพิ่มสถานประกอบการณ์ใหม่ <a href="?controller=cooperative&action=newCooperative&userid=$userid"> click!!! </a> </h3>
 </div>
 
 
@@ -502,13 +462,7 @@ tr:nth-child(even){background-color: #f2f2f2}
     <div class="btn-group">
         <input type="text" name="key">
         <input type="hidden" name="controller" value="cooperative"/>
-        <input type="hidden" name="userid" value="<?php 
-                if($userid !="x"){
-                    echo $userid;
-                }
-                else{
-                    echo $userid='x';
-                }?>"/>
+        <input type="hidden" name="userid" value="<?php echo $userid?>";/>
         <button class="button" type="submit" name="action" value="search">Search</button>
 
     </div>
