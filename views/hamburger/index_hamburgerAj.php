@@ -321,15 +321,7 @@ body {
   .sidebar a {font-size: 18px;}
 }
 
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 25px;
-  text-align: center;
-  background-color: #f1f1f1;
-  border-radius: 25px;
-  font-size: 25px;
-  
-}
+
 .card2 {
           
           background-color: #f1f1f1;
@@ -340,20 +332,68 @@ body {
           float: left;
           width: 45%;
       }
-      .card3 {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 25px;
-  text-align: center;
-  background-color: #f1f1f1;
-  border-radius: 25px;
-  font-size: 25px;
-  width: 100%;
-  height: 650px;
+
+      .card1 {
+           
+           background-color: #f1f1f1;
+           padding: 20px 20px 20px 20px;
+           margin: 20px 20px 20px 20px;
+           border-radius: 25px;
+           font-size: 30px;
+           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.column {
+ float: left;
+ width: 50%;
+ padding: 20px 20px 20px 20px;
+
 }
 
-.card a{
-    text-decoration: none;
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+ content: "";
+ display: table;
+ clear: both;
 }
+
+@media screen and (max-width: 600px) {
+ .column {
+   width: 100%;
+   display: block;
+   margin-bottom: 20px;
+ }
+}
+
+
+/* Style the counter cards */
+.card {
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+ padding: 25px;
+ text-align: center;
+ background-color: #f1f1f1;
+ border-radius: 25px;
+ font-size: 25px;
+}
+.card a{
+   text-decoration: none;
+}
+
+.card3 {
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+ padding: 25px;
+ text-align: center;
+ background-color: #f1f1f1;
+ border-radius: 25px;
+ font-size: 25px;
+ width: 100%;
+ height: 650px;
+}
+
+
+
 
 </style>
 <body>
@@ -495,12 +535,22 @@ body {
 
     </div>
 
-    <div class="card2">
-        <a href="?controller=companyP&action=indexP&userid=<?php echo $userid;?>">ข้อมูลสถานประกอบการณ์ฝึกงาน</a>    
+
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <a href="?controller=companyP&action=indexP&userid=<?php echo $userid;?>">ข้อมูลสถานประกอบการณ์ฝึกงาน</a>    
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <a href="?controller=cooperativeP&action=index&userid=<?php echo $userid;?>">ข้อมูลสถานประกอบการณ์สหกิจ</a>    
+            </div>
+        </div>
     </div>
-    <div class="card3">
-        <a href="?controller=cooperativeP&action=index&userid=<?php echo $userid;?>">ข้อมูลสถานประกอบการณ์สหกิจ</a>    
-    </div>
+
+    
 
 </section>
 
