@@ -345,7 +345,7 @@ body {
 }
 .column {
   float: left;
-  width: 47%;
+  width: 50%;
   padding: 20px 20px 20px 20px;
 
 }
@@ -412,12 +412,12 @@ body {
         </div>
     <dl class="nav-links">
         <li>
-            <a href="?controller=nisit&action=indexHome&userid=x">
+            <a href="?controller=pages&action=home">
             <i class='bx bx-home'></i>
                 <span class="link_name">หน้าแรก</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=nisit&action=indexHome&userid=x">หน้าแรก</a></li>
+                <li><a class="link_name" href="?controller=pages&action=home">หน้าแรก</a></li>
             </ul>
         </li>
         <li>
@@ -430,8 +430,8 @@ body {
             </div>
             <ul class="sub-menu">
                 <li><a class="link_name" href="#">สถานประกอบการณ์</a></li>
-                <li><a href="?controller=company&action=index&userid=x">ฝึกงาน</a></li>
-                <li><a href="?controller=cooperative&action=index&userid=x">สหกิจ</a></li>
+                <li><a href="?controller=company&action=indexDCHome">ฝึกงาน</a></li>
+                <li><a href="?controller=cooperative&action=indexCHome">สหกิจ</a></li>
             </ul>
         </li>
         <li> 
@@ -486,13 +486,13 @@ body {
     <div class="row">
         <div class="column">
             <div class="card">
-                <a href="?controller=company&action=index&userid=x">ข้อมูลสถานประกอบการณ์ฝึกงาน</a>    
+                <a href="?controller=company&action=indexDCHome">ข้อมูลสถานประกอบการณ์ฝึกงาน</a>    
             </div>
         </div>
 
         <div class="column">
             <div class="card">
-                <a href="?controller=cooperative&action=index&userid=x">ข้อมูลสถานประกอบการณ์สหกิจ</a>    
+                <a href="?controller=cooperative&action=indexCHome">ข้อมูลสถานประกอบการณ์สหกิจ</a>    
             </div>
         </div>
     </div>
