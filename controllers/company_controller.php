@@ -51,6 +51,22 @@ class companyController
         require_once('views/detailCompany/index_detailCompany.php');
     }
 
+    public function indexDCHome()
+    {
+    
+        
+        $DetailCompanyList = DetailCompanyModel::getAll();
+        require_once('views/detailCompany/index_companyHome.php');
+    }
+
+    public function searchDCHome()
+    {
+        $key = $_GET['key'];
+        
+        $DetailCompanyList = DetailCompanyModel::search($key);
+        require_once('views/detailCompany/index_companyHome.php');
+    }
+
 
 }
 ?>
