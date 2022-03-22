@@ -543,6 +543,7 @@ input[type=text], select {
     <div class="btn-group2">
         <input type="text" name="key">
             <input type="hidden" name="controller" value="companyP"/>
+            <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
             <button class="button2" type="submit" name="action" value="searchP">
                 <i class='fas fa-search' style='font-size: 22px'></i> </button>
 
