@@ -337,7 +337,7 @@ body {
 }
 .column {
   float: left;
-  width: 47%;
+  width: 50%;
   padding: 20px 20px 20px 20px;
 
 }
