@@ -50,5 +50,18 @@ class cooperativeController
         $cooperativeList = cooperativeModel::search($key);
         require_once('views/cooperative/index_cooperative.php');
     }
+
+    public function indexCHome()
+    {
+        $cooperativeList = cooperativeModel::getAll();
+        require_once('views/cooperative/index_cooperativeHome.php');
+    }
+
+    public function searchCHome()
+    {
+        $key = $_GET['key'];
+        $cooperativeList = cooperativeModel::search($key);
+        require_once('views/cooperative/index_cooperativeHome.php');
+    }
 }
 ?>
