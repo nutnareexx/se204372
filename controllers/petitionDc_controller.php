@@ -101,7 +101,6 @@ class petitionDcController
     public function updateformNodc()
     {
         $userid = $_GET['userid'];
-        echo $userid;
         $petition_id = $_GET['petition_id'];
         $userList = userModel::get($userid);
 
