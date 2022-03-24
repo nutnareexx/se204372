@@ -3,7 +3,7 @@
 <html>
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
-   
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <style>
@@ -323,6 +323,8 @@ body {
                 font-family: 'Prompt', sans-serif;
                 background-color: #f1f1f1;
                 text-align: center;
+                font-size: 32px;
+                font-weight: bold;
             }
 
             button {
@@ -369,6 +371,13 @@ body {
             border-radius: 50px;
             
         }
+        th, td {
+            padding: 5px 5px 5px 5px;
+        }
+
+        tr{
+            padding: 10px 10px 10px 10px;
+        }
 </style> 
 
 <body>
@@ -376,7 +385,7 @@ body {
 
 <div class="sidebar close">
         <div class="logo-details">
-            <i class='bx bxs-tree-alt'></i>
+        <i class='bx bx-buildings'></i>
             <span class="logo_name">KASETSART UNIVERSITY</span>
         </div>
     <dl class="nav-links">
@@ -480,7 +489,8 @@ body {
             
             <div class="name-job">
                 <div class="profile_name">
-                <?php echo $userList->user_name;?> <?php echo $userList->user_surname;?>
+                    
+                    <?php echo $userList->user_name." ".$userList->user_surname;?>
                 </div>
             </div>   
             <a href="?controller=pages&action=home&userid=<?php echo $userid;?>">          
@@ -498,7 +508,7 @@ body {
  </div>
  <div class="header">
      
-     <h2>การอนุมัติการฝึกงาน</h2>
+     การอนุมัติการฝึกงาน
  </div>
  
 <form method="get" action="">
@@ -507,7 +517,7 @@ body {
 <div class="card">
     <table>
     <tr>
-            <th align="right">รหัสนิสิต : </th>
+            <th align="right" style="width: 30%;">รหัสนิสิต : </th>
             <td><?php echo $petionDcList->user_id;?></td>
         </tr>
         <tr>
