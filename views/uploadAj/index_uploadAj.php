@@ -363,7 +363,6 @@ body {
     .card2 {
       font-family: 'Prompt', sans-serif;
       background-color: #f1f1f1;
-      
       text-align: center;
       /* padding: 20px; */
       width: 100%;
@@ -375,6 +374,7 @@ body {
                 float: left;
                 width: 40%;
                 margin-left: 20px;
+                
                 /* margin-top: 100px; */
                 /* text-align: center; */
                 /*text-shadow: 3px 2px 6px black;*/
@@ -419,12 +419,12 @@ body {
         </div>
     <dl class="nav-links">
     <li>
-            <a href="?controller=nisit&action=index&userid=<?php echo $userid;?>">
+            <a href="?controller=Aj&action=index&userid=<?php echo $userid;?>">
             <i class='bx bx-home'></i>
                 <span class="link_name">หน้าแรก</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=nisit&action=index&userid=<?php echo $userid;?>">หน้าแรก</a></li>
+                <li><a class="link_name" href="?controller=Aj&action=index&userid=<?php echo $userid;?>">หน้าแรก</a></li>
             </ul>
         </li>
         <li>
@@ -498,14 +498,17 @@ body {
     <div class="row">
         <div class="leftcolumn">
             <div class="card2">
-                        <?php
-                        foreach($fList as $f){
-                        echo "<image src='annoucement/$f->fname' style='width:50%'>";
-                        echo "<br>";
-                        }
-                        ?>
-                        <br>
-            
+            <div class="w3-content w3-display-container">
+            <?php foreach($fList as $f){
+                echo "<div class='w3-display-container mySlides'>
+                            <image src='annoucement/$f->fname' style='width:45%'>
+                      </div>";
+            }?>
+        
+        <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+
+        </div>     
             </div>
         </div>
         <div class="rightcolumn">
@@ -553,6 +556,27 @@ console.log(sidebarBtn);
 sidebarBtn.addEventListener("click", ()=>{
     sidebar.classList.toggle("close");
 });
+
+
+
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+
 
 </script>
 
