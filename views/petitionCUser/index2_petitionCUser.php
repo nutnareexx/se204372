@@ -459,12 +459,12 @@
                 </ul>
             </li>
             <li>
-                <a href="?controller=checkApproval&action=index">
+                <a href="?controller=checkApproval&action=index&userid=<?php echo $userid;?>">
                     <i class='bx bx-check-square' ></i>
                     <span class="link_name">ตรวจสอบผลการอนุมัติ</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">ตรวจสอบผลการอนุมัติ</a></li>
+                    <li><a class="link_name" href="?controller=checkApproval&action=index&userid=<?php echo $userid;?>">ตรวจสอบผลการอนุมัติ</a></li>
                 </ul>
             </li>
             
@@ -716,6 +716,26 @@
         <br>
 
     </section>
+    
+    <script>
+
+        let arrow = document.querySelectorAll(".arrow");
+        for (var i = 0; i < arrow.length; i++){
+            arrow[i].addEventListener("click", (e)=>{
+                let arrowParent = e.target.parentElement.parentElement;
+                arrowParent.classList.toggle("showMenu");
+            });
+        }
+
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".bx-menu");
+        console.log(sidebarBtn);
+        sidebarBtn.addEventListener("click", ()=>{
+            sidebar.classList.toggle("close");
+        });
+
+    </script>
+
     </body>
 
 </html>
