@@ -414,13 +414,11 @@
 
     <body>
     <div class="sidebar close">
-            <div class="logo-details">
-                <i class='bx bxs-tree-alt'></i>
-                <span class="logo_name">KASETSART UNIVERSITY</span>
-            </div>
-
+        <div class="logo-details">
+            <span class="logo_icon">KU</span>
+            <span class="logo_name">KASETSART UNIVERSITY</span>
+        </div>
         <dl class="nav-links">
-        
         <li>
             <a href="?controller=nisit&action=index&userid=<?php echo $userid;?>">
             <i class='bx bx-home'></i>
@@ -486,7 +484,8 @@
                 <li><a class="link_name" href="?controller=uploadStudent&action=index&userid=<?php echo $userid;?>">upload</a></li>
             </ul>
         </li>
-        <li> 
+    
+    <li> 
     <div class="profile-details">
         <div class="profile-content">
             <i class='bx bxs-user'></i>
@@ -494,7 +493,9 @@
             
             <div class="name-job">
                 <div class="profile_name">
-                    <?php echo $userList->user_name;?> <?php echo $userList->user_surname;?>
+                
+                <?php echo $userList->user_name;?> <?php echo $userList->user_surname;?>
+                
                 </div>
             </div>   
             <a href="?controller=user&action=logoutNisit&userid=<?php echo $userid;?>">          
@@ -502,7 +503,7 @@
             </a>
     </div>
     </li>
-        </dl>
+    </dl>
     </div>
 
     <section class="home-section">

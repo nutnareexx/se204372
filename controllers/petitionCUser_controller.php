@@ -5,7 +5,6 @@ class petitionCUserController
     {
         $userid = $_GET['userid'];
         $userList=userModel::get($userid);
-        // $nametitleList  = nametitleModel::getAll();
         require_once('views/petitionCUser/index_petitionCUser.php');
     }
 
@@ -15,9 +14,7 @@ class petitionCUserController
         $y = $_GET['y'];
         $userid = $_GET['userid'];
         $company = $_GET['company'];
-        echo "before";
         $cList = cooperativeModel::getAll();
-        echo "after";
         $userList = userModel::get($userid);
         require_once('views/petitionCUser/index2_petitionCUser.php');
     }
@@ -57,15 +54,11 @@ class petitionCUserController
         if(isset($_GET['company_id'])){
             $c="cid";
             $company_id = $_GET['company_id'];
-            echo $company_id;
             $comList = cooperativeModel::get($company_id);
-            // petitionCModel::addC_old($date,$userid,$y,$faceB,$phone,$position,$approve_name,$approve_lastname,$approve_position,$company_id,$company_no,$company_road,$company_sub,$company_dis,$company_prov,$company_code,$hr_name,$hr_lastname,$hr_phone,$hr_mail,$pay,$room,$start,$finish);
         }
         if(isset($_GET['dc_name'])){
             $c="name";
             $company_name = $_GET['dc_name'];
-            echo $company_name;
-            // petitionCModel::addC_new($date,$userid,$y,$faceB,$phone,$position,$approve_name,$approve_lastname,$approve_position,$company_name,$company_no,$company_road,$company_sub,$company_dis,$company_prov,$company_code,$hr_name,$hr_lastname,$hr_phone,$hr_mail,$pay,$room,$start,$finish);
         }
         
         
@@ -77,18 +70,14 @@ class petitionCUserController
         $userid = $_GET['userid'];
         $userList=userModel::get($userid);
         $petionCList = petitionCModel::getAll();
-        //$approveList = approveModel::getAll();
         $statusList = statusModel::getAll();
         $nametitleList = nametitleModel::getAll();
-        //$userList = userModel::getAll();
         $DetailCompanyList = DetailCompanyModel::getAll();
-        //$cooperativeList =  cooperativeModel::getAll();
         require_once('views/petitionCUser/newpetitionC.php');
     }
 
     public function addpetitionC()
     {
-        echo "<br>addp<br>";
         $date = $_GET['p_date'];
         $y = $_GET['y'];
         $userid = $_GET['userid'];
@@ -122,12 +111,10 @@ class petitionCUserController
 
         if(isset($_GET['company_id'])){
             $company_id = $_GET['company_id'];
-            echo $company_id;
             petitionCModel::addC_old($date,$userid,$y,$faceB,$phone,$position,$approve_name,$approve_lastname,$approve_position,$company_id,$company_no,$company_road,$company_sub,$company_dis,$company_prov,$company_code,$hr_name,$hr_lastname,$hr_phone,$hr_mail,$pay,$room,$start,$finish);
         }
         if(isset($_GET['dc_name'])){
             $company_name = $_GET['dc_name'];
-            echo $company_name;
             petitionCModel::addC_new($date,$userid,$y,$faceB,$phone,$position,$approve_name,$approve_lastname,$approve_position,$company_name,$company_no,$company_road,$company_sub,$company_dis,$company_prov,$company_code,$hr_name,$hr_lastname,$hr_phone,$hr_mail,$pay,$room,$start,$finish);
         }
     }
