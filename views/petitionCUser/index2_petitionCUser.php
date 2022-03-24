@@ -2,6 +2,7 @@
 <html>
     <head>
             <!-- <link rel ="stylesheet" href="hamburger.css"> -->
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
             <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
             <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -325,6 +326,9 @@
             font-family: 'Prompt', sans-serif;
             background-color: #f1f1f1;
             text-align: center;
+            
+            font-size: 32px;
+            font-weight: bold;
         }
 
         table {
@@ -409,100 +413,104 @@
                 box-sizing: border-box;
             
             }
+        
+           
+        
     </style>
 
 
     <body>
     <div class="sidebar close">
-            <div class="logo-details">
-                <i class='bx bxs-tree-alt'></i>
-                <span class="logo_name">KASETSART UNIVERSITY</span>
-            </div>
-
-        <dl class="nav-links">
-        
-            <li>
-                <a href="?controller=nisit&action=index">
-                <i class='bx bx-home'></i>
-                    <span class="link_name">หน้าแรก</span>
-                </a>
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="?controller=nisit&action=index&userid=<?php echo $userid;?>">หน้าแรก</a></li>
-                </ul>
-            </li>
-            <li>
-                <div class="iocn-link">
-                    <a href="#">
-                        <i class='bx bx-buildings'></i>
-                        <span class="link_name">สถานประกอบการ</span>
-                    </a>
-                    <i class='bx bx-chevron-down arrow'></i>
-                </div>
-                <ul class="sub-menu">
-                    <li><a class="link_name" href="#">สถานประกอบการ</a></li>
-                    <li><a href="?controller=company&action=index&userid=<?php echo $userid;?>">ฝึกงาน</a></li>
-                    <li><a href="?controller=cooperative&action=index&userid=<?php echo $userid;?>">สหกิจ</a></li>
-                </ul>
-            </li>
-            <li>
-                <div class="iocn-link">
-                    <a href="#">
-                        <i class='bx bx-file-blank' ></i>
-                        <span class="link_name">ยื่นคำร้อง</span>
-                    </a>
-                    <i class='bx bx-chevron-down arrow'></i>
-                </div>
-                <ul class="sub-menu">
-                    <li><a class="link_name" href="#">ยื่นคำร้อง</a></li>
-                    <li><a href="?controller=petitionDCUser&action=index&userid=<?php echo $userid;?>">ฝึกงาน</a></li>
-                    <li><a href="?controller=petitionCUser&action=index&userid=<?php echo $userid;?>">สหกิจ</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="?controller=checkApproval&action=index&userid=<?php echo $userid;?>">
-                    <i class='bx bx-check-square' ></i>
-                    <span class="link_name">ตรวจสอบผลการอนุมัติ</span>
-                </a>
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="?controller=checkApproval&action=index&userid=<?php echo $userid;?>">ตรวจสอบผลการอนุมัติ</a></li>
-                </ul>
-            </li>
+        <div class="logo-details">
             
-            <li>
-                <a href="?controller=downloadStudent&action=index">
-                <i class='bx bx-download'></i>
-                <span class="link_name">download</span>
+            <span class="logo_name">KASETSART UNIVERSITY</span>
+        </div>
+    <dl class="nav-links">
+        <li>
+            <a href="?controller=nisit&action=index&userid=<?php echo $userid;?>">
+            <i class='bx bx-home'></i>
+                <span class="link_name">หน้าแรก</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="?controller=nisit&action=index&userid=<?php echo $userid;?>">หน้าแรก</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="iocn-link">
+                <a href="#">
+                    <i class='bx bx-buildings'></i>
+                    <span class="link_name">สถานประกอบการณ์</span>
                 </a>
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">download</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="?controller=uploadStudent&action=index">
-                <i class='bx bx-upload'></i>
-                <span class="link_name">upload</span>
-                </a>
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">upload</a></li>
-                </ul>
-            </li>
-            <li>
-            <div class="profile-details">
-                <div class="profile-content">
-                    <i class='bx bxs-user'></i>
-                </div>
-                
-                    <div class="name-job">
-                        <div class="profile_name">Name</div>
-                    </div>
-                
-                    <a href="?controller=pages&action=home">          
-                        <i class='bx bx-log-out '></i>
-                    </a>
-                
+                <i class='bx bx-chevron-down arrow'></i>
             </div>
-            </li>
-        </dl>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="#">สถานประกอบการณ์</a></li>
+                <li><a href="?controller=company&action=index&userid=<?php echo $userid;?>">ฝึกงาน</a></li>
+                <li><a href="?controller=cooperative&action=index&userid=<?php echo $userid;?>">สหกิจ</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="iocn-link">
+                <a href="#">
+                    <i class='bx bx-file-blank' ></i>
+                    <span class="link_name">ยื่นคำร้อง</span>
+                </a>
+                <i class='bx bx-chevron-down arrow'></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="#">ยื่นคำร้อง</a></li>
+                <li><a href="?controller=petitionDCUser&action=index&userid=<?php echo $userid;?>">ฝึกงาน</a></li>
+                <li><a href="?controller=petitionCUser&action=index&userid=<?php echo $userid;?>">สหกิจ</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="?controller=checkApproval&action=index&userid=<?php echo $userid;?>">
+                <i class='bx bx-check-square' ></i>
+                <span class="link_name">ตรวจสอบผลการอนุมัติ</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="?controller=checkApproval&action=index&userid=<?php echo $userid;?>">ตรวจสอบผลการอนุมัติ</a></li>
+            </ul>
+        </li>
+        
+        <li>
+            <a href="?controller=downloadStudent&action=index&userid=<?php echo $userid;?>">
+            <i class='bx bx-download'></i>
+            <span class="link_name">download</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="?controller=downloadStudent&action=index&userid=<?php echo $userid;?>">download</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="?controller=uploadStudent&action=index&userid=<?php echo $userid;?>">
+            <i class='bx bx-upload'></i>
+            <span class="link_name">upload</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="?controller=uploadStudent&action=index&userid=<?php echo $userid;?>">upload</a></li>
+            </ul>
+        </li>
+    
+    <li> 
+    <div class="profile-details">
+        <div class="profile-content">
+            <i class='bx bxs-user'></i>
+        </div>
+            
+            <div class="name-job">
+                <div class="profile_name">
+                
+                <?php echo $userList->user_name;?> <?php echo $userList->user_surname;?>
+                
+                </div>
+            </div>   
+            <a href="?controller=user&action=logoutNisit&userid=<?php echo $userid;?>">          
+                <i class='bx bx-log-out '></i>
+            </a>
+    </div>
+    </li>
+    </dl>
     </div>
 
     <section class="home-section">
@@ -513,7 +521,7 @@
         <!-- เขียนตรงนี้นาจาาาาาา -->
         <div class="header">
     
-        <h2><b>ยื่นคำร้องฝึกงานสหกิจ <br></h2>
+        ยื่นคำร้องฝึกงานสหกิจ 
 
         </div>
 
