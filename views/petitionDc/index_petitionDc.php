@@ -1,16 +1,18 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+<meta charset="UTF-8">
+        
+        <link rel ="stylesheet" >
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
 
 </head>
 <style>
-
 body {
     font-family: 'Prompt', sans-serif;
 }
@@ -319,9 +321,6 @@ body {
   .sidebar a {font-size: 18px;}
 }
 
-
-
-    
     .header {
                 font-family: 'Prompt', sans-serif;
                 background-color: #f1f1f1;
@@ -330,50 +329,25 @@ body {
                 font-weight: bold;
             }
 
-table {
-    font-family: 'Prompt', sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-    border-color: white;
-}
+    table {
+        font-family: 'Prompt', sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        border-color: white;
+    }
 
-th
-{
-    text-align: center;
-    padding: 8px;
-}
- td {
-    text-align: left;
-    padding: 8px;
-}
+    th
+    {
+        text-align: center;
+        padding: 8px;
+    }
+    td {
+        text-align: left;
+        padding: 8px;
+    }
 
-tr:nth-child(odd){background-color: #cae3cc}
-tr:nth-child(even){background-color: #f2f2f2}
-
-.btn-group2 .button2 {
-            font-family: 'Prompt', sans-serif;
-            position: relative;
-             background-color: #73c088 ; /*Green */
-            border: 1px black;
-            color: white;
-            padding: 7px 25px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block; 
-            font-size: 16px;
-            cursor: pointer;
-            /* float: center; */
-            border-radius: 50px;
-        }
-
-        .btn-group2 .button2:not(:last-child) {
-            border-right: none; /* Prevent double borders */
-        }
-
-        .btn-group2 .button2:hover {
-            background-color: #ddd;
-            color: black;
-        }
+    tr:nth-child(odd){background-color: #cae3cc}
+    tr:nth-child(even){background-color: #f2f2f2}
 
     .btn-group .button {
             font-family: 'Prompt', sans-serif;
@@ -413,117 +387,6 @@ tr:nth-child(even){background-color: #f2f2f2}
             box-sizing: border-box;
         }
 
-.button3 {
-  background-color: #04AA6D;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 48%;
-}
-
-.button3:hover {
-  /* opacity: 0.8; */
-}
-
-
-
-/* Extra styles for the cancel button */
-.cancelbtn {
-  width: 48%;
-  padding: 14px 20px;
-  background-color: #f44336;
-}
-
-/* Center the image and position the close button */
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-  position: relative;
-}
-
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
-}
-
-.container {
-  padding: 50px;
-  width: 100%;
-
-}
-
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  padding-top: 60px;
-}
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
-
-/* The Close Button (x) */
-.close {
-  position: absolute;
-  right: 25px;
-  top: 0;
-  color: #000;
-  font-size: 50px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: red;
-  cursor: pointer;
-}
-
-/* Add Zoom Animation */
-.animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
-}
-
-@-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)} 
-  to {-webkit-transform: scale(1)}
-}
-  
-@keyframes animatezoom {
-  from {transform: scale(0)} 
-  to {transform: scale(1)}
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 100%;
-  }
-}
 
 a {
   color: blue;
@@ -618,130 +481,120 @@ a:hover {
     </div>
     <!-- เขียนตรงนี้นาจาาาาา -->
     
-<div class="header">
-     <!--width="20%" height="20%">-->
-    ตรวจสอบคำร้องฝึกงาน
-</div>
-
-<form method="get" action="">
-        <div class="btn-group2">
-    <input type="text" name="key">
-    <input type="hidden" name="controller" value="petitionDC"/>
-    <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
-    <button class="button2" type="submit" name="action" value="search">
-        <i class='fas fa-search' style='font-size: 22px'></i></button>
-
-    </div>
-    <br><br>
     <div class="header">
-    สถานประกอบการฝึกงานที่มีอยู่
+        ตรวจสอบคำร้องฝึกงาน
     </div>
+    <br><br>
 
-<table border="1">
-    <!-- <form method="get" action="">
-        <div class="btn-group"> -->
-            
-            <tr>
-            <th><?php echo "<a href=?controller=petitionDC&action=upY&userid=$userid>
-                <i class='fas fa-caret-up' style='font-size:24px'></i></a>" ?>
-                <?php echo "<a href=?controller=petitionDC&action=downY&userid=$userid>
-                <i class='fas fa-caret-down' style='font-size:24px'></i></a>" ?>
-            ปีการศึกษา</th>
-            <th><?php echo "<a href=?controller=petitionDC&action=upD&userid=$userid>
-                <i class='fas fa-caret-up' style='font-size:24px'></i></a>" ?>
-                <?php echo "<a href=?controller=petitionDC&action=downD&userid=$userid>
-                <i class='fas fa-caret-down' style='font-size:24px'></i></a>" ?>
-            วันที่ส่งคำร้อง</th>
-            <th>รหัสนิสิต</th>
-            <th>ชื่อ-นามสกุล</th>
-            <th>ชื่อสถานประกอบการฝึกงานที่มีอยู่</th>
-            <th>รายละเอียดการฝึกงาน</th>
-            <th><?php echo "<a href=?controller=petitionDC&action=upA&userid=$userid>
-                <i class='fas fa-caret-up' style='font-size:24px'></i></a>" ?>
-                <?php echo "<a href=?controller=petitionDC&action=downA&userid=$userid>
-                <i class='fas fa-caret-down' style='font-size:24px'></i></a>" ?>
-            สถานะ</th>
+    <form method="get" action="">
+        <div class="btn-group">
+        <input type="text" name="key">
+        <input type="hidden" name="controller" value="petitionDC"/>
+        <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
+        <button class="button" type="submit" name="action" value="search"><i class='bx bx-search'></i></button>
 
-        </tr>
         </div>
-       
-    </form>
+        <br><br>
+        <div class="header">
+        สถานประกอบการฝึกงานที่มีอยู่
+        </div>
+
+        <table border="1">
+        
+                
+                <tr>
+                <th><?php echo "<a href=?controller=petitionDC&action=upY&userid=$userid>
+                    <i class='fas fa-caret-up' style='font-size:24px'></i></a>" ?>
+                    <?php echo "<a href=?controller=petitionDC&action=downY&userid=$userid>
+                    <i class='fas fa-caret-down' style='font-size:24px'></i></a>" ?>
+                ปีการศึกษา</th>
+                <th><?php echo "<a href=?controller=petitionDC&action=upD&userid=$userid>
+                    <i class='fas fa-caret-up' style='font-size:24px'></i></a>" ?>
+                    <?php echo "<a href=?controller=petitionDC&action=downD&userid=$userid>
+                    <i class='fas fa-caret-down' style='font-size:24px'></i></a>" ?>
+                วันที่ส่งคำร้อง</th>
+                <th>รหัสนิสิต</th>
+                <th>ชื่อ-นามสกุล</th>
+                <th>ชื่อสถานประกอบการฝึกงานที่มีอยู่</th>
+                <th>รายละเอียดการฝึกงาน</th>
+                <th><?php echo "<a href=?controller=petitionDC&action=upA&userid=$userid>
+                    <i class='fas fa-caret-up' style='font-size:24px'></i></a>" ?>
+                    <?php echo "<a href=?controller=petitionDC&action=downA&userid=$userid>
+                    <i class='fas fa-caret-down' style='font-size:24px'></i></a>" ?>
+                สถานะ</th>
+
+            </tr>
+            </div>
+        
+        
+        
+        <?php foreach( $petionDcList as $dclist)
+        {
+            echo "<tr> <td>$dclist->academicY_p</td>
+            <td>$dclist->date_p</td>
+            <td>$dclist->user_id</td>
+            <td>$dclist->name_title$dclist->user_name $dclist->user_surname</td>
+            <td>$dclist->dc_name</td>
+            <td><a href=?controller=petitionDC&action=indexDetail&petition_id=$dclist->petition_id&userid=$userid>รายละเอียดเพิ่มเติม</td>   
+            <td> <a href=?controller=petitionDC&action=updateform&petition_id=$dclist->petition_id&userid=$userid> $dclist->status_name </a> </td>
+            </td></tr>";
+        }
+        echo "</table>"?>
+
+        <table border="1">
+                <tr>
+                <th><?php echo "<a href=?controller=petitionDC&action=upY2&userid=$userid>
+                        <i class='fas fa-caret-up' style='font-size:24px'></i></a>" ?>
+                        <?php echo "<a href=?controller=petitionDC&action=downY2&userid=$userid>
+                        <i class='fas fa-caret-down' style='font-size:24px'></i></a>" ?>
+                ปีการศึกษา</th>
+                <th><?php echo "<a href=?controller=petitionDC&action=upD2&userid=$userid>
+                        <i class='fas fa-caret-up' style='font-size:24px'></i></a>" ?>
+                        <?php echo "<a href=?controller=petitionDC&action=downD2&userid=$userid>
+                        <i class='fas fa-caret-down' style='font-size:24px'></i></a>" ?>
+                วันที่ส่งคำร้อง</th>
+                <th>รหัสนิสิต</th>
+                <th>ชื่อ-นามสกุล</th>
+                <th>ชื่อสถานประกอบการฝึกงานที่เพิ่มใหม่</th>
+                <th>รายละเอียดการฝึกงาน</th>
+                <th><?php echo "<a href=?controller=petitionDC&action=upA2&userid=$userid>
+                        <i class='fas fa-caret-up' style='font-size:24px'></i></a>" ?>
+                        <?php echo "<a href=?controller=petitionDC&action=downA2&userid=$userid>
+                        <i class='fas fa-caret-down' style='font-size:24px'></i></a>" ?>
+                สถานะ</th>
+
+            </tr>
+        
+
+            <br><br>
+            <br><br>
+            <div class="header">สถานประกอบการฝึกงานที่เพิ่มใหม่ </div>
+
+        <?php
+            foreach($pelist as $p)
+        {
+
+
+            echo "<tr> <td>$p->academicY_p</td>
+            <td>$p->date_p</td>
+            <td>$p->user_id</td>
+            <td>$p->name_title$p->user_name $p->user_surname</td>
+            <td>$p->comName_p</td>
+            <td><a href=?controller=petitionDC&action=indexDetailNoDc&petition_id=$p->petition_id&userid=$userid> รายละเอียดเพิ่มเติม </a> </td>  
+            <td> <a href=?controller=petitionDC&action=updateformNodc&petition_id=$p->petition_id&userid=$userid> $p->status_name </a> </td>
+
+            </td></tr>";
+        }
+        echo "</table>";
+
+        ?>
     
-
-
-
-
-
-
-
-<?php foreach( $petionDcList as $dclist)
-{
-    echo "<tr> <td>$dclist->academicY_p</td>
-    <td>$dclist->date_p</td>
-    <td>$dclist->user_id</td>
-    <td>$dclist->name_title$dclist->user_name $dclist->user_surname</td>
-    <td>$dclist->dc_name</td>
-    <td><a href=?controller=petitionDC&action=indexDetail&petition_id=$dclist->petition_id&userid=$userid>รายละเอียดเพิ่มเติม</td>   
-    <td> <a href=?controller=petitionDC&action=updateform&petition_id=$dclist->petition_id&userid=$userid> $dclist->status_name </a> </td>
-    </td></tr>";
-}?>
-
-
-
-<table border="1">
-        <tr>
-        <th><?php echo "<a href=?controller=petitionDC&action=upY2&userid=$userid>
-                <i class='fas fa-caret-up' style='font-size:24px'></i></a>" ?>
-                <?php echo "<a href=?controller=petitionDC&action=downY2&userid=$userid>
-                <i class='fas fa-caret-down' style='font-size:24px'></i></a>" ?>
-        ปีการศึกษา</th>
-        <th><?php echo "<a href=?controller=petitionDC&action=upD2&userid=$userid>
-                <i class='fas fa-caret-up' style='font-size:24px'></i></a>" ?>
-                <?php echo "<a href=?controller=petitionDC&action=downD2&userid=$userid>
-                <i class='fas fa-caret-down' style='font-size:24px'></i></a>" ?>
-        วันที่ส่งคำร้อง</th>
-        <th>รหัสนิสิต</th>
-        <th>ชื่อ-นามสกุล</th>
-        <th>ชื่อสถานประกอบการฝึกงานที่เพิ่มใหม่</th>
-        <th>รายละเอียดการฝึกงาน</th>
-        <th><?php echo "<a href=?controller=petitionDC&action=upA2&userid=$userid>
-                <i class='fas fa-caret-up' style='font-size:24px'></i></a>" ?>
-                <?php echo "<a href=?controller=petitionDC&action=downA2&userid=$userid>
-                <i class='fas fa-caret-down' style='font-size:24px'></i></a>" ?>
-        สถานะ</th>
-
-    </tr>
     </form>
-
-    <br><br>
-    <br><br>
-    <div class="header">สถานประกอบการฝึกงานที่เพิ่มใหม่ </div>
-
-<?php
-    foreach($pelist as $p)
-{
-
-
-    echo "<tr> <td>$p->academicY_p</td>
-    <td>$p->date_p</td>
-    <td>$p->user_id</td>
-    <td>$p->name_title$p->user_name $p->user_surname</td>
-    <td>$p->comName_p</td>
-    <td><a href=?controller=petitionDC&action=indexDetailNoDc&petition_id=$p->petition_id&userid=$userid> รายละเอียดเพิ่มเติม </a> </td>  
-    <td> <a href=?controller=petitionDC&action=updateformNodc&petition_id=$p->petition_id&userid=$userid> $p->status_name </a> </td>
-
-    </td></tr>";
-}
-echo "</table>";
-
- ?>
- 
- 
 
 
 </section>
     
-</form>
+
 
 
 <script>
