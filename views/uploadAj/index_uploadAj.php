@@ -2,7 +2,7 @@
 <html>
 <head>
 
-       
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
         
@@ -322,6 +322,9 @@ body {
                 font-family: 'Prompt', sans-serif;
                 background-color: #f1f1f1;
                 text-align: center;
+                font-size: 32px;
+                font-weight: bold;
+        
             }
 
     button {
@@ -411,7 +414,7 @@ body {
 
 <div class="sidebar close">
         <div class="logo-details">
-            <i class='bx bxs-tree-alt'></i>
+            <i class='bx bx-buildings'></i>
             <span class="logo_name">KASETSART UNIVERSITY</span>
         </div>
     <dl class="nav-links">
@@ -453,51 +456,7 @@ body {
             </ul>
         </li>
         
-        <li>
-            <a href="?controller=considerAj&action=index&userid=<?php echo $userid;?>">
-                <i class='bx bx-file'></i>
-                <span class="link_name">พิจาราณาคำร้องขอฝึกงาน</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=considerAj&action=index&userid=<?php echo $userid;?>">พิจาราณาคำร้องขอฝึกงาน</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="?controller=graphAj&action=index&userid=<?php echo $userid;?>">
-                <i class='bx bx-line-chart' ></i>
-                <span class="link_name">สถานการณ์ยื่นคำร้องนิสิต</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=graphAj&action=index&userid=<?php echo $userid;?>">สถานการณ์ยื่นคำร้องนิสิต</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="?controller=reportPetition&action=index&userid=<?php echo $userid;?>">
-                <i class='bx bx-file-blank' ></i>
-                <span class="link_name">รายงานสรุปการอนุมัติฝึกงาน</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=reportPetition&action=index&userid=<?php echo $userid;?>">รายงานสรุปการอนุมัติฝึกงาน</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="?controller=bookAj&action=index&userid=<?php echo $userid;?>">
-                <i class='bx bx-book' ></i>
-                <span class="link_name">ออกหนังสือขอความอนุเคราะห์</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=bookAj&action=index&userid=<?php echo $userid;?>">ออกหนังสือขอความอนุเคราะห์</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="?controller=checkHistory&action=index&userid=<?php echo $userid;?>">
-                <i class='bx bx-notepad'></i>
-                <span class="link_name">ตรวจสอบประวัติการฝึกงาน</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=checkHistory&action=index&userid=<?php echo $userid;?>">ตรวจสอบประวัติการฝึกงาน</a></li>
-            </ul>
-        </li>
+        
         <li>
             <a href="?controller=uploadAj&action=index&userid=<?php echo $userid;?>">
                 <i class='bx bx-upload'></i>
@@ -532,9 +491,7 @@ body {
         <span class="text">ระบบบริหารจัดการการฝึกงานแบบออนไลน์</span>
     </div>
     <!-- เขียนตรงนี้นาจาาาาา -->
-    <div class="header">
-        <h2>อัพโหลดประกาศต่างๆ</h2>
-    </div>
+    <div class="header"> อัพโหลดประกาศต่างๆ </div>
 
 
     <div class="row">
