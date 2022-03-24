@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-        
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
         <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
@@ -326,6 +326,8 @@ body {
                 font-family: 'Prompt', sans-serif;
                 background-color: #f1f1f1;
                 text-align: center;
+                font-size: 32px;
+                font-weight: bold;
             }
 
 .table {
@@ -344,7 +346,11 @@ th, td {
 tr:nth-child(odd){background-color: #cae3cc}
 tr:nth-child(even){background-color: #f2f2f2}
 
-
+.head2{
+            font-family: 'Prompt', sans-serif;
+            font-size: 25px;
+            font-weight: bold;
+        }
 </style>
 
 
@@ -352,7 +358,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 
 <div class="sidebar close">
         <div class="logo-details">
-            <i class='bx bxs-tree-alt'></i>
+        <i class='bx bx-buildings'></i>
             <span class="logo_name">KASETSART UNIVERSITY</span>
         </div>
     <dl class="nav-links">
@@ -394,51 +400,7 @@ tr:nth-child(even){background-color: #f2f2f2}
             </ul>
         </li>
         
-        <li>
-            <a href="?controller=considerAj&action=index&userid=<?php echo $userid;?>">
-                <i class='bx bx-file'></i>
-                <span class="link_name">พิจาราณาคำร้องขอฝึกงาน</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=considerAj&action=index&userid=<?php echo $userid;?>">พิจาราณาคำร้องขอฝึกงาน</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="?controller=graphAj&action=index&userid=<?php echo $userid;?>">
-                <i class='bx bx-line-chart' ></i>
-                <span class="link_name">สถานการณ์ยื่นคำร้องนิสิต</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=graphAj&action=index&userid=<?php echo $userid;?>">สถานการณ์ยื่นคำร้องนิสิต</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="?controller=reportPetition&action=index&userid=<?php echo $userid;?>">
-                <i class='bx bx-file-blank' ></i>
-                <span class="link_name">รายงานสรุปการอนุมัติสหกิจ</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=reportPetition&action=index&userid=<?php echo $userid;?>">รายงานสรุปการอนุมัติสหกิจ</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="?controller=bookAj&action=index&userid=<?php echo $userid;?>">
-                <i class='bx bx-book' ></i>
-                <span class="link_name">ออกหนังสือขอความอนุเคราะห์</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=bookAj&action=index&userid=<?php echo $userid;?>">ออกหนังสือขอความอนุเคราะห์</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="?controller=checkHistory&action=index&userid=<?php echo $userid;?>">
-                <i class='bx bx-notepad'></i>
-                <span class="link_name">ตรวจสอบประวัติการฝึกสหกิจ</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=checkHistory&action=index&userid=<?php echo $userid;?>">ตรวจสอบประวัติการฝึกสหกิจ</a></li>
-            </ul>
-        </li>
+        
         <li>
             <a href="?controller=uploadAj&action=index&userid=<?php echo $userid;?>">
                 <i class='bx bx-upload'></i>
@@ -474,18 +436,20 @@ tr:nth-child(even){background-color: #f2f2f2}
     </div>
     <!-- เขียนตรงนี้นาจาาาาา -->
     <div class="header">
-        <h2>รายละเอียดสถานประกอบการที่ประสงค์รับนิสิตสหกิจ</h2>
-
-    <h3>เพิ่มสถานประกอบการณ์ใหม่ <a href="?controller=cooperativeP&action=newCooperative&userid=<?php echo $userid;?>"> click!!! </a> </h3>
+        รายละเอียดสถานประกอบการที่ประสงค์รับนิสิตสหกิจ
 </div>
+<div class="head2"> เพิ่มสถานประกอบการณ์ใหม่ <a href="?controller=cooperativeP&action=newCooperative&userid=<?php echo $userid;?>"> click!!! </a></div>   
+
+
+
 
 
 <form method="get" action="">
-    <input type="text" name="key">
+<input type="text" name="key">
     <input type="hidden" name="controller" value="cooperativeP"/>
+    <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
     <button type="submit" name="action" value="search"><i class='fas fa-search'></i></button>
     
-</form>
 <table>
 <tr> <td><b>ที่</td>
 <td><b>ชื่อสถานประกอบการ/หน่วยงาน</td>
@@ -500,6 +464,28 @@ tr:nth-child(even){background-color: #f2f2f2}
 <td><b>การคัดเลือก</td>
 <td><b>อัพเดตข้อมูล</td>
 <td><b>ลบข้อมูล</td> </tr>
+
+<?php foreach( $cooperativePList as  $c)
+{
+    echo "<tr> <td>$c->c_id</td>
+    <td>$c->c_name</td>
+    <td>$c->c_position</td>
+    <td>$c->c_department</td>
+    <td>$c->c_num</td>
+    <td>$c->c_skills</td>
+    <td>$c->c_nature</td>
+    <td>$c->c_pay</td>
+    <td>$c->c_room</td>
+    <td>$c->c_benefit</td>
+    <td>$c->c_select</td>
+    <td>  <a href=?controller=cooperativeP&action=updateforms&c_id=$c->c_id&userid=$userid> <i class='fas fa-edit' style='font-size: 24px;'></i>  </a> </td>
+    <td>  <a href=?controller=cooperativeP&action=deleteconfirm&c_id=$c->c_id&userid=$userid> <i class='fas fa-trash-alt' style='font-size: 24px;'></i></a> </td></tr>";
+}
+echo "</table>";
+?>
+
+
+</form>
 
 </section>
 
@@ -531,21 +517,5 @@ sidebarBtn.addEventListener("click", ()=>{
 
 
 
-<?php foreach( $cooperativePList as  $c)
-{
-    echo "<tr> <td>$c->c_id</td>
-    <td>$c->c_name</td>
-    <td>$c->c_position</td>
-    <td>$c->c_department</td>
-    <td>$c->c_num</td>
-    <td>$c->c_skills</td>
-    <td>$c->c_nature</td>
-    <td>$c->c_pay</td>
-    <td>$c->c_room</td>
-    <td>$c->c_benefit</td>
-    <td>$c->c_select</td>
-    <td>  <a href=?controller=cooperativeP&action=updateforms&c_id=$c->c_id> <i class='fas fa-edit' style='font-size: 24px;'></i>  </a> </td>
-    <td>  <a href=?controller=cooperativeP&action=deleteconfirm&c_id=$c->c_id> <i class='fas fa-trash-alt' style='font-size: 24px;'></i></a> </td></tr>";
-}
-echo "</table>";
- ?>
+
+ 
