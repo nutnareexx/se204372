@@ -8,12 +8,12 @@ class userController{
         $userList = userModel::getAll();
         
 
-        echo "<br>username : ".$userid."<br>password :".$password."<br>";
+        //echo "<br>username : ".$userid."<br>password :".$password."<br>";
 
         $c=0;
         foreach($userList as $u){
             if($u->user_id == $userid){
-                echo "check userid";
+                //echo "check userid";
                 $c=1;
                 break;
             }
@@ -22,7 +22,7 @@ class userController{
         if($c==1){
             $checkList = userModel::get($userid);
             if($checkList->user_password == $password){
-                echo "<br> submit success <br>";
+                //echo "<br> submit success <br>";
                 $userList =userModel::get($userid);
                 if($userid == 'aj'){
                     $fList = fileModel::getAll();
