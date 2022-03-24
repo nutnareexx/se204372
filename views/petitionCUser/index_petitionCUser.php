@@ -507,7 +507,7 @@
                         <div class="profile_name"><?php echo $userList->user_name." ".$userList->user_surname?></div>
                     </div>
                 
-                    <a href="?controller=user&action=logoutNisit">          
+                    <a href="?controller=user&action=logoutNisit&userid=<?php echo $userid;?>">          
                         <i class='bx bx-log-out '></i>
                     </a>
                 
