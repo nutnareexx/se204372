@@ -527,11 +527,11 @@ tr:nth-child(even){background-color: #f2f2f2}
  </div>
  </form>
 
- <div class="header">
+ 
      
     <h2>สถานประกอบการสหกิจที่มีอยู่</h2>
      
- </div>
+
  
  
  <table align="center"> 
@@ -574,11 +574,11 @@ foreach( $petionCList as $clist)
 echo "</table><br><br>";
  ?>
 
-<div class="header">
+
      
      <h2>สถานประกอบการสหกิจที่เพิ่มใหม่</h2>
      
- </div>
+
 
 
 
