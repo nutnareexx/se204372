@@ -8,12 +8,10 @@ class userController{
         $userList = userModel::getAll();
         
 
-        //echo "<br>username : ".$userid."<br>password :".$password."<br>";
-
         $c=0;
         foreach($userList as $u){
             if($u->user_id == $userid){
-                //echo "check userid";
+                
                 $c=1;
                 break;
             }
@@ -22,7 +20,7 @@ class userController{
         if($c==1){
             $checkList = userModel::get($userid);
             if($checkList->user_password == $password){
-                //echo "<br> submit success <br>";
+                
                 $userList =userModel::get($userid);
                 if($userid == 'aj'){
                     $fList = fileModel::getAll();
@@ -39,7 +37,6 @@ class userController{
                 echo "alert('username หรือ password ไม่ถูกต้อง');";
                 echo "window.location.assign('http://localhost/se204372/index.php?controller=user&action=indexLogin');";
                 echo "</script>";
-                echo "<br> password worng <br>";
             }
         }
         else{
@@ -47,7 +44,6 @@ class userController{
             echo "alert('username หรือ password ไม่ถูกต้อง');";
             echo "window.location.assign('http://localhost/se204372/index.php?controller=user&action=indexLogin');";
             echo "</script>";
-            echo "<br> password worng <br>";
         }
 
     }
