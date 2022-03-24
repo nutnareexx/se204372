@@ -145,13 +145,10 @@ class petitionDcController
         $petition_id = $_GET['petition_id'];
         $app_rea =$_GET['approve_reason'];
         $userList=userModel::get($userid);
-        echo $numrand;
         petitionDcModel::update2($petition_id);
         approveModel::Add($numrand, $app_rea);
         $aList = approveModel::get($numrand);
-        echo "<br>".$petition_id." ".$numrand."<br>";
         petitionDcModel::updateApp($petition_id,$numrand);
-        // petitionDcModel::updateApp()
         petitionDcController::index();
     }
 
@@ -175,11 +172,11 @@ class petitionDcController
         $petition_id = $_GET['petition_id'];
         $app_rea =$_GET['approve_reason'];
         $userList=userModel::get($userid);
-        echo $numrand;
+        
         petitionDcModel::update2($petition_id);
         approveModel::Add($numrand, $app_rea);
         $aList = approveModel::get($numrand);
-        echo "<br>".$petition_id." ".$numrand."<br>";
+        
         petitionDcModel::updateApp($petition_id,$numrand);
         // petitionDcModel::updateApp()
         petitionDcController::index();
