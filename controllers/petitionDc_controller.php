@@ -73,6 +73,7 @@ class petitionDcController
     public function updateform()
     {
         $userid = $_GET['userid'];
+        
         $petition_id = $_GET['petition_id'];
         $userList=userModel::get($userid);
         $petionDcList = petitionDcModel::get($petition_id);
@@ -100,11 +101,12 @@ class petitionDcController
     public function updateformNodc()
     {
         $userid = $_GET['userid'];
+        echo $userid;
         $petition_id = $_GET['petition_id'];
-        $userList=userModel::get($userid);
+        $userList = userModel::get($userid);
+
         $petionDcList = petitionModelFornew::get($petition_id);
         $nametitleList = nametitleModel::getAll();
-        $userList = userModel::getAll();
         $DetailCompanyList = DetailCompanyModel::getAll();
         $statusList = statusModel::getAll();
         $pelist = petitionModelFornew::getAll();
