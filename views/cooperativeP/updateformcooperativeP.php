@@ -168,7 +168,7 @@ body {
     top: -10px;
     margin-top: 0;
     padding: 10px;
-    border: radius 10px;;
+    border-radius: 10px;
     
     opacity: 0;
     display: block;
@@ -321,6 +321,7 @@ body {
 
 
 
+
     
     .header {
                 font-family: 'Prompt', sans-serif;
@@ -446,7 +447,7 @@ body {
             <ul class="sub-menu">
                 <li><a class="link_name" href="#">สถานประกอบการณ์</a></li>
                 <li><a href="?controller=companyP&action=indexP&userid=<?php echo $userid;?>&userid=<?php echo $userid;?>">ฝึกงาน</a></li>
-                <li><a href="?controller=companyC&action=index&userid=<?php echo $userid;?>">สหกิจ</a></li>
+                <li><a href="?controller=cooperativeP&action=index&userid=<?php echo $userid;?>">สหกิจ</a></li>
             </ul>
         </li>
         <li>
