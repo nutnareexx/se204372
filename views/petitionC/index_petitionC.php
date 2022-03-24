@@ -482,6 +482,7 @@ a:hover {
  </div>
  <div class="header">ตรวจสอบคำร้องสหกิจ</div>
  
+ <br><br>
  <form method="get" action="">
  <div class="btn-group">
      
@@ -491,8 +492,8 @@ a:hover {
      <button class="button" type="submit" name="action" value="searchC"><i class='bx bx-search'></i></button>
  </div>
  </form>
-
- <div class="head2"> สถานประกอบการสหกิจที่มีอยู่ </div>
+ <br><br>
+ <div class="header"> สถานประกอบการสหกิจที่มีอยู่ </div>
  
  
  <table align="center"> 
@@ -535,9 +536,7 @@ foreach( $petionCList as $clist)
 echo "</table><br><br>";
  ?>
 
-<div class="head2">สถานประกอบการสหกิจที่เพิ่มใหม่</div>
-
-
+<div class="header">สถานประกอบการสหกิจที่เพิ่มใหม่</div>
 
 <table align="center"> 
      <tr>
