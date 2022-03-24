@@ -491,8 +491,9 @@ body {
         <span class="text">ระบบบริหารจัดการการฝึกงานแบบออนไลน์</span>
     </div>
     <!-- เขียนตรงนี้นาจาาาาา -->
+    <br>
     <div class="header"> อัพโหลดประกาศต่างๆ </div>
-
+<br>
 
     <div class="row">
         <div class="leftcolumn">
