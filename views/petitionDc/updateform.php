@@ -3,7 +3,7 @@
 <html>
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
-   
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <style>
@@ -323,6 +323,8 @@ body {
                 font-family: 'Prompt', sans-serif;
                 background-color: #f1f1f1;
                 text-align: center;
+                font-size: 32px;
+                font-weight: bold;
             }
 
             button {
@@ -362,12 +364,25 @@ body {
 
             .card {
             font-family: 'Prompt', sans-serif;
-            width: 80%;
             background-color: #f1f1f1;
+            width:80%;
             padding: 20px 20px 20px 20px;
             margin: 20px 20px 20px 20px;
             border-radius: 50px;
             
+        }
+        table {
+           
+            font-size: 18px;
+            font-weight: bold;
+            width: 80%;
+        }
+        th, td {
+            padding: 5px 5px 5px 5px;
+        }
+
+        tr{
+            padding: 10px 10px 10px 10px;
         }
 </style> 
 
@@ -376,7 +391,7 @@ body {
 
 <div class="sidebar close">
         <div class="logo-details">
-            <i class='bx bxs-tree-alt'></i>
+        <i class='bx bx-buildings'></i>
             <span class="logo_name">KASETSART UNIVERSITY</span>
         </div>
     <dl class="nav-links">
@@ -454,7 +469,7 @@ body {
  </div>
  <div class="header">
      
-     <h2>การอนุมัติการฝึกงาน</h2>
+     การอนุมัติการฝึกงาน
  </div>
  
 <form method="get" action="">
@@ -462,8 +477,12 @@ body {
 <center>
 <div class="card">
     <table>
+        <th colspan="2"> 
+                <br>
+                <label>ส่วนของนิสิต</label>
+            </th>
         <tr>
-            <th align="right">รหัสนิสิต : </th>
+            <th align="right" style="width: 30%;">รหัสนิสิต : </th>
             <td><?php echo $petionDcList->user_id;?></td>
         </tr>
         <tr>
@@ -482,14 +501,25 @@ body {
             <th align="right">ตำแหน่งที่ไปฝึกงาน : </th>
             <td><?php echo "$petionDcList->position_p";?></td>
         </tr>
+        <th colspan="2"> 
+                <br>
+                <label>ส่วนของผู้ที่จะให้ภาควิชาฯ ออกหนังสือขอความอนุเคราะห์ฝึกงาน</label>
+            </th>
         <tr>
-            <th align="right">ชื่อผู้ที่จะให้ภาควิชาฯ ออกหนังสือขอความอนุเคราะห์ : </th>
+            <th align="right">ชื่อ - นามสกุล : </th>
             <td><?php echo "$petionDcList->approverName_p  $petionDcList->approverSname_p";?></td>
         </tr>
         <tr>
-            <th align="right">ตำแหน่งของผู้ที่จะให้ภาควิชาฯ ออกหนังสือขอความอนุเคราะห์ : </th>
+            <th align="right">ตำแหน่ง : </th>
             <td><?php echo "$petionDcList->approverP_p";?></td>
         </tr>
+
+        <th colspan="2">
+                <br><br>
+                <label>ส่วนของสถานประกอบการ</label> 
+                
+            </th>
+        
         <tr>
             <th align="right">ชื่อสถานประกอบการ : </th>
             <td><?php echo "$petionDcList->dc_name";?></td>
@@ -518,6 +548,11 @@ body {
             <th align="right">รหัสไปรษณีย์ : </th>
             <td><?php echo "$petionDcList->compPost_p";?></td>
         </tr>
+        <th colspan="2">
+                <br><br>
+                <label>ส่วนของผู้ประสานงาน</label> 
+                
+            </th>
         <tr>
             <th align="right">ชื่อผู้ประสานงาน : </th>
             <td><?php echo "$petionDcList->hrName_p   $petionDcList->hrSname_p";?></td>
@@ -527,9 +562,14 @@ body {
             <td><?php echo "$petionDcList->hrPhone_p";?></td>
         </tr>
         <tr>
-            <th align="right">อีเมล : </th>
+            <th align="right">E-mail : </th>
             <td><?php echo "$petionDcList->hrMail_p";?></td>
         </tr>
+        <th colspan="2">
+                <br><br>
+                <label>ส่วนของรายละเอียดการฝึกงาน</label> 
+                
+            </th>
         <tr>
             <th align="right">ระยะการฝึกงานตั้งแต่วันที่ : </th>
             <td><?php echo "$petionDcList->compRoad_p";?></td>
@@ -554,6 +594,11 @@ body {
             <th align="right">ระยะการเวลาการฝึกงาน : </th>
             <td><?php echo "$petionDcList->start_p - $petionDcList->finish_p";?></td>
         </tr>
+        <th colspan="2">
+                <br><br>
+                <label>การอนุมัติการฝึกงาน</label> 
+                
+            </th>
         <tr>
             <th align="right">ผลการอนุมัติ : </th>
             <td><?php echo "$petionDcList->status_name";?></td>
