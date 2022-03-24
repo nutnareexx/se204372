@@ -365,6 +365,7 @@ body {
       background-color: #f1f1f1;
       text-align: center;
       /* padding: 20px; */
+     
       width: 100%;
       border-radius: 10px;
     }
