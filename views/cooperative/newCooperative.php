@@ -2,6 +2,7 @@
 <html>
 <head>
         <link rel ="stylesheet" >
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -376,6 +377,12 @@ input[type=text], select {
             background-color: #ddd;
             color: black;
         }
+
+        .head2{
+            font-family: 'Prompt', sans-serif;
+            font-size: 32px;
+            font-weight: bold;
+        }
 </style>
 
 
@@ -477,8 +484,8 @@ input[type=text], select {
     </div>
     <!-- เขียนตรงนี้นาจาาาาาา -->
     <div class="header">
-  
-    <h2><b>เพิ่มสถานประกอบการณ์ใหม่</h2>
+        <div class="head2"> เพิ่มสถานประกอบการณ์ใหม่ </div> 
+    
     </div>
 
     <form method="get" action="">
