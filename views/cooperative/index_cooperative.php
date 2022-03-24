@@ -5,10 +5,11 @@
 <html>
 <head>
         <link rel ="stylesheet" >
-        
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <style>
 body {
@@ -327,26 +328,102 @@ body {
                 font-family: 'Prompt', sans-serif;
                 background-color: #f1f1f1;
                 text-align: center;
+                font-size: 32px;
+                font-weight: bold;
             }
 
 
         
 
-.table {
-    font-family: 'Prompt', sans-serif;
-    border-collapse: collapse;
-    
-    text-align: center;
-    background: #f2f2f2;
-}
+    .table {
+        font-family: 'Prompt', sans-serif;
+        border-collapse: collapse;
+        
+        text-align: center;
+        background: #f2f2f2;
+    }
 
-th, td {
-    text-align: left;
-    padding: 8px;
-}
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
 
-tr:nth-child(odd){background-color: #cae3cc}
-tr:nth-child(even){background-color: #f2f2f2}
+    tr:nth-child(odd){background-color: #cae3cc}
+    tr:nth-child(even){background-color: #f2f2f2}
+
+    .btn-group .button {
+            font-family: 'Prompt', sans-serif;
+            position: relative;
+             background-color: #73c088 ; /*Green */
+            border: 1px black;
+            color: white;
+            padding: 7px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block; 
+            font-size: 16px;
+            cursor: pointer;
+            /* float: center; */
+            border-radius: 50px;
+        }
+
+        .btn-group .button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+
+        .btn-group .button:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+    input[type=text], select {
+                font-family: 'Prompt', sans-serif;
+                width: 50%;
+                padding: 5px 5px;
+                margin: 8px 0;
+                font-size: 16px;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 50px;
+            box-sizing: border-box;
+        }
+
+.btn-group2 .button2 {
+            font-family: 'Prompt', sans-serif;
+            position: relative;
+             background-color: #73c088 ; /*Green */
+            border: 1px black;
+            color: white;
+            padding: 7px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block; 
+            font-size: 16px;
+            cursor: pointer;
+            /* float: center; */
+            border-radius: 50px;
+        }
+
+        .btn-group2 .button2:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+
+        .btn-group2 .button2:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        input[type=text], select {
+            font-family: 'Prompt', sans-serif;
+            width: 50%;
+            padding: 5px 5px;
+            margin: 8px 0;
+            font-size: 16px;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 50px;
+            box-sizing: border-box;
+        }
 
 </style>
 
@@ -355,7 +432,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 
 <div class="sidebar close">
         <div class="logo-details">
-            <i class='bx bxs-tree-alt'></i>
+        <i class='bx bx-buildings'></i>
             <span class="logo_name">KASETSART UNIVERSITY</span>
         </div>
     <dl class="nav-links">
@@ -451,23 +528,22 @@ tr:nth-child(even){background-color: #f2f2f2}
     <!-- เขียนตรงนี้นาจาาาาาา -->
     
 <div class="header">
-     <h2>รายละเอียดสถานประกอบการที่ประสงค์รับนิสิตสหกิจ</h2>
+     รายละเอียดสถานประกอบการที่ประสงค์รับนิสิตสหกิจ
 
-    <h3>เพิ่มสถานประกอบการณ์ใหม่ <a href="?controller=cooperative&action=newCooperative&userid=$userid"> click!!! </a> </h3>
+    
 </div>
 
-
+<br>
 
 <form method="get" action="">
-    <div class="btn-group">
+    <div class="btn-group2">
         <input type="text" name="key">
         <input type="hidden" name="controller" value="cooperative"/>
         <input type="hidden" name="userid" value="<?php echo $userid?>";/>
-        <button class="button" type="submit" name="action" value="search">Search</button>
+        <button class="button2" type="submit" name="action" value="search"><i class='fas fa-search' style='font-size: 22px'></i></button>
 
     </div>
-    
-</form>
+    <br>
     
 
 <table>
@@ -484,6 +560,30 @@ tr:nth-child(even){background-color: #f2f2f2}
         <td>สวัสดิการอื่นๆ</td>
         <td>การคัดเลือก</td>
     </tr>
+    <?php foreach($cooperativeList as $c)
+    {
+        echo "<tr>
+        <td>$c->c_id</td>
+        <td>$c->c_name</td>
+        <td>$c->c_position</td>
+        <td>$c->c_department</td>
+        <td>$c->c_num</td>
+        <td>$c->c_skills</td>
+        <td>$c->c_nature</td>
+        <td>$c->c_pay</td>
+        <td>$c->c_room</td>
+        <td>$c->c_benefit</td>
+        <td>$c->c_select</td>
+        </tr>
+        ";
+    } 
+
+    echo "</table>";
+    ?>
+    
+    
+</form>
+
 </section>
 
 <script>
@@ -510,24 +610,4 @@ sidebarBtn.addEventListener("click", ()=>{
 
 </html>
 
-<?php foreach($cooperativeList as $c)
-{
-    echo "<tr>
-    <td>$c->c_id</td>
-    <td>$c->c_name</td>
-    <td>$c->c_position</td>
-    <td>$c->c_department</td>
-    <td>$c->c_num</td>
-    <td>$c->c_skills</td>
-    <td>$c->c_nature</td>
-    <td>$c->c_pay</td>
-    <td>$c->c_room</td>
-    <td>$c->c_benefit</td>
-    <td>$c->c_select</td>
-    </tr>
-    ";
-} 
-
-echo "</table>";
-?>
 
