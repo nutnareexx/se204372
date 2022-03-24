@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-        
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
         <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
@@ -326,6 +326,9 @@ body {
                 font-family: 'Prompt', sans-serif;
                 background-color: #f1f1f1;
                 text-align: center;
+                font-size: 32px;
+                font-weight: bold;
+        
             }
 
 .table {
@@ -405,6 +408,12 @@ input[type=text], select {
             background-color: #ddd;
             color: black;
         }
+
+        .head2{
+            font-family: 'Prompt', sans-serif;
+            font-size: 25px;
+            font-weight: bold;
+        }
 </style>
 
 
@@ -412,7 +421,7 @@ input[type=text], select {
 
 <div class="sidebar close">
         <div class="logo-details">
-            <i class='bx bxs-tree-alt'></i>
+            <i class='bx bx-buildings'></i>
             <span class="logo_name">KASETSART UNIVERSITY</span>
         </div>
     <dl class="nav-links">
@@ -454,51 +463,7 @@ input[type=text], select {
             </ul>
         </li>
         
-        <li>
-            <a href="?controller=considerAj&action=index&userid=<?php echo $userid;?>">
-                <i class='bx bx-file'></i>
-                <span class="link_name">พิจาราณาคำร้องขอฝึกงาน</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=considerAj&action=index&userid=<?php echo $userid;?>">พิจาราณาคำร้องขอฝึกงาน</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="?controller=graphAj&action=index&userid=<?php echo $userid;?>">
-                <i class='bx bx-line-chart' ></i>
-                <span class="link_name">สถานการณ์ยื่นคำร้องนิสิต</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=graphAj&action=index&userid=<?php echo $userid;?>">สถานการณ์ยื่นคำร้องนิสิต</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="?controller=reportPetition&action=index&userid=<?php echo $userid;?>">
-                <i class='bx bx-file-blank' ></i>
-                <span class="link_name">รายงานสรุปการอนุมัติฝึกงาน</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=reportPetition&action=index&userid=<?php echo $userid;?>">รายงานสรุปการอนุมัติฝึกงาน</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="?controller=bookAj&action=index&userid=<?php echo $userid;?>">
-                <i class='bx bx-book' ></i>
-                <span class="link_name">ออกหนังสือขอความอนุเคราะห์</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=bookAj&action=index&userid=<?php echo $userid;?>">ออกหนังสือขอความอนุเคราะห์</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="?controller=checkHistory&action=index&userid=<?php echo $userid;?>">
-                <i class='bx bx-notepad'></i>
-                <span class="link_name">ตรวจสอบประวัติการฝึกงาน</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=checkHistory&action=index&userid=<?php echo $userid;?>">ตรวจสอบประวัติการฝึกงาน</a></li>
-            </ul>
-        </li>
+        
         <li>
             <a href="?controller=uploadAj&action=index&userid=<?php echo $userid;?>">
                 <i class='bx bx-upload'></i>
@@ -534,10 +499,11 @@ input[type=text], select {
     </div>
     <!-- เขียนตรงนี้นาจาาาาา -->
     <div class="header">
-        <h2>รายละเอียดสถานประกอบการที่ประสงค์รับนิสิตฝึกงาน</h2>
-
-    <h3>เพิ่มสถานประกอบการณ์ใหม่ <a href="?controller=companyP&action=newDetailCompanyP"> click!!! </a> </h3>
+        รายละเอียดสถานประกอบการที่ประสงค์รับนิสิตฝึกงาน
 </div>
+<div class="head2"> เพิ่มสถานประกอบการณ์ใหม่ <a href="?controller=companyP&action=newDetailCompanyP&userid=<?php echo $userid;?>"> click!!! </a> </div> 
+
+
 
 <form method="get" action="">
     <div class="btn-group2">
@@ -609,8 +575,8 @@ sidebarBtn.addEventListener("click", ()=>{
     <td>$c->dc_room</td>
     <td>$c->dc_benefit</td>
     <td>$c->dc_select</td>
-    <td> <a href=?controller=companyP&action=updateformP&dc_id=$c->dc_id> <i class='fas fa-edit' style='font-size: 24px;'></i>  </a> </td>
-    <td> <a href=?controller=companyP&action=deleteconfirmP&dc_id=$c->dc_id> <i class='fas fa-trash-alt' style='font-size: 24px;'></i> </a>
+    <td> <a href=?controller=companyP&action=updateformP&dc_id=$c->dc_id&userid=$userid> <i class='fas fa-edit' style='font-size: 24px;'></i>  </a> </td>
+    <td> <a href=?controller=companyP&action=deleteconfirmP&dc_id=$c->dc_id&userid=$userid> <i class='fas fa-trash-alt' style='font-size: 24px;'></i> </a>
     </tr>
     ";
 } 
