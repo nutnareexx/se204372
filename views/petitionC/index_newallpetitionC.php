@@ -502,9 +502,13 @@
      <div class="card" align='center'>
      <form method="get" action="">
  
-     <table>
+     <table align="center">
+            <th colspan="2"> 
+                <br>
+                <label>ส่วนของนิสิต</label>
+            </th>
                 <tr>
-                    <th align="right">รหัสนิสิต :</th>
+                    <th align="right" style="width: 40%;">รหัสนิสิต :</th>
                     <td><?php echo "$petionCnewList->user_id";?></td>
                 </tr>
                 <tr>
@@ -531,14 +535,24 @@
                     <th align="right">ตำแหน่งที่ไปฝึกงาน :</th>
                     <td><?php echo "$petionCnewList->position_p";?></td>
                 </tr>
+
+                <th colspan="2"> 
+                    <br>
+                    <label>ส่วนของผู้ที่จะให้ภาควิชาฯ ออกหนังสือขอความอนุเคราะห์ฝึกงาน</label>
+                </th>
                 <tr>
-                    <th align="right">ชื่อผู้อนุมัติฝึกสหกิจ :</th>
+                    <th align="right">ชื่อ - นามสกุล :</th>
                     <td><?php echo "$petionCnewList->approverName_p $petionCnewList->approverSname_p";?></td>
                 </tr>
                 <tr>
-                    <th align="right">ตำแหน่งผู้อนุมัติฝึกสหกิจ :</th>
+                    <th align="right">ตำแหน่ง :</th>
                     <td><?php echo "$petionCnewList->approverP_p";?></td>
                 </tr>
+                <th colspan="2">
+                    <br><br>
+                    <label>ส่วนของสถานประกอบการ</label> 
+                
+                </th>
                 <tr>
                     <th align="right">ชื่อสถานประกอบการสหกิจ :</th>
                     <td><?php echo "$petionCnewList->comName_p";?></td>
@@ -567,6 +581,11 @@
                     <th align="right">รหัสไปรษณีย์ :</th>
                     <td><?php echo "$petionCnewList->compPost_p";?></td>
                 </tr>
+                <th colspan="2">
+                    <br><br>
+                    <label>ส่วนของผู้ประสานงาน</label> 
+                
+                 </th>
                 <tr>
                     <th align="right">ชื่อผู้ประสานงาน :</th>
                     <td><?php echo "$petionCnewList->hrName_p $petionCnewList->hrSname_p";?></td>
@@ -579,6 +598,12 @@
                     <th align="right">E-mail :</th>
                     <td><?php echo "$petionCnewList->hrMail_p";?></td>
                 </tr>
+
+                <th colspan="2">
+                    <br><br>
+                    <label>ส่วนของรายละเอียดการฝึกงาน</label> 
+                
+                </th>
                 <tr>
                     <th align="right">ค่าตอบแทน :</th>
                     <td><?php echo "$petionCnewList->salary_p";?></td>
@@ -604,10 +629,14 @@
                     <th align="right">สิ้นสุดการฝึกงาน :</th>
                     <td><?php echo "$petionCnewList->finish_p";?></td>
                 </tr>
-                
+                <th colspan="2">
+                    <br><br>
+                    <label>การอนุมัติการฝึกงาน</label> 
+                    
+                </th>
             
                 <tr>
-                    <th align="right">สถานะ :</th>
+                    <th align="right">ผลการอนุมัติ :</th>
                     <td><?php echo "$petionCnewList->status_name";?></td>
                 </tr>
 
