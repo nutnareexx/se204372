@@ -20,9 +20,10 @@ class userController{
         if($c==1){
             $checkList = userModel::get($userid);
             if($checkList->user_password == $password){
-                
+                $u = substr($userid, 0 ,1);
+                echo $u;
                 $userList =userModel::get($userid);
-                if($userid == 'aj'){
+                if($u == 'a'){
                     $fList = fileModel::getAll();
                     require_once('views/hamburger/index_hamburgerAj.php');
                 }
