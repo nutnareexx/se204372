@@ -229,7 +229,6 @@ class petitionDcModel{
 
   public static function updateApp($p,$num)
   {
-    echo"in".$num;
       require("connection_connect.php");
       $sql = "UPDATE `petition` 
                 SET `approve_id`= '$num'
