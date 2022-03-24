@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-       
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -327,6 +327,8 @@ body {
                 font-family: 'Prompt', sans-serif;
                 background-color: #f1f1f1;
                 text-align: center;
+                font-size: 32px;
+                font-weight: bold;
             }
 
 .table {
@@ -389,7 +391,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 
 <div class="sidebar close">
         <div class="logo-details">
-            <i class='bx bxs-tree-alt'></i>
+        <i class='bx bx-buildings'></i>
             <span class="logo_name">KASETSART UNIVERSITY</span>
         </div>
     <dl class="nav-links">
@@ -485,10 +487,10 @@ tr:nth-child(even){background-color: #f2f2f2}
     <!-- เขียนตรงนี้นาจาาาาาา -->
     <div class="header">
      
-    <h2>รายละเอียดสถานประกอบการที่ประสงค์รับนิสิตฝึกงาน</h2>
+    รายละเอียดสถานประกอบการที่ประสงค์รับนิสิตฝึกงาน
 </div>
-    <h3>เพิ่มสถานประกอบการณ์ใหม่ <a href="?controller=company&action=newDetailCompany&userid=$userid"> click!!! </a> </h3>
-
+    
+<br>
 
 <form method="get" action="">
     <div class="btn-group2">
