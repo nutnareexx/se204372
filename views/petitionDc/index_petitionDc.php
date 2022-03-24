@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -326,6 +326,8 @@ body {
                 font-family: 'Prompt', sans-serif;
                 background-color: #f1f1f1;
                 text-align: center;
+                font-size: 32px;
+                font-weight: bold;
             }
 
 table {
@@ -522,6 +524,15 @@ span.psw {
      width: 100%;
   }
 }
+
+a {
+  color: blue;
+}
+
+a:hover {
+  color: black;
+}
+
 </style>
 
 
@@ -529,7 +540,7 @@ span.psw {
 
 <div class="sidebar close">
         <div class="logo-details">
-            <i class='bx bxs-tree-alt'></i>
+        <i class='bx bx-buildings'></i>
             <span class="logo_name">KASETSART UNIVERSITY</span>
         </div>
     <dl class="nav-links">
@@ -653,7 +664,7 @@ span.psw {
     
 <div class="header">
      <!--width="20%" height="20%">-->
-    <h2>ตรวจสอบคำร้องฝึกงาน</h2>
+    ตรวจสอบคำร้องฝึกงาน
 </div>
 
 <form method="get" action="">
@@ -664,34 +675,11 @@ span.psw {
     <button class="button2" type="submit" name="action" value="search">
         <i class='fas fa-search' style='font-size: 22px'></i></button>
 
-        
-
     </div>
-    
-</form>
-
-
-<script>
-
-let arrow = document.querySelectorAll(".arrow");
-for (var i = 0; i < arrow.length; i++){
-    arrow[i].addEventListener("click", (e)=>{
-        let arrowParent = e.target.parentElement.parentElement;
-        arrowParent.classList.toggle("showMenu");
-    });
-}
-
-let sidebar = document.querySelector(".sidebar");
-let sidebarBtn = document.querySelector(".bx-menu");
-console.log(sidebarBtn);
-sidebarBtn.addEventListener("click", ()=>{
-    sidebar.classList.toggle("close");
-});
-
-</script>
-
-
-    <h2>สถานประกอบการฝึกงานที่มีอยู่</h2>
+    <br><br>
+    <div class="header">
+    สถานประกอบการฝึกงานที่มีอยู่
+    </div>
 
 <table border="1">
     <!-- <form method="get" action="">
@@ -770,7 +758,8 @@ sidebarBtn.addEventListener("click", ()=>{
     </form>
 
     <br><br>
-    <h2>สถานประกอบการฝึกงานที่เพิ่มใหม่</h2>
+    <br><br>
+    <div class="header">สถานประกอบการฝึกงานที่เพิ่มใหม่ </div>
 
 <?php
     foreach($pelist as $p)
@@ -782,8 +771,8 @@ sidebarBtn.addEventListener("click", ()=>{
     <td>$p->user_id</td>
     <td>$p->name_title$p->user_name $p->user_surname</td>
     <td>$p->comName_p</td>
-    <td><a href=?controller=petitionDC&action=indexDetailNoDc&petition_id=$p->petition_id&userid=$userid> รายละเอียดเพิ่มเติม </td>  
-    <td> <a href=?controller=petitionDC&action=updateformNodc&petition_id=$p->petition_id&userid=$userid> $p->status_name </td>
+    <td><a href=?controller=petitionDC&action=indexDetailNoDc&petition_id=$p->petition_id&userid=$userid> รายละเอียดเพิ่มเติม </a> </td>  
+    <td> <a href=?controller=petitionDC&action=updateformNodc&petition_id=$p->petition_id&userid=$userid> $p->status_name </a> </td>
 
     </td></tr>";
 }
@@ -795,6 +784,30 @@ echo "</table>";
 
 
 </section>
+    
+</form>
+
+
+<script>
+
+let arrow = document.querySelectorAll(".arrow");
+for (var i = 0; i < arrow.length; i++){
+    arrow[i].addEventListener("click", (e)=>{
+        let arrowParent = e.target.parentElement.parentElement;
+        arrowParent.classList.toggle("showMenu");
+    });
+}
+
+let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".bx-menu");
+console.log(sidebarBtn);
+sidebarBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("close");
+});
+
+</script>
+
+
 
 </body>
 
