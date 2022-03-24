@@ -17,12 +17,11 @@ else
         }
     </style>
     <body>
-        <?php echo "controller = ".$controller." ,action = ".$action ;?>
-        <br>
-        [<a href= "?controller=pages&action=home"> home </a>]
+        
+        <!--[<a href= "?controller=pages&action=home"> home </a>]
         [<a href= "?controller=user&action=indexLogin">login</a>]
         [<a href= "?controller=nisit&action=index"> Nisit </a>]
-        <!--[<a href= "?controller=petitionDCUser&action=index">ยื่นคำร้องฝึกงานสำหรับนิสิต</a>]
+        [<a href= "?controller=petitionDCUser&action=index">ยื่นคำร้องฝึกงานสำหรับนิสิต</a>]
         [<a href= "?controller=petitionCUser&action=index">ยื่นคำร้องสหกิจสำหรับนิสิต</a>]
         [<a href= "?controller=checkApproval&action=index">ตรวจสอบผลการอนุมัตินิสิต</a>]
         [<a href= "?controller=downloadStudent&action=index">downloadนิสิต</a>]
@@ -32,9 +31,9 @@ else
         [<a href= "?controller=company&action=index">companyฝึกงาน</a>]
         [<a href= "?controller=cooperative&action=index">companyสหกิจ</a>]
         [<a href= "?controller=companyP&action=indexP">companyฝึกงานสำหรับอาจารย์</a>]
-        [<a href= "?controller=companyC&action=index">companyสหกิจสำหรับอาจารย์</a>]-->
+        [<a href= "?controller=companyC&action=index">companyสหกิจสำหรับอาจารย์</a>]
         [<a href= "?controller=Aj&action=index">hamburgerอาจารย์</a>]
-        <!--[<a href= "?controller=considerAj&action=index">พิจาราณาคำร้อง/อาจารย์</a>]
+        [<a href= "?controller=considerAj&action=index">พิจาราณาคำร้อง/อาจารย์</a>]
         [<a href= "?controller=graphAj&action=index">กราฟคำร้อง/อาจารย์</a>]
         [<a href= "?controller=reportPetition&action=index">รายงานสรุป/อาจารย์</a>]
         [<a href= "?controller=bookAj&action=index">ออกหนังสือ/อาจารย์</a>]
