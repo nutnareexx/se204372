@@ -633,7 +633,7 @@
         </tr>
     </table>
 
-    <br>
+    <br><br>
         <input type="hidden" name="controller" value="petitionDC"/>
         <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
         <input type="hidden" name="petition_id" value="<?php echo $petition_id;?>"/>
@@ -643,6 +643,8 @@
 </div>
 </form>
 </center>
+<br>
+<br>
 
     
 
