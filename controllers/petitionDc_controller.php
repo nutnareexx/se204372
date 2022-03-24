@@ -78,7 +78,7 @@ class petitionDcController
         $userList=userModel::get($userid);
         $petionDcList = petitionDcModel::get($petition_id);
         $nametitleList = nametitleModel::getAll();
-        $userList = userModel::getAll();
+        
         $DetailCompanyList = DetailCompanyModel::getAll();
         $statusList = statusModel::getAll();
         // $pelist = petitionModelFornew::getAll();
@@ -131,7 +131,7 @@ class petitionDcController
         $userList=userModel::get($userid);
         $petionDcList = petitionDcModel::get($petition_id);
         $nametitleList = nametitleModel::getAll();
-        $userList = userModel::getAll();
+        
         $DetailCompanyList = DetailCompanyModel::getAll();
         $statusList = statusModel::getAll();
         $pelist = petitionModelFornew::getAll();
