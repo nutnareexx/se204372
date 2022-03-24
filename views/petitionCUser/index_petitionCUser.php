@@ -2,6 +2,7 @@
 <html>
     <head>
             <!-- <link rel ="stylesheet" href="hamburger.css"> -->
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
             <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
             <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -410,6 +411,11 @@
                 box-sizing: border-box;
             
             }
+        .head2{
+            font-family: 'Prompt', sans-serif;
+            font-size: 32px;
+            font-weight: bold;
+        }
     </style>
 
 
@@ -460,12 +466,12 @@
                 </ul>
             </li>
             <li>
-                <a href="?controller=checkApproval&action=index">
+                <a href="?controller=checkApproval&action=index&userid=<?php echo $userid;?>">
                     <i class='bx bx-check-square' ></i>
                     <span class="link_name">ตรวจสอบผลการอนุมัติ</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">ตรวจสอบผลการอนุมัติ</a></li>
+                    <li><a class="link_name" href="?controller=checkApproval&action=index&userid=<?php echo $userid;?>">ตรวจสอบผลการอนุมัติ</a></li>
                 </ul>
             </li>
             
@@ -514,7 +520,7 @@
         <!-- เขียนตรงนี้นาจาาาาาา -->
         <div class="header">
     
-        <h2><b>ยื่นคำร้องฝึกงานสหกิจ <br></h2>
+        <div class="head2"> ยื่นคำร้องฝึกงานสหกิจ </div> 
 
         </div>
 
