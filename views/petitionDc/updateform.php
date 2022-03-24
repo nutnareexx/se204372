@@ -396,12 +396,12 @@ body {
         </div>
     <dl class="nav-links">
     <li>
-            <a href="?controller=nisit&action=index&userid=<?php echo $userid;?>">
+            <a href="?controller=Aj&action=index&userid=<?php echo $userid;?>">
             <i class='bx bx-home'></i>
                 <span class="link_name">หน้าแรก</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=nisit&action=index&userid=<?php echo $userid;?>">หน้าแรก</a></li>
+                <li><a class="link_name" href="?controller=Aj&action=index&userid=<?php echo $userid;?>">หน้าแรก</a></li>
             </ul>
         </li>
         <li>
@@ -454,7 +454,7 @@ body {
                 <?php echo $userList->user_name;?> <?php echo $userList->user_surname;?>
                 </div>
             </div>   
-            <a href="?controller=pages&action=home&userid=<?php echo $userid;?>">          
+            <a href="?controller=user&action=logoutAj&userid=<?php echo $userid;?>">          
                 <i class='bx bx-log-out '></i>
             </a>
     </div>
