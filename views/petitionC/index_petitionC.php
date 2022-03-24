@@ -1,17 +1,18 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<meta charset="UTF-8">
+        
+        <link rel ="stylesheet" >
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
 
 </head>
 <style>
-
 body {
     font-family: 'Prompt', sans-serif;
 }
@@ -320,10 +321,7 @@ body {
   .sidebar a {font-size: 18px;}
 }
 
-
-
-    
-.header {
+    .header {
                 font-family: 'Prompt', sans-serif;
                 background-color: #f1f1f1;
                 text-align: center;
@@ -331,25 +329,27 @@ body {
                 font-weight: bold;
             }
 
-table {
-    font-family: 'Prompt', sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-    align-items: center;
-    text-align: center;
-    background: #f2f2f2;
-}
+    table {
+        font-family: 'Prompt', sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        border-color: white;
+    }
 
-th, td {
-    text-align: center;
-    border: 1px solid white;
-    padding: 8px;
-}
+    th
+    {
+        text-align: center;
+        padding: 8px;
+    }
+    td {
+        text-align: left;
+        padding: 8px;
+    }
 
-tr:nth-child(odd){background-color: #cae3cc}
-tr:nth-child(even){background-color: #f2f2f2}
+    tr:nth-child(odd){background-color: #cae3cc}
+    tr:nth-child(even){background-color: #f2f2f2}
 
-.btn-group2 .button2 {
+    .btn-group .button {
             font-family: 'Prompt', sans-serif;
             position: relative;
              background-color: #73c088 ; /*Green */
@@ -365,14 +365,15 @@ tr:nth-child(even){background-color: #f2f2f2}
             border-radius: 50px;
         }
 
-        .btn-group2 .button2:not(:last-child) {
+        .btn-group .button:not(:last-child) {
             border-right: none; /* Prevent double borders */
         }
 
-        .btn-group2 .button2:hover {
+        .btn-group .button:hover {
             background-color: #ddd;
             color: black;
         }
+
 
         input[type=text], select {
             font-family: 'Prompt', sans-serif;
@@ -385,11 +386,16 @@ tr:nth-child(even){background-color: #f2f2f2}
             border-radius: 50px;
             box-sizing: border-box;
         }
-        .head2{
-            font-family: 'Prompt', sans-serif;
-            font-size: 25px;
-            font-weight: bold;
-        }
+
+
+a {
+  color: blue;
+}
+
+a:hover {
+  color: black;
+}
+
 </style>
 
 
@@ -477,12 +483,12 @@ tr:nth-child(even){background-color: #f2f2f2}
  <div class="header">ตรวจสอบคำร้องสหกิจ</div>
  
  <form method="get" action="">
- <div class="btn-group2">
+ <div class="btn-group">
      
      <input type="text" name="key">
      <input type="hidden" name="controller" value="petitionC"/>
      <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
-     <button class="button2" type="submit" name="action" value="searchC"><i class='fas fa-search' style='font-size: 22px'></i></button>
+     <button class="button" type="submit" name="action" value="searchC"><i class='bx bx-search'></i></button>
  </div>
  </form>
 
