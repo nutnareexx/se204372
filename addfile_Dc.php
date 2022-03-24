@@ -8,7 +8,6 @@
 	//$fileupload = $_POST['fileupload']; //รับค่าไฟล์จากฟอร์ม	
 	$fileupload = (isset($_POST['fileupload']) ? $_POST['fileupload'] : '');
 
-	echo $fileupload;
 	//ฟังก์ชั่นสุ่มตัวเลข
 		$numrand = (mt_rand());
 
@@ -26,7 +25,7 @@
 		
 
 		$userid = $_POST['userid'];
-		echo $userid;
+
 		
 		//ตั้งชื่อไฟล์ใหม่โดยเอาเวลาไว้หน้าชื่อไฟล์เดิม
 		
@@ -70,17 +69,10 @@
 
 		$company_name = $_POST['company_name'];
 
-		echo "<br>".$company_name."<br>";
-        
-			echo $date.$userid.$y.$faceB.$phone.$position
-			.$approve_name.$approve_lastname.$approve_position.
-			$company_no.$company_road.$company_sub.$company_dis.$company_prov.$company_code.
-			$hr_name.$hr_lastname.$hr_phone.$hr_mail.
-			$pay.$room."dc".$start.$finish."01";
+
 
         if(isset($_POST['company_id'])){
             $company_id = $_POST['company_id'];
-			echo "<br>".$company_id;
             $sql = "INSERT INTO `petition`( `date_p`, `user_id`, `academicY_p`,`FB_p`, `phone_p`,`position_p`, 
                                         `approverName_p`, `approverSname_p`, `approverP_p`, 
                                         `dc_id`, `compNo_p`, `compRoad_p`, `compSubdist_p`, `compDistrict_p`, `compProvince_p`, `compPost_p`, 
@@ -95,7 +87,6 @@
         }
         if(isset($_POST['company_name'])){
             $company_name = $_POST['company_name'];
-			echo "<br>".$company_name;
             $sql = "INSERT INTO `petition`( `date_p`, `user_id`, `academicY_p`,`FB_p`, `phone_p`, `position_p`,
                                         `approverName_p`, `approverSname_p`, `approverP_p`, 
                                         `comName_p`, `compNo_p`, `compRoad_p`, `compSubdist_p`, `compDistrict_p`, `compProvince_p`, `compPost_p`, 

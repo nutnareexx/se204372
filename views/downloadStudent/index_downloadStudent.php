@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-        
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
         
@@ -320,6 +320,8 @@ body {
             font-family: 'Prompt', sans-serif;
             background-color: #f1f1f1;
             text-align: center;
+            font-weight: bold;
+            font-size: 32px;
         }
 
         .card {
@@ -333,6 +335,7 @@ body {
         }
         th, td {
             padding: 5px 5px 5px 5px;
+            font-size: 18px;
         }
 
         tr{
@@ -357,7 +360,7 @@ body {
 <body>
 <div class="sidebar close">
         <div class="logo-details">
-            <i class='bx bxs-tree-alt'></i>
+        <i class='bx bx-buildings'></i>
             <span class="logo_name">KASETSART UNIVERSITY</span>
         </div>
     <dl class="nav-links">
@@ -453,7 +456,7 @@ body {
     <!-- เขียนตรงนี้นาจาาาาาา -->
     <div class="header">
   
-    <h2><b>หนังสือขอความอนุเคราะห์การฝึกงาน และหนังสือส่งตัว</h2>
+    หนังสือขอความอนุเคราะห์การฝึกงาน และหนังสือส่งตัว
     </div>
 
     <center>
@@ -465,7 +468,7 @@ body {
             </tr>
 
             <tr>
-                <td>หนังสือส่งตัว : </td>
+                <td align="right" style="width: 30%;">หนังสือส่งตัว : </td>
                 <td><a href="#">download</a></td>
             </tr>
         </table>
