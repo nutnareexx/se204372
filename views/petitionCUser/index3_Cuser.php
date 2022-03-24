@@ -2,6 +2,7 @@
 <html>
     <head>
             <!-- <link rel ="stylesheet" href="hamburger.css"> -->
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
             <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
             <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -325,6 +326,8 @@
             font-family: 'Prompt', sans-serif;
             background-color: #f1f1f1;
             text-align: center;
+            font-size: 32px;
+            font-weight: bold;
         }
 
         table {
@@ -415,7 +418,7 @@
     <body>
     <div class="sidebar close">
         <div class="logo-details">
-            <span class="logo_icon">KU</span>
+        <i class='bx bx-buildings'></i>
             <span class="logo_name">KASETSART UNIVERSITY</span>
         </div>
         <dl class="nav-links">
@@ -514,7 +517,7 @@
         <!-- เขียนตรงนี้นาจาาาาาา -->
         <div class="header">
     
-        <h2><b>ยื่นคำร้องฝึกงาน <br></h2>
+        ยื่นคำร้องฝึกงานสหกิจ <br></h2>
 
         </div>
 
@@ -757,13 +760,11 @@
 
             <?php
             if($c=="cid"){
-                // $company_id = $_GET['company_id'];
-                echo "cid";
+                
                 echo "<input type='hidden' name='company_id' value='$company_id'/>";
             }
             else if($c=="name"){
-                // $company_name = $_GET['dc_name'];
-                echo $company_name;
+                
                 echo "<input type='hidden' name='company_name' value='$company_name'/>";
             }
             ?>
@@ -781,6 +782,24 @@
         <br>
 
     </section>
+    <script>
+
+        let arrow = document.querySelectorAll(".arrow");
+        for (var i = 0; i < arrow.length; i++){
+            arrow[i].addEventListener("click", (e)=>{
+                let arrowParent = e.target.parentElement.parentElement;
+                arrowParent.classList.toggle("showMenu");
+            });
+        }
+
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".bx-menu");
+        console.log(sidebarBtn);
+        sidebarBtn.addEventListener("click", ()=>{
+            sidebar.classList.toggle("close");
+        });
+
+    </script>
     </body>
 
 </html>
