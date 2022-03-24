@@ -327,7 +327,7 @@ body {
                 font-weight: bold;
             }
 
-            button {
+    button {
             font-family: 'Prompt', sans-serif;
             position: relative;
             background-color: #397d54 ; 
@@ -477,10 +477,14 @@ body {
 
 <center>
 <div class="card">
-    
+<form action="" method="get">
     <table align="center">
-    <tr>
-            <th align="right" style="width: 30%;">รหัสนิสิต : </th>
+        <th colspan="2"> 
+                <br>
+                <label>ส่วนของนิสิต</label>
+        </th>
+        <tr>
+            <td align="right" style="width: 40%;">รหัสนิสิต : </td>
             <td><?php echo $petionDcList->user_id;?></td>
         </tr>
         <tr>
@@ -499,14 +503,23 @@ body {
             <th align="right">ตำแหน่งที่ไปฝึกงาน : </th>
             <td><?php echo "$petionDcList->position_p";?></td>
         </tr>
+        <th colspan="2"> 
+                <br>
+                <label>ส่วนของผู้ที่จะให้ภาควิชาฯ ออกหนังสือขอความอนุเคราะห์ฝึกงาน</label>
+            </th>
         <tr>
-            <th align="right">ชื่อผู้ที่จะให้ภาควิชาฯ ออกหนังสือขอความอนุเคราะห์ : </th>
+            <th align="right">ชื่อ - นามสกุล : </th>
             <td><?php echo "$petionDcList->approverName_p  $petionDcList->approverSname_p";?></td>
         </tr>
         <tr>
-            <th align="right">ตำแหน่งของผู้ที่จะให้ภาควิชาฯ ออกหนังสือขอความอนุเคราะห์ : </th>
+            <th align="right">ตำแหน่ง : </th>
             <td><?php echo "$petionDcList->approverP_p";?></td>
         </tr>
+        <th colspan="2">
+                <br><br>
+                <label>ส่วนของสถานประกอบการ</label> 
+                
+            </th>
         <tr>
             <th align="right">ชื่อสถานประกอบการ : </th>
             <td><?php echo "$petionDcList->comName_p";?></td>
@@ -535,6 +548,11 @@ body {
             <th align="right">รหัสไปรษณีย์ : </th>
             <td><?php echo "$petionDcList->compPost_p";?></td>
         </tr>
+        <th colspan="2">
+                <br><br>
+                <label>ส่วนของผู้ประสานงาน</label> 
+                
+            </th>
         <tr>
             <th align="right">ชื่อผู้ประสานงาน : </th>
             <td><?php echo "$petionDcList->hrName_p   $petionDcList->hrSname_p";?></td>
@@ -544,9 +562,14 @@ body {
             <td><?php echo "$petionDcList->hrPhone_p";?></td>
         </tr>
         <tr>
-            <th align="right">อีเมล : </th>
+            <th align="right">E-mail : </th>
             <td><?php echo "$petionDcList->hrMail_p";?></td>
         </tr>
+        <th colspan="2">
+                <br><br>
+                <label>ส่วนของรายละเอียดการฝึกงาน</label> 
+                
+            </th>
         <tr>
             <th align="right">ระยะการฝึกงานตั้งแต่วันที่ : </th>
             <td><?php echo "$petionDcList->compRoad_p";?></td>
@@ -571,6 +594,12 @@ body {
             <th align="right">ระยะการเวลาการฝึกงาน : </th>
             <td><?php echo "$petionDcList->start_p - $petionDcList->finish_p";?></td>
         </tr>
+
+        <th colspan="2">
+                <br><br>
+                <label>การอนุมัติการฝึกงาน</label> 
+                
+            </th>
         <tr>
             <th align="right">ผลการอนุมัติ : </th>
             <td><?php echo "$petionDcList->status_name";?></td>
@@ -578,12 +607,11 @@ body {
             </table>
         <input type="hidden" name="controller" value="petitionDC"/>
     
+    </table>            
         <br>
-        <form action="" method="get">
+        
     <input type="hidden" name="petition_id" value="<?php echo $petition_id;?>"/>
     <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
-    <!-- <input type="hidden" name="status_id" value="<?php echo $status_id;?>"/> -->
-    
     <button type="submit" name="action" value="update"> อนุมัติ </button>
     <button type="submit" name="action" value="NoupForm2"> ไม่อนุมัติ </button>
     <br><br>
