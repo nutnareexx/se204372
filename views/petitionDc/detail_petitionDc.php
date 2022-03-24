@@ -424,12 +424,12 @@
         </div>
     <dl class="nav-links">
         <li>
-            <a href="?controller=Aj&action=index">
+            <a href="?controller=Aj&action=index&userid=<?php echo $userid;?>">
             <i class='bx bx-home'></i>
                 <span class="link_name">หน้าแรก</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=Aj&action=index">หน้าแรก</a></li>
+                <li><a class="link_name" href="?controller=Aj&action=index&userid=<?php echo $userid;?>">หน้าแรก</a></li>
             </ul>
         </li>
         <li>
@@ -442,8 +442,8 @@
             </div>
             <ul class="sub-menu">
                 <li><a class="link_name" href="#">สถานประกอบการณ์</a></li>
-                <li><a href="?controller=companyP&action=indexP">ฝึกงาน</a></li>
-                <li><a href="?controller=cooperativeP&action=index">สหกิจ</a></li>
+                <li><a href="?controller=companyP&action=indexP&userid=<?php echo $userid;?>">ฝึกงาน</a></li>
+                <li><a href="?controller=cooperativeP&action=index&userid=<?php echo $userid;?>">สหกิจ</a></li>
             </ul>
         </li>
         <li>
@@ -456,19 +456,19 @@
             </div>
             <ul class="sub-menu">
                 <li><a class="link_name" href="#">ตรวจสอบคำร้อง</a></li>
-                <li><a href="?controller=petitionDC&action=index">ฝึกงาน</a></li>
-                <li><a href="?controller=petitionC&action=indexC">สหกิจ</a></li>
+                <li><a href="?controller=petitionDC&action=index&userid=<?php echo $userid;?>">ฝึกงาน</a></li>
+                <li><a href="?controller=petitionC&action=indexC&userid=<?php echo $userid;?>">สหกิจ</a></li>
             </ul>
         </li>
         
         
         <li>
-            <a href="?controller=uploadAj&action=index">
+            <a href="?controller=uploadAj&action=index&userid=<?php echo $userid;?>">
                 <i class='bx bx-upload'></i>
                 <span class="link_name">อัพโหลดประกาศ</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">อัพโหลดประกาศ</a></li>
+                <li><a class="link_name" href="?controller=uploadAj&action=index&userid=<?php echo $userid;?>">อัพโหลดประกาศ</a></li>
             </ul>
         </li>
         <li> 
@@ -482,7 +482,7 @@
                 <?php echo $userList->user_name;?> <?php echo $userList->user_surname;?>
                 </div>
             </div>   
-            <a href="?controller=user&action=logoutAj">          
+            <a href="?controller=user&action=logoutAj&userid=<?php echo $userid;?>">          
                 <i class='bx bx-log-out '></i>
             </a>
     </div>
