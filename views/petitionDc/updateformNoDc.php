@@ -362,14 +362,20 @@ body {
 
             }
 
-            .card {
+        .card {
             font-family: 'Prompt', sans-serif;
-            width: 80%;
             background-color: #f1f1f1;
+            width:80%;
             padding: 20px 20px 20px 20px;
             margin: 20px 20px 20px 20px;
             border-radius: 50px;
             
+        }
+        table {
+            
+            font-size: 18px;
+            font-weight: bold;
+            width: 80%;
         }
         th, td {
             padding: 5px 5px 5px 5px;
@@ -511,11 +517,12 @@ body {
      การอนุมัติการฝึกงาน
  </div>
  
-<form method="get" action="">
+
 
 <center>
 <div class="card">
-    <table>
+    
+    <table align="center">
     <tr>
             <th align="right" style="width: 30%;">รหัสนิสิต : </th>
             <td><?php echo $petionDcList->user_id;?></td>
@@ -616,6 +623,7 @@ body {
         <input type="hidden" name="controller" value="petitionDC"/>
     
         <br>
+        <form action="" method="get">
     <input type="hidden" name="petition_id" value="<?php echo $petition_id;?>"/>
     <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
     <!-- <input type="hidden" name="status_id" value="<?php echo $status_id;?>"/> -->
@@ -624,7 +632,7 @@ body {
     <button type="submit" name="action" value="NoupForm2"> ไม่อนุมัติ </button>
     <br><br>
     <button type="submit" name="action" value="index"> กลับ </button>
-
+        </form>
 </div>
 
 
@@ -635,7 +643,7 @@ body {
 
     
 
-</form>
+
 
 </section>
 
