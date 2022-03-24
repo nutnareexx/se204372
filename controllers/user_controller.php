@@ -35,11 +35,19 @@ class userController{
                 
             }
             else{
+                echo "<script type='text/javascript'>";
+                echo "alert('username หรือ password ไม่ถูกต้อง');";
+                echo "window.location.assign('http://localhost/se204372/index.php?controller=user&action=indexLogin');";
+                echo "</script>";
                 echo "<br> password worng <br>";
             }
         }
         else{
-            echo "<br> Don't have user <br>";
+            echo "<script type='text/javascript'>";
+            echo "alert('username หรือ password ไม่ถูกต้อง');";
+            echo "window.location.assign('http://localhost/se204372/index.php?controller=user&action=indexLogin');";
+            echo "</script>";
+            echo "<br> password worng <br>";
         }
 
     }
