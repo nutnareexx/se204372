@@ -339,6 +339,8 @@ body {
                 font-family: 'Prompt', sans-serif;
                 background-color: #f1f1f1;
                 text-align: center;
+                font-size: 32px;
+                font-weight: bold;
             }
 
 .table {
@@ -452,10 +454,8 @@ tr:nth-child(even){background-color: #f2f2f2}
         <i class='bx bx-menu'></i>
             <span class="text">ระบบบริหารจัดการการฝึกงานแบบออนไลน์</span>
     </div>
-    <!-- เขียนตรงนี้นาจาาาาาา -->
-    <div class="header">
-     
-    <h2>รายละเอียดสถานประกอบการที่ประสงค์รับนิสิตฝึกงาน</h2>
+    <!-- เขียนตรงนี้นาจาาาาาา --><br>
+    <div class="header">รายละเอียดสถานประกอบการที่ประสงค์รับนิสิตฝึกงาน</div>
 
 
 <form method="get" action="">
