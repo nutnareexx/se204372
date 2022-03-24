@@ -422,8 +422,8 @@
     <body>
     <div class="sidebar close">
             <div class="logo-details">
-                <i class='bx bxs-tree-alt'></i>
-                <span class="logo_name">KASETSART UNIVERSITY</span>
+            <i class='bx bx-buildings'></i>
+                <span class="logo_name"> KASETSART UNIVERSITY </span>
             </div>
 
         <dl class="nav-links">
@@ -476,21 +476,21 @@
             </li>
             
             <li>
-                <a href="?controller=downloadStudent&action=index">
+                <a href="?controller=downloadStudent&action=index&userid=<?php echo $userid;?>">
                 <i class='bx bx-download'></i>
                 <span class="link_name">download</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">download</a></li>
+                    <li><a class="link_name" href="?controller=downloadStudent&action=index&userid=<?php echo $userid;?>">download</a></li>
                 </ul>
             </li>
             <li>
-                <a href="?controller=uploadStudent&action=index">
-                <i class='bx bx-upload'></i>
-                <span class="link_name">upload</span>
+                <a href="?controller=uploadStudent&action=index&userid=<?php echo $userid;?>">
+                    <i class='bx bx-upload'></i>
+                    <span class="link_name">upload</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">upload</a></li>
+                    <li><a class="link_name" href="?controller=uploadStudent&action=index&userid=<?php echo $userid;?>">upload</a></li>
                 </ul>
             </li>
             <li>
