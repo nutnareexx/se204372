@@ -339,6 +339,8 @@ body {
                 font-family: 'Prompt', sans-serif;
                 background-color: #f1f1f1;
                 text-align: center;
+                font-size: 32px;
+                font-weight: bold;
             }
 
 .table {
@@ -393,11 +395,7 @@ tr:nth-child(even){background-color: #f2f2f2}
             border-radius: 50px;
             box-sizing: border-box;
         }
-        .head2{
-            font-family: 'Prompt', sans-serif;
-            font-size: 32px;
-            font-weight: bold;
-        }
+
 
 </style>
 
@@ -406,7 +404,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 
 <div class="sidebar close">
         <div class="logo-details">
-            <i class='bx bx-buildings'></i>
+            <span class="logo_icon">KU</span>
             <span class="logo_name">KASETSART UNIVERSITY</span>
         </div>
     <dl class="nav-links">
@@ -457,9 +455,8 @@ tr:nth-child(even){background-color: #f2f2f2}
         <i class='bx bx-menu'></i>
             <span class="text">ระบบบริหารจัดการการฝึกงานแบบออนไลน์</span>
     </div>
-    <!-- เขียนตรงนี้นาจาาาาาา -->
-    <div class="header">
-    <div class="head2"> รายละเอียดสถานประกอบการที่ประสงค์รับนิสิตสหกิจ </div>  
+    <!-- เขียนตรงนี้นาจาาาาาา --><br>
+    <div class="header"> รายละเอียดสถานประกอบการที่ประสงค์รับนิสิตสหกิจ </div>  
     
 
 
