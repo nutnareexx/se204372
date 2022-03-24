@@ -406,6 +406,11 @@ body {
                 box-sizing: border-box;
             
             }
+            .head2{
+            font-family: 'Prompt', sans-serif;
+            font-size: 32px;
+            font-weight: bold;
+        }
 
 
 </style>
@@ -415,7 +420,7 @@ body {
 
 <div class="sidebar close">
         <div class="logo-details">
-            <i class='bx bxs-tree-alt'></i>
+            <i class='bx bx-buildings'></i>
             <span class="logo_name">KASETSART UNIVERSITY</span>
         </div>
     <dl class="nav-links">
@@ -457,51 +462,7 @@ body {
             </ul>
         </li>
         
-        <li>
-            <a href="?controller=considerAj&action=index&userid=<?php echo $userid;?>">
-                <i class='bx bx-file'></i>
-                <span class="link_name">พิจาราณาคำร้องขอฝึกงาน</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=considerAj&action=index&userid=<?php echo $userid;?>">พิจาราณาคำร้องขอฝึกงาน</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="?controller=graphAj&action=index&userid=<?php echo $userid;?>">
-                <i class='bx bx-line-chart' ></i>
-                <span class="link_name">สถานการณ์ยื่นคำร้องนิสิต</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=graphAj&action=index&userid=<?php echo $userid;?>">สถานการณ์ยื่นคำร้องนิสิต</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="?controller=reportPetition&action=index&userid=<?php echo $userid;?>">
-                <i class='bx bx-file-blank' ></i>
-                <span class="link_name">รายงานสรุปการอนุมัติฝึกงาน</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=reportPetition&action=index&userid=<?php echo $userid;?>">รายงานสรุปการอนุมัติฝึกงาน</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="?controller=bookAj&action=index&userid=<?php echo $userid;?>">
-                <i class='bx bx-book' ></i>
-                <span class="link_name">ออกหนังสือขอความอนุเคราะห์</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=bookAj&action=index&userid=<?php echo $userid;?>">ออกหนังสือขอความอนุเคราะห์</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="?controller=checkHistory&action=index&userid=<?php echo $userid;?>">
-                <i class='bx bx-notepad'></i>
-                <span class="link_name">ตรวจสอบประวัติการฝึกงาน</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=checkHistory&action=index&userid=<?php echo $userid;?>">ตรวจสอบประวัติการฝึกงาน</a></li>
-            </ul>
-        </li>
+        
         <li>
             <a href="?controller=uploadAj&action=index&userid=<?php echo $userid;?>">
                 <i class='bx bx-upload'></i>
@@ -537,8 +498,8 @@ body {
     </div>
     <!-- เขียนตรงนี้นาจาาาาา -->
     <div class="header">
-        
-<h2>เพิ่มข้อมูลสถานประกอบการณ์<h2>
+    <div class="head2"> เพิ่มข้อมูลสถานประกอบการณ์ </div>  
+
     
 </div>
 
@@ -590,6 +551,7 @@ body {
 </table>
 
 <input type="hidden" name="controller" value="cooperativeP"/>
+<input type="hidden" name="userid" value="<?php echo $userid;?>"/>
 <button type="submit" name="action" value="index">Back</button>
 <button type="submit" name="action" value="addCooperative">Save</button>
     
