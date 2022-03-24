@@ -505,10 +505,10 @@
     <div class="card" align='center'>
         <form method="get" action="">
     <table align="center">
-    <th colspan="2"> 
+        <th colspan="2"> 
                 <br>
                 <label>ส่วนของนิสิต</label>
-            </th>
+        </th>
         <tr>
             <th align="right" style="width: 40%;" >รหัสนิสิต : </th>
             <td><?php echo $p->user_id;?></td>
