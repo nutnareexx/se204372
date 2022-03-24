@@ -498,7 +498,7 @@ body {
     <table>
         
         <tr>
-            <th align="right">รหัสนิสิต : </th>
+            <th align="right" >รหัสนิสิต : </th>
             <td><?php echo $p->user_id;?></td>
         </tr>
         <tr>
