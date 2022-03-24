@@ -331,7 +331,11 @@ body {
                 font-size: 32px;
                 font-weight: bold;
             }
-
+            .header2{
+            font-family: 'Prompt', sans-serif;
+            font-size: 25px;
+            font-weight: bold;
+        }
 
         
 
@@ -432,7 +436,11 @@ body {
 
 <div class="sidebar close">
         <div class="logo-details">
+<<<<<<< Updated upstream
         <i class='bx bx-buildings'></i>
+=======
+            <i class='bx bx-buildings'></i>
+>>>>>>> Stashed changes
             <span class="logo_name">KASETSART UNIVERSITY</span>
         </div>
     <dl class="nav-links">

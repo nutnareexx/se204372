@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-       
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -393,6 +393,11 @@ tr:nth-child(even){background-color: #f2f2f2}
             border-radius: 50px;
             box-sizing: border-box;
         }
+        .head2{
+            font-family: 'Prompt', sans-serif;
+            font-size: 32px;
+            font-weight: bold;
+        }
 
 </style>
 
@@ -401,7 +406,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 
 <div class="sidebar close">
         <div class="logo-details">
-            <span class="logo_icon">KU</span>
+            <i class='bx bx-buildings'></i>
             <span class="logo_name">KASETSART UNIVERSITY</span>
         </div>
     <dl class="nav-links">
@@ -454,8 +459,8 @@ tr:nth-child(even){background-color: #f2f2f2}
     </div>
     <!-- เขียนตรงนี้นาจาาาาาา -->
     <div class="header">
-     
-    <h2>รายละเอียดสถานประกอบการที่ประสงค์รับนิสิตสหกิจ</h2>
+    <div class="head2"> รายละเอียดสถานประกอบการที่ประสงค์รับนิสิตสหกิจ </div>  
+    
 
 
 <form method="get" action="">

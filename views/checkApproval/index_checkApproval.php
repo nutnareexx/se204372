@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-        
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -374,6 +374,17 @@ th, td {
             border-radius: 20px;
         }
 
+        .head2{
+            font-family: 'Prompt', sans-serif;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .head3{
+            font-family: 'Prompt', sans-serif;
+            font-size: 25px;
+            font-weight: bold;
+        }
 
 
 </style>
@@ -382,7 +393,7 @@ th, td {
 <body>
 <div class="sidebar close">
         <div class="logo-details">
-            <i class='bx bxs-tree-alt'></i>
+        <i class='bx bx-buildings'></i>
             <span class="logo_name">KASETSART UNIVERSITY</span>
         </div>
     <dl class="nav-links">
@@ -477,14 +488,16 @@ th, td {
     </div>
     <!-- เขียนตรงนี้นาจาาาาาา -->
     <div class="header">
-  
-        <h2><b>ตรวจสอบผลการอนุมัติ</h2>
+        <div class="head2"> ตรวจสอบผลการอนุมัติ </div> 
+        
     </div>
 
     <center>    
 <div class='card'>
+    <br>
     <div class='card2'>
-        <h3>ฝึกงาน</h3>
+        
+    <div class="head3"> ฝึกงาน </div> 
     </div>
    <?php foreach($checkList as $clist){
        echo "
@@ -560,8 +573,10 @@ th, td {
    </div>
 
    <div class='card'>
+       <br>
         <div class='card2'>
-                <h3>สหกิจ</h3>
+            
+            <div class="head3"> สหกิจ </div> 
             </div>
 
 <?php foreach($checkCList as $clist){
