@@ -403,15 +403,7 @@ tr:nth-child(even){background-color: #f2f2f2}
                 <li><a class="link_name" href="?controller=downloadStudent&action=index&userid=<?php echo $userid;?>">download</a></li>
             </ul>
         </li>
-        <li>
-            <a href="?controller=uploadStudent&action=index&userid=<?php echo $userid;?>">
-            <i class='bx bx-upload'></i>
-            <span class="link_name">upload</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?controller=uploadStudent&action=index&userid=<?php echo $userid;?>">upload</a></li>
-            </ul>
-        </li>
+        
         <li> 
     <div class="profile-details">
         <div class="profile-content">
