@@ -42,7 +42,7 @@ body {
     align-items: center;
 }
 
-.sidebar .logo-details .logo_icon{
+.sidebar .logo-details i{
     font-size: 30px;
     color: #fff;
     height: 50px;
@@ -52,16 +52,12 @@ body {
     
 }
 
-
-
 .sidebar .logo-details .logo_name{
-    display: flex;
     font-size: 22px;
     color: #fff;
     font-weight: 600;
     transition:  0.3s ease;
     transition-delay: 0.1s;
-   
 }
 
 .sidebar.close .logo-details .logo_name{
@@ -148,7 +144,7 @@ body {
     margin-top: -10px;
     background: #397d54;
     display: none;
-    border-radius: 10px;
+    
 }
 
 .sidebar .nav-links li.showMenu .sub-menu{
@@ -159,7 +155,6 @@ body {
     color: #fff;
     font-size: 15px;
     padding: 5px 40px;
-    
     white-space: nowrap;
     opacity: 0.6;
     transition: all 0.3 ease;
@@ -181,7 +176,6 @@ body {
     display: block;
     pointer-events: none;
     transition: 0s;
-    
 }
 
 
@@ -327,19 +321,31 @@ body {
   .sidebar a {font-size: 18px;}
 }
 
-.card1 {
+
+.card2 {
+          
+          background-color: #f1f1f1;
+          padding: 20px 15px 20px 20px;
+          margin: 10px 20px 20px 20px;
+          border-radius: 25px;
+          font-size: 30px;
+          float: left;
+          width: 45%;
+      }
+
+      .card1 {
            
-            background-color: #f1f1f1;
-            padding: 20px 20px 20px 20px;
-            margin: 20px 20px 20px 20px;
-            border-radius: 25px;
-            font-size: 30px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+           background-color: #f1f1f1;
+           padding: 20px 20px 20px 20px;
+           margin: 20px 20px 20px 20px;
+           border-radius: 25px;
+           font-size: 30px;
+           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .column {
-  float: left;
-  width: 50%;
-  padding: 20px 20px 20px 20px;
+ float: left;
+ width: 50%;
+ padding: 20px 20px 20px 20px;
 
 }
 
@@ -348,42 +354,42 @@ body {
 
 /* Clear floats after the columns */
 .row:after {
-  content: "";
-  display: table;
-  clear: both;
+ content: "";
+ display: table;
+ clear: both;
 }
 
 @media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
-  }
+ .column {
+   width: 100%;
+   display: block;
+   margin-bottom: 20px;
+ }
 }
 
 
 /* Style the counter cards */
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 25px;
-  text-align: center;
-  background-color: #f1f1f1;
-  border-radius: 25px;
-  font-size: 25px;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+ padding: 25px;
+ text-align: center;
+ background-color: #f1f1f1;
+ border-radius: 25px;
+ font-size: 25px;
 }
 .card a{
-    text-decoration: none;
+   text-decoration: none;
 }
 
 .card3 {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 25px;
-  text-align: center;
-  background-color: #f1f1f1;
-  border-radius: 25px;
-  font-size: 25px;
-  width: 100%;
-  height: 650px;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+ padding: 25px;
+ text-align: center;
+ background-color: #f1f1f1;
+ border-radius: 25px;
+ font-size: 25px;
+ width: 100%;
+ height: 650px;
 }
 
 
@@ -394,7 +400,7 @@ body {
 
 <div class="sidebar close">
         <div class="logo-details">
-            <span class="logo_icon">KU</span>
+            <i class='bx bx-buildings'></i>
             <span class="logo_name">KASETSART UNIVERSITY</span>
         </div>
     <dl class="nav-links">
