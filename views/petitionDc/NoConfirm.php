@@ -419,7 +419,7 @@
 
 <div class="sidebar close">
         <div class="logo-details">
-            <i class='bx bxs-tree-alt'></i>
+        <i class='bx bx-buildings'></i>
             <span class="logo_name">KASETSART UNIVERSITY</span>
         </div>
     <dl class="nav-links">
@@ -497,7 +497,7 @@
     
 <div class="header">
      <!--width="20%" height="20%">-->
-    <h2>เหตุผลการไม่อนุมัติ</h2>
+    เหตุผลการไม่อนุมัติ
 </div>
 <center>
     <div class="card" align='center'>
