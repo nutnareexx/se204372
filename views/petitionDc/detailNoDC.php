@@ -410,51 +410,7 @@ body {
             </ul>
         </li>
         
-        <li>
-            <a href="?controller=considerAj&action=index">
-                <i class='bx bx-file'></i>
-                <span class="link_name">พิจาราณาคำร้องขอฝึกงาน</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">พิจาราณาคำร้องขอฝึกงาน</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="?controller=graphAj&action=index">
-                <i class='bx bx-line-chart' ></i>
-                <span class="link_name">สถานการณ์ยื่นคำร้องนิสิต</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">สถานการณ์ยื่นคำร้องนิสิต</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="?controller=reportPetition&action=index">
-                <i class='bx bx-file-blank' ></i>
-                <span class="link_name">รายงานสรุปการอนุมัติฝึกงาน</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">รายงานสรุปการอนุมัติฝึกงาน</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="?controller=bookAj&action=index">
-                <i class='bx bx-book' ></i>
-                <span class="link_name">ออกหนังสือขอความอนุเคราะห์</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">ออกหนังสือขอความอนุเคราะห์</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="?controller=checkHistory&action=index">
-                <i class='bx bx-notepad'></i>
-                <span class="link_name">ตรวจสอบประวัติการฝึกงาน</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">ตรวจสอบประวัติการฝึกงาน</a></li>
-            </ul>
-        </li>
+        
         <li>
             <a href="?controller=uploadAj&action=index">
                 <i class='bx bx-upload'></i>
