@@ -14,12 +14,6 @@ $controllers = array('pages'=>['home','error'],
                      'petitionCUser'=> ['index', 'index2','index3','newpetitionC','addpetitionC'],
                      'checkApproval'=> ['index'],
                      'downloadStudent'=> ['index'],
-                     'uploadStudent'=> ['index'],
-                     'considerAj'=> ['index'],
-                     'graphAj'=> ['index'],
-                     'reportPetition'=> ['index'],
-                     'bookAj'=> ['index'],
-                     'checkHistory'=> ['index'],
                      'uploadAj'=> ['index'],
                      'user'=>['login','logoutNisit','logoutAj','indexHome','indexLogin'],
                      'test'=>['index']
@@ -122,30 +116,7 @@ function call($controller,$action){
         case "downloadStudent": require_once("models/userModel.php"); 
                                 $controller = new downloadStudentController();
                                 break; 
-
-        case "uploadStudent":   require_once("models/userModel.php");
-                                $controller = new uploadStudentController();
-                                break; 
-
-        case "considerAj":  require_once("models/userModel.php");
-                            $controller = new considerAjController();
-                            break; 
-
-        case "graphAj":     require_once("models/userModel.php");
-                            $controller = new graphAjController();
-                            break; 
-
-        case "reportPetition":require_once("models/userModel.php");  
-                            $controller = new reportPetitionController();
-                            break; 
-
-        case "bookAj":      require_once("models/userModel.php");
-                            $controller = new bookAjController();
-                            break; 
-
-        case "checkHistory":    require_once("models/userModel.php");
-                                $controller = new checkHistoryController();
-                                break; 
+ 
 
         case "uploadAj":    require_once("models/userModel.php");
                             require_once("models/fileModel.php");
