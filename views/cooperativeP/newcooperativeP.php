@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,9 +26,7 @@ body {
     width: 78px;
 }
 
-/*.sidebar a:hover {
-    color: #f1f1f1;
-}*/
+
 .sidebar .logo-details{
     height: 60px;
     width: 100%;
@@ -64,7 +59,6 @@ body {
 }
 
 .sidebar .nav-links{
-     /*   background: red;*/
     height: 100%;
     padding-top:30px 0 150px 0;
     overflow: auto;
@@ -327,20 +321,12 @@ body {
                 text-align: center;
             }
 
-.table {
-    /* font-family: 'Prompt', sans-serif;
-    border-collapse: collapse; */
-    width: 100%;
-    /* text-align: center;
-    background: #f2f2f2; */
-}
+    .table {
+        width: 100%;
+    }
 
-/* th, td {
-    text-align: left;
-    padding: 8px;
-} */
 
-.card {
+        .card {
             font-family: 'Prompt', sans-serif;
             width: 80%;
             background-color: #f1f1f1;
