@@ -28,9 +28,6 @@ body {
     width: 78px;
 }
 
-/*.sidebar a:hover {
-    color: #f1f1f1;
-}*/
 .sidebar .logo-details{
     height: 60px;
     width: 100%;
@@ -343,7 +340,7 @@ body {
             border-radius: 50px;
         }
         button:not(:last-child) {
-            border-right: none; /* Prevent double borders */
+            border-right: none; 
         }
         button:hover {
             background-color: #73c088;
@@ -362,8 +359,6 @@ body {
             }
 
         table {
-            /* font-family: 'Prompt', sans-serif; */
-            /* border-collapse: collapse; */
             font-size: 18px;
             font-weight: bold;
             width: 80%;
@@ -380,28 +375,11 @@ body {
             
         }
 
-        /* button {
-            font-family: 'Prompt', sans-serif;
-            position: relative;
-            background-color: #397d54 ; 
-            border: 1px black;
-            color: white;
-            padding: 10px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 18px;
-            cursor: pointer;
-            width: 30%;
-            border-radius: 50px;
-        }
-        button:not(:last-child) {
-            /* border-right: none; /* Prevent double borders
-        }  */
+        
         button:hover {
             background-color: #73c088;
             color: white;
-        } */
+        } 
 
         input[type=text], select {
                 font-family: 'Prompt', sans-serif;
