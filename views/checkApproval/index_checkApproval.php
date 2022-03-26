@@ -27,9 +27,6 @@ body {
     width: 78px;
 }
 
-/*.sidebar a:hover {
-    color: #f1f1f1;
-}*/
 .sidebar .logo-details{
     height: 60px;
     width: 100%;
@@ -350,7 +347,7 @@ th, td {
             border-radius: 50px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         }
-        }
+        
 
 .card1 {
             font-family: 'Prompt', sans-serif;
