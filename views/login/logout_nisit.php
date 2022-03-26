@@ -5,8 +5,6 @@
        
         <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
-        
-    
 
 </head>
 <style>
@@ -36,7 +34,6 @@ html {
         text-align: center;
         font-family: 'Prompt', sans-serif;
         font-size: 18px;
-       /* background-color: white;*/
         padding: 40px;
         margin-top: 10px;
         margin-left: 100px;
@@ -46,11 +43,8 @@ html {
     .card2 {
         font-family: 'Prompt', sans-serif;
         text-align: center;
-        /* background-color: #f1f1f1; */
-        /* padding: 20px; */
         margin-top: 80px;
         margin-left: 10px;
-        /* margin-right: auto; */
        
     }
     .center {
@@ -60,9 +54,8 @@ html {
         
         .btn-group .button {
             font-family: 'Prompt', sans-serif;
-            /*border-radius: 5%;*/
             position: relative;
-            background-color: #397d54 ; /* Green */
+            background-color: #397d54 ; 
             border: 1px black;
             color: white;
             padding: 15px 22px;
@@ -71,14 +64,13 @@ html {
             display: inline-block;
             font-size: 16px;
             cursor: pointer;
-            /*float: center;*/
             border-radius: 50px;
             width: 30%;
             transition: all 0.5s ease;
         }
 
         .btn-group .button:not(:last-child) {
-            border-right: none; /* Prevent double borders */
+            border-right: none; 
         }
 
         .btn-group .button:hover {
@@ -88,9 +80,8 @@ html {
 
         .btn-group2 .button {
             font-family: 'Prompt', sans-serif;
-            /*border-radius: 5%;*/
             position: sticky ;
-            background-color: #0974ba ; /* Green */
+            background-color: #0974ba ; 
             border: 1px black;
             color: white;
             padding: 14px 16px;
@@ -103,11 +94,10 @@ html {
         }
 
         .btn-group2 .button:not(:last-child) {
-            border-right: none; /* Prevent double borders */
+            border-right: none;
         }
 
         .btn-group2 .button:hover {
-            /*background-color: #ddd;*/
             color: black;
         }
 
@@ -118,7 +108,6 @@ html {
             padding: 5px 10px;
             margin: 8px 0px;
             font-size: 16px;
-            /*display: inline-block;*/
             border: 1px solid #ccc;
             border-radius: 50px;
             box-sizing: border-box;

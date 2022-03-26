@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,9 +26,7 @@ body {
     width: 78px;
 }
 
-/*.sidebar a:hover {
-    color: #f1f1f1;
-}*/
+
 .sidebar .logo-details{
     height: 60px;
     width: 100%;
@@ -64,7 +59,6 @@ body {
 }
 
 .sidebar .nav-links{
-     /*   background: red;*/
     height: 100%;
     padding-top:30px 0 150px 0;
     overflow: auto;
@@ -345,7 +339,7 @@ body {
             border-radius: 50px;
         }
         button:not(:last-child) {
-            border-right: none; /* Prevent double borders */
+            border-right: none; 
         }
         button:hover {
             background-color: #73c088;
@@ -364,8 +358,6 @@ body {
             }
 
         table {
-            /* font-family: 'Prompt', sans-serif; */
-            /* border-collapse: collapse; */
             font-size: 18px;
             font-weight: bold;
             width: 80%;
@@ -398,7 +390,7 @@ body {
             border-radius: 50px;
         }
         button:not(:last-child) {
-            border-right: none; /* Prevent double borders */
+            border-right: none; 
         }
         button:hover {
             background-color: #73c088;

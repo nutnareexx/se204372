@@ -30,9 +30,7 @@ body {
     width: 78px;
 }
 
-/*.sidebar a:hover {
-    color: #f1f1f1;
-}*/
+
 .sidebar .logo-details{
     height: 60px;
     width: 100%;
@@ -362,7 +360,7 @@ input[type=text], select {
         .btn-group .button {
             font-family: 'Prompt', sans-serif;
             position: relative;
-            background-color: #73c088 ; /* Green */
+            background-color: #73c088 ; 
             border: 1px black;
             color: white;
             padding: 7px 25px;
@@ -371,12 +369,11 @@ input[type=text], select {
             display: inline-block;
             font-size: 16px;
             cursor: pointer;
-            /*float: center;*/
             border-radius: 50px;
         }
 
         .btn-group .button:not(:last-child) {
-            border-right: none; /* Prevent double borders */
+            border-right: none; 
         }
 
         .btn-group .button:hover {
@@ -387,7 +384,7 @@ input[type=text], select {
         .btn-group2 .button2 {
             font-family: 'Prompt', sans-serif;
             position: relative;
-             background-color: #73c088 ; /*Green */
+             background-color: #73c088 ; 
             border: 1px black;
             color: white;
             padding: 7px 25px;
@@ -401,7 +398,7 @@ input[type=text], select {
         }
 
         .btn-group2 .button2:not(:last-child) {
-            border-right: none; /* Prevent double borders */
+            border-right: none;
         }
 
         .btn-group2 .button2:hover {

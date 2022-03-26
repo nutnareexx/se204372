@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,9 +28,6 @@ body {
     width: 78px;
 }
 
-/*.sidebar a:hover {
-    color: #f1f1f1;
-}*/
 .sidebar .logo-details{
     height: 60px;
     width: 100%;
@@ -66,7 +60,6 @@ body {
 }
 
 .sidebar .nav-links{
-     /*   background: red;*/
     height: 100%;
     padding-top:30px 0 150px 0;
     overflow: auto;
@@ -350,7 +343,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 .btn-group2 .button2 {
             font-family: 'Prompt', sans-serif;
             position: relative;
-             background-color: #73c088 ; /*Green */
+             background-color: #73c088 ; 
             border: 1px black;
             color: white;
             padding: 7px 25px;
@@ -359,12 +352,11 @@ tr:nth-child(even){background-color: #f2f2f2}
             display: inline-block; 
             font-size: 16px;
             cursor: pointer;
-            /* float: center; */
             border-radius: 50px;
         }
 
         .btn-group2 .button2:not(:last-child) {
-            border-right: none; /* Prevent double borders */
+            border-right: none; 
         }
 
         .btn-group2 .button2:hover {
@@ -510,6 +502,26 @@ tr:nth-child(even){background-color: #f2f2f2}
         <td>สวัสดิการอื่นๆ</td>
         <td>การคัดเลือก</td>
     </tr>
+    <?php foreach($DetailCompanyList as $c)
+{
+    echo "<tr>
+    <td>$c->dc_id</td>
+    <td>$c->dc_name</td>
+    <td>$c->dc_position</td>
+    <td>$c->dc_department</td>
+    <td>$c->dc_num</td>
+    <td>$c->dc_skills</td>
+    <td>$c->dc_nature</td>
+    <td>$c->dc_pay</td>
+    <td>$c->dc_room</td>
+    <td>$c->dc_benefit</td>
+    <td>$c->dc_select</td>
+    </tr>
+    ";
+} 
+
+echo "</table>";
+?>
 </section>
 
 <script>
@@ -538,24 +550,5 @@ sidebarBtn.addEventListener("click", ()=>{
 
 </html>
 
-<?php foreach($DetailCompanyList as $c)
-{
-    echo "<tr>
-    <td>$c->dc_id</td>
-    <td>$c->dc_name</td>
-    <td>$c->dc_position</td>
-    <td>$c->dc_department</td>
-    <td>$c->dc_num</td>
-    <td>$c->dc_skills</td>
-    <td>$c->dc_nature</td>
-    <td>$c->dc_pay</td>
-    <td>$c->dc_room</td>
-    <td>$c->dc_benefit</td>
-    <td>$c->dc_select</td>
-    </tr>
-    ";
-} 
 
-echo "</table>";
-?>
 

@@ -33,9 +33,6 @@ body {
     width: 78px;
 }
 
-/*.sidebar a:hover {
-    color: #f1f1f1;
-}*/
 .sidebar .logo-details{
     height: 60px;
     width: 100%;
@@ -71,7 +68,6 @@ body {
 }
 
 .sidebar .nav-links{
-     /*   background: red;*/
     height: 100%;
     padding-top:30px 0 150px 0;
     overflow: auto;
@@ -350,10 +346,10 @@ body {
 
 }
 
-/* Remove extra left and right margins, due to padding */
-.row {margin: 0 -5px;}
+.row {
+    margin: 0 -5px;
+}
 
-/* Clear floats after the columns */
 .row:after {
   content: "";
   display: table;
@@ -368,8 +364,6 @@ body {
   }
 }
 
-
-/* Style the counter cards */
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 25px;
