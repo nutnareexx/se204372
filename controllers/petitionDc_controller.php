@@ -4,7 +4,6 @@ class petitionDcController
     public function index()
     {
         $userid = $_GET['userid'];
-        // $petition_id = $_GET['petition_id'];
         $userList=userModel::get($userid);
         $petionDcList = petitionDcModel::getAll();
         $pelist = petitionModelFornew::getAll();
@@ -39,12 +38,9 @@ class petitionDcController
         $userid = $_GET['userid'];
         $userList=userModel::get($userid);
         $petionDcList = petitionDcModel::getAll();
-        //$approveList = approveModel::getAll();
         $statusList = statusModel::getAll();
         $nametitleList = nametitleModel::getAll();
-        //$userList = userModel::getAll();
         $DetailCompanyList = DetailCompanyModel::getAll();
-        //$cooperativeList =  cooperativeModel::getAll();
         require_once('views/petitionDc/newpetitionDc.php');
     }
 
@@ -78,10 +74,8 @@ class petitionDcController
         $userList=userModel::get($userid);
         $petionDcList = petitionDcModel::get($petition_id);
         $nametitleList = nametitleModel::getAll();
-        
         $DetailCompanyList = DetailCompanyModel::getAll();
         $statusList = statusModel::getAll();
-        // $pelist = petitionModelFornew::getAll();
         require_once('views/petitionDc/updateform.php');
 
     }
@@ -90,7 +84,6 @@ class petitionDcController
     {
         $userid = $_GET['userid'];
         $petition_id = $_GET['petition_id'];
-        // $status_id = $_GET['status_id'];
         $userList=userModel::get($userid);
         petitionDcModel::update( $petition_id);
         petitionDcController::index();
@@ -103,7 +96,6 @@ class petitionDcController
         $userid = $_GET['userid'];
         $petition_id = $_GET['petition_id'];
         $userList = userModel::get($userid);
-
         $petionDcList = petitionModelFornew::get($petition_id);
         $nametitleList = nametitleModel::getAll();
         $DetailCompanyList = DetailCompanyModel::getAll();
@@ -117,7 +109,6 @@ class petitionDcController
     {
         $userid = $_GET['userid'];
         $petition_id = $_GET['petition_id'];
-        // $status_id = $_GET['status_id'];
         $userList=userModel::get($userid);
         petitionModelFornew::update( $petition_id);
         petitionDcController::index();
@@ -131,11 +122,9 @@ class petitionDcController
         $userList=userModel::get($userid);
         $petionDcList = petitionDcModel::get($petition_id);
         $nametitleList = nametitleModel::getAll();
-        
         $DetailCompanyList = DetailCompanyModel::getAll();
         $statusList = statusModel::getAll();
         $pelist = petitionModelFornew::getAll();
-        // petitionDcModel::update2($petition_id);
         require_once('views/petitionDc/NoConfirm.php');
     }
 
@@ -162,7 +151,6 @@ class petitionDcController
         $DetailCompanyList = DetailCompanyModel::getAll();
         $statusList = statusModel::getAll();
         $pelist = petitionModelFornew::getAll();
-        // petitionDcModel::update2($petition_id);
         require_once('views/petitionDc/NoConfirmNC.php');
     }
 
@@ -172,13 +160,10 @@ class petitionDcController
         $petition_id = $_GET['petition_id'];
         $app_rea =$_GET['approve_reason'];
         $userList=userModel::get($userid);
-        
         petitionDcModel::update2($petition_id);
         approveModel::Add($numrand, $app_rea);
         $aList = approveModel::get($numrand);
-        
         petitionDcModel::updateApp($petition_id,$numrand);
-        // petitionDcModel::updateApp()
         petitionDcController::index();
         
     }
@@ -190,7 +175,6 @@ class petitionDcController
         $userList=userModel::get($userid);
         $petionDcList = petitionDcModel::search($key);
         $pelist = petitionModelFornew::search($key);
-        
         require_once('views/petitionDc/index_petitionDc.php');
     }
 
