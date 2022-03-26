@@ -29,7 +29,6 @@
 		//ตั้งชื่อไฟล์ใหม่โดยเอาเวลาไว้หน้าชื่อไฟล์เดิม
 		
 		$newname = "application form_".$numrand.$type;
-		// $newname = "new".$userid.$type;
 		$path_copy=$path.$newname;
 		$path_link="up/".$newname;
 

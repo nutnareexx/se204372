@@ -121,11 +121,11 @@ function call($controller,$action){
         
         case "downloadStudent": require_once("models/userModel.php"); 
                                 $controller = new downloadStudentController();
-                            break; 
+                                break; 
 
         case "uploadStudent":   require_once("models/userModel.php");
                                 $controller = new uploadStudentController();
-                            break; 
+                                break; 
 
         case "considerAj":  require_once("models/userModel.php");
                             $controller = new considerAjController();
@@ -143,9 +143,9 @@ function call($controller,$action){
                             $controller = new bookAjController();
                             break; 
 
-        case "checkHistory":  require_once("models/userModel.php");
+        case "checkHistory":    require_once("models/userModel.php");
                                 $controller = new checkHistoryController();
-                            break; 
+                                break; 
 
         case "uploadAj":    require_once("models/userModel.php");
                             require_once("models/fileModel.php");
