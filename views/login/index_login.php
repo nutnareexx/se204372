@@ -18,9 +18,8 @@
 
         button {
             font-family: 'Prompt', sans-serif;
-            /*border-radius: 5%;*/
             position: relative;
-            background-color: #397d54 ; /* Green */
+            background-color: #397d54 ; 
             border: 1px black;
             color: white;
             padding: 15px 32px;
@@ -28,15 +27,13 @@
             text-decoration: none;
             display: inline-block;
             font-size: 18px;
-            
             cursor: pointer;
-            /*float: center;*/
             box-shadow: 3px 2px 8px gray;
             border-radius: 50px;
         }
 
         button:not(:last-child) {
-            border-right: none; /* Prevent double borders */
+            border-right: none; 
         }
 
         button:hover {
@@ -46,7 +43,6 @@
 
         input[type=text], select {
             font-family: 'Prompt', sans-serif;
-            /* font-size: 18px; */
             width: 50%;
             padding: 12px 20px;
             margin: 8px 0;
@@ -58,7 +54,6 @@
 
         input[type=password], select {
             font-family: 'Prompt', sans-serif;
-            /* font-size: 18px; */
             width: 50%;
             padding: 12px 20px;
             margin: 8px 0;
