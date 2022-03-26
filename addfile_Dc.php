@@ -16,7 +16,6 @@
 	if($upload != '') {   
 
 		//โฟลเดอร์ที่จะ upload file เข้าไป 
-		// $path="C:/xampp/htdocs/se204372/up/";
 		$path="up/";  
 
 		//เอาชื่อไฟล์เก่าออกให้เหลือแต่นามสกุล
@@ -30,7 +29,6 @@
 		//ตั้งชื่อไฟล์ใหม่โดยเอาเวลาไว้หน้าชื่อไฟล์เดิม
 		
 		$newname = "application form_".$numrand.$type;
-		// $newname = "new".$userid.$type;
 		$path_copy=$path.$newname;
 		$path_link="up/".$newname;
 
