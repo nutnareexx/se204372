@@ -61,7 +61,6 @@ class petitionCController
     {
         $userid = $_GET['userid'];
         $petition_id = $_GET['petition_id'];
-        //$status_id = $_GET['status_id'];
         petitionCModel::update($petition_id);
         petitionCController::indexC();
     }
@@ -72,7 +71,6 @@ class petitionCController
         $userid = $_GET['userid'];
         $petition_id = $_GET['petition_id'];
         $app_rea =$_GET['approve_reason'];
-        //$status_id = $_GET['status_id'];
         $userList=userModel::get($userid);
         approveModel::Add($numrand, $app_rea);
         $aList = approveModel::get($numrand);
@@ -87,7 +85,6 @@ class petitionCController
         $petionCnewList = petitionnewCModel::getnew($c);
         $statusList = statusModel::getAll();
         $userList = userModel::get($userid);
-
         require_once('views/petitionC/updateformnewC.php');
 
     }
@@ -110,7 +107,6 @@ class petitionCController
     {
         $userid = $_GET['userid'];
         $petition_id = $_GET['petition_id'];
-        //$status_id = $_GET['status_id'];
         petitionnewCModel::update( $petition_id);
         petitionCController::indexC();
     }
@@ -124,7 +120,6 @@ class petitionCController
         $userList=userModel::get($userid);
         approveModel::Add($numrand, $app_rea);
         $aList = approveModel::get($numrand);
-        //$status_id = $_GET['status_id'];
         petitionnewCModel::updateappNo($petition_id, $numrand);
         petitionCController::indexC();
     }
@@ -237,8 +232,4 @@ class petitionCController
         $petionCnewList = petitionnewCModel::getAllnewdownS();
         require_once('views/petitionC/index_petitionC.php');
     }
-
-
-
-
 }?>
