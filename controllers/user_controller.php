@@ -21,7 +21,7 @@ class userController{
             $checkList = userModel::get($userid);
             if($checkList->user_password == $password){
                 $u = substr($userid, 0 ,1);
-                echo $u;
+                
                 $userList =userModel::get($userid);
                 if($u == 'a'){
                     $fList = fileModel::getAll();

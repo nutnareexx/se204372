@@ -3,7 +3,7 @@
 <head>
 
 <meta charset="UTF-8">
-        
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
         <link rel ="stylesheet" >
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -515,7 +515,7 @@ a:hover {
          <th>
          <?php echo "<a href=?controller=petitionC&action=upS&userid=$userid>
                 <i class='fas fa-caret-up' style='font-size:24px'></i></a>" ?>
-                <?php echo "<a href=?controller=petitionC&action=downS&userid=$userid>
+        <?php echo "<a href=?controller=petitionC&action=downS&userid=$userid>
                 <i class='fas fa-caret-down' style='font-size:24px'></i></a>" ?>สถานะ</th>
          
      </tr>

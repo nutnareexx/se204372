@@ -423,11 +423,7 @@
     <div class="sidebar close">
             <div class="logo-details">
                 <i class='bx bx-buildings'></i>
-<<<<<<< Updated upstream
                 <span class="logo_name"> KASETSART UNIVERSITY </span>
-=======
-                <span class="logo_name">KASETSART UNIVERSITY</span>
->>>>>>> Stashed changes
             </div>
 
         <dl class="nav-links">
@@ -510,7 +506,7 @@
 
     <section class="home-section">
         <div class="home-content">
-                <span class="logo_icon">KU</span>
+                
                 <span class="text">ระบบบริหารจัดการการฝึกงานแบบออนไลน์</span>
         </div>
         <!-- เขียนตรงนี้นาจาาาาาา -->

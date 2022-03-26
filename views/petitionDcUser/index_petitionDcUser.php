@@ -419,7 +419,7 @@
     <body>
     <div class="sidebar close">
             <div class="logo-details">
-            <i class='bx bx-buildings'></i>
+                <i class='bx bx-buildings'></i>
                 <span class="logo_name">KASETSART UNIVERSITY</span>
             </div>
 
