@@ -509,7 +509,7 @@
         </th>
         
         <tr>
-            <th align="right">รหัสนิสิต : </th>
+            <th align="right" style="width: 40%;">รหัสนิสิต : </th>
             <td><?php echo $petionDcList->user_id;?></td>
         </tr>
         <tr>
@@ -541,7 +541,6 @@
             <th align="right">ตำแหน่ง : </th>
             <td><?php echo "$petionDcList->approverP_p";?></td>
         </tr>
-
         <th colspan="2">
                 <br><br>
                 <label>ส่วนของสถานประกอบการ</label> 
@@ -622,12 +621,10 @@
             <th align="right">ระยะการเวลาการฝึกงาน : </th>
             <td><?php echo "$petionDcList->start_p - $petionDcList->finish_p";?></td>
         </tr>
-
-        <th colspan="2">
+             <th colspan="2">
                 <br><br>
                 <label>การอนุมัติการฝึกงาน</label> 
-                
-                </th>
+            </th>
         <tr>
             <th align="right">ผลการอนุมัติ : </th>
             <td><?php echo "ไม่อนุมัติ";?></td>
