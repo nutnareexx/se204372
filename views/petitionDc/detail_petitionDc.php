@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-            <!-- <link rel ="stylesheet" href="hamburger.css"> -->
             <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
             <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
             <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
@@ -30,9 +29,6 @@
             width: 78px;
         }
 
-        /*.sidebar a:hover {
-            color: #f1f1f1;
-        }*/
         .sidebar .logo-details{
             height: 60px;
             width: 100%;
@@ -65,7 +61,6 @@
         }
 
         .sidebar .nav-links{
-            /*   background: red;*/
             height: 100%;
             padding-top:30px 0 150px 0;
             overflow: auto;
@@ -318,10 +313,7 @@
         .sidebar {padding-top: 15px;}
         .sidebar a {font-size: 18px;}
         }
-
-
-
-            
+      
         .header {
             font-family: 'Prompt', sans-serif;
             background-color: #f1f1f1;
@@ -331,8 +323,6 @@
         }
 
         table {
-            /* font-family: 'Prompt', sans-serif; */
-            /* border-collapse: collapse; */
             font-size: 18px;
             font-weight: bold;
             width: 80%;
@@ -638,19 +628,12 @@
         <input type="hidden" name="userid" value="<?php echo $userid;?>"/>
         <input type="hidden" name="petition_id" value="<?php echo $petition_id;?>"/>
         <button type="submit" name="action" value="index">กลับ</button>
-        <!-- <button type="submit" name="action" value="update">อนุมัติ</button> -->
 
 </div>
 </form>
 </center>
 <br>
 <br>
-
-    
-
-    
-
-
 
 
 </section>
@@ -673,8 +656,6 @@ sidebarBtn.addEventListener("click", ()=>{
 });
 
 </script>
-
-
 
 
 </body>
