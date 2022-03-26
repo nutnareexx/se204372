@@ -2,7 +2,7 @@
 <html>
 <head>
 
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
         
@@ -29,9 +29,6 @@ body {
     width: 78px;
 }
 
-/*.sidebar a:hover {
-    color: #f1f1f1;
-}*/
 .sidebar .logo-details{
     height: 60px;
     width: 100%;
@@ -64,7 +61,6 @@ body {
 }
 
 .sidebar .nav-links{
-     /*   background: red;*/
     height: 100%;
     padding-top:30px 0 150px 0;
     overflow: auto;
@@ -330,7 +326,7 @@ body {
     button {
       font-family: 'Prompt', sans-serif;
       position: relative;
-      background-color: #397d54 ; /* Green */
+      background-color: #397d54 ;
       border: 1px black;
       color: white;
       padding: 10px 32px;
@@ -339,7 +335,6 @@ body {
       display: inline-block;
       font-size: 16px;
       cursor: pointer;
-      /*float: center;*/
       border-radius: 50px;
     }
 
@@ -364,8 +359,6 @@ body {
       font-family: 'Prompt', sans-serif;
       background-color: #f1f1f1;
       text-align: center;
-      /* padding: 20px; */
-     
       width: 100%;
       border-radius: 10px;
     }
@@ -375,20 +368,12 @@ body {
                 float: left;
                 width: 40%;
                 margin-left: 20px;
-                
-                /* margin-top: 100px; */
-                /* text-align: center; */
-                /*text-shadow: 3px 2px 6px black;*/
-                
             }
 
     /* Right column */
     .rightcolumn {
                 float: right;
-                /* margin-top: 20px; */
                 width: 58%;
-            
-
             }
 
     /* Clear floats after the columns */
@@ -407,7 +392,6 @@ body {
       border: 1px solid #ccc;
       border-radius: 50px;
       box-sizing: border-box;
-      /* background-color: #235d3a; */
     }
 
 </style>
@@ -543,40 +527,40 @@ body {
 
 <script>
 
-let arrow = document.querySelectorAll(".arrow");
-for (var i = 0; i < arrow.length; i++){
-    arrow[i].addEventListener("click", (e)=>{
-        let arrowParent = e.target.parentElement.parentElement;
-        arrowParent.classList.toggle("showMenu");
+    let arrow = document.querySelectorAll(".arrow");
+    for (var i = 0; i < arrow.length; i++){
+        arrow[i].addEventListener("click", (e)=>{
+            let arrowParent = e.target.parentElement.parentElement;
+            arrowParent.classList.toggle("showMenu");
+        });
+    }
+
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".bx-menu");
+    console.log(sidebarBtn);
+    sidebarBtn.addEventListener("click", ()=>{
+        sidebar.classList.toggle("close");
     });
-}
-
-let sidebar = document.querySelector(".sidebar");
-let sidebarBtn = document.querySelector(".bx-menu");
-console.log(sidebarBtn);
-sidebarBtn.addEventListener("click", ()=>{
-    sidebar.classList.toggle("close");
-});
 
 
 
-var slideIndex = 1;
-showDivs(slideIndex);
+    var slideIndex = 1;
+    showDivs(slideIndex);
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
+    function plusDivs(n) {
+    showDivs(slideIndex += n);
+    }
 
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";  
-  }
-  x[slideIndex-1].style.display = "block";  
-}
+    function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+    }
+    x[slideIndex-1].style.display = "block";  
+    }
 
 
 </script>
