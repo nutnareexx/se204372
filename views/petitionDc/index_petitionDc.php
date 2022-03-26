@@ -32,9 +32,6 @@ body {
     width: 78px;
 }
 
-/*.sidebar a:hover {
-    color: #f1f1f1;
-}*/
 .sidebar .logo-details{
     height: 60px;
     width: 100%;
