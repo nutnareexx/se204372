@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-            <!-- <link rel ="stylesheet" href="hamburger.css"> -->
             <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
             <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
             <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
@@ -30,9 +29,6 @@
             width: 78px;
         }
 
-        /*.sidebar a:hover {
-            color: #f1f1f1;
-        }*/
         .sidebar .logo-details{
             height: 60px;
             width: 100%;
@@ -65,7 +61,6 @@
         }
 
         .sidebar .nav-links{
-            /*   background: red;*/
             height: 100%;
             padding-top:30px 0 150px 0;
             overflow: auto;
@@ -331,8 +326,6 @@
         }
 
         table {
-            /* font-family: 'Prompt', sans-serif; */
-            /* border-collapse: collapse; */
             font-size: 18px;
             font-weight: bold;
             width: 80%;
@@ -496,7 +489,6 @@
     <!-- เขียนตรงนี้นาจาาาาา -->
     
 <div class="header">
-     <!--width="20%" height="20%">-->
     เหตุผลการไม่อนุมัติ
 </div>
 <center>
@@ -648,13 +640,6 @@
 </form>
 </center>
 
-    
-
-    
-
-
-
-
 </section>
 
 <script>
@@ -675,9 +660,6 @@ sidebarBtn.addEventListener("click", ()=>{
 });
 
 </script>
-
-
-
 
 </body>
 
